@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <title>
+    Hoofdstuk 1 &middot; 
+    Rubyprog
+  </title>
+
+  <!-- CSS -->
+  <link href="/public/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="/public/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="/public/less/custom.css" rel="stylesheet">
+</head>
+
+
+  <body class="layout-reverse theme-base-08 scrollspy">
+
+  <header>
+
+  <!-- <img src="/public/images/logo.png" height="65px" style="padding:0px; margin-top:13px;"> -->
+  <!-- <img src="/public/images/logo.png" height="60px" style="padding:0px; margin:0px;"/> -->
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Bootstrap theme</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</header> 
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 id="hoofdstuk_1_hallo">Hoofdstuk 1: hallo</h1>
+
+<p>We maken kennis met Ruby en Sublime Text. We praten tegen de computer en laten de computer terugpraten.</p>
+
+<h2 id="de_bestanden">De bestanden</h2>
+
+<p>In de map Hoofdstuk 1 vind je de volgende bestanden:</p>
+
+<pre><code>Hoofdstuk1.url - deze beschrijving
+hallo.rb - het script waar je in gaat werken</code></pre>
+
+<h2 id="informatie">Informatie</h2>
+
+<h3 id="iets_op_het_scherm_zetten_">Iets op het scherm zetten: <code>puts</code></h3>
+
+<p>Open de map <code>Rubyprog</code> in Sublime Text. (<code>File -&gt; Open Folder...</code>). Links zie je allerlei mappen (Hoofdstuk 1, Hoofdstuk 2, etc.) staan. Open nu het bestand <code>hallo.rb</code> in de map “Hoofdstuk 1”. Daar staat:</p>
+<div class='highlight'><pre><code class='ruby'><span class='nb'>puts</span> <span class='s2'>&quot;Hallo&quot;</span>
+</code></pre></div>
+<p>Dit programma zag je in de <a href="/command_line">command line</a> al in actie. Het commando <code>puts</code> (put string) zet een <code>String</code> op het scherm. Een string is een stuk tekst.</p>
+
+<h3 id="om_input_vragen_">Om input vragen: <code>gets</code></h3>
+
+<p>Als je input van de gebruiker wilt hebben, gebruik je <code>gets</code> (get string):</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>naam</span> <span class='o'>=</span> <span class='nb'>gets</span>
+</code></pre></div>
+<p>Wat gebeurt hier? <code>naam</code> is een <em>variabele</em>. Dat is een soort opslagplaats voor informatie. Als je zegt:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>geluksgetal</span> <span class='o'>=</span> <span class='mi'>1</span>
+</code></pre></div>
+<p>dan sla je <code>1</code> op als <code>geluksgetal</code>. Later kun je typen:</p>
+<div class='highlight'><pre><code class='ruby'><span class='nb'>puts</span> <span class='n'>geluksgetal</span>
+</code></pre></div>
+<p>en dan geeft Ruby <code>1</code> als output.</p>
+
+<p>Maar terug naar <code>gets</code>. Dit is een commando dat de gebruiker om <em>input</em> vraagt: je kunt iets intypen. <code>naam = gets</code> vertelt de computer de input van de gebruiker op te slaan in <code>naam</code>.</p>
+
+<h3 id="het_statement">Het <code>if</code>-statement</h3>
+
+<p>Een programma is meer dan een rij commando’s, die achter elkaar worden uitgevoerd. Een computer kan ook keuzes maken. Hier zijn aparte commando’s voor nodig, en één van de krachtigste is <code>if</code>. Hiermee geef je aan dat de computer alleen iets moet uitvoeren onder een bepaalde voorwaarde en anders niet.</p>
+
+<p>Neem bijvoorbeeld:</p>
+<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>naam</span> <span class='o'>==</span> <span class='s2'>&quot;Jan&quot;</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;De naam is Jan!&quot;</span>
+<span class='k'>end</span>
+</code></pre></div>
+<p>Je kunt wel raden wat hier gebeurt: alleen als de variabele <code>naam</code> gelijk is aan “Jan”, dan zegt de computer iets. Voor het vergelijken van twee waarden gebruik je <code>==</code>, een dubbel is-teken. Vergeet het <code>if</code>-statement niet af te sluiten met <code>end</code>.</p>
+
+<p>Maar als de naam geen Jan is, hoe zeg je dan wat de computer moet doen? Hiervoor heb je <code>else</code>:</p>
+<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>naam</span> <span class='o'>==</span> <span class='s2'>&quot;Jan&quot;</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;De naam is Jan!&quot;</span>
+<span class='k'>else</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;De naam is niet Jan!&quot;</span>
+<span class='k'>end</span>
+</code></pre></div>
+<p>En om het nog mooier te maken: je kunt ook vragen of <code>naam</code> misschien Piet is. Dit doe je met <code>elsif</code>:</p>
+<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>naam</span> <span class='o'>==</span> <span class='s2'>&quot;Jan&quot;</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;De naam is Jan!&quot;</span>
+<span class='k'>elsif</span> <span class='n'>naam</span> <span class='o'>==</span> <span class='s2'>&quot;Piet&quot;</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;De naam is Piet!&quot;</span>
+<span class='k'>else</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;De naam is niet Jan of Piet!&quot;</span>
+<span class='k'>end</span>
+</code></pre></div>
+<p>Je kunt er net zoveel <code>elsif</code>s achter zetten als je wilt.</p>
+
+<h2 id="de_opdracht">De opdracht</h2>
+
+<p>Je weet nu alles wat je nodig hebt om zelf aan de slag te gaan. Je eerste script gaat over het communiceren met de computer. Schrijf een programma dat de volgende dingen doet:</p>
+
+<ul>
+<li>Begroet de gebruiker</li>
+
+<li>Vraagt de naam van de gebruiker</li>
+
+<li>Verwerkt de naam in een antwoord en vraagt de gebruiker om <code>jongen</code> of <code>meisje</code>, of <code>man</code> of <code>vrouw</code> in te typen</li>
+
+<li>Maakt een persoonlijke begroeting, waarin de gebruiker wordt begroet met “Meneer” of “Mevrouw” en dan de naam, allemaal bepaald door wat de gebruiker eerder heeft ingetypt</li>
+</ul>
+
+<h3 id="extra_oeps_foutje">(Extra) Oeps, foutje!</h3>
+
+<p>Wat doet je programma als je per ongeluk <code>jongne</code> in plaats van <code>jongen</code> intypt? Probeer dit soort fouten op een mooie manier op te lossen. (Is het irritant om alles opnieuw in te vullen als je één typfout maakt? Antwoord: ja.)</p>
+        </div>
+        <div class="col-md-5">
+          <div class="hidden-print page-map-sidebar">
+            <ul id="page-map" class="nav">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <footer>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <p><a href="/" id="logo" class="footer-brand">ruby{prog}</a></p>
+
+      <p>Deze cursus is ontwikkeld door Geert Kapteijns en Boris Ponsioen. Het materiaal is vrij te gebruiken onder de <a href="http://creativecommons.org/licenses/by-nc/4.0/deed.nl">CC BY-NC 4.0-licentie</a> --- je mag er alles mee doen, zolang het maar niet-commercieel is.</p>
+
+      <p>Meehelpen? Zie de <a href="https://github.com/b1592/b1592.github.io">Github-pagina.</a></p>
+
+      <p>Alle kritiek is welkom. Mail naar <a href="mailto:ghkapteijns@gmail.com">ghkapteijns@gmail.com</a>.
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+</div>
+</footer>
+
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-47467348-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  <!-- Load JS here for greater good =============================-->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

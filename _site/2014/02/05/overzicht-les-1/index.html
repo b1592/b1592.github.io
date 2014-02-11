@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <title>
+    Overzicht les 1 &middot; 
+    Rubyprog
+  </title>
+
+  <!-- CSS -->
+  <link href="/public/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="/public/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="/public/less/custom.css" rel="stylesheet">
+</head>
+
+
+  <body class="layout-reverse theme-base-08 scrollspy">
+
+  <header>
+
+  <!-- <img src="/public/images/logo.png" height="65px" style="padding:0px; margin-top:13px;"> -->
+  <!-- <img src="/public/images/logo.png" height="60px" style="padding:0px; margin:0px;"/> -->
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Bootstrap theme</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</header> 
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="post">
+  <h1>Overzicht les 1</h1>
+  <span class="post-date">05 Feb 2014</span>
+  <p>Hoi iedereen,</p>
+
+<p>Bedankt voor de interesse gisteren! Wij kijken uit naar volgende week. Hier een overzicht van de eerste les:<!-- more --></p>
+<div class="maruku_toc"><ul><li><a href="#voor_thuis">Voor thuis</a></li><li><a href="#extra_informatie_hoofdstuk_1">Extra informatie hoofdstuk 1</a><ul><li><a href="#while_loop_voor_de_extra_opdracht">While loop (voor de extra opdracht)</a></li><li><a href="#wat_is_">Wat is <code>gets.chomp</code>?</a></li><li><a href="#wat_doet_">Wat doet <code>&quot;Hallo, #{naam}&quot;</code>?</a></li><li><a href="#_of_en__en">|| (OF) en &amp;&amp; (EN)</a></li><li><a href="#_niet_gelijk_aan"><code>!=</code> (niet gelijk aan)</a></li><li><a href="#error_messages">Error messages</a></li><li><a href="#ruby_warrior">Ruby Warrior</a></li></ul></li></ul></div>
+<h2 id="voor_thuis">Voor thuis</h2>
+
+<ul>
+<li><a href="/installatie/">Installeer</a> Ruby en Sublime Text.</li>
+
+<li>Probeer de eerste paar bladzijden van de <a href="http://cli.learncodethehardway.org/book/">command line crash course</a>. In plaats van <code>cmd</code> werkt dit boek met <code>powershell</code>, maar de verschillen zijn heel klein. Bovendien hebben de computers op het Felisenum ook <code>powershell</code> (zoals Daan terecht opmerkte.)</li>
+
+<li><a href="https://www.bloc.io/ruby-warrior/#/">Ruby Warrior</a>! Wie komt er langs level 4? Zie onder voor een korte uitleg. De eerste die de code voor level 4 naar ons mailt krijgt een verrassing…</li>
+</ul>
+
+<h2 id="extra_informatie_hoofdstuk_1">Extra informatie hoofdstuk 1</h2>
+
+<h3 id="while_loop_voor_de_extra_opdracht">While loop (voor de extra opdracht)</h3>
+
+<p>Je hebt een programma dat “Hoi meneer!” of “Hoi mevrouw” en de juiste naam zegt. Hoe kun je er voor zorgen dat het programma doorgaat tot de gebruiker het <em>eindelijk</em> goed heeft ingevoerd? Met een <a href="/hoofdstuk2/#whileloop">while loop</a>!</p>
+
+<p>Net als bij een <a href="/hoofdstuk1/#het_statement"><code>if-statement</code></a>, checkt een while loop een <a href="/hoofdstuk2/#logische_uitspraken">logische uitspraak</a>. Welke logische uitspraak moeten we in dit geval checken? Wij hadden zoiets bedacht:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>correct</span> <span class='o'>=</span> <span class='kp'>false</span>
+<span class='k'>while</span> <span class='n'>correct</span> <span class='o'>==</span> <span class='kp'>false</span> <span class='k'>do</span>
+    <span class='c1'># De code</span>
+<span class='k'>end</span>
+</code></pre></div>
+<p>Ergens in de while loop zul je dan <code>correct = true</code> moeten zetten, zodat <code>correct == false</code> niet meer waar is. Dan stopt de while loop.</p>
+
+<h3 id="wat_is_">Wat is <code>gets.chomp</code>?</h3>
+
+<p>Er staat in je programma <code>naam = gets</code>. Jij typt <code>Jan</code> in. Staat er in <code>naam</code> dan de waarde <code>&quot;Jan&quot;</code>? Nee! De enter, die je hebt ingetoetst om de input te beëindigen, is ook opgeslagen. <code>naam</code> heeft de waarde <code>&quot;Jan\n&quot;</code>. <code>&quot;\n&quot;</code> is een speciaal karakter dat een <em>newline</em> (nieuwe regel) aangeeft — een enter dus.</p>
+
+<p><code>chomp</code> haalt de newline aan het eind van een string weg. Lees <a href="http://www.ruby-doc.org/core-1.9.3/String.html#method-i-chomp">hier</a> de officiële uitleg.</p>
+
+<h3 id="wat_doet_">Wat doet <code>&quot;Hallo, #{naam}&quot;</code>?</h3>
+
+<p>Hiermee zet je de waarde van <code>naam</code> op de juiste plek in de string. Je kunt daarna weer verder typen: <code>&quot;Wat is #{naam} een mooie naam!&quot;</code>.</p>
+
+<p>Dit is niet de enige manier om strings aan elkaar te maken. Met <code>+</code> lukt het ook:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Jan&quot;</span>
+<span class='nb'>puts</span> <span class='s2'>&quot;Wat is &quot;</span> <span class='o'>+</span> <span class='n'>naam</span> <span class='o'>+</span> <span class='s2'>&quot; een mooie naam!&quot;</span>
+<span class='c1'># =&gt; Wat is Jan een mooie naam!</span>
+</code></pre></div>
+<p>Maar de eerste methode is in dit geval handiger.</p>
+
+<h3 id="_of_en__en">|| (OF) en &amp;&amp; (EN)</h3>
+
+<p>Als je wilt checken of <code>geslacht</code> de waarde <code>&quot;vrouw&quot;</code> of de waarde <code>&quot;meisje&quot;</code> bevat, moet je de OF-operator gebruiken. Dat gaat zo:</p>
+<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>geslacht</span> <span class='o'>==</span> <span class='s2'>&quot;vrouw&quot;</span> <span class='o'>||</span> <span class='n'>geslacht</span> <span class='o'>==</span> <span class='s2'>&quot;meisje&quot;</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;Hallo mevrouw </span><span class='si'>#{</span><span class='n'>naam</span><span class='si'>}</span><span class='s2'>!&quot;</span>
+<span class='k'>end</span> 
+</code></pre></div>
+<p>Wat nou als je wilt kijken of de leeftijd groter is dan <code>10</code>, maar kleiner dan <code>20</code>? Dan gebruik je de EN-operator:</p>
+<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>leeftijd</span> <span class='o'>&gt;</span> <span class='mi'>10</span> <span class='o'>&amp;&amp;</span> <span class='n'>leeftijd</span> <span class='o'>&lt;</span> <span class='mi'>20</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;Een tiener.&quot;</span>
+<span class='k'>end</span> 
+</code></pre></div>
+<h3 id="_niet_gelijk_aan"><code>!=</code> (niet gelijk aan)</h3>
+
+<p>Met <code>!=</code> eis je dat twee dingen <em>niet</em> gelijk aan elkaar zijn.</p>
+<div class='highlight'><pre><code class='ruby'><span class='mi'>5</span> <span class='o'>!=</span> <span class='mi'>10</span>             <span class='c1'># =&gt; true</span>
+<span class='s2'>&quot;Piet&quot;</span> <span class='o'>!=</span> <span class='s2'>&quot;Jan&quot;</span>     <span class='c1'># =&gt; true</span>
+<span class='s2'>&quot;Jan&quot;</span> <span class='o'>!=</span> <span class='s2'>&quot;Jan&quot;</span>      <span class='c1'># =&gt; false</span>
+</code></pre></div>
+<h3 id="error_messages">Error messages</h3>
+
+<p>Ruby klaagt luidkeels als je een typfout maakt. All hope is not lost. Wat gebeurt hier?</p>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># test.rb</span>
+<span class='n'>correct</span> <span class='o'>==</span> <span class='kp'>false</span> 
+</code></pre></div>
+<p>Je bedoelde <code>correct = false</code>, maar je gebruikte <code>==</code>. Je vraagt Ruby de waarde van <code>correct</code> te checken, terwijl <code>correct</code> nog niet bestaat! Je krijgt nu:</p>
+
+<pre><code>test.rb:2:in `&lt;main&gt;': undefined local variable or method `correct'
+for main:Object (NameError)</code></pre>
+
+<p>Wat staat hier in godsnaam?</p>
+
+<ul>
+<li><code>test.rb:2</code>: Ruby zegt dat het in regel 2 van bestand <code>test.rb</code> is fout is gegaan. Het is een goed idee om daar een kijkje te nemen!</li>
+
+<li><code>undefined local variable or method 'correct'</code>: Ruby zegt dat <code>correct</code> niet gedefinieerd is.</li>
+</ul>
+
+<p>Genoeg informatie om je fout snel te herstellen. Nog een voorbeeld:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>correct</span> <span class='o'>=</span> <span class='kp'>false</span>
+<span class='k'>while</span> <span class='n'>correct</span> <span class='o'>==</span> <span class='kp'>false</span> <span class='k'>do</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;Ben je een jongen, of een meisje?&quot;</span>
+    <span class='n'>geslacht</span> <span class='o'>=</span> <span class='nb'>gets</span><span class='o'>.</span><span class='n'>chomp</span>
+    <span class='k'>if</span> <span class='n'>geslacht</span> <span class='o'>==</span> <span class='s2'>&quot;jongen&quot;</span>
+        <span class='nb'>puts</span> <span class='s2'>&quot;Hallo, meneer&quot;</span>
+        <span class='n'>correct</span> <span class='o'>=</span> <span class='kp'>true</span>
+    <span class='k'>elsif</span> <span class='n'>geslacht</span> <span class='o'>==</span> <span class='s2'>&quot;meisje&quot;</span>
+        <span class='nb'>puts</span> <span class='s2'>&quot;Hallo, mevrouw&quot;</span>
+        <span class='n'>correct</span> <span class='o'>=</span> <span class='kp'>true</span>
+    <span class='k'>else</span>
+        <span class='nb'>puts</span> <span class='s2'>&quot;Ik begrijp het niet, probeer het nog eens.&quot;</span>
+<span class='k'>end</span>
+</code></pre></div>
+<p>Nu is de foutboodschap:</p>
+
+<pre><code>test.rb:13: syntax error, unexpected end-of-input, expecting keyword_end</code></pre>
+
+<p>Het regelnummer is 13 (de laatste regel). Daar heb je niet zoveel aan. Maar de boodschap is duidelijker: <code>unexpected end-of-input, expecting keyword_end</code>. We zijn een <code>end</code> vergeten! Zien jullie waar?</p>
+
+<p>Elk apart codeblok moet je laten inspringen met Tab. Alles in de while loop hoort bij elkaar. Dit krijgt één Tab. Alles in de if-statements krijgt nóg een Tab. Nu is het makkelijk onthouden: elke Tab die je inspringt, moet je afsluiten met een <code>end</code>. We zijn hier twee Tabs ingesprongen, maar we hebben maar één <code>end</code>. Je ziet meteen dat het niet klopt.</p>
+
+<h3 id="ruby_warrior">Ruby Warrior</h3>
+
+<p>Speel <a href="https://www.bloc.io/ruby-warrior/#/">hier</a>. Er gebeuren wat dingen die jullie nog niet snappen (aan het eind van de cursus wel.) De functie <code>play_turn</code> wordt steeds opnieuw uitgevoerd. Als je een functie gebruikt met een uitroepteken, zoals <code>warrior.walk!</code>, dan is de beurt voorbij en begin je vooraan <code>play_turn</code>. Dus je kunt maar één keer lopen, slaan of healen per beurt.</p>
+
+<p>In het eerste level hoef je alleen maar vooruit te lopen:</p>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>play_turn</span><span class='p'>(</span><span class='n'>warrior</span><span class='p'>)</span>
+    <span class='n'>warrior</span><span class='o'>.</span><span class='n'>walk!</span>
+<span class='k'>end</span>
+</code></pre></div>
+<p>Links in beeld voor staan alle functies uitgelegd. Succes!</p>
+</div>
+
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2013/12/30/cursus-programmeren/">
+            Cursus programmeren
+            <small>30 Dec 2013</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
+        </div>
+        <div class="col-md-5">
+          <div class="hidden-print page-map-sidebar">
+            <ul id="page-map" class="nav">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <footer>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <p><a href="/" id="logo" class="footer-brand">ruby{prog}</a></p>
+
+      <p>Deze cursus is ontwikkeld door Geert Kapteijns en Boris Ponsioen. Het materiaal is vrij te gebruiken onder de <a href="http://creativecommons.org/licenses/by-nc/4.0/deed.nl">CC BY-NC 4.0-licentie</a> --- je mag er alles mee doen, zolang het maar niet-commercieel is.</p>
+
+      <p>Meehelpen? Zie de <a href="https://github.com/b1592/b1592.github.io">Github-pagina.</a></p>
+
+      <p>Alle kritiek is welkom. Mail naar <a href="mailto:ghkapteijns@gmail.com">ghkapteijns@gmail.com</a>.
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+</div>
+</footer>
+
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-47467348-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  <!-- Load JS here for greater good =============================-->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

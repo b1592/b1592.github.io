@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <title>
+    Hoofdstuk 2 &middot; 
+    Rubyprog
+  </title>
+
+  <!-- CSS -->
+  <link href="/public/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="/public/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="/public/less/custom.css" rel="stylesheet">
+</head>
+
+
+  <body class="layout-reverse theme-base-08 scrollspy">
+
+  <header>
+
+  <!-- <img src="/public/images/logo.png" height="65px" style="padding:0px; margin-top:13px;"> -->
+  <!-- <img src="/public/images/logo.png" height="60px" style="padding:0px; margin:0px;"/> -->
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Bootstrap theme</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</header> 
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 id="hoofdstuk_2_priemgetallen">Hoofdstuk 2: priemgetallen</h1>
+
+<p>In dit hoofdstuk gaan we bepalen of een getal priem is of niet. Een getal is priem als het alleen deelbaar is door 1 en door zichzelf. De eerste paar priemgetallen zijn:</p>
+
+<pre><code>2, 3, 5, 7, 11, 13, 17, ...</code></pre>
+
+<p>Jullie gaan een <em>algoritme</em> schrijven. Dat is een set instructies die tot een duidelijke conclusie leiden: is het gegeven getal een priemgetal, ja of nee?</p>
+
+<h2 id="bestanden">Bestanden</h2>
+
+<pre><code>Hoofdstuk2.url - deze beschrijving
+prime.rb - het script waar je in gaat werken
+prime_test.rb - de testjes </code></pre>
+
+<h2 id="informatie">Informatie</h2>
+
+<h3 id="booleans_waar_of_niet_waar">Booleans: waar of niet waar?</h3>
+
+<p>Ruby kent verschillende <em>datatypen</em>. <code>String</code> kennen jullie al. Gehele getallen zijn van het type <code>Integer</code>. Maar we hebben ook nog een ander datatype nodig: <code>Boolean</code>. Dit datatype heeft twee mogelijke waarden: <code>true</code> of <code>false</code>.</p>
+
+<h3 id="logische_uitspraken">Logische uitspraken</h3>
+
+<p>In bijna elk programma moeten er keuzes worden gemaakt: als dít waar is, doe dan dát. Deze <em>logische uitspraken</em> leveren <code>true</code> of <code>false</code> op. Een paar voorbeelden (testen met <code>irb</code>!)</p>
+<div class='highlight'><pre><code class='ruby'><span class='mi'>8</span> <span class='o'>&gt;</span> <span class='mi'>5</span>   <span class='c1'># =&gt; true</span>
+<span class='mi'>6</span> <span class='o'>&lt;</span> <span class='mi'>6</span>   <span class='c1'># =&gt; false</span>
+<span class='mi'>6</span> <span class='o'>&lt;=</span> <span class='mi'>6</span>  <span class='c1'># =&gt; true</span>
+
+<span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Piet&quot;</span>
+<span class='n'>naam</span> <span class='o'>==</span> <span class='s2'>&quot;Piet&quot;</span>  <span class='c1'># =&gt; true</span>
+</code></pre></div>
+<h3 id="de_modulooperator">De modulo-operator</h3>
+
+<p>Een belangrijke operator voor deze opdracht is <code>%</code>, de modulo-operator. Deze geeft de rest terug van deling van twee getallen.</p>
+<div class='highlight'><pre><code class='ruby'><span class='mi'>10</span> <span class='o'>%</span> <span class='mi'>3</span>  <span class='c1'># =&gt; 1</span>
+<span class='mi'>17</span> <span class='o'>%</span> <span class='mi'>7</span>  <span class='c1'># =&gt; 3</span>
+<span class='mi'>8</span> <span class='o'>%</span> <span class='mi'>2</span>   <span class='c1'># =&gt; 0</span>
+
+<span class='c1'># is 14 deelbaar door 3?</span>
+<span class='mi'>14</span> <span class='o'>%</span> <span class='mi'>3</span> <span class='o'>==</span> <span class='mi'>0</span> <span class='c1'># =&gt; false</span>
+<span class='c1'># is 12 deelbaar door 4?</span>
+<span class='mi'>12</span> <span class='o'>%</span> <span class='mi'>4</span> <span class='o'>==</span> <span class='mi'>0</span> <span class='c1'># =&gt; true</span>
+</code></pre></div>
+<h3 id="whileloop">While-loop</h3>
+
+<p>Een if-statement is een eenmalige beslissing. Maar soms wil je met een opdracht doorgaan zolang als <em>(while)</em> een bepaalde uitspraak waar is. Haal een ei uit de doos, zolang er nog eieren zijn. Wat komt hier uit?</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>counter</span> <span class='o'>=</span> <span class='mi'>0</span>
+<span class='k'>while</span> <span class='n'>counter</span> <span class='o'>&lt;</span> <span class='mi'>10</span> <span class='k'>do</span>
+    <span class='n'>counter</span> <span class='o'>=</span> <span class='n'>counter</span> <span class='o'>+</span> <span class='mi'>1</span>
+<span class='k'>end</span>
+<span class='nb'>puts</span> <span class='n'>counter</span>
+</code></pre></div>
+<h3 id="functies">Functies</h3>
+
+<p>Een functie is één van de belangrijkste wapens die een programmeur tot zijn beschikking heeft. Wat voorbeelden (test zoals altijd met <code>irb</code>.)</p>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># Een functie begint met def, en wordt niet direct uitgevoerd.</span>
+<span class='k'>def</span> <span class='nf'>f</span><span class='p'>(</span><span class='n'>x</span><span class='p'>)</span>
+    <span class='k'>return</span> <span class='n'>x</span> <span class='o'>+</span> <span class='mi'>1</span>
+<span class='k'>end</span>
+
+<span class='n'>f</span><span class='p'>(</span><span class='mi'>4</span><span class='p'>)</span>    <span class='c1'># =&gt; 5</span>
+
+<span class='k'>def</span> <span class='nf'>greet</span><span class='p'>(</span><span class='n'>naam</span><span class='p'>)</span>
+    <span class='k'>return</span> <span class='s2'>&quot;Hallo, </span><span class='si'>#{</span><span class='n'>naam</span><span class='si'>}</span><span class='s2'>!&quot;</span>
+<span class='k'>end</span>
+
+<span class='n'>greet</span><span class='p'>(</span><span class='s2'>&quot;Bob&quot;</span><span class='p'>)</span>    <span class='c1'># =&gt; &quot;Hallo, Bob!&quot;</span>
+
+<span class='c1'># Meerdere variabelen.</span>
+<span class='k'>def</span> <span class='nf'>multiply</span><span class='p'>(</span><span class='n'>a</span><span class='p'>,</span> <span class='n'>b</span><span class='p'>)</span>
+    <span class='k'>return</span> <span class='n'>a</span> <span class='o'>*</span> <span class='n'>b</span>
+<span class='k'>end</span>
+
+<span class='n'>multiply</span><span class='p'>(</span><span class='mi'>5</span><span class='p'>,</span> <span class='mi'>8</span><span class='p'>)</span>  <span class='c1'># =&gt; 40</span>
+</code></pre></div>
+<p>Een functie geeft overzicht en scheelt behoorlijk wat typwerk. Stel dat je drie mensen wilt begroeten.</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>greet</span><span class='p'>(</span><span class='s2'>&quot;Anna&quot;</span><span class='p'>)</span>
+<span class='n'>greet</span><span class='p'>(</span><span class='s2'>&quot;Bert&quot;</span><span class='p'>)</span>
+<span class='n'>greet</span><span class='p'>(</span><span class='s2'>&quot;Chloe&quot;</span><span class='p'>)</span>
+</code></pre></div>
+<p>Als je nu de groet wilt veranderen, hoef je alleen maar de functiedefinitie aan te passen (<code>def ... end</code>). Dan worden Anna, Bert en Chloe meteen op de juiste manier begroet.</p>
+
+<h3 id="scope_van_variabelen">Scope van variabelen</h3>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>mijn_functie</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;Dit is mijn functie&quot;</span>
+    <span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Klaas&quot;</span>
+<span class='k'>end</span>
+
+<span class='nb'>puts</span> <span class='n'>naam</span>
+<span class='c1'># =&gt; undefined local variable or method `naam&#39;</span>
+</code></pre></div>
+<p>Waarom is <code>naam</code> onbekend? Er staat toch <code>naam = &quot;Klaas&quot;</code> in <code>mijn_functie</code>?</p>
+
+<p>Het antwoord is dat de variabele <code>naam</code> alleen bekend is in de functie <code>mijn_functie</code>. Daarbuiten bestaat <code>naam</code> niet. Je zegt ook wel: <code>naam</code> is bekend in de <em>scope</em> van <code>mijn_functie</code>. De scope bepaalt vanaf welke plek een variabele bereikbaar is.</p>
+
+<p>Dus wat gebeurt hier?</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Pieter&quot;</span>
+
+<span class='k'>def</span> <span class='nf'>mijn_functie</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;Dit is mijn functie&quot;</span>
+    <span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Klaas&quot;</span>
+    <span class='nb'>puts</span> <span class='n'>naam</span>
+<span class='k'>end</span>
+
+<span class='nb'>puts</span> <span class='n'>naam</span>
+<span class='c1'># =&gt; &quot;Pieter&quot;</span>
+<span class='n'>mijn_functie</span>
+<span class='c1'># =&gt; &quot;Dit is mijn functie&quot;</span>
+<span class='c1'># =&gt; &quot;Klaas&quot;</span>
+<span class='nb'>puts</span> <span class='n'>naam</span>
+<span class='c1'># =&gt; &quot;Pieter&quot;</span>
+</code></pre></div>
+<p>Buiten de functie staat nu <code>naam = &quot;Pieter&quot;</code>. Dus <code>puts naam</code> geeft <code>&quot;Pieter&quot;</code> terug.</p>
+
+<p>Maar binnen de functie, in de <em>lokale scope</em>, staat <code>naam = &quot;Klaas&quot;</code>. Dus het commando <code>puts naam</code> binnen <code>mijn_functie</code> geeft <code>&quot;Klaas&quot;</code>.</p>
+
+<p>Wat gebeurt er als we <code>naam = &quot;Klaas&quot;</code> weghalen?</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Pieter&quot;</span>
+
+<span class='k'>def</span> <span class='nf'>mijn_functie</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;Dit is mijn functie&quot;</span>
+    <span class='nb'>puts</span> <span class='n'>naam</span>
+<span class='k'>end</span>
+
+<span class='n'>mijn_functie</span>
+<span class='c1'># &quot;Dit is mijn functie&quot;</span>
+<span class='c1'># =&gt; undefined local variable or method `naam&#39;</span>
+</code></pre></div>
+<p><code>naam</code> is niet bekend! Variabelen die binnen functies worden gedefinieerd zijn onzichtbaar buiten de functie en <em>vice versa</em>!</p>
+
+<p>Wees niet bang als je het bovenstaande niet begrijpt. Programmeer vrolijk door, tot je een keer <code>undefined local variable or method 'naam'</code> in de command line ziet staan, terwijl je zéker weet dat je <code>naam</code> gedefinieerd hebt. Lees dan dit stuk nog eens door. Programmeren ga je snappen door te doen.</p>
+
+<h2 id="de_opdracht">De opdracht</h2>
+
+<p>Jullie gaan een functie schrijven die <code>false</code> teruggeeft als het getal niet priem is, en <code>true</code> als het getal wel priem is. Dit is de bedoeling:</p>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>prime?</span><span class='p'>(</span><span class='n'>number</span><span class='p'>)</span>
+    <span class='c1'># Algoritme ...</span>
+<span class='k'>end</span>
+
+<span class='n'>prime?</span><span class='p'>(</span><span class='mi'>8</span><span class='p'>)</span>   <span class='c1'># =&gt; false</span>
+<span class='n'>prime?</span><span class='p'>(</span><span class='mi'>13</span><span class='p'>)</span>  <span class='c1'># =&gt; true</span>
+<span class='n'>prime?</span><span class='p'>(</span><span class='mi'>104729</span><span class='p'>)</span>  <span class='c1'># =&gt; true </span>
+</code></pre></div>
+<h3 id="tests">Tests</h3>
+
+<p>We hebben een programma geschreven dat je functie aan een paar simpele tests onderwerpt. Dit programma voer je uit met:</p>
+
+<pre><code>ruby prime_test.rb</code></pre>
+
+<p>Aan de slag!</p>
+
+<h3 id="extra_duizendste_priemgetal">(Extra) Duizendste priemgetal</h3>
+
+<p>Je hebt de functie <code>prime?</code> geschreven. Kun je het duizendste priemgetal vinden? En het miljoenste? En het miljardste? Nu begint de snelheid van je algoritme een rol te spelen. Probeer je algoritme te optimaliseren. Check je niet onnodig veel getallen? Snelste algoritme van de klas krijgt een verrassing!</p>
+
+<h3 id="extra_zeef_van_eratosthenes">(Extra) Zeef van Eratosthenes</h3>
+
+<p>Wat dacht je van alle priemgetallen onder de duizend? <a href="http://nl.wikipedia.org/wiki/Zeef_van_Eratosthenes">Een oude Griek</a> heeft hier al over nagedacht.</p>
+        </div>
+        <div class="col-md-5">
+          <div class="hidden-print page-map-sidebar">
+            <ul id="page-map" class="nav">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <footer>
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <p><a href="/" id="logo" class="footer-brand">ruby{prog}</a></p>
+
+      <p>Deze cursus is ontwikkeld door Geert Kapteijns en Boris Ponsioen. Het materiaal is vrij te gebruiken onder de <a href="http://creativecommons.org/licenses/by-nc/4.0/deed.nl">CC BY-NC 4.0-licentie</a> --- je mag er alles mee doen, zolang het maar niet-commercieel is.</p>
+
+      <p>Meehelpen? Zie de <a href="https://github.com/b1592/b1592.github.io">Github-pagina.</a></p>
+
+      <p>Alle kritiek is welkom. Mail naar <a href="mailto:ghkapteijns@gmail.com">ghkapteijns@gmail.com</a>.
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+</div>
+</footer>
+
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-47467348-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  <!-- Load JS here for greater good =============================-->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Hyde</title>
+ <link href="http://andhyde.com/atom.xml" rel="self"/>
+ <link href="http://andhyde.com/"/>
+ <updated>2014-02-12T00:21:08+01:00</updated>
+ <id>http://andhyde.com</id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Overzicht les 1</title>
+   <link href="http://andhyde.com/2014/02/05/overzicht-les-1/"/>
+   <updated>2014-02-05T00:00:00+01:00</updated>
+   <id>http://andhyde.com/2014/02/05/overzicht-les-1</id>
+   <content type="html">&lt;p&gt;Hoi iedereen,&lt;/p&gt;
+
+&lt;p&gt;Bedankt voor de interesse gisteren! Wij kijken uit naar volgende week. Hier een overzicht van de eerste les:&lt;!-- more --&gt;&lt;/p&gt;
+&lt;div class=&quot;maruku_toc&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;#voor_thuis&quot;&gt;Voor thuis&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#extra_informatie_hoofdstuk_1&quot;&gt;Extra informatie hoofdstuk 1&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;#while_loop_voor_de_extra_opdracht&quot;&gt;While loop (voor de extra opdracht)&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#wat_is_&quot;&gt;Wat is &lt;code&gt;gets.chomp&lt;/code&gt;?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#wat_doet_&quot;&gt;Wat doet &lt;code&gt;&amp;quot;Hallo, #{naam}&amp;quot;&lt;/code&gt;?&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#_of_en__en&quot;&gt;|| (OF) en &amp;amp;&amp;amp; (EN)&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#_niet_gelijk_aan&quot;&gt;&lt;code&gt;!=&lt;/code&gt; (niet gelijk aan)&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#error_messages&quot;&gt;Error messages&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#ruby_warrior&quot;&gt;Ruby Warrior&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;h2 id=&quot;voor_thuis&quot;&gt;Voor thuis&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/installatie/&quot;&gt;Installeer&lt;/a&gt; Ruby en Sublime Text.&lt;/li&gt;
+
+&lt;li&gt;Probeer de eerste paar bladzijden van de &lt;a href=&quot;http://cli.learncodethehardway.org/book/&quot;&gt;command line crash course&lt;/a&gt;. In plaats van &lt;code&gt;cmd&lt;/code&gt; werkt dit boek met &lt;code&gt;powershell&lt;/code&gt;, maar de verschillen zijn heel klein. Bovendien hebben de computers op het Felisenum ook &lt;code&gt;powershell&lt;/code&gt; (zoals Daan terecht opmerkte.)&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://www.bloc.io/ruby-warrior/#/&quot;&gt;Ruby Warrior&lt;/a&gt;! Wie komt er langs level 4? Zie onder voor een korte uitleg. De eerste die de code voor level 4 naar ons mailt krijgt een verrassing…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;extra_informatie_hoofdstuk_1&quot;&gt;Extra informatie hoofdstuk 1&lt;/h2&gt;
+
+&lt;h3 id=&quot;while_loop_voor_de_extra_opdracht&quot;&gt;While loop (voor de extra opdracht)&lt;/h3&gt;
+
+&lt;p&gt;Je hebt een programma dat “Hoi meneer!” of “Hoi mevrouw” en de juiste naam zegt. Hoe kun je er voor zorgen dat het programma doorgaat tot de gebruiker het &lt;em&gt;eindelijk&lt;/em&gt; goed heeft ingevoerd? Met een &lt;a href=&quot;/hoofdstuk2/#whileloop&quot;&gt;while loop&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;Net als bij een &lt;a href=&quot;/hoofdstuk1/#het_statement&quot;&gt;&lt;code&gt;if-statement&lt;/code&gt;&lt;/a&gt;, checkt een while loop een &lt;a href=&quot;/hoofdstuk2/#logische_uitspraken&quot;&gt;logische uitspraak&lt;/a&gt;. Welke logische uitspraak moeten we in dit geval checken? Wij hadden zoiets bedacht:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;correct&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kp'&gt;false&lt;/span&gt;
+&lt;span class='k'&gt;while&lt;/span&gt; &lt;span class='n'&gt;correct&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='kp'&gt;false&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+    &lt;span class='c1'&gt;# De code&lt;/span&gt;
+&lt;span class='k'&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ergens in de while loop zul je dan &lt;code&gt;correct = true&lt;/code&gt; moeten zetten, zodat &lt;code&gt;correct == false&lt;/code&gt; niet meer waar is. Dan stopt de while loop.&lt;/p&gt;
+
+&lt;h3 id=&quot;wat_is_&quot;&gt;Wat is &lt;code&gt;gets.chomp&lt;/code&gt;?&lt;/h3&gt;
+
+&lt;p&gt;Er staat in je programma &lt;code&gt;naam = gets&lt;/code&gt;. Jij typt &lt;code&gt;Jan&lt;/code&gt; in. Staat er in &lt;code&gt;naam&lt;/code&gt; dan de waarde &lt;code&gt;&amp;quot;Jan&amp;quot;&lt;/code&gt;? Nee! De enter, die je hebt ingetoetst om de input te beëindigen, is ook opgeslagen. &lt;code&gt;naam&lt;/code&gt; heeft de waarde &lt;code&gt;&amp;quot;Jan\n&amp;quot;&lt;/code&gt;. &lt;code&gt;&amp;quot;\n&amp;quot;&lt;/code&gt; is een speciaal karakter dat een &lt;em&gt;newline&lt;/em&gt; (nieuwe regel) aangeeft — een enter dus.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;chomp&lt;/code&gt; haalt de newline aan het eind van een string weg. Lees &lt;a href=&quot;http://www.ruby-doc.org/core-1.9.3/String.html#method-i-chomp&quot;&gt;hier&lt;/a&gt; de officiële uitleg.&lt;/p&gt;
+
+&lt;h3 id=&quot;wat_doet_&quot;&gt;Wat doet &lt;code&gt;&amp;quot;Hallo, #{naam}&amp;quot;&lt;/code&gt;?&lt;/h3&gt;
+
+&lt;p&gt;Hiermee zet je de waarde van &lt;code&gt;naam&lt;/code&gt; op de juiste plek in de string. Je kunt daarna weer verder typen: &lt;code&gt;&amp;quot;Wat is #{naam} een mooie naam!&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Dit is niet de enige manier om strings aan elkaar te maken. Met &lt;code&gt;+&lt;/code&gt; lukt het ook:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;naam&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Jan&amp;quot;&lt;/span&gt;
+&lt;span class='nb'&gt;puts&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Wat is &amp;quot;&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='n'&gt;naam&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot; een mooie naam!&amp;quot;&lt;/span&gt;
+&lt;span class='c1'&gt;# =&amp;gt; Wat is Jan een mooie naam!&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Maar de eerste methode is in dit geval handiger.&lt;/p&gt;
+
+&lt;h3 id=&quot;_of_en__en&quot;&gt;|| (OF) en &amp;amp;&amp;amp; (EN)&lt;/h3&gt;
+
+&lt;p&gt;Als je wilt checken of &lt;code&gt;geslacht&lt;/code&gt; de waarde &lt;code&gt;&amp;quot;vrouw&amp;quot;&lt;/code&gt; of de waarde &lt;code&gt;&amp;quot;meisje&amp;quot;&lt;/code&gt; bevat, moet je de OF-operator gebruiken. Dat gaat zo:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;geslacht&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;vrouw&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;||&lt;/span&gt; &lt;span class='n'&gt;geslacht&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;meisje&amp;quot;&lt;/span&gt;
+    &lt;span class='nb'&gt;puts&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Hallo mevrouw &lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='n'&gt;naam&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;!&amp;quot;&lt;/span&gt;
+&lt;span class='k'&gt;end&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Wat nou als je wilt kijken of de leeftijd groter is dan &lt;code&gt;10&lt;/code&gt;, maar kleiner dan &lt;code&gt;20&lt;/code&gt;? Dan gebruik je de EN-operator:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;leeftijd&lt;/span&gt; &lt;span class='o'&gt;&amp;gt;&lt;/span&gt; &lt;span class='mi'&gt;10&lt;/span&gt; &lt;span class='o'&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class='n'&gt;leeftijd&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='mi'&gt;20&lt;/span&gt;
+    &lt;span class='nb'&gt;puts&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Een tiener.&amp;quot;&lt;/span&gt;
+&lt;span class='k'&gt;end&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;_niet_gelijk_aan&quot;&gt;&lt;code&gt;!=&lt;/code&gt; (niet gelijk aan)&lt;/h3&gt;
+
+&lt;p&gt;Met &lt;code&gt;!=&lt;/code&gt; eis je dat twee dingen &lt;em&gt;niet&lt;/em&gt; gelijk aan elkaar zijn.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='mi'&gt;5&lt;/span&gt; &lt;span class='o'&gt;!=&lt;/span&gt; &lt;span class='mi'&gt;10&lt;/span&gt;             &lt;span class='c1'&gt;# =&amp;gt; true&lt;/span&gt;
+&lt;span class='s2'&gt;&amp;quot;Piet&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;!=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Jan&amp;quot;&lt;/span&gt;     &lt;span class='c1'&gt;# =&amp;gt; true&lt;/span&gt;
+&lt;span class='s2'&gt;&amp;quot;Jan&amp;quot;&lt;/span&gt; &lt;span class='o'&gt;!=&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Jan&amp;quot;&lt;/span&gt;      &lt;span class='c1'&gt;# =&amp;gt; false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;error_messages&quot;&gt;Error messages&lt;/h3&gt;
+
+&lt;p&gt;Ruby klaagt luidkeels als je een typfout maakt. All hope is not lost. Wat gebeurt hier?&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='c1'&gt;# test.rb&lt;/span&gt;
+&lt;span class='n'&gt;correct&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='kp'&gt;false&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Je bedoelde &lt;code&gt;correct = false&lt;/code&gt;, maar je gebruikte &lt;code&gt;==&lt;/code&gt;. Je vraagt Ruby de waarde van &lt;code&gt;correct&lt;/code&gt; te checken, terwijl &lt;code&gt;correct&lt;/code&gt; nog niet bestaat! Je krijgt nu:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;test.rb:2:in `&amp;lt;main&amp;gt;': undefined local variable or method `correct'
+for main:Object (NameError)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Wat staat hier in godsnaam?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;test.rb:2&lt;/code&gt;: Ruby zegt dat het in regel 2 van bestand &lt;code&gt;test.rb&lt;/code&gt; is fout is gegaan. Het is een goed idee om daar een kijkje te nemen!&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;undefined local variable or method 'correct'&lt;/code&gt;: Ruby zegt dat &lt;code&gt;correct&lt;/code&gt; niet gedefinieerd is.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Genoeg informatie om je fout snel te herstellen. Nog een voorbeeld:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;correct&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kp'&gt;false&lt;/span&gt;
+&lt;span class='k'&gt;while&lt;/span&gt; &lt;span class='n'&gt;correct&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='kp'&gt;false&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+    &lt;span class='nb'&gt;puts&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Ben je een jongen, of een meisje?&amp;quot;&lt;/span&gt;
+    &lt;span class='n'&gt;geslacht&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nb'&gt;gets&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;chomp&lt;/span&gt;
+    &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;geslacht&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;jongen&amp;quot;&lt;/span&gt;
+        &lt;span class='nb'&gt;puts&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Hallo, meneer&amp;quot;&lt;/span&gt;
+        &lt;span class='n'&gt;correct&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kp'&gt;true&lt;/span&gt;
+    &lt;span class='k'&gt;elsif&lt;/span&gt; &lt;span class='n'&gt;geslacht&lt;/span&gt; &lt;span class='o'&gt;==&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;meisje&amp;quot;&lt;/span&gt;
+        &lt;span class='nb'&gt;puts&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Hallo, mevrouw&amp;quot;&lt;/span&gt;
+        &lt;span class='n'&gt;correct&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='kp'&gt;true&lt;/span&gt;
+    &lt;span class='k'&gt;else&lt;/span&gt;
+        &lt;span class='nb'&gt;puts&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Ik begrijp het niet, probeer het nog eens.&amp;quot;&lt;/span&gt;
+&lt;span class='k'&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nu is de foutboodschap:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;test.rb:13: syntax error, unexpected end-of-input, expecting keyword_end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Het regelnummer is 13 (de laatste regel). Daar heb je niet zoveel aan. Maar de boodschap is duidelijker: &lt;code&gt;unexpected end-of-input, expecting keyword_end&lt;/code&gt;. We zijn een &lt;code&gt;end&lt;/code&gt; vergeten! Zien jullie waar?&lt;/p&gt;
+
+&lt;p&gt;Elk apart codeblok moet je laten inspringen met Tab. Alles in de while loop hoort bij elkaar. Dit krijgt één Tab. Alles in de if-statements krijgt nóg een Tab. Nu is het makkelijk onthouden: elke Tab die je inspringt, moet je afsluiten met een &lt;code&gt;end&lt;/code&gt;. We zijn hier twee Tabs ingesprongen, maar we hebben maar één &lt;code&gt;end&lt;/code&gt;. Je ziet meteen dat het niet klopt.&lt;/p&gt;
+
+&lt;h3 id=&quot;ruby_warrior&quot;&gt;Ruby Warrior&lt;/h3&gt;
+
+&lt;p&gt;Speel &lt;a href=&quot;https://www.bloc.io/ruby-warrior/#/&quot;&gt;hier&lt;/a&gt;. Er gebeuren wat dingen die jullie nog niet snappen (aan het eind van de cursus wel.) De functie &lt;code&gt;play_turn&lt;/code&gt; wordt steeds opnieuw uitgevoerd. Als je een functie gebruikt met een uitroepteken, zoals &lt;code&gt;warrior.walk!&lt;/code&gt;, dan is de beurt voorbij en begin je vooraan &lt;code&gt;play_turn&lt;/code&gt;. Dus je kunt maar één keer lopen, slaan of healen per beurt.&lt;/p&gt;
+
+&lt;p&gt;In het eerste level hoef je alleen maar vooruit te lopen:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;play_turn&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;warrior&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+    &lt;span class='n'&gt;warrior&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;walk!&lt;/span&gt;
+&lt;span class='k'&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Links in beeld voor staan alle functies uitgelegd. Succes!&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Cursus programmeren</title>
+   <link href="http://andhyde.com/2013/12/30/cursus-programmeren/"/>
+   <updated>2013-12-30T00:00:00+01:00</updated>
+   <id>http://andhyde.com/2013/12/30/cursus-programmeren</id>
+   <content type="html">&lt;p&gt;Programmeren is praten tegen een computer — een programma schrijven.&lt;/p&gt;
+
+&lt;p&gt;Maar programmeren is ook: zelf iets maken en ontwerpen. Puzzelen. Honderd problemen oplossen. Elke keer iets nieuws leren. Divers. Overal te gebruiken. &lt;strong&gt;Overal nodig&lt;/strong&gt;. &lt;!-- more --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;iframe allowfullscreen='allowfullscreen' frameborder='0' height='315' src='//www.youtube.com/embed/dU1xS07N-FA' width='420'&gt;  &lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;Wij geven een cursus van zes weken aan het &lt;a href=&quot;http://www.felisenum.nl/&quot;&gt;Gymnasium Felisenum&lt;/a&gt; in Velsen. Hierin leren we jullie het “Aap (App?) Noot Mies” van programmeren.&lt;/p&gt;
+
+&lt;p&gt;Al enthousiast? &lt;a href='http://tryruby.org/levels/1/challenges/0'&gt;tryruby.org&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We gaan programmeren in Ruby, één van de vele programmeertalen. Een programma is &lt;strong&gt;puur tekst&lt;/strong&gt;. Denk maar aan Kladblok op Windows. De Ruby Interpreter vertaalt Ruby-code in nulletjes en eentjes die de computer kan begrijpen (en mensen doorgaans niet).&lt;/p&gt;
+
+&lt;p&gt;Hieronder staat een programma dat “Doe mee aan de cursus!” op het scherm schrijft.&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='nb'&gt;print&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Doe mee aan de cursus!&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Viel dat mee?&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='nb'&gt;print&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Schrijf je in bij Jaap de Jonge.&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+ </entry>
+ 
+
+</feed>
