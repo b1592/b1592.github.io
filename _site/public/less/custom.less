@@ -1,6 +1,5 @@
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 10px;
-  font-weight: 600;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
 }
@@ -21,11 +20,15 @@ nav {
 }
 
 .navbar-brand {
-  margin-top: -11px;
+  // margin-top: -11px;
 }
 
 .content {
-  padding: 20px 20px 20px 20px;
+  padding: 40px 150px 40px 150px;
+}
+
+footer > .container{
+  padding: 20px 150px 40px 150px;
 }
 
 footer #logo {
@@ -118,7 +121,7 @@ pre code {
   a {
     font-weight: normal;
     font-family: @font-family-monospace;
-    font-size: 14px;
+    font-size: 12px;
     color: @mdo-black;
   }
 }
@@ -147,12 +150,12 @@ pre code {
 }
 
 .page-map-sidebar {
-  padding-left: 60px;
+  width:120px;
 }
-
 .page-map-sidebar.affix {
 position: fixed;
 top: 20px;
+
 }
 
 .page-map-sidebar.affix-bottom {
@@ -163,3 +166,15 @@ position: absolute;
 .page-map-sidebar {
   display: none;
 }
+#rubylogo {
+  width: 260px;
+  padding:0px; margin-top:-8px; margin-right: 20px;
+}
+
+@media (max-width: @screen-xs) {
+  #rubylogo {
+    width: 180px;
+    margin-right:0px;
+  }
+}
+
