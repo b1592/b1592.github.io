@@ -23,16 +23,80 @@ nav {
   // margin-top: -11px;
 }
 
+
+// header .container {
+//   @media (min-width: @screen-sm-min) {
+//   }
+//   @media (min-width: @screen-md-min) {
+//   }
+//   @media (min-width: @screen-lg-min) {
+//     @padding-nav: 0.5 * (@container-lg - @nav-width);
+//     padding-left: @padding-nav;
+//     padding-right: @padding-nav;
+//   }
+// }
+
+// .content {
+
+//   @media (min-width: @screen-sm-min) {
+//     padding: 40px 30px 40px 30px;
+//   }
+//   @media (min-width: @screen-md-min) {
+//     padding: 40px 60px 40px 60px;
+//   }
+//   @media (min-width: @screen-lg-min) {
+//     @padding-content: 0.5 * (@container-lg - @content-width);
+//     padding: 40px @padding-content 40px @padding-content;
+//   }
+// }
+
 .content {
-  padding: 40px 150px 40px 150px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-footer > .container{
-  padding: 20px 150px 40px 150px;
+footer {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: @screen-sm-min) {
+  @padding-content: 0.5 * (@container-sm - @content-width);
+  .container {
+    padding-left: @padding-content;
+    padding-right: @padding-content;
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  @padding-content: 0.5 * (@container-md - @content-width);
+  .container {
+    padding-left: @padding-content;
+    padding-right: @padding-content;
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  @padding-content: 0.5 * (@container-lg - @content-width);
+  @padding-nav: 0.5 * (@container-lg - @nav-width);
+
+  .content {
+    padding-left: @padding-content;
+    padding-right: @padding-content;
+  }
+
+  header .container {
+    padding-left: @padding-nav;
+    padding-right: @padding-nav;
+  }
+
+  footer .container {
+    padding-left: @padding-content;
+    padding-right: @padding-content;
+  }
 }
 
 footer #logo {
-  margin-top: 32px;
   font-family: @font-family-monospace;
   text-decoration: none;
   font-size: @font-size-h3;
@@ -104,7 +168,7 @@ pre {
   line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
-  word-break: break-all;
+  word-break: normal;
   word-wrap: break-word;
   background-color: #f9f9f9;
 }
@@ -167,8 +231,11 @@ position: absolute;
   display: none;
 }
 #rubylogo {
-  width: 260px;
-  padding:0px; margin-top:-8px; margin-right: 20px;
+  width: 240px;
+  padding:0px;
+  margin-top:-8px;
+  margin-right: 20px;
+  margin-left: 4px;
 }
 
 @media (max-width: @screen-xs) {
