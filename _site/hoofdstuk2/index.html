@@ -26,7 +26,7 @@
 
   <!-- <img src="/public/images/logo.png" height="65px" style="padding:0px; margin-top:13px;"> -->
   <!-- <img src="/public/images/logo.png" height="60px" style="padding:0px; margin:0px;"/> -->
-  <div class="navbar navbar-inverse" role="navigation">
+  <div class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -39,6 +39,7 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="/" style="font-weight:400;">Home</a></li>
           <li><a href="/introductie">Introductie</a></li>
           <!-- <li><a href="">Contact</a></li> -->
           <li class="dropdown">
@@ -53,6 +54,7 @@
               <li><a href="/hoofdstuk4">Hoofdstuk 4</a></li>
             </ul>
           </li>
+          <li><a href="/">Contact</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -60,8 +62,9 @@
 </header> 
 
     <div class="container content">
-
-      <h1 id="hoofdstuk_2_priemgetallen">Hoofdstuk 2: priemgetallen</h1>
+      <div class="row">
+        <div class="col-lg-9">
+          <h1 id="hoofdstuk_2_priemgetallen">Hoofdstuk 2: priemgetallen</h1>
 
 <p>In dit hoofdstuk gaan we bepalen of een getal priem is of niet. Een getal is priem als het alleen deelbaar is door 1 en door zichzelf. De eerste paar priemgetallen zijn:</p>
 
@@ -190,7 +193,7 @@ prime_test.rb - de testjes </code></pre>
 </code></pre></div>
 <p><code>naam</code> is niet bekend! Variabelen die binnen functies worden gedefinieerd zijn onzichtbaar buiten de functie en <em>vice versa</em>!</p>
 
-<p>Wees niet bang als je het bovenstaande niet begrijpt. Programmeer vrolijk door, tot je een keer <code>undefined local variable or method &#39;naam&#39;</code> in de command line ziet staan, terwijl je zéker weet dat je <code>naam</code> gedefinieerd hebt. Lees dan dit stuk nog eens door. Programmeren ga je snappen door te doen.</p>
+<p>Wees niet bang als je het bovenstaande niet begrijpt. Programmeer vrolijk door, tot je een keer <code>undefined local variable or method 'naam'</code> in de command line ziet staan, terwijl je zéker weet dat je <code>naam</code> gedefinieerd hebt. Lees dan dit stuk nog eens door. Programmeren ga je snappen door te doen.</p>
 
 <h2 id="de_opdracht">De opdracht</h2>
 
@@ -218,11 +221,20 @@ prime_test.rb - de testjes </code></pre>
 <h3 id="extra_zeef_van_eratosthenes">(Extra) Zeef van Eratosthenes</h3>
 
 <p>Wat dacht je van alle priemgetallen onder de duizend? <a href="http://nl.wikipedia.org/wiki/Zeef_van_Eratosthenes">Een oude Griek</a> heeft hier al over nagedacht.</p>
+        </div>
 
+        <div class="col-lg-3">
+          <div class="page-map-sidebar" data-spy="affix">
+            <ul id="page-map" class="nav">
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
   <footer>
   <div class="container">
+  <div class="col-lg-9">
     <p><a href="/" id="logo" class="footer-brand">ruby{prog}</a></p>
 
     <p>Deze cursus is ontwikkeld door Geert Kapteijns en Boris Ponsioen. Het materiaal is vrij te gebruiken onder de <a href="http://creativecommons.org/licenses/by-nc/4.0/deed.nl">CC BY-NC 4.0-licentie</a> --- je mag er alles mee doen, zolang het maar niet-commercieel is.</p>
@@ -231,6 +243,11 @@ prime_test.rb - de testjes </code></pre>
 
     <p>Alle kritiek is welkom. Mail naar <a href="mailto:ghkapteijns@gmail.com">ghkapteijns@gmail.com</a>.
   </div>
+  <div class="col-lg-3">
+  &nbsp;
+  </div>
+  </div>
+
 </footer>
 
   <script type="text/javascript">
@@ -251,5 +268,6 @@ prime_test.rb - de testjes </code></pre>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/public/bootstrap/js/bootstrap.min.js"></script>
     <script src="/public/js/custom.js"></script>
+    <script src="/public/js/scrollspy.js"></script>
   </body>
 </html>

@@ -26,7 +26,7 @@
 
   <!-- <img src="/public/images/logo.png" height="65px" style="padding:0px; margin-top:13px;"> -->
   <!-- <img src="/public/images/logo.png" height="60px" style="padding:0px; margin:0px;"/> -->
-  <div class="navbar navbar-inverse" role="navigation">
+  <div class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -39,6 +39,7 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="/" style="font-weight:400;">Home</a></li>
           <li><a href="/introductie">Introductie</a></li>
           <!-- <li><a href="">Contact</a></li> -->
           <li class="dropdown">
@@ -53,6 +54,7 @@
               <li><a href="/hoofdstuk4">Hoofdstuk 4</a></li>
             </ul>
           </li>
+          <li><a href="/">Contact</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -60,8 +62,9 @@
 </header> 
 
     <div class="container content">
-
-      <div class="posts">
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="posts">
   
   <div class="post">
     <h2 id="overzicht-les-1">
@@ -81,7 +84,7 @@
   </div>
   
   <div class="post">
-    <h2 id="cursus-programmeren">
+    <h2 id="">
       <a href="/2013/12/30/cursus-programmeren/">
         Cursus programmeren
       </a>
@@ -91,7 +94,9 @@
 
     <p>Programmeren is praten tegen een computer — een programma schrijven.</p>
 
-<p>Maar programmeren is ook: zelf iets maken en ontwerpen. Puzzelen. Honderd problemen oplossen. Elke keer iets nieuws leren. Divers. Overal te gebruiken. <strong>Overal nodig</strong>. 
+<p>Maar programmeren is ook: zelf iets maken en ontwerpen. Puzzelen. Honderd problemen oplossen. Elke keer iets nieuws leren. Divers. Overal te gebruiken. <strong>Overal nodig</strong>.</p>
+<p><iframe allowfullscreen='allowfullscreen' frameborder='0' height='315' src='//www.youtube.com/embed/dU1xS07N-FA' width='420'>  </iframe></p>
+<p>Wij geven een cursus van zes weken aan het <a href="http://www.felisenum.nl/">Gymnasium Felisenum</a> in Velsen. Hierin leren we jullie het “Aap (App?) Noot Mies” van programmeren. 
     
       <p><br/><a href="/2013/12/30/cursus-programmeren/">Lees verder >>></a></p><hr><br/>
     
@@ -108,11 +113,20 @@
     <span class="previous">Nieuwer</span>
   
 </div>
+        </div>
 
+        <div class="col-lg-3">
+          <div class="page-map-sidebar" data-spy="affix">
+            <ul id="page-map" class="nav">
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
   <footer>
   <div class="container">
+  <div class="col-lg-9">
     <p><a href="/" id="logo" class="footer-brand">ruby{prog}</a></p>
 
     <p>Deze cursus is ontwikkeld door Geert Kapteijns en Boris Ponsioen. Het materiaal is vrij te gebruiken onder de <a href="http://creativecommons.org/licenses/by-nc/4.0/deed.nl">CC BY-NC 4.0-licentie</a> --- je mag er alles mee doen, zolang het maar niet-commercieel is.</p>
@@ -121,6 +135,11 @@
 
     <p>Alle kritiek is welkom. Mail naar <a href="mailto:ghkapteijns@gmail.com">ghkapteijns@gmail.com</a>.
   </div>
+  <div class="col-lg-3">
+  &nbsp;
+  </div>
+  </div>
+
 </footer>
 
   <script type="text/javascript">
@@ -141,5 +160,6 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/public/bootstrap/js/bootstrap.min.js"></script>
     <script src="/public/js/custom.js"></script>
+    <script src="/public/js/scrollspy.js"></script>
   </body>
 </html>

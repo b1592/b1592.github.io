@@ -6,9 +6,11 @@
 ## Code
 * Hulpcode mastermind
 
-## Notes les 1
-* irb (vb eerst in irb doen voor opdracht)
-* Ruby warrior
+## Site
+* media queries
+* geen hacky css
+* subtiel patroontje in groen?
+* affix bar met nested lists
 
 
 

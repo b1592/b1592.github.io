@@ -11,12 +11,17 @@ h3 {
   margin-top: 24px;
 }
 
+body {
+  background-image: url("../../images/background.png");
+  background-repeat: repeat repeat;
+}
+
 .nav > li > a:hover, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 nav {
-  font-family: @font-family-monospace;
+  font-family: @font-family-sans-serif;
 }
 
 .navbar-brand {
@@ -51,13 +56,23 @@ nav {
 // }
 
 .content {
-  padding-top: 40px;
+  padding-top: 80px;
   padding-bottom: 40px;
+  -webkit-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
+  width: @nav-width;
+  background-color: #fff;
+
+}
+
+.col-lg-9 {
+  padding-right: 55px;
 }
 
 footer {
-  padding-top: 40px;
-  padding-bottom: 20px;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 
 @media (min-width: @screen-sm-min) {
@@ -71,8 +86,8 @@ footer {
 @media (min-width: @screen-md-min) {
   @padding-content: 0.5 * (@container-md - @content-width);
   .container {
-    padding-left: @padding-content;
-    padding-right: @padding-content;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -81,18 +96,25 @@ footer {
   @padding-nav: 0.5 * (@container-lg - @nav-width);
 
   .content {
-    padding-left: @padding-content;
-    padding-right: @padding-content;
+    padding-left: 81px;
+    padding-right: 81px;
+    
   }
 
   header .container {
     padding-left: @padding-nav;
     padding-right: @padding-nav;
-  }
+    padding-top: 60px;
+    padding-bottom: 0;
 
+    
+  }
+  .navbar {
+      margin: 0px;
+  }
   footer .container {
-    padding-left: @padding-content;
-    padding-right: @padding-content;
+    padding-left: 81px;
+    padding-right: 81px;
   }
 }
 
@@ -182,23 +204,29 @@ pre code {
 // Affix scroll spy
 
 #page-map li {
+  border-left: 4px transparent solid;
   a {
-    font-weight: normal;
-    font-family: @font-family-monospace;
+    font-weight: 600;
+    font-family: @font-family-sans-serif;
     font-size: 12px;
     color: @mdo-black;
   }
 }
 
 #page-map li.active, {
+  border-left: 4px @battlefields solid;
+
   a {
-    background-color: darken(@code-bg, 5%);
+    background-color: transparent;
+    color: @battlefields;
+
   }
 }
 
 #page-map li {
   a:hover {
-    background-color: darken(@code-bg, 5%);
+    background-color: transparent;
+    color: @battlefields;
   }
 }
 
@@ -211,15 +239,20 @@ pre code {
 #page-map {
   margin-top: 0;
   margin-bottom: 0;
+  list-style: none;
+  
 }
 
 .page-map-sidebar {
-  width:120px;
+  // width:120px;
+  
+  padding-top: 82px;
 }
 .page-map-sidebar.affix {
 position: fixed;
 top: 20px;
-
+width: 214px;
+padding-top: 0px;
 }
 
 .page-map-sidebar.affix-bottom {
@@ -233,7 +266,7 @@ position: absolute;
 #rubylogo {
   width: 240px;
   padding:0px;
-  margin-top:-8px;
+  margin-top:-18px;
   margin-right: 20px;
   margin-left: 4px;
 }

@@ -39,6 +39,17 @@
 
 @mdo-black:                 #454441;
 
+@melt-with-you:				#5C162B;
+@toxica:					#7C2643;
+@lying-to-angels:#9C1342;
+
+@woodpecker:#A03737;
+
+@dies-peacefully: #D6D6B0;
+@sea-turtle-cove: #C0D6B6;
+@battlefields: #EB6760;
+@water-nymph: #D4878A;
+
 //## Gray and brand colors for use across Bootstrap.
 // Grays
 @gray:                      @concrete;
@@ -49,7 +60,7 @@
 @gray-lighter:              lighten(#000, 93.5%); // #eee
 
 // Brand colors
-@brand-primary:             darken(@pomegranate, 0%);
+@brand-primary:             @battlefields;
 @brand-secondary:           @midnight-blue;
 @brand-success:             @emerald;
 @brand-warning:             @sun-flower;
@@ -62,7 +73,8 @@
 // ## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+// @body-bg:               #f5f5ec;
+@body-bg:				@sea-turtle-cove;
 //** Global text color on `<body>`.
 @text-color:            @mdo-black;
 
@@ -87,7 +99,7 @@
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:                ceil(@font-size-base * 2.222);
+@font-size-h1:                ceil(@font-size-base * 2.522);
 @font-size-h2:                floor(@font-size-base * 1.78);
 @font-size-h3:                ceil(@font-size-base * 1.333);
 @font-size-h4:                16px;
@@ -364,7 +376,7 @@
 //##
 
 // Basics of a navbar
-@navbar-height:                    80px;
+@navbar-height:                    55px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             0;
 @navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
@@ -372,14 +384,14 @@
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #777;
-@navbar-default-bg:                #f8f8f8;
+@navbar-default-bg:                transparent;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
-@navbar-default-link-color:                #777;
-@navbar-default-link-hover-color:          #333;
+@navbar-default-link-color:                @mdo-black;
+@navbar-default-link-hover-color:          @battlefields;
 @navbar-default-link-hover-bg:             transparent;
-@navbar-default-link-active-color:         #555;
+@navbar-default-link-active-color:         @battlefields;
 @navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
@@ -824,13 +836,13 @@
 //
 //##
 
-@code-color:                  darken(@pomegranate, 5%);
-@code-bg:                     mix(@brand-primary, @inverse, 10%);
+@code-color:                  darken(@water-nymph, 10%);
+@code-bg:                     @dies-peacefully;
 
 @kbd-color:                   #fff;
 @kbd-bg:                      #333;
 
-@pre-bg:                      #f5f5f5;
+@pre-bg:                      @dies-peacefully;
 @pre-color:                   @gray-dark;
 @pre-border-color:            #ccc;
 @pre-scrollable-max-height:   340px;
@@ -868,7 +880,7 @@
 
 @nav-content-proportion: 1.232;
 
-@content-width: 700px;
+@content-width: 900px;
 @nav-width: @content-width * @nav-content-proportion;
 
 // @padding-content: 235px;

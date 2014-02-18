@@ -8,9 +8,18 @@
   {% include header.html %} 
 
     <div class="container content">
+      <div class="row">
+        <div class="col-lg-9">
+          {{ content }}
+        </div>
 
-      {{ content }}
-
+        <div class="col-lg-3">
+          <div class="page-map-sidebar" data-spy="affix">
+            <ul id="page-map" class="nav">
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
   {% include footer.html %}
@@ -21,5 +30,6 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/public/bootstrap/js/bootstrap.min.js"></script>
     <script src="/public/js/custom.js"></script>
+    <script src="/public/js/scrollspy.js"></script>
   </body>
 </html>

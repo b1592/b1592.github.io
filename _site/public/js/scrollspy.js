@@ -11,7 +11,7 @@ titles.each( function(index) {
     $('#page-map').append(
     $('<li>').append(
       $('<a>').attr('href', '#' + $(this).attr('id')).append(
-        ">&nbsp;" + $(this).text()
+        "&nbsp;&nbsp;" + $(this).text()
     )));
   }
 });
@@ -33,7 +33,7 @@ $('body').scrollspy({ target: '.page-map-sidebar' });
     // side bar
     $('.page-map-sidebar').affix({
       offset: {
-        top: function () { return $window.width() <= 980 ? 280 : 140 }
+        top: 284
       , bottom: 270
       }
     })          
