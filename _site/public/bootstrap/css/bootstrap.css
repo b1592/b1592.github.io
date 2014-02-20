@@ -4843,6 +4843,17 @@ pre code {
   margin-bottom: 0;
   list-style: none;
 }
+#page-map ul {
+  list-style: none;
+  display: none;
+  padding-left: 30px;
+}
+#page-map ul li {
+  padding-left: 3px;
+}
+#page-map ul.active {
+  display: block;
+}
 .page-map-sidebar {
   padding-top: 82px;
 }

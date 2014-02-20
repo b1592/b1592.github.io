@@ -1,4 +1,4 @@
-var titles = $("h2, h3");
+var titles = $("h2");
 
 // Voeg link met 'Inhoud' toe bovenaan affix
 $('#page-map').append(
@@ -6,22 +6,45 @@ $('#page-map').append(
     $('<a>').attr({href: '#top', id: 'page-map-inhoud-link'}).append(
       'Inhoud'
 )));
+eerstepaar = $("h2:nth-of-type(2)").nextUntil("h2", "h3");
+console.log(eerstepaar);
 
 titles.each( function(index) {
-  
-  if ( $(this).prop("tagName") == "H2" ) {
-    $('#page-map').append(
+  $('#page-map').append(
     $('<li>').append(
       $('<a>').attr('href', '#' + $(this).attr('id')).append(
         $(this).text()
-    )));
-  } else {
+  )));
+
+  var childheaders = $(this).nextUntil("h2", "h3");
+  if ($(childheaders).length > 0) {
     $('#page-map').append(
-    $('<li>').append(
-      $('<a>').attr('href', '#' + $(this).attr('id')).append(
-        "&nbsp;&nbsp;" + $(this).text()
-    )));
+      $("<ul>"));
+    
+    childheaders.each( function(index) {
+      console.log("Childheader: " + $(this).text())
+      $('#page-map ul').filter(':last').append(
+      $('<li>').append(
+        $('<a>').attr('href', '#' + $(this).attr('id')).append(
+          $(this).text()
+      )));
+    });     
   }
+  // $(this).nextUntil("h2", "h3").each( function(index) {
+  //   if ( $(this).prop("tagName") == "H2" ) {
+  //     $('#page-map').append(
+  //     $('<li>').append(
+  //       $('<a>').attr('href', '#' + $(this).attr('id')).append(
+  //         $(this).text()
+  //     )));
+  //   } else {
+  //     $('#page-map').append(
+  //     $('<li>').append(
+  //       $('<a>').attr('href', '#' + $(this).attr('id')).append(
+  //         "&nbsp;&nbsp;" + $(this).text()
+  //     )));
+  //   }
+  // });
 });
 
 // Maak link naar de bovenste H2 actief in de affix
@@ -87,5 +110,15 @@ $( window ).resize(function() {
     jQuery('#page-map:hidden').delay(600).fadeIn(duration);
   } else {
     jQuery('#page-map').hide();
+  }
+});
+
+$( window ).scroll(function() {
+  if ($('#page-map ul li.active') != 0) {
+    $('#page-map ul li.active').parent().addClass('active');
+    $('#page-map ul li.active').parent().prev('li').addClass('active');
+  }
+  if ($('#page-map li.active') != 0) {
+    $('#page-map ul li.active').parent().next('ul').addClass('active');
   }
 });
