@@ -4664,6 +4664,10 @@ nav {
   box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
   background-color: #fff;
 }
+.page-map-sidebar,
+#page-map {
+  display: none;
+}
 footer {
   padding-top: 60px;
   padding-bottom: 40px;
@@ -4706,6 +4710,9 @@ header .container {
   .navbar {
     margin: 0px;
   }
+  .page-map-sidebar {
+    display: block;
+  }
 }
 @media (min-width: 1200px) {
   .content {
@@ -4728,6 +4735,9 @@ header .container {
   footer .container {
     padding-left: 81px;
     padding-right: 81px;
+  }
+  .page-map-sidebar {
+    display: block;
   }
 }
 footer #logo {
@@ -4844,9 +4854,6 @@ pre code {
 }
 .page-map-sidebar.affix-bottom {
   position: absolute;
-}
-.page-map-sidebar {
-  display: none;
 }
 #rubylogo {
   width: 240px;

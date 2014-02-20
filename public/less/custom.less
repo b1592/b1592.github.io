@@ -66,7 +66,9 @@ nav {
 
 }
 
-
+.page-map-sidebar, #page-map {
+  display: none;
+}
 
 
 // Small Screen
@@ -126,6 +128,9 @@ header .container {
   .navbar {
       margin: 0px;
   }
+  .page-map-sidebar {
+    display: block;
+  }
 }
 
 @media (min-width: @screen-lg-min) {
@@ -155,6 +160,10 @@ header .container {
   footer .container {
     padding-left: 81px;
     padding-right: 81px;
+  }
+
+  .page-map-sidebar {
+    display: block;
   }
 }
 
@@ -304,9 +313,7 @@ position: absolute;
 }
 
 
-.page-map-sidebar {
-  display: none;
-}
+
 #rubylogo {
   width: 240px;
   padding:0px;
