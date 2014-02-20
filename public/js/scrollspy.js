@@ -46,7 +46,7 @@ $('body').scrollspy({ target: '.page-map-sidebar' });
     $('.page-map-sidebar').affix({
       offset: {
         top: 284
-      , bottom: 270
+      , bottom: 400
       }
     })          
   })

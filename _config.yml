@@ -10,3 +10,4 @@ markdown:     maruku
 permalink:    pretty
 pygments:     true
 paginate:     5
+baseurl:	  /rubyprognl
