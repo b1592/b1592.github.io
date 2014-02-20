@@ -1,6 +1,15 @@
 var titles = $("h2, h3");
 
+// First element
+$('#page-map').append(
+  $('<li>').append(
+    $('<a>').attr({href: '#top', id: 'page-map-inhoud-link'}).append(
+      'Inhoud'
+)));
+
 titles.each( function(index) {
+  
+
   if ( $(this).prop("tagName") == "H2" ) {
     $('#page-map').append(
     $('<li>').append(

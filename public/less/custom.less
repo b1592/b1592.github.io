@@ -61,7 +61,7 @@ nav {
   -webkit-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
-  width: @nav-width;
+  
   background-color: #fff;
 
 }
@@ -70,10 +70,25 @@ nav {
   padding-right: 55px;
 }
 
+
+// Small Screen
+
 footer {
   padding-top: 60px;
   padding-bottom: 40px;
 }
+
+header .container {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 60px;
+  padding-bottom: 0;
+    
+}
+.navbar {
+    margin: 0px;
+}
+
 
 @media (min-width: @screen-sm-min) {
   @padding-content: 0.5 * (@container-sm - @content-width);
@@ -81,13 +96,37 @@ footer {
     padding-left: @padding-content;
     padding-right: @padding-content;
   }
+  header .container {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 60px;
+    padding-bottom: 0;
+
+    
+  }
+  .navbar {
+      margin: 0px;
+  }
 }
 
 @media (min-width: @screen-md-min) {
   @padding-content: 0.5 * (@container-md - @content-width);
+  
   .container {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 81px;
+    padding-right: 81px;
+  }
+
+  header .container {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 60px;
+    padding-bottom: 0;
+
+    
+  }
+  .navbar {
+      margin: 0px;
   }
 }
 
@@ -98,7 +137,7 @@ footer {
   .content {
     padding-left: 81px;
     padding-right: 81px;
-    
+    width: @nav-width;
   }
 
   header .container {
@@ -211,6 +250,10 @@ pre code {
     font-size: 12px;
     color: @mdo-black;
   }
+  #page-map-inhoud-link {
+    color: @battlefields;
+    font-weight: 500;
+  }
 }
 
 #page-map li.active, {
@@ -267,14 +310,7 @@ position: absolute;
   width: 240px;
   padding:0px;
   margin-top:-18px;
-  margin-right: 20px;
+  margin-right: 0px;
   margin-left: 4px;
-}
 
-@media (max-width: @screen-xs) {
-  #rubylogo {
-    width: 180px;
-    margin-right:0px;
-  }
 }
-

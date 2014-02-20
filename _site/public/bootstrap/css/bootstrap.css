@@ -4662,7 +4662,6 @@ nav {
   -webkit-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
-  width: 1108.8px;
   background-color: #fff;
 }
 .col-lg-9 {
@@ -4672,22 +4671,50 @@ footer {
   padding-top: 60px;
   padding-bottom: 40px;
 }
+header .container {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 60px;
+  padding-bottom: 0;
+}
+.navbar {
+  margin: 0px;
+}
 @media (min-width: 768px) {
   .container {
     padding-left: -75px;
     padding-right: -75px;
   }
+  header .container {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 60px;
+    padding-bottom: 0;
+  }
+  .navbar {
+    margin: 0px;
+  }
 }
 @media (min-width: 992px) {
   .container {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 81px;
+    padding-right: 81px;
+  }
+  header .container {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 60px;
+    padding-bottom: 0;
+  }
+  .navbar {
+    margin: 0px;
   }
 }
 @media (min-width: 1200px) {
   .content {
     padding-left: 81px;
     padding-right: 81px;
+    width: 1108.8px;
   }
   header .container {
     padding-left: 30.6px;
@@ -4786,6 +4813,9 @@ pre code {
   font-size: 12px;
   color: #454441;
 }
+#page-map li #page-map-inhoud-link {
+  color: #eb6760;
+}
 #page-map li.active {
   border-left: 4px #eb6760 solid;
 }
@@ -4821,14 +4851,8 @@ pre code {
   width: 240px;
   padding: 0px;
   margin-top: -18px;
-  margin-right: 20px;
+  margin-right: 0px;
   margin-left: 4px;
-}
-@media (max-width: 480px) {
-  #rubylogo {
-    width: 180px;
-    margin-right: 0px;
-  }
 }
 footer {
   background-color: transparent;
