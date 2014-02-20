@@ -4664,9 +4664,6 @@ nav {
   box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
   background-color: #fff;
 }
-.col-lg-9 {
-  padding-right: 55px;
-}
 footer {
   padding-top: 60px;
   padding-bottom: 40px;
@@ -4715,6 +4712,9 @@ header .container {
     padding-left: 81px;
     padding-right: 81px;
     width: 1108.8px;
+  }
+  .col-lg-9 {
+    padding-right: 55px;
   }
   header .container {
     padding-left: 30.6px;
@@ -4815,6 +4815,7 @@ pre code {
 }
 #page-map li #page-map-inhoud-link {
   color: #eb6760;
+  font-weight: 500;
 }
 #page-map li.active {
   border-left: 4px #eb6760 solid;

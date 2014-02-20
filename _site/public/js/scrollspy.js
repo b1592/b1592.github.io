@@ -1,6 +1,6 @@
 var titles = $("h2, h3");
 
-// First element
+// Voeg link met 'Inhoud' toe bovenaan affix
 $('#page-map').append(
   $('<li>').append(
     $('<a>').attr({href: '#top', id: 'page-map-inhoud-link'}).append(
@@ -9,7 +9,6 @@ $('#page-map').append(
 
 titles.each( function(index) {
   
-
   if ( $(this).prop("tagName") == "H2" ) {
     $('#page-map').append(
     $('<li>').append(
@@ -24,6 +23,10 @@ titles.each( function(index) {
     )));
   }
 });
+
+// Maak link naar de bovenste H2 actief in de affix
+$('#page-map li:nth-child(2)').addClass('active');
+
 
 $('body').scrollspy({ target: '.page-map-sidebar' });
 
@@ -76,7 +79,10 @@ jQuery(document).ready(function() {
 });
 
 $( window ).resize(function() {
+  var duration = 500;
   if ($(window).width() > 992) {
+
+    // alert("Resize!");
     // 992 is @screen-md-min
     jQuery('.page-map-sidebar').delay(600).fadeIn(duration);
   } else {
