@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<h1>Nieuws</h1>
+<hr>
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h2 id="{{ post.identifier }}">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h2>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.content | split:"<!-- more -->" | first}}
+    {% if post.content | size > 300 %}
+      <p><br/><a href="{{ post.url }}">Lees verder >>></a></p><hr><br/>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a href="/page{{paginator.next_page}}" class="older">Ouder</a>
+  {% else %}
+    <span class="next">Ouder</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a href="/" class="newer">Nieuwer</a>
+    {% else %}
+      <a href="/page{{paginator.previous_page}}" class="newer">Nieuwer</a>
+    {% endif %}
+  {% else %}
+    <span class="previous">Nieuwer</span>
+  {% endif %}
+</div>

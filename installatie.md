@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Installatie
+scrollspy: true
 ---
 
 # Installatie

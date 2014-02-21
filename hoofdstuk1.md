@@ -17,7 +17,7 @@ In de map Hoofdstuk 1 vind je de volgende bestanden:
 
 ## Informatie
 
-### `puts`
+### Iets op het scherm zetten: `puts`
 
 Open de map `Rubyprog` in Sublime Text. (`File -> Open Folder...`). Links zie je allerlei mappen (Hoofdstuk 1, Hoofdstuk 2, etc.) staan. Open nu het bestand `hallo.rb` in de map "Hoofdstuk 1". Daar staat:
 
@@ -29,7 +29,7 @@ puts "Hallo"
 
 Dit programma zag je in de [command line](/command_line) al in actie. Het commando `puts` (put string) zet een `String` op het scherm. Een string is een stuk tekst.
 
-### `gets`
+### Om input vragen: `gets`
 
 Als je input van de gebruiker wilt hebben, gebruik je `gets` (get string):
 
@@ -59,7 +59,7 @@ en dan geeft Ruby `1` als output.
 
 Maar terug naar `gets`. Dit is een commando dat de gebruiker om *input* vraagt: je kunt iets intypen. `naam = gets` vertelt de computer de input van de gebruiker op te slaan in `naam`.
 
-### `if`
+### Het `if`-statement
 
 Een programma is meer dan een rij commando's, die achter elkaar worden uitgevoerd. Een computer kan ook keuzes maken. Hier zijn aparte commando's voor nodig, en één van de krachtigste is `if`. Hiermee geef je aan dat de computer alleen iets moet uitvoeren onder een bepaalde voorwaarde en anders niet.
 
@@ -112,5 +112,5 @@ Je weet nu alles wat je nodig hebt om zelf aan de slag te gaan. Je eerste script
 * Verwerkt de naam in een antwoord en vraagt de gebruiker om `jongen` of `meisje`, of `man` of `vrouw` in te typen
 * Maakt een persoonlijke begroeting, waarin de gebruiker wordt begroet met "Meneer" of "Mevrouw" en dan de naam, allemaal bepaald door wat de gebruiker eerder heeft ingetypt
 
-### (Extra)
+### (Extra) Oeps, foutje!
 Wat doet je programma als je per ongeluk `jongne` in plaats van `jongen` intypt? Probeer dit soort fouten op een mooie manier op te lossen. (Is het irritant om alles opnieuw in te vullen als je één typfout maakt? Antwoord: ja.)
