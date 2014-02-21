@@ -3,14 +3,13 @@
 
   {% include head.html %}
 
-  <body class="scrollspy">
+  <body class="scrollspy" id="top">
 
   {% include header.html %} 
 
     <div class="container content">
       <div class="row">
         <div class="col-lg-9 col-md-9">
-          <a name="top"></a>
           {{ content }}
         </div>
 
@@ -31,6 +30,8 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/public/bootstrap/js/bootstrap.min.js"></script>
     <script src="/public/js/custom.js"></script>
-    <script src="/public/js/scrollspy.js"></script>
+    {% if page.scrollspy %}
+      <script src="/public/js/scrollspy.js"></script>
+    {% endif %}
   </body>
 </html>

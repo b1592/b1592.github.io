@@ -18,7 +18,7 @@ titles.each( function(index) {
 
   var childheaders = $(this).nextUntil("h2", "h3");
   if ($(childheaders).length > 0) {
-    $('#page-map').append(
+    $('#page-map li').filter(':last').append(
       $("<ul>"));
     
     childheaders.each( function(index) {
@@ -48,7 +48,7 @@ titles.each( function(index) {
 });
 
 // Maak link naar de bovenste H2 actief in de affix
-$('#page-map li:nth-child(2)').addClass('active');
+// $('#page-map > li:nth-child(2)').addClass('active');
 
 
 $('body').scrollspy({ target: '.page-map-sidebar' });
@@ -114,11 +114,11 @@ $( window ).resize(function() {
 });
 
 $( window ).scroll(function() {
-  if ($('#page-map ul li.active') != 0) {
-    $('#page-map ul li.active').parent().addClass('active');
-    $('#page-map ul li.active').parent().prev('li').addClass('active');
+  if ($('#page-map li ul li.active') != 0) {
+    $('#page-map li ul li.active').parent().addClass('active');
+    $('#page-map li ul li.active').parent().parent().addClass('active');
   }
   if ($('#page-map li.active') != 0) {
-    $('#page-map ul li.active').parent().next('ul').addClass('active');
+    $('#page-map li.active ul').addClass('active');
   }
 });

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Hoofdstuk 3
+scrollspy: true
 ---
 
 #Hoofdstuk 3: Cipher

@@ -1,16 +1,16 @@
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 10px;
-  line-height: 1.25;
   text-rendering: optimizeLegibility;
 }
 
-h2 {
+// h2 {
+//   margin-top: 20px;
+// }
+// h3 {
+//   margin-top: 24px;
+// }
+h2 + h3 {
   margin-top: 20px;
 }
-h3 {
-  margin-top: 24px;
-}
-
 body {
   background-image: url("../../images/background.png");
   background-repeat: repeat repeat;
@@ -25,7 +25,7 @@ nav {
 }
 
 .navbar-brand {
-  // margin-top: -11px;
+  padding-right: 0px;
 }
 
 
@@ -56,7 +56,7 @@ nav {
 // }
 
 .content {
-  padding-top: 80px;
+  padding-top: 50px;
   padding-bottom: 40px;
   -webkit-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
@@ -93,8 +93,8 @@ header .container {
 @media (min-width: @screen-sm-min) {
   @padding-content: 0.5 * (@container-sm - @content-width);
   .container {
-    padding-left: @padding-content;
-    padding-right: @padding-content;
+    padding-left: 40px;
+    padding-right: 40px;
   }
   header .container {
     padding-left: 0px;
@@ -253,8 +253,9 @@ pre code {
 // Affix scroll spy
 
 #page-map li {
-  border-left: 4px transparent solid;
+  
   a {
+    border-left: 4px transparent solid;
     font-weight: 600;
     font-family: @font-family-sans-serif;
     font-size: 12px;
@@ -263,16 +264,29 @@ pre code {
   #page-map-inhoud-link {
     color: @battlefields;
     font-weight: 500;
+    border-left: 4px transparent solid;
+  }
+  ul li {
+    color: @mdo-black;
   }
 }
 
 #page-map li.active, {
-  border-left: 4px @battlefields solid;
+  
 
   a {
+    border-left: 4px @battlefields solid;
     background-color: transparent;
     color: @battlefields;
 
+  }
+  ul li a {
+    border-left: 4px transparent solid;
+    color: @mdo-black;
+  }
+  ul li.active a {
+    border-left: 4px @battlefields solid;
+    color: @battlefields;
   }
 }
 
@@ -294,16 +308,16 @@ pre code {
   margin-bottom: 0;
   list-style: none;
   
-  ul {
+  li ul {
     list-style: none;
     display: none;
     padding-left: 30px;
 
-    li {
+    li a {
       padding-left: 3px;
     }
   }
-  ul.active {
+  li ul.active {
     display: block;
   }
 }
@@ -311,7 +325,7 @@ pre code {
 .page-map-sidebar {
   // width:120px;
   
-  padding-top: 82px;
+  padding-top: 110px;
 }
 .page-map-sidebar.affix {
 position: fixed;
@@ -331,6 +345,9 @@ position: absolute;
   padding:0px;
   margin-top:-18px;
   margin-right: 0px;
-  margin-left: 4px;
+  margin-left: 15px;
 
+  // @media(max-width: @screen-xs) {
+  //   margin-left: 4px;
+  // }
 }

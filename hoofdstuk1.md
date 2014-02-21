@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Hoofdstuk 1
+scrollspy: true
 ---
 
 #Hoofdstuk 1: hallo

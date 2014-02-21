@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Hoofdstuk 2
+scrollspy: true
 ---
 
 # Hoofdstuk 2: priemgetallen

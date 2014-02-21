@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Hoofdstuk 4
+scrollspy: true
 ---
 
-#Hoofdstuk 4: Tic Tac Toe
+#HOOFDSTUK 4: TIC TAC TOE
 
 Wie kent het niet: boter, kaas en eieren? Het werd al rond 100 jaar voor Christus gespeeld door de Romeinen en nu nog steeds. We gaan in deze les het spel aan de computer uitleggen, zodat je het digitaal kunt spelen. In de extra opdracht kun je zelfs de computer tegen jou laten spelen.
 

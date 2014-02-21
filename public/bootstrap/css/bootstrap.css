@@ -353,8 +353,8 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 600;
-  line-height: 1.1;
+  font-weight: 500;
+  line-height: 1.25;
   color: inherit;
 }
 h1 small,
@@ -386,13 +386,17 @@ h6 .small,
   color: #bdc3c7;
 }
 h1,
+.h1 {
+  text-transform: uppercase;
+}
+h1,
 .h1,
 h2,
 .h2,
 h3,
 .h3 {
-  margin-top: 27px;
-  margin-bottom: 13.5px;
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
 h1 small,
 .h1 small,
@@ -433,7 +437,7 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 46px;
+  font-size: 36px;
   padding-bottom: 20px;
 }
 h2,
@@ -3019,7 +3023,8 @@ input[type="button"].btn-block {
   height: 1px;
   margin: 12.5px 0;
   overflow: hidden;
-  background-color: #e85149;
+  background-color: #454441;
+  opacity: 0.2;
 }
 .dropdown-menu > li > a {
   display: block;
@@ -3152,6 +3157,7 @@ input[type="button"].btn-block {
   margin: 12.5px 0;
   overflow: hidden;
   background-color: #e5e5e5;
+  opacity: 0.2;
 }
 .nav > li > a > img {
   max-width: none;
@@ -3426,8 +3432,8 @@ input[type="button"].btn-block {
   float: right;
   margin-right: 15px;
   padding: 9px 10px;
-  margin-top: 10.5px;
-  margin-bottom: 10.5px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   background-color: transparent;
   background-image: none;
   border: 0;
@@ -3641,14 +3647,16 @@ input[type="button"].btn-block {
   background-color: transparent;
 }
 .navbar-default .navbar-toggle {
-  border-color: #dddddd;
+  border-color: #454441;
 }
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #dddddd;
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+.navbar-default .navbar-toggle:hover .icon-bar {
+  background-color: #eb6760;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #888888;
+  background-color: #454441;
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
@@ -4634,15 +4642,10 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 10px;
-  line-height: 1.25;
   text-rendering: optimizeLegibility;
 }
-h2 {
+h2 + h3 {
   margin-top: 20px;
-}
-h3 {
-  margin-top: 24px;
 }
 body {
   background-image: url("../../images/background.png");
@@ -4656,8 +4659,11 @@ body {
 nav {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
+.navbar-brand {
+  padding-right: 0px;
+}
 .content {
-  padding-top: 80px;
+  padding-top: 50px;
   padding-bottom: 40px;
   -webkit-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
@@ -4683,8 +4689,8 @@ header .container {
 }
 @media (min-width: 768px) {
   .container {
-    padding-left: -75px;
-    padding-right: -75px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
   header .container {
     padding-left: 0px;
@@ -4814,10 +4820,8 @@ pre code {
   color: inherit;
   background-color: transparent;
 }
-#page-map li {
-  border-left: 4px transparent solid;
-}
 #page-map li a {
+  border-left: 4px transparent solid;
   font-weight: 600;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -4826,12 +4830,22 @@ pre code {
 #page-map li #page-map-inhoud-link {
   color: #eb6760;
   font-weight: 500;
+  border-left: 4px transparent solid;
 }
-#page-map li.active {
-  border-left: 4px #eb6760 solid;
+#page-map li ul li {
+  color: #454441;
 }
 #page-map li.active a {
+  border-left: 4px #eb6760 solid;
   background-color: transparent;
+  color: #eb6760;
+}
+#page-map li.active ul li a {
+  border-left: 4px transparent solid;
+  color: #454441;
+}
+#page-map li.active ul li.active a {
+  border-left: 4px #eb6760 solid;
   color: #eb6760;
 }
 #page-map li a:hover {
@@ -4843,19 +4857,19 @@ pre code {
   margin-bottom: 0;
   list-style: none;
 }
-#page-map ul {
+#page-map li ul {
   list-style: none;
   display: none;
   padding-left: 30px;
 }
-#page-map ul li {
+#page-map li ul li a {
   padding-left: 3px;
 }
-#page-map ul.active {
+#page-map li ul.active {
   display: block;
 }
 .page-map-sidebar {
-  padding-top: 82px;
+  padding-top: 110px;
 }
 .page-map-sidebar.affix {
   position: fixed;
@@ -4871,7 +4885,7 @@ pre code {
   padding: 0px;
   margin-top: -18px;
   margin-right: 0px;
-  margin-left: 4px;
+  margin-left: 15px;
 }
 footer {
   background-color: transparent;
