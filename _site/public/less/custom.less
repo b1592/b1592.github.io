@@ -339,6 +339,12 @@ position: absolute;
 }
 
 
+@media(max-width: @screen-xs) {
+  iframe {
+    width: 280px;
+    height: 210px;
+  }
+}
 
 #rubylogo {
   width: 240px;
@@ -351,3 +357,17 @@ position: absolute;
   //   margin-left: 4px;
   // }
 }
+
+@media(max-width: @screen-sm) {
+  .container > .navbar-header {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  #rubylogo {
+    margin-left: 0px;
+  }
+  .navbar-brand {
+    padding-left: 12px;
+  }
+}
+

@@ -3430,7 +3430,7 @@ input[type="button"].btn-block {
 .navbar-toggle {
   position: relative;
   float: right;
-  margin-right: 15px;
+  margin-right: 3px;
   padding: 9px 10px;
   margin-top: 3px;
   margin-bottom: 3px;
@@ -4880,12 +4880,30 @@ pre code {
 .page-map-sidebar.affix-bottom {
   position: absolute;
 }
+@media (max-width: 480px) {
+  iframe {
+    width: 280px;
+    height: 210px;
+  }
+}
 #rubylogo {
   width: 240px;
   padding: 0px;
   margin-top: -18px;
   margin-right: 0px;
   margin-left: 15px;
+}
+@media (max-width: 768px) {
+  .container > .navbar-header {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  #rubylogo {
+    margin-left: 0px;
+  }
+  .navbar-brand {
+    padding-left: 12px;
+  }
 }
 footer {
   background-color: transparent;
