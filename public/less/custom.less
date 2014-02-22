@@ -2,12 +2,6 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 
-// h2 {
-//   margin-top: 20px;
-// }
-// h3 {
-//   margin-top: 24px;
-// }
 h2 + h3 {
   margin-top: 20px;
 }
@@ -137,10 +131,10 @@ header .container {
   @padding-content: 0.5 * (@container-lg - @content-width);
   @padding-nav: 0.5 * (@container-lg - @nav-width);
 
-  .content {
+  .content, footer .container {
     padding-left: 81px;
     padding-right: 81px;
-    width: @nav-width;
+    // width: @nav-width;
   }
   .col-lg-9 {
     padding-right: 55px;

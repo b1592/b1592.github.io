@@ -4721,10 +4721,10 @@ header .container {
   }
 }
 @media (min-width: 1200px) {
-  .content {
+  .content,
+  footer .container {
     padding-left: 81px;
     padding-right: 81px;
-    width: 1108.8px;
   }
   .col-lg-9 {
     padding-right: 55px;

@@ -3,7 +3,7 @@ layout: default
 title: 
 ---
 
-#Cursus Programmeren
+# Wat is programmeren?
 
 Programmeren is praten tegen een computer --- een programma schrijven.
 
