@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  {% include head.html %}
+
+  <body id="top">
+
+  {% include header.html %} 
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-9">
+          {{ content }}
+        </div>
+
+        <div class="col-md-3">
+          <h2 id="nieuws">Nieuws</h2>
+          <ul id="blog-posts" class="posts">
+          {% for post in site.posts %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            <li>{{ post.date | date_to_string }}</li>
+            <li><hr></li>
+          {% endfor %}
+            <li><a href="/blog">Meer &raquo;</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  {% include footer.html %}
+
+  {% include analytics.html %}
+
+  <!-- Load JS here for greater good =============================-->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+    {% if page.scrollspy %}
+      <script src="/public/js/scrollspy.js"></script>
+    {% endif %}
+    <script src="/public/js/custom.js"></script>
+  </body>
+</html>

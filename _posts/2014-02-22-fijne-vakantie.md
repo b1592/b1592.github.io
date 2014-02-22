@@ -8,6 +8,7 @@ title: Fijne vakantie!
 Fijne vakantie, jongens. We zien jullie pas 3 maart weer.
 
 Wetenschappers zeggen dat een groene kleur creativiteit opwekt. Een rode kleur wat minder. [Echt waar](http://www.prevention.com/mind-body/emotional-health/looking-color-green-enhances-creativity). Dus hier is de nieuwe site! Wat vinden jullie ervan? Laat het vooral weten: [ghkapteijns@gmail.com](mailto:ghkapteijns@gmail.com).
+<!-- more -->
 
 ## In de tussentijd
 

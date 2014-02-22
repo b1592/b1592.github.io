@@ -369,10 +369,27 @@ position: absolute;
 // Posts
 
 ul.posts {
-  margin-top: 0;
+  margin-top: 0px;
   list-style-type: none;
-  margin-bottom: 20px;
   padding-left: 0px;
+  color: @mdo-black;
+  // border-left: 4px @battlefields solid;
+  hr {
+    display: hidden;
+  }
+  
+  @media(min-width: @screen-md-min) {
+    margin-bottom: 20px;
+    padding-left: 25px;
+    font-size: 12px;
+
+    a {
+      font-size: 16px
+    }
+    hr {
+      display: block;
+    }
+  }
 }
 
 ul.posts li {
@@ -386,4 +403,19 @@ ul.posts span {
   // color: #aaa;
   padding-right: 5px;
   // font-size:14px;
+}
+
+#nieuws {
+  text-transform: uppercase;
+
+  @media(min-width: @screen-md-min) {
+    margin-top: 44px;
+    margin-bottom: 33px;
+    padding-left: 25px;
+  }
+
+  + hr {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
 }

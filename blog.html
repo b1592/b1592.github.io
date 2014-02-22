@@ -4,7 +4,7 @@ layout: default
 
 <h1>Nieuws</h1>
 <div class="posts">
-  {% for post in paginator.posts %}
+  {% for post in site.posts %}
   <div class="post">
     <h2 id="{{ post.identifier }}">
       <a href="{{ post.url }}">
@@ -23,7 +23,7 @@ layout: default
 </div>
 
 <!-- Pagination links -->
-<div class="pagination">
+<div class="pagination" style="display:none;">
   {% if paginator.next_page %}
     <a href="/page{{paginator.next_page}}" class="older">Ouder</a>
   {% else %}
