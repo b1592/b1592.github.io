@@ -42,7 +42,7 @@ Door het `def`-commando weet ruby dat het om een functie gaat. De code wordt pas
 Als je dit doorhebt, weet je voorlopig genoeg.
 
 ## Project Euler
-Als je dit soort puzzels leuk vindt, dan moet je hier eens kijken: [Project Euler](https://projecteuler.net/problems). Dit is een geweldige site om te leren programmeren. Je moet een wiskundig vraagstuk met de computer oplossen. Als je het goede antwoord invoert, kom je op een forum waar je kunt zien hoe anderen op de oplossing zijn gekomen. (Eerst even een account aanmaken.)
+Als je dit soort puzzels leuk vindt, dan moet je eens naar [Project Euler](https://projecteuler.net/problems) kijken. Dit is een geweldige site om te leren programmeren. Je moet een wiskundig vraagstuk met de computer oplossen. Als je het goede antwoord invoert, kom je op een forum waar je kunt zien hoe anderen de oplossing hebben gevonden. (Eerst even een account aanmaken.)
 
 <s>Drie middagen Project Euler staat gelijk aan een jaar middelbaar onderwijs.</s>
 
