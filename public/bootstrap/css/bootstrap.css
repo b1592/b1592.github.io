@@ -747,7 +747,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 970px;
   }
 }
 .container-fluid {
@@ -4728,12 +4728,9 @@ header .container {
     padding-left: 81px;
     padding-right: 81px;
   }
-  .col-lg-9 {
-    padding-right: 55px;
-  }
   header .container {
-    padding-left: 30.6px;
-    padding-right: 30.6px;
+    padding-left: -69.4px;
+    padding-right: -69.4px;
     padding-top: 60px;
     padding-bottom: 0;
   }
