@@ -4909,10 +4909,26 @@ pre code {
   }
 }
 ul.posts {
-  margin-top: 0;
+  margin-top: 0px;
   list-style-type: none;
-  margin-bottom: 20px;
   padding-left: 0px;
+  color: #454441;
+}
+ul.posts hr {
+  display: hidden;
+}
+@media (min-width: 992px) {
+  ul.posts {
+    margin-bottom: 20px;
+    padding-left: 25px;
+    font-size: 12px;
+  }
+  ul.posts a {
+    font-size: 16px;
+  }
+  ul.posts hr {
+    display: block;
+  }
 }
 ul.posts li {
   margin-bottom: 0px;
@@ -4920,6 +4936,20 @@ ul.posts li {
 ul.posts span {
   font-family: Menlo, "Inconsolata", Monaco, Consolas, "Courier New", monospace;
   padding-right: 5px;
+}
+#nieuws {
+  text-transform: uppercase;
+}
+@media (min-width: 992px) {
+  #nieuws {
+    margin-top: 44px;
+    margin-bottom: 33px;
+    padding-left: 25px;
+  }
+}
+#nieuws + hr {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 footer {
   background-color: transparent;
