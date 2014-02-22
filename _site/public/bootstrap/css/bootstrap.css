@@ -4676,6 +4676,10 @@ nav {
 #page-map {
   display: none;
 }
+.youtube {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
 footer {
   padding-top: 60px;
   padding-bottom: 40px;
@@ -4904,6 +4908,19 @@ pre code {
     padding-left: 12px;
   }
 }
+ul.posts {
+  margin-top: 0;
+  list-style-type: none;
+  margin-bottom: 20px;
+  padding-left: 0px;
+}
+ul.posts li {
+  margin-bottom: 0px;
+}
+ul.posts span {
+  font-family: Menlo, "Inconsolata", Monaco, Consolas, "Courier New", monospace;
+  padding-right: 5px;
+}
 footer {
   background-color: transparent;
   color: #454441;
@@ -4943,7 +4960,7 @@ footer p {
   color: #ffffff;
 }
 .footer-banner a {
-  color: #90a9c2;
+  color: #eb6760;
   text-decoration: underline;
 }
 .footer-banner a:hover {

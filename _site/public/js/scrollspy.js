@@ -69,7 +69,7 @@ $('body').scrollspy({ target: '.page-map-sidebar' });
     $('.page-map-sidebar').affix({
       offset: {
         top: 284
-      , bottom: 400
+      , bottom: 150
       }
     })          
   })
@@ -94,11 +94,6 @@ $( window ).load(function() {
     // 992 is @screen-md-min
     jQuery('#page-map').delay(600).fadeIn(duration);
   }
-
-  $('a[href*=#]').on('click', function(event){     
-    event.preventDefault();
-    $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
-  });
 });
 
 $( window ).resize(function() {
