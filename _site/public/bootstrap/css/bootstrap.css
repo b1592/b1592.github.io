@@ -694,6 +694,8 @@ code {
   background-color: #d6d6b0;
   white-space: nowrap;
   border-radius: 0;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 kbd {
   padding: 2px 4px;
