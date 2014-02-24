@@ -4,7 +4,7 @@
  <title>Hyde</title>
  <link href="http://andhyde.com/atom.xml" rel="self"/>
  <link href="http://andhyde.com/"/>
- <updated>2014-02-22T14:11:29+01:00</updated>
+ <updated>2014-02-25T00:36:20+01:00</updated>
  <id>http://andhyde.com</id>
  <author>
    <name></name>
@@ -21,7 +21,7 @@
 
 &lt;p&gt;Fijne vakantie, jongens. We zien jullie pas 3 maart weer.&lt;/p&gt;
 
-&lt;p&gt;Wetenschappers zeggen dat een groene kleur creativiteit opwekt. Een rode kleur wat minder. &lt;a href=&quot;http://www.prevention.com/mind-body/emotional-health/looking-color-green-enhances-creativity&quot;&gt;Echt waar&lt;/a&gt;. Dus hier is de nieuwe site! Wat vinden jullie ervan? Laat het vooral weten: &lt;a href=&quot;mailto:ghkapteijns@gmail.com&quot;&gt;ghkapteijns@gmail.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Wetenschappers zeggen dat een groene kleur creativiteit opwekt. Een rode kleur wat minder. &lt;a href=&quot;http://www.prevention.com/mind-body/emotional-health/looking-color-green-enhances-creativity&quot;&gt;Echt waar&lt;/a&gt;. Dus hier is de nieuwe site! Wat vinden jullie ervan? Laat het vooral weten: &lt;a href=&quot;mailto:ghkapteijns@gmail.com&quot;&gt;ghkapteijns@gmail.com&lt;/a&gt;. &lt;!-- more --&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;in_de_tussentijd&quot;&gt;In de tussentijd&lt;/h2&gt;
 
@@ -29,7 +29,7 @@
 
 &lt;p&gt;Het goede nieuws is: vanaf nu valt het mee. Eigenlijk valt alles mee, als je eenmaal algorithmisch kan denken.&lt;/p&gt;
 
-&lt;p&gt;Neem &lt;a href=&quot;/hoofdstuk2/#functies&quot;&gt;functies&lt;/a&gt; nog eens door. Als je een functie &lt;code&gt;prime?&lt;/code&gt; hebt:&lt;/p&gt;
+&lt;p&gt;Neem &lt;a href=&#39;/hoofdstuk2/#functies&#39; target=&#39;_blank&#39;&gt;functies&lt;/a&gt; nog eens door. Als je een functie &lt;code&gt;prime?&lt;/code&gt; hebt:&lt;/p&gt;
 &lt;div class=&#39;highlight&#39;&gt;&lt;pre&gt;&lt;code class=&#39;ruby&#39;&gt;&lt;span class=&#39;k&#39;&gt;def&lt;/span&gt; &lt;span class=&#39;nf&#39;&gt;prime?&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;(&lt;/span&gt;&lt;span class=&#39;n&#39;&gt;getal&lt;/span&gt;&lt;span class=&#39;p&#39;&gt;)&lt;/span&gt;
     &lt;span class=&#39;k&#39;&gt;if&lt;/span&gt; &lt;span class=&#39;n&#39;&gt;getal&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;%&lt;/span&gt; &lt;span class=&#39;mi&#39;&gt;2&lt;/span&gt; &lt;span class=&#39;o&#39;&gt;==&lt;/span&gt; &lt;span class=&#39;mi&#39;&gt;0&lt;/span&gt;
         &lt;span class=&#39;k&#39;&gt;return&lt;/span&gt; &lt;span class=&#39;kp&#39;&gt;false&lt;/span&gt;

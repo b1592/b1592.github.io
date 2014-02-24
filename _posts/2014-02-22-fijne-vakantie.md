@@ -16,7 +16,7 @@ We geven toe dat de vorige les heel moeilijk was.
 
 Het goede nieuws is: vanaf nu valt het mee. Eigenlijk valt alles mee, als je eenmaal algorithmisch kan denken.
 
-Neem [functies](/hoofdstuk2/#functies) nog eens door. Als je een functie `prime?` hebt:
+Neem <a href="/hoofdstuk2/#functies" target="_blank">functies</a> nog eens door. Als je een functie `prime?` hebt:
 
 {% highlight ruby %}
 def prime?(getal)
