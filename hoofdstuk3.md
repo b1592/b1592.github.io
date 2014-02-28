@@ -20,6 +20,8 @@ In deze map vind je de volgende bestanden:
     encrypted_message.txt - het versleutelde bestand met shift 12
     secret.txt - voor de laatste opdracht
 
+[Download hier de bestanden](/public/downloads/Hoofdstuk3.zip)
+
 ## Informatie
 
 ### Arrays
