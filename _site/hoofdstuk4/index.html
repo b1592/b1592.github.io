@@ -66,9 +66,9 @@
         <div class="col-md-9">
           <h1 id="hoofdstuk_4_tic_tac_toe_en_mastermind">HOOFDSTUK 4: TIC TAC TOE EN MASTERMIND</h1>
 
-<p>In dit hoofdstuk ga je <a href="http://en.wikipedia.org/wiki/Tic-tac-toe">boter, kaas en eieren</a> of <a href="http://en.wikipedia.org/wiki/Mastermind_(board_game">mastermind</a>) aan de computer uitleggen.</p>
+<p>In dit hoofdstuk ga je <a href="http://en.wikipedia.org/wiki/Tic-tac-toe">boter, kaas en eieren</a> of <a href="http://nl.wikipedia.org/wiki/Mastermind">mastermind</a> aan de computer uitleggen.</p>
 
-<p>Beide spellen zijn een grote uitdaging, maar wij denken dat boter, kaas en eieren iets lastiger is dan mastermind. Je mag zelf weten welke je wilt doen.</p>
+<p>Beide spellen zijn een grote uitdaging, maar wij denken dat boter, kaas en eieren iets lastiger is dan mastermind. Je mag zelf weten welke je gaat maken.</p>
 
 <p>Lees eerst goed de informatie door, die is voor beide spellen belangrijk.</p>
 <p><iframe allowfullscreen='allowfullscreen' frameborder='0' height='315' src='//www.youtube.com/embed/F7qOV8xonfY' width='420'>  </iframe></p>
@@ -189,7 +189,7 @@ narrator.rb</code></pre>
 
 <p>Laat je niet overdonderen. Het kost de meeste mensen minstens een half jaar om aan <em>objectgeörienteerd</em> programmeren gewend te raken.</p>
 
-<h3 id="_en_"><code>require</code> en <code>require_relative</code></h3>
+<h3 id="_en_de_standard_library"><code>require</code> en de standard library</h3>
 
 <p>Je hoeft het wiel niet opnieuw uit te vinden. Voorbeeld: je wilt een datum omrekenen naar een weekdag. Daar heeft Ruby al iets op bedacht. Je “leent” het bestand <code>date</code> uit de <em>standard library</em>. Daar staan alle files die standaard bij de Ruby-taal geleverd worden. Dat gaat zo:</p>
 <div class='highlight'><pre><code class='ruby'><span class='nb'>require</span> <span class='s2'>&quot;date&quot;</span>
@@ -200,18 +200,22 @@ narrator.rb</code></pre>
 </code></pre></div>
 <p>Nu kun je alle code uit <code>date</code> aanroepen, zonder te weten wat er precies in dat bestand staat. Op de <a href="http://ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Date.html#method-i-wday">pagina van <code>date</code></a> staat wat je er mee kunt doen. In Ruby hoef je bijna geen basisfunctionaliteit zelf te schrijven. Kijk dus eerst in de <a href="http://ruby-doc.org/core-1.9.3/">documentatie</a>, zodat je geen onnodig werk doet.</p>
 
+<h3 id="eigen_bestanden_aanroepen">Eigen bestanden aanroepen</h3>
+
 <p>Grote programma’s worden vaak gesplitst in meerdere bestanden. Dit geeft overzicht. Als je code uit je eigen mappen wilt aanroepen, moet je <code>require_relative</code> gebruiken.</p>
 
-<p>In de map <code>Hoofdstuk4</code> staat <code>tictactoe.rb</code>. Dit bestand willen we uitvoeren om het spel te starten. Maar om het overzicht te bewaren, zetten we alle code van de klasse <code>Game</code> in <code>game.rb</code> en van klasse <code>Narrator</code> in <code>narrator.rb</code>. In <code>tictactoe.rb</code> zetten we vervolgens:</p>
+<p>In de map <code>Hoofdstuk4B</code> staat <code>tictactoe.rb</code>. Dit bestand willen we uitvoeren om het spel te starten. Maar om het overzicht te bewaren, zetten we alle code van de klasse <code>Game</code> in <code>game.rb</code> en van klasse <code>Narrator</code> in <code>narrator.rb</code>. In <code>tictactoe.rb</code> zetten we vervolgens:</p>
 <div class='highlight'><pre><code class='ruby'><span class='n'>require_relative</span> <span class='s2'>&quot;game&quot;</span>
 <span class='n'>require_relative</span> <span class='s2'>&quot;narrator&quot;</span>
 
 <span class='n'>game</span> <span class='o'>=</span> <span class='no'>Game</span><span class='o'>.</span><span class='n'>new</span>
 <span class='n'>narrator</span> <span class='o'>=</span> <span class='no'>Narrator</span><span class='o'>.</span><span class='n'>new</span>
 </code></pre></div>
-<p>Zoals je ziet, kun je <code>.rb</code> weglaten uit de bestandsnaam.</p>
+<p>Zoals je ziet, kun je <code>.rb</code> weglaten uit de bestandsnaam. De hulpcode van Mastermind is op dezelfde manier gescheiden.</p>
 
 <h3 id="2darray">2D-array</h3>
+
+<p>Deze informatie is nuttig als je boter, kaas en eieren gaat maken.</p>
 
 <p>Je hebt al kennis gemaakt met arrays. Nu gaan we een stapje verder: tweedimensionale arrays. Dit zijn arrays in arrays. Het spelbord is precies dat:</p>
 <div class='highlight'><pre><code class='ruby'><span class='o'>[[</span><span class='s2'>&quot;X&quot;</span><span class='p'>,</span> <span class='s2'>&quot;X&quot;</span><span class='p'>,</span> <span class='s2'>&quot;O&quot;</span><span class='o'>]</span><span class='p'>,</span> <span class='o'>[</span><span class='s2'>&quot;O&quot;</span><span class='p'>,</span> <span class='s2'>&quot;O&quot;</span><span class='p'>,</span> <span class='s2'>&quot;X&quot;</span><span class='o'>]</span><span class='p'>,</span> <span class='o'>[</span><span class='s2'>&quot; &quot;</span><span class='p'>,</span> <span class='s2'>&quot; &quot;</span><span class='p'>,</span> <span class='s2'>&quot;O&quot;</span><span class='o'>]]</span>
@@ -226,7 +230,7 @@ narrator.rb</code></pre>
 
 <p>Probeer zelf een paar van dit soort arrays te maken in <code>irb</code>, zodat je echt begrijpt hoe ze werken.</p>
 
-<h2 id="de_opdracht">De opdracht</h2>
+<h2 id="tic_tac_toe">Tic Tac Toe</h2>
 
 <h3 id="de_spelregels">De spelregels</h3>
 
@@ -257,13 +261,44 @@ narrator.rb</code></pre>
 </code></pre></div>
 <p>In <code>narrator.rb</code> kun je <code>intro</code> programmeren zoals je wilt. Misschien wil je de spelers begroeten, of de regels uitleggen. Het gaat erom dat het hoofdbestand <code>tictactoe.rb</code> overzichtelijk blijft: het scheelt enorm als je alleen een instructie hoeft te geven aan het <code>Narrator</code>-object. <code>narrator.intro</code> is een stuk duidelijker dan meerdere regels met <code>puts</code>- commando’s.</p>
 
-<h3 id="pen_en_papier">Pen en papier</h3>
-
-<p>Het is verleidelijk om meteen te gaan typen. Maar begin eens met pen en papier. Hoe verloopt een speelbeurt? Wanneer is het spel afgelopen? Schroom niet om functies toe te voegen aan <code>Game</code> of <code>Narrator</code>.</p>
-
 <h3 id="extra_tegen_de_computer">(Extra) Tegen de computer</h3>
 
 <p>De ultieme uitdaging van deze cursus. Maak een klasse <code>ComputerPlayer</code> en zorg dat je tegen de computer kunt spelen!</p>
+
+<h2 id="mastermind">Mastermind</h2>
+
+<h3 id="de_spelregels_2">De spelregels</h3>
+
+<p>Alle spellogica staat in de <code>Game</code>-klasse. Wat moeten we allemaal aan een spelobject kunnen vragen? Hoeveel keer de speler nog maar raden, wat de score van de laatste gok was, of het spel al voorbij is, enzovoorts. Stel je zoiets voor:</p>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># game.rb</span>
+
+<span class='c1'># De geheime code is 1234</span>
+<span class='n'>game</span> <span class='o'>=</span> <span class='no'>Game</span><span class='o'>.</span><span class='n'>new</span><span class='p'>(</span><span class='s2'>&quot;1234&quot;</span><span class='p'>)</span>
+<span class='n'>game</span><span class='o'>.</span><span class='n'>guesses_left</span> <span class='c1'># =&gt; 10</span>
+<span class='n'>game</span><span class='o'>.</span><span class='n'>guess</span><span class='p'>(</span><span class='s2'>&quot;1241&quot;</span><span class='p'>)</span>
+<span class='c1'># voor elk getal op de juiste plaats krijg je een plusje,</span>
+<span class='c1'># voor elk getal op de verkeerde plek een minnetje.   </span>
+<span class='n'>game</span><span class='o'>.</span><span class='n'>score</span> <span class='c1'># =&gt; ++-</span>
+<span class='n'>game</span><span class='o'>.</span><span class='n'>over?</span> <span class='c1'># =&gt; false</span>
+<span class='n'>game</span><span class='o'>.</span><span class='n'>guesses_left</span> <span class='c1'># =&gt; 9</span>
+</code></pre></div>
+<p>Dit is slechts een voorbeeld, het gaat erom dat je de spellogica “verstopt” in een object, zodat je de relevante informatie op een overzichtelijke manier kunt opvragen. De details laten we aan jullie over.</p>
+
+<p>In <code>mastermind.rb</code> hoef je je geen zorgen meer te maken over de spellogica. Een voorbeeldje:</p>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># mastermind.rb</span>
+
+<span class='n'>require_relative</span> <span class='s2'>&quot;game&quot;</span>
+
+<span class='n'>game</span> <span class='o'>=</span> <span class='no'>Game</span><span class='o'>.</span><span class='n'>new</span><span class='p'>(</span><span class='s2'>&quot;1234&quot;</span><span class='p'>)</span>
+<span class='nb'>puts</span> <span class='s2'>&quot;Welkom bij Mastermind, raad de code van vier cijfers.&quot;</span>
+
+<span class='k'>while</span> <span class='n'>game</span><span class='o'>.</span><span class='n'>over?</span> <span class='o'>==</span> <span class='kp'>false</span>
+    <span class='c1'># vraag speler om code en geef score</span>
+<span class='k'>end</span>
+</code></pre></div>
+<h2 id="pen_en_papier">Pen en papier</h2>
+
+<p>Het is verleidelijk om meteen te gaan typen. Maar begin eens met pen en papier. Hoe verloopt een speelbeurt? Wanneer is het spel afgelopen? Schroom niet om functies toe te voegen aan <code>Game</code> of (in het geval van Tic Tac Toe) <code>Narrator</code>.</p>
         </div>
 
         <div class="col-md-3">
