@@ -4,19 +4,28 @@ title: Hoofdstuk 4
 scrollspy: true
 ---
 
-#HOOFDSTUK 4: TIC TAC TOE
+#HOOFDSTUK 4: TIC TAC TOE EN MASTERMIND
 
-Wie kent het niet: boter, kaas en eieren? Het werd al rond 100 jaar voor Christus gespeeld door de Romeinen en nu nog steeds. We gaan in deze les het spel aan de computer uitleggen, zodat je het digitaal kunt spelen. In de extra opdracht kun je zelfs de computer tegen jou laten spelen.
+In dit hoofdstuk ga je [boter, kaas en eieren](http://en.wikipedia.org/wiki/Tic-tac-toe) of [mastermind](http://en.wikipedia.org/wiki/Mastermind_(board_game)) aan de computer uitleggen. 
+
+Beide spellen zijn een grote uitdaging, maar wij denken dat boter, kaas en eieren iets lastiger is dan mastermind. Je mag zelf weten welke je wilt doen.
+
+Lees eerst goed de informatie door, die is voor beide spellen belangrijk.
 
 <p><iframe width="420" height="315" src="//www.youtube.com/embed/F7qOV8xonfY"
   frameborder="0" allowfullscreen="allowfullscreen">  </iframe></p>
 
 ##Bestanden
 
-In deze map vind je de volgende bestanden:
+In de map `Hoofdstuk4A` vind je de volgende bestanden:
 
     Hoofdstuk4.url - deze beschrijving
-    readme.html
+    mastermind.rb
+    game.rb
+
+En in `Hoofdstuk4B`:
+
+    Hoofdstuk4.url
     tictactoe.rb
     game.rb
     narrator.rb
