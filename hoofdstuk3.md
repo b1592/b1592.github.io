@@ -132,11 +132,20 @@ In deze hash moet elke letter in het alfabet gekoppeld worden aan de letter waar
 {% highlight ruby %}
 
 {
-"a" => "d", "b" => "e", "c" => "f", "d" => "g", "e" => "h", "f" => "i",
-"g" => "j", "h" => "k", "i" => "l", "j" => "m", "k" => "n", "l" => "o",
-"m" => "p", "n" => "q", "o" => "r", "p" => "s", "q" => "t", "r" => "u",
-"s" => "v", "t" => "w", "u" => "x", "v" => "y", "w" => "z", "x" => " ",
-"y" => "a", "z" => "b", " " => "c"
+ "a" => "d", "b" => "e",
+ "c" => "f", "d" => "g",
+ "e" => "h", "f" => "i",
+ "g" => "j", "h" => "k",
+ "i" => "l", "j" => "m",
+ "k" => "n", "l" => "o",
+ "m" => "p", "n" => "q",
+ "o" => "r", "p" => "s",
+ "q" => "t", "r" => "u",
+ "s" => "v", "t" => "w",
+ "u" => "x", "v" => "y",
+ "w" => "z", "x" => " ",
+ "y" => "a", "z" => "b", 
+ " " => "c"
 }
 
 {% endhighlight %}
