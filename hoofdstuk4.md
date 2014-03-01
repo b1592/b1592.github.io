@@ -261,7 +261,7 @@ De ultieme uitdaging van deze cursus. Maak een klasse `ComputerPlayer` en zorg d
 ## Mastermind
 
 ### De spelregels
-Alle spellogica staat in de `Game`-klasse. Wat moeten we allemaal aan een spelobject kunnen vragen? Hoeveel keer de speler nog maar raden, wat de score van de laatste gok was, of het spel al voorbij is, enzovoorts. Stel je zoiets voor:
+Alle spellogica staat in de `Game`-klasse. Wat moeten we allemaal aan een spelobject kunnen vragen? Hoe vaak de speler nog mag raden, wat de score van de laatste gok was, of het spel al voorbij is, enzovoorts. Stel je zoiets voor:
 
 {% highlight ruby %}
 # game.rb
