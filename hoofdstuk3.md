@@ -12,15 +12,13 @@ Een van de oudste manieren zou door Julius Caesar zelf zijn gebruikt en is redel
 
 ##Bestanden
 
-In deze map vind je de volgende bestanden:
+[Download hier de bestanden:](/public/downloads/Hoofdstuk3.zip)
 
     Hoofstuk3.url - deze beschrijving
     cipher.rb - het script waar je in gaat werken
     cipher_test.rb - wat simpele tests
     encrypted_message.txt - het versleutelde bestand met shift 12
     secret.txt - voor de laatste opdracht
-
-[Download hier de bestanden](/public/downloads/Hoofdstuk3.zip)
 
 ## Informatie
 
