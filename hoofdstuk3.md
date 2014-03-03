@@ -91,6 +91,13 @@ hoofdsteden["Nederland"]    # => "Amsterdam"
 
 `"Nederland"` en `"Amsterdam"` worden samen een _key, value pair_ genoemd.
 
+Je kunt altijd waarden aan een hash toevoegen:
+
+{% highlight ruby %}
+hoofdsteden["Duitsland"] = "Berlijn"
+hoofdsteden["Duitsland"] # => "Berlijn"
+{% endhighlight %}
+
 ### File Input/Output
 Stel dat je `bericht.txt` wilt inlezen. Dat gaat als volgt:
 
