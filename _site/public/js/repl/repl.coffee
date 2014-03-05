@@ -85,11 +85,15 @@ jqconsole.RegisterMatching('(', ')', 'paran');
 jqconsole.RegisterMatching('[', ']', 'bracket');
 `
 
-output = (string) -> jqconsole.Write("> #{string}\n")
+output = (string) ->
+  jqconsole.Write("> #{string}\n")
+  return undefined
+
 result = output
 error = output
+engine = Ruby
 
-rubyHandler = new RubyHandler(output, result, error, Ruby)
+rubyHandler = new RubyHandler(output, result, error, engine)
 promptHandler = (input) ->
   rubyHandler.Eval(input)
   startPrompt()

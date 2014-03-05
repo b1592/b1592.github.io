@@ -6,14 +6,15 @@
   this.RubyHandler = (function() {
     function RubyHandler(output, result, error, engine, ready) {
       var bufferError, printOutput;
+      this.output = output;
       this.result = result;
       this.error = error;
       this.engine = engine;
-      this.error_buffer = [];
+      this.error_buffer = this.output_buffer = [];
       printOutput = (function(_this) {
         return function(chr) {
           if (chr != null) {
-            return output(String.fromCharCode(chr));
+            return _this.output_buffer.push(String.fromCharCode(chr));
           }
         };
       })(this);
@@ -29,9 +30,12 @@
 
     RubyHandler.prototype.Eval = function(command) {
       var e, result;
-      this.error_buffer = [];
+      this.error_buffer = this.output_buffer = [];
       try {
         result = this.engine["eval"](command);
+        if (this.output_buffer.length) {
+          this.output(this.output_buffer.join(""));
+        }
         return this.result(this.engine.stringify(result));
       } catch (_error) {
         e = _error;

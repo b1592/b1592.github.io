@@ -1,15 +1,18 @@
 class this.RubyHandler
-  constructor: (output, @result, @error, @engine, ready) ->
-    @error_buffer = []
-    printOutput = (chr) => if chr? then output String.fromCharCode chr
+  constructor: (@output, @result, @error, @engine, ready) ->
+    @error_buffer = @output_buffer = []
+    printOutput = (chr) =>
+      if chr? then @output_buffer.push( String.fromCharCode(chr) )
     bufferError = (chr) =>
       if chr? then @error_buffer.push String.fromCharCode chr
     @engine.initialize null, printOutput, bufferError
 
   Eval: (command) ->
-    @error_buffer = []
+    @error_buffer = @output_buffer = []
     try
       result = @engine.eval command
+      if @output_buffer.length
+        @output( @output_buffer.join("") )
       @result @engine.stringify result
     catch e
       if typeof e isnt 'number'

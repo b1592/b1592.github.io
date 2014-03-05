@@ -24,17 +24,20 @@ jqconsole.RegisterMatching('{', '}', 'brace');
 jqconsole.RegisterMatching('(', ')', 'paran');
 jqconsole.RegisterMatching('[', ']', 'bracket');
 ;
-  var error, output, promptHandler, result, rubyHandler, startPrompt;
+  var engine, error, output, promptHandler, result, rubyHandler, startPrompt;
 
   output = function(string) {
-    return jqconsole.Write("> " + string + "\n");
+    jqconsole.Write("> " + string + "\n");
+    return void 0;
   };
 
   result = output;
 
   error = output;
 
-  rubyHandler = new RubyHandler(output, result, error, Ruby);
+  engine = Ruby;
+
+  rubyHandler = new RubyHandler(output, result, error, engine);
 
   promptHandler = function(input) {
     rubyHandler.Eval(input);
