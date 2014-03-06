@@ -72,15 +72,13 @@
 
 <h2 id="bestanden">Bestanden</h2>
 
-<p>In deze map vind je de volgende bestanden:</p>
+<p><a href="/public/downloads/Hoofdstuk3.zip">Download hier de bestanden:</a></p>
 
 <pre><code>Hoofstuk3.url - deze beschrijving
 cipher.rb - het script waar je in gaat werken
 cipher_test.rb - wat simpele tests
 encrypted_message.txt - het versleutelde bestand met shift 12
 secret.txt - voor de laatste opdracht</code></pre>
-
-<p><a href="/public/downloads/Hoofdstuk3.zip">Download hier de bestanden</a></p>
 
 <h2 id="informatie">Informatie</h2>
 
@@ -135,6 +133,10 @@ secret.txt - voor de laatste opdracht</code></pre>
 </code></pre></div>
 <p><code>&quot;Nederland&quot;</code> en <code>&quot;Amsterdam&quot;</code> worden samen een <em>key, value pair</em> genoemd.</p>
 
+<p>Je kunt altijd waarden aan een hash toevoegen:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>hoofdsteden</span><span class='o'>[</span><span class='s2'>&quot;Duitsland&quot;</span><span class='o'>]</span> <span class='o'>=</span> <span class='s2'>&quot;Berlijn&quot;</span>
+<span class='n'>hoofdsteden</span><span class='o'>[</span><span class='s2'>&quot;Duitsland&quot;</span><span class='o'>]</span> <span class='c1'># =&gt; &quot;Berlijn&quot;</span>
+</code></pre></div>
 <h3 id="file_inputoutput">File Input/Output</h3>
 
 <p>Stel dat je <code>bericht.txt</code> wilt inlezen. Dat gaat als volgt:</p>
