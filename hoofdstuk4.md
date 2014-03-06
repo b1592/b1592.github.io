@@ -6,9 +6,9 @@ scrollspy: true
 
 #HOOFDSTUK 4: TIC TAC TOE EN MASTERMIND
 
-In dit hoofdstuk ga je [boter, kaas en eieren](http://en.wikipedia.org/wiki/Tic-tac-toe) of [mastermind](http://en.wikipedia.org/wiki/Mastermind_(board_game)) aan de computer uitleggen. 
+In dit hoofdstuk ga je [boter, kaas en eieren](http://en.wikipedia.org/wiki/Tic-tac-toe) of [mastermind](http://nl.wikipedia.org/wiki/Mastermind) aan de computer uitleggen. 
 
-Beide spellen zijn een grote uitdaging, maar wij denken dat boter, kaas en eieren iets lastiger is dan mastermind. Je mag zelf weten welke je wilt doen.
+Beide spellen zijn een grote uitdaging, maar wij denken dat boter, kaas en eieren iets lastiger is dan mastermind. Je mag zelf weten welke je gaat maken.
 
 Lees eerst goed de informatie door, die is voor beide spellen belangrijk.
 
@@ -168,7 +168,7 @@ getallen.max # => 5
 
 Laat je niet overdonderen. Het kost de meeste mensen minstens een half jaar om aan _objectgeörienteerd_ programmeren gewend te raken.
 
-### `require` en `require_relative`
+### `require` en de standard library
 Je hoeft het wiel niet opnieuw uit te vinden. Voorbeeld: je wilt een datum omrekenen naar een weekdag. Daar heeft Ruby al iets op bedacht. Je "leent" het bestand `date` uit de _standard library_. Daar staan alle files die standaard bij de Ruby-taal geleverd worden. Dat gaat zo:
 
 {% highlight ruby %}
@@ -181,9 +181,11 @@ date.tuesday? # => true
 
 Nu kun je alle code uit `date` aanroepen, zonder te weten wat er precies in dat bestand staat. Op de [pagina van `date`](http://ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Date.html#method-i-wday) staat wat je er mee kunt doen. In Ruby hoef je bijna geen basisfunctionaliteit zelf te schrijven. Kijk dus eerst in de [documentatie](http://ruby-doc.org/core-1.9.3/), zodat je geen onnodig werk doet.
 
+### Eigen bestanden aanroepen
+
 Grote programma's worden vaak gesplitst in meerdere bestanden. Dit geeft overzicht. Als je code uit je eigen mappen wilt aanroepen, moet je `require_relative` gebruiken.
 
-In de map `Hoofdstuk4` staat `tictactoe.rb`. Dit bestand willen we uitvoeren om het spel te starten. Maar om het overzicht te bewaren, zetten we alle code van de klasse `Game` in `game.rb` en van klasse `Narrator` in `narrator.rb`. In `tictactoe.rb` zetten we vervolgens:
+In de map `Hoofdstuk4B` staat `tictactoe.rb`. Dit bestand willen we uitvoeren om het spel te starten. Maar om het overzicht te bewaren, zetten we alle code van de klasse `Game` in `game.rb` en van klasse `Narrator` in `narrator.rb`. In `tictactoe.rb` zetten we vervolgens:
 
 {% highlight ruby %}
 require_relative "game"
@@ -193,9 +195,11 @@ game = Game.new
 narrator = Narrator.new
 {% endhighlight %}
 
-Zoals je ziet, kun je `.rb` weglaten uit de bestandsnaam.
+Zoals je ziet, kun je `.rb` weglaten uit de bestandsnaam. De hulpcode van Mastermind is op dezelfde manier gescheiden.
 
-###2D-array
+### 2D-array
+
+Deze informatie is nuttig als je boter, kaas en eieren gaat maken.
 
 Je hebt al kennis gemaakt met arrays. Nu gaan we een stapje verder: tweedimensionale arrays. Dit zijn arrays in arrays. Het spelbord is precies dat:
 
@@ -213,7 +217,7 @@ Je ziet dat er één grote array is met daarin drie kleine arrays. Deze kleine a
 
 Probeer zelf een paar van dit soort arrays te maken in `irb`, zodat je echt begrijpt hoe ze werken.
 
-## De opdracht
+## Tic Tac Toe
 ### De spelregels
 Jullie zullen vooral aan de `Game`-klasse werken. Deze klasse bevat alle spellogica. We moeten aan een `Game`-object kunnen vragen wie er aan de beurt is, of het spel al over is, hoe het huidige bord eruit ziet, enzovoort. Bovendien moeten we een zet kunnen doen.
 
@@ -251,9 +255,45 @@ narrator.intro
 
 In `narrator.rb` kun je `intro` programmeren zoals je wilt. Misschien wil je de spelers begroeten, of de regels uitleggen. Het gaat erom dat het hoofdbestand `tictactoe.rb` overzichtelijk blijft: het scheelt enorm als je alleen een instructie hoeft te geven aan het `Narrator`-object. `narrator.intro` is een stuk duidelijker dan meerdere regels met `puts`- commando's.
 
-### Pen en papier
-Het is verleidelijk om meteen te gaan typen. Maar begin eens met pen en papier. Hoe verloopt een speelbeurt? Wanneer is het spel afgelopen? Schroom niet om functies toe te voegen aan `Game` of `Narrator`.
-
 ### (Extra) Tegen de computer
 De ultieme uitdaging van deze cursus. Maak een klasse `ComputerPlayer` en zorg dat je tegen de computer kunt spelen!
+
+## Mastermind
+
+### De spelregels
+Alle spellogica staat in de `Game`-klasse. Wat moeten we allemaal aan een spelobject kunnen vragen? Hoe vaak de speler nog mag raden, wat de score van de laatste gok was, of het spel al voorbij is, enzovoorts. Stel je zoiets voor:
+
+{% highlight ruby %}
+# game.rb
+
+# De geheime code is 1234
+game = Game.new("1234")
+game.guesses_left # => 10
+game.guess("1241")
+# voor elk getal op de juiste plaats krijg je een plusje,
+# voor elk getal op de verkeerde plek een minnetje.   
+game.score # => ++-
+game.over? # => false
+game.guesses_left # => 9
+{% endhighlight %}
+
+Dit is slechts een voorbeeld, het gaat erom dat je de spellogica "verstopt" in een object, zodat je de relevante informatie op een overzichtelijke manier kunt opvragen. De details laten we aan jullie over.
+
+In `mastermind.rb` hoef je je geen zorgen meer te maken over de spellogica. Een voorbeeldje:
+
+{% highlight ruby %}
+# mastermind.rb
+
+require_relative "game"
+
+game = Game.new("1234")
+puts "Welkom bij Mastermind, raad de code van vier cijfers."
+
+while game.over? == false
+    # vraag speler om code en geef score
+end
+{% endhighlight %}
+
+## Pen en papier
+Het is verleidelijk om meteen te gaan typen. Maar begin eens met pen en papier. Hoe verloopt een speelbeurt? Wanneer is het spel afgelopen? Schroom niet om functies toe te voegen aan `Game` of (in het geval van Tic Tac Toe) `Narrator`.
 

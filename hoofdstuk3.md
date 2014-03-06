@@ -12,15 +12,13 @@ Een van de oudste manieren zou door Julius Caesar zelf zijn gebruikt en is redel
 
 ##Bestanden
 
-In deze map vind je de volgende bestanden:
+[Download hier de bestanden:](/public/downloads/Hoofdstuk3.zip)
 
     Hoofstuk3.url - deze beschrijving
     cipher.rb - het script waar je in gaat werken
     cipher_test.rb - wat simpele tests
     encrypted_message.txt - het versleutelde bestand met shift 12
     secret.txt - voor de laatste opdracht
-
-[Download hier de bestanden](/public/downloads/Hoofdstuk3.zip)
 
 ## Informatie
 
@@ -92,6 +90,13 @@ hoofdsteden["Nederland"]    # => "Amsterdam"
 {% endhighlight %}
 
 `"Nederland"` en `"Amsterdam"` worden samen een _key, value pair_ genoemd.
+
+Je kunt altijd waarden aan een hash toevoegen:
+
+{% highlight ruby %}
+hoofdsteden["Duitsland"] = "Berlijn"
+hoofdsteden["Duitsland"] # => "Berlijn"
+{% endhighlight %}
 
 ### File Input/Output
 Stel dat je `bericht.txt` wilt inlezen. Dat gaat als volgt:

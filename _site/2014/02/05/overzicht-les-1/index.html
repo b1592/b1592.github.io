@@ -139,7 +139,7 @@
 </code></pre></div>
 <p>Je bedoelde <code>correct = false</code>, maar je gebruikte <code>==</code>. Je vraagt Ruby de waarde van <code>correct</code> te checken, terwijl <code>correct</code> nog niet bestaat! Je krijgt nu:</p>
 
-<pre><code>test.rb:2:in `&lt;main&gt;': undefined local variable or method `correct'
+<pre><code>test.rb:2:in `&lt;main&gt;&#39;: undefined local variable or method `correct&#39;
 for main:Object (NameError)</code></pre>
 
 <p>Wat staat hier in godsnaam?</p>
@@ -147,7 +147,7 @@ for main:Object (NameError)</code></pre>
 <ul>
 <li><code>test.rb:2</code>: Ruby zegt dat het in regel 2 van bestand <code>test.rb</code> is fout is gegaan. Het is een goed idee om daar een kijkje te nemen!</li>
 
-<li><code>undefined local variable or method 'correct'</code>: Ruby zegt dat <code>correct</code> niet gedefinieerd is.</li>
+<li><code>undefined local variable or method &#39;correct&#39;</code>: Ruby zegt dat <code>correct</code> niet gedefinieerd is.</li>
 </ul>
 
 <p>Genoeg informatie om je fout snel te herstellen. Nog een voorbeeld:</p>
@@ -188,6 +188,15 @@ for main:Object (NameError)</code></pre>
 <!-- <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2014/03/06/overzicht-les-3/">
+            Overzicht les 3
+            <small>06 Mar 2014</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
