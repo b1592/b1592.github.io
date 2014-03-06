@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Overzicht les 3
+scrollspy: true
 ---
 
 Hier is wat informatie naar aanleiding van de vorige les. Probeer alles uit in `irb`.
