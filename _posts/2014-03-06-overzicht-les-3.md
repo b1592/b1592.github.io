@@ -46,7 +46,7 @@ versleuteling["a"]
 Hoe voeg je verbindingen toe? Zo:
 
 {% highlight ruby %}
-versleuteling["b"] = "d"
+versleuteling["b"] = "e"
 {% endhighlight %}
 
 ### De hash vullen
