@@ -61,7 +61,7 @@
 #   });
 
 `
-window.jqconsole = $('#console').jqconsole("Click to load interactive Ruby session.\n", '> ');
+window.jqconsole = $('#console').jqconsole("DO YOU WANT TO PLAY A GAME?\n", '> ');
 
 jqconsole.RegisterShortcut('Z', function() {
   jqconsole.AbortPrompt();
@@ -96,15 +96,15 @@ loadRest = ->
   jqconsole.Write("done.\n")
 
   output = (string) ->
-    jqconsole.Write("> #{string}", "repl-output")
+    jqconsole.Write("#{string}", "repl-output")
     return undefined
 
   error = (string) ->
-    jqconsole.Write("> #{string}", "repl-error")
+    jqconsole.Write("#{string}", "repl-error")
     return undefined
 
   result = (string) ->
-    jqconsole.Write("> #{string}\n", "repl-result")
+    jqconsole.Write(" => #{string}\n", "repl-result")
     return undefined
 
   engine = Ruby
