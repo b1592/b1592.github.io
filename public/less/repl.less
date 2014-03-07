@@ -1,3 +1,7 @@
+@repl-error-red: #CC3300;
+@repl-orange: #FF6600;
+@repl-green: #00AA88;
+
 #console {
   height: 310px;
   width: 600px;
@@ -11,30 +15,41 @@
     color: #fff;
     font-size: 16px;
   }
+
+  .repl-error {
+    color: @repl-error-red;
+  }
   
+  .repl-result {
+    color: @repl-green;
+  }
 }
+
+
+
+
 .jqconsole {
   padding: 10px;
   padding-bottom: 10px;
 }
 .jqconsole-cursor {
-  background-color: #999;
+  background-color: @inverse;
 }
 .jqconsole-blurred .jqconsole-cursor {
   background-color: #666;
 }
 .jqconsole-prompt {
-  color: #0d0;
+  color: @inverse;
 }
 .jqconsole-old-prompt {
-  color: #0b0;
+  color: darken(@inverse, 20%);
   font-weight: normal;
 }
 .jqconsole-input {
   color: #dd0;
 }
 .jqconsole-old-input {
-  color: #bb0;
+  color: darken(@inverse, 20%);
   font-weight: normal;
 }
 .brace {

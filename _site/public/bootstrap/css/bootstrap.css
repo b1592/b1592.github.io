@@ -5040,7 +5040,7 @@ footer p {
 }
 #console {
   height: 310px;
-  width: 750px;
+  width: 600px;
   position: relative;
   background: transparent;
   margin-left: 71px;
@@ -5050,28 +5050,34 @@ footer p {
   color: #fff;
   font-size: 16px;
 }
+#console .repl-error {
+  color: #cc3300;
+}
+#console .repl-result {
+  color: #00aa88;
+}
 .jqconsole {
   padding: 10px;
   padding-bottom: 10px;
 }
 .jqconsole-cursor {
-  background-color: #999;
+  background-color: #ffffff;
 }
 .jqconsole-blurred .jqconsole-cursor {
   background-color: #666;
 }
 .jqconsole-prompt {
-  color: #0d0;
+  color: #ffffff;
 }
 .jqconsole-old-prompt {
-  color: #0b0;
+  color: #cccccc;
   font-weight: normal;
 }
 .jqconsole-input {
   color: #dd0;
 }
 .jqconsole-old-input {
-  color: #bb0;
+  color: #cccccc;
   font-weight: normal;
 }
 .brace {

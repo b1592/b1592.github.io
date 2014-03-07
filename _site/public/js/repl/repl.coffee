@@ -61,7 +61,7 @@
 #   });
 
 `
-window.jqconsole = $('#console').jqconsole("Ruby 1.8.7\n", '> ');
+window.jqconsole = $('#console').jqconsole("Click to load interactive Ruby session.\n", '> ');
 
 jqconsole.RegisterShortcut('Z', function() {
   jqconsole.AbortPrompt();
@@ -85,22 +85,48 @@ jqconsole.RegisterMatching('(', ')', 'paran');
 jqconsole.RegisterMatching('[', ']', 'bracket');
 `
 
-output = (string) ->
-  jqconsole.Write("> #{string}\n")
-  return undefined
+that = this
+jqcons = ""
 
-result = output
-error = output
-engine = Ruby
 
-rubyHandler = new RubyHandler(output, result, error, engine)
-promptHandler = (input) ->
-  rubyHandler.Eval(input)
+loadRest = ->
+  console.log("Hallo vanuit de focus")
+  console.log(this)
+
+  jqconsole.Write("done.\n")
+
+  output = (string) ->
+    jqconsole.Write("> #{string}", "repl-output")
+    return undefined
+
+  error = (string) ->
+    jqconsole.Write("> #{string}", "repl-error")
+    return undefined
+
+  result = (string) ->
+    jqconsole.Write("> #{string}\n", "repl-result")
+    return undefined
+
+  engine = Ruby
+
+  console.log(engine)
+
+  rubyHandler = new RubyHandler(output, result, error, engine)
+  promptHandler = (input) ->
+    rubyHandler.Eval(input)
+    startPrompt()
+
+
+  startPrompt = ->
+    # Start prompt with history enabled
+    jqconsole.Prompt(true, promptHandler)
+
   startPrompt()
 
 
-startPrompt = ->
-  # Start prompt with history enabled
-  jqconsole.Prompt(true, promptHandler)
+$(".jqconsole").click(->
 
-startPrompt()
+  unless Ruby?
+    jqconsole.Write("Loading...")
+    jQuery.ajax({url: "/public/js/repl/ruby.closure.js", dataType: 'script', success: loadRest, cache: true})
+)
