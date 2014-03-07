@@ -90,8 +90,6 @@ jqcons = ""
 
 
 loadRest = ->
-  console.log("Hallo vanuit de focus")
-  console.log(this)
 
   jqconsole.Write("done.\n")
 
