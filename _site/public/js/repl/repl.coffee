@@ -85,13 +85,20 @@ jqconsole.RegisterMatching('(', ')', 'paran');
 jqconsole.RegisterMatching('[', ']', 'bracket');
 `
 
-that = this
-jqcons = ""
+# blinkCursor = ->
+#   $(".jqconsole-cursor").animate({opacity:0}, 800)
+#   $(".jqconsole-cursor").animate({opacity:1}, 800)
 
+blinkCursor = ->
+  cursor = $(".jqconsole-cursor")
+  if cursor.css("opacity") == "1"
+    cursor.css( {"opacity": 0} )
+  else  
+    cursor.css( {'opacity' : 1} )
 
-loadRest = ->
-  console.log("Hallo vanuit de focus")
-  console.log(this)
+setInterval(blinkCursor, 650);
+
+initializeRepl = ->
 
   jqconsole.Write("done.\n")
 
@@ -128,5 +135,5 @@ $(".jqconsole").click(->
 
   unless Ruby?
     jqconsole.Write("Loading...")
-    jQuery.ajax({url: "/public/js/repl/ruby.closure.js", dataType: 'script', success: loadRest, cache: true})
+    jQuery.ajax({url: "/public/js/repl/ruby.closure.js", dataType: 'script', success: initializeRepl, cache: true})
 )

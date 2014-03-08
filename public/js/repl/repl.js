@@ -24,16 +24,26 @@ jqconsole.RegisterMatching('{', '}', 'brace');
 jqconsole.RegisterMatching('(', ')', 'paran');
 jqconsole.RegisterMatching('[', ']', 'bracket');
 ;
-  var jqcons, loadRest, that;
+  var blinkCursor, initializeRepl;
 
-  that = this;
+  blinkCursor = function() {
+    var cursor;
+    cursor = $(".jqconsole-cursor");
+    if (cursor.css("opacity") === "1") {
+      return cursor.css({
+        "opacity": 0
+      });
+    } else {
+      return cursor.css({
+        'opacity': 1
+      });
+    }
+  };
 
-  jqcons = "";
+  setInterval(blinkCursor, 650);
 
-  loadRest = function() {
+  initializeRepl = function() {
     var engine, error, output, promptHandler, result, rubyHandler, startPrompt;
-    console.log("Hallo vanuit de focus");
-    console.log(this);
     jqconsole.Write("done.\n");
     output = function(string) {
       jqconsole.Write("" + string, "repl-output");
@@ -66,7 +76,7 @@ jqconsole.RegisterMatching('[', ']', 'bracket');
       return jQuery.ajax({
         url: "/public/js/repl/ruby.closure.js",
         dataType: 'script',
-        success: loadRest,
+        success: initializeRepl,
         cache: true
       });
     }
