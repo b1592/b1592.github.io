@@ -15,6 +15,7 @@ class this.RubyHandler
 
   Eval: (command) ->
     @error_buffer = @output_buffer = []
+
     try
       result = @engine.eval command
       if @output_buffer.length
@@ -27,6 +28,14 @@ class this.RubyHandler
         @error @error_buffer.join ''
       else
         @error 'Unknown error.\n'
+
+    if @lesson?
+      @lesson.currentQuestion().evaluate(command)
+      if @lesson.currentQuestion().isRightAnswer
+        @lesson.next()
+        @output_lesson (@lesson.currentQuestion().description) unless @lesson.isDone?
+      else
+        @output_lesson (@lesson.currentQuestion().error_message)
   
   RawEval: (command) -> @Eval(command)
 
