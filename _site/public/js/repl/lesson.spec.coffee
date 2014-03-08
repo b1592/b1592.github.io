@@ -10,11 +10,11 @@ describe "Lesson", ->
     lesson = new Lesson([question1, question2])
 
   it "starts with the first question", ->
-    expect( lesson.current_question() ).toEqual question1
+    expect( lesson.currentQuestion() ).toEqual question1
 
   it "knows which question it's at", ->
     lesson.next()
-    expect( lesson.current_question() ).toEqual question2
+    expect( lesson.currentQuestion() ).toEqual question2
 
   it "knows when it's done", ->
     expect( lesson.isDone() ).toEqual false
@@ -24,6 +24,6 @@ describe "Lesson", ->
   it "doesn't go past the final question", ->
     lesson.next()
     lesson.next()
-    expect( lesson.current_question() ).toEqual question2
+    expect( lesson.currentQuestion() ).toEqual question2
 
 

@@ -28,6 +28,9 @@
         };
       })(this);
       this.engine.initialize(null, bufferOutput, bufferError);
+      if (this.lesson != null) {
+        this.output_lesson(this.lesson.currentQuestion().description);
+      }
     }
 
     RubyHandler.prototype.Eval = function(command) {

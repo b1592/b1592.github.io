@@ -17,11 +17,11 @@
       return lesson = new Lesson([question1, question2]);
     });
     it("starts with the first question", function() {
-      return expect(lesson.current_question()).toEqual(question1);
+      return expect(lesson.currentQuestion()).toEqual(question1);
     });
     it("knows which question it's at", function() {
       lesson.next();
-      return expect(lesson.current_question()).toEqual(question2);
+      return expect(lesson.currentQuestion()).toEqual(question2);
     });
     it("knows when it's done", function() {
       expect(lesson.isDone()).toEqual(false);
@@ -31,7 +31,7 @@
     return it("doesn't go past the final question", function() {
       lesson.next();
       lesson.next();
-      return expect(lesson.current_question()).toEqual(question2);
+      return expect(lesson.currentQuestion()).toEqual(question2);
     });
   });
 

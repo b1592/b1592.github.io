@@ -2,7 +2,7 @@ class this.Lesson
   constructor: (@questions) ->
     @_index = 0
 
-  current_question: ->
+  currentQuestion: ->
     @questions[@_index]
 
   next: ->
