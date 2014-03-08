@@ -20,7 +20,7 @@ class this.RubyHandler
       else if @error_buffer.length
         @error @error_buffer.join ''
       else
-        @error 'Unknown error.'
+        @error 'Unknown error.\n'
   
   RawEval: (command) -> @Eval(command)
 
