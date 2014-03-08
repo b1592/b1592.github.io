@@ -11,6 +11,7 @@ class this.RubyHandler
     bufferError = (chr) =>
       if chr? then @error_buffer.push( String.fromCharCode (chr) )
     @engine.initialize null, bufferOutput, bufferError
+    @output_lesson(@lesson.currentQuestion().description) if @lesson?
 
   Eval: (command) ->
     @error_buffer = @output_buffer = []

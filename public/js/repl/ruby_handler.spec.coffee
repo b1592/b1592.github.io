@@ -2,7 +2,6 @@ Question = require "./question"
 Lesson = require "./lesson"
 RubyHandler = require "./ruby_handler"
 
-
 describe "RubyHandler", ->
 
   MOCK_STDOUT = mockEngine = mockOutput = rubyHandler = lesson = questionParams = question = outputHandlers = null 
@@ -16,8 +15,8 @@ describe "RubyHandler", ->
     MOCK_STDOUT = ""
     mockEngine =
       initialize: ->
-      eval: -> "bytecode"
-      stringify: -> "ruby output"
+      eval: (command) -> "bytecode"
+      stringify: (bytecode) -> "ruby output"
     mockOutput = (string) -> MOCK_STDOUT += string
     questionParams =
       description: "Typ eens x = 1."
