@@ -6,7 +6,7 @@
       this._index = 0;
     }
 
-    Lesson.prototype.current_question = function() {
+    Lesson.prototype.currentQuestion = function() {
       return this.questions[this._index];
     };
 

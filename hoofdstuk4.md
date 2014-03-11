@@ -17,6 +17,8 @@ Lees eerst goed de informatie door, die is voor beide spellen belangrijk.
 
 ##Bestanden
 
+[Download hier de bestanden:](/public/downloads/Hoofdstuk4.zip)
+
 In de map `Hoofdstuk4A` vind je de volgende bestanden:
 
     Hoofdstuk4.url - deze beschrijving

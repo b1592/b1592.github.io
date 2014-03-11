@@ -12,12 +12,12 @@ describe "RubyHandler", ->
     # We mock them here to simplify the testing of the ruby_handler class.
     # The mock output function appends its argument to MOCK_STDOUT (a string),
     # which is checked for correct output.
-    MOCK_STDOUT = ""
+    MOCK_STDOUT = []
     mockEngine =
       initialize: ->
       eval: (command) -> "bytecode"
       stringify: (bytecode) -> "ruby output"
-    mockOutput = (string) -> MOCK_STDOUT += string
+    mockOutput = (string) -> MOCK_STDOUT.push(string)
     questionParams =
       description: "Typ eens x = 1."
       answer: /x\s*=\s*1/
@@ -37,4 +37,9 @@ describe "RubyHandler", ->
     rubyHandler = new RubyHandler(outputHandlers, mockEngine, lesson)
 
   it "outputs the lesson description immediately", ->
-    expect(MOCK_STDOUT).toEqual "Typ eens x = 1."
+    expect(MOCK_STDOUT.join(" ")).toEqual "Typ eens x = 1."
+
+  it "outputs both the ruby command and error response if wrong answer", ->
+    MOCK_STDOUT = []
+    rubyHandler.Eval("hallo")
+    expect(MOCK_STDOUT.join(" ")).toEqual "ruby output Dat is niet goed. Typte je x = 1?"
