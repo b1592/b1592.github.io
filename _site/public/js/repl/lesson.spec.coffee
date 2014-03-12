@@ -1,4 +1,4 @@
-Lesson = require "./lesson"
+Lesson = require "./lesson.coffee"
 
 describe "Lesson", ->
   lesson = question1 = question2 = null
@@ -17,9 +17,11 @@ describe "Lesson", ->
     expect( lesson.currentQuestion() ).toEqual question2
 
   it "knows when it's done", ->
-    expect( lesson.isDone() ).toEqual false
+    expect( lesson.isDone ).toEqual false
     lesson.next()
-    expect( lesson.isDone() ).toEqual true
+    expect( lesson.isDone ).toEqual false
+    lesson.next()
+    expect( lesson.isDone ).toEqual true
 
   it "doesn't go past the final question", ->
     lesson.next()

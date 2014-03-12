@@ -1,14 +1,14 @@
 class this.Lesson
   constructor: (@questions) ->
     @_index = 0
+    @isDone = false
 
   currentQuestion: ->
     @questions[@_index]
 
   next: ->
-    @_index += 1 unless @isDone()
+    @isDone = true if @questions.length == @_index + 1
+    @_index += 1 unless @isDone
 
-  isDone: ->
-    @questions.length == @_index + 1
 
 module.exports = this.Lesson

@@ -1,6 +1,6 @@
-Question = require "./question"
-Lesson = require "./lesson"
-RubyHandler = require "./ruby_handler"
+Question = require "./question.coffee"
+Lesson = require "./lesson.coffee"
+RubyHandler = require "./ruby_handler.coffee"
 
 describe "RubyHandler", ->
 
@@ -12,12 +12,12 @@ describe "RubyHandler", ->
     # We mock them here to simplify the testing of the ruby_handler class.
     # The mock output function appends its argument to MOCK_STDOUT (a string),
     # which is checked for correct output.
-    MOCK_STDOUT = ""
+    MOCK_STDOUT = []
     mockEngine =
       initialize: ->
       eval: (command) -> "bytecode"
       stringify: (bytecode) -> "ruby output"
-    mockOutput = (string) -> MOCK_STDOUT += string
+    mockOutput = (string) -> MOCK_STDOUT.push(string)
     questionParams =
       description: "Typ eens x = 1."
       answer: /x\s*=\s*1/
@@ -27,7 +27,7 @@ describe "RubyHandler", ->
         wrong_value: "Je hebt de verkeerde waarde toegewezen."
         default: "Dat is niet goed. Typte je x = 1?"
     question = new Question(questionParams)
-    lesson = new Lesson([question])
+    lesson = new Lesson([question, question])
     # Use mock output for result, output, error and lesson output handling
     outputHandlers = 
       output: mockOutput
@@ -37,4 +37,22 @@ describe "RubyHandler", ->
     rubyHandler = new RubyHandler(outputHandlers, mockEngine, lesson)
 
   it "outputs the lesson description immediately", ->
-    expect(MOCK_STDOUT).toEqual "Typ eens x = 1."
+    expect(MOCK_STDOUT.join(" ")).toEqual "Typ eens x = 1."
+
+  it "outputs both the ruby command and error response if wrong answer", ->
+    MOCK_STDOUT = []
+    rubyHandler.Eval("hallo")
+    expect(MOCK_STDOUT.join(" ")).toEqual "ruby output Dat is niet goed. Typte je x = 1?"
+
+  it "outputs the ruby command and description of the next question if right answer", ->
+    MOCK_STDOUT = []
+    rubyHandler.Eval("x = 1")
+    expect(MOCK_STDOUT.join(" ")).toEqual "ruby output Typ eens x = 1."
+
+  it "only outputs ruby output after the lesson is done", ->
+    rubyHandler.Eval("x = 1")
+    rubyHandler.Eval("x = 1")
+    MOCK_STDOUT = []
+    rubyHandler.Eval("x = 1")
+    rubyHandler.Eval("hallo")
+    expect(MOCK_STDOUT.join(" ")).toEqual "ruby output ruby output"

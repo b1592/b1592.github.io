@@ -33,9 +33,9 @@ class this.RubyHandler
       @lesson.currentQuestion().evaluate(command)
       if @lesson.currentQuestion().isRightAnswer
         @lesson.next()
-        @output_lesson (@lesson.currentQuestion().description) unless @lesson.isDone?
+        @output_lesson (@lesson.currentQuestion().description) unless @lesson.isDone
       else
-        @output_lesson (@lesson.currentQuestion().error_message)
+        @output_lesson (@lesson.currentQuestion().error_message) unless @lesson.isDone
   
   RawEval: (command) -> @Eval(command)
 

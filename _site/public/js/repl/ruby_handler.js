@@ -28,6 +28,9 @@
         };
       })(this);
       this.engine.initialize(null, bufferOutput, bufferError);
+      if (this.lesson != null) {
+        this.output_lesson(this.lesson.currentQuestion().description);
+      }
     }
 
     RubyHandler.prototype.Eval = function(command) {
@@ -38,15 +41,26 @@
         if (this.output_buffer.length) {
           this.output(this.output_buffer.join(""));
         }
-        return this.result(this.engine.stringify(result));
+        this.result(this.engine.stringify(result));
       } catch (_error) {
         e = _error;
         if (typeof e !== 'number') {
-          return this.error('Internal error: ' + e);
+          this.error('Internal error: ' + e);
         } else if (this.error_buffer.length) {
-          return this.error(this.error_buffer.join(''));
+          this.error(this.error_buffer.join(''));
         } else {
-          return this.error('Unknown error.\n');
+          this.error('Unknown error.\n');
+        }
+      }
+      if (this.lesson != null) {
+        this.lesson.currentQuestion().evaluate(command);
+        if (this.lesson.currentQuestion().isRightAnswer) {
+          this.lesson.next();
+          if (this.lesson.isDone == null) {
+            return this.output_lesson((this.lesson.currentQuestion().description));
+          }
+        } else {
+          return this.output_lesson((this.lesson.currentQuestion().error_message));
         }
       }
     };
