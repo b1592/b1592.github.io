@@ -52,18 +52,34 @@ initializeRepl = ->
     jqconsole.Write(" => #{string}\n", "repl-result")
     return undefined
 
+  outputLesson = (string) ->
+    jqconsole.Write("#{string}\n", "repl-lesson")
+    return undefined
+
   outputHandlers =
     output: output
     error: error
     result: result
+    lesson: outputLesson
 
   engine = Ruby
 
-  rubyHandler = new RubyHandler(outputHandlers, engine)
+  questionParams =
+      description: "Typ eens x = 1."
+      answer: /x\s*=\s*1/
+      possible_errors:
+        wrong_value: /x\s*=\s*\d/
+      error_messages:
+        wrong_value: "Je hebt de verkeerde waarde toegewezen."
+        default: "Dat is niet goed. Typte je x = 1?"
+
+  question = new Question(questionParams)
+  lesson = new Lesson([question, question])
+
+  rubyHandler = new RubyHandler(outputHandlers, engine, lesson)
   promptHandler = (input) ->
     rubyHandler.Eval(input)
     startPrompt()
-
 
   startPrompt = ->
     # Start prompt with history enabled

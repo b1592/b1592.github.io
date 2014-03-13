@@ -43,7 +43,7 @@ jqconsole.RegisterMatching('[', ']', 'bracket');
   setInterval(blinkCursor, 650);
 
   initializeRepl = function() {
-    var engine, error, output, outputHandlers, promptHandler, result, rubyHandler, startPrompt;
+    var engine, error, lesson, output, outputHandlers, outputLesson, promptHandler, question, questionParams, result, rubyHandler, startPrompt;
     jqconsole.Write("done.\n");
     output = function(string) {
       jqconsole.Write("" + string, "repl-output");
@@ -57,13 +57,31 @@ jqconsole.RegisterMatching('[', ']', 'bracket');
       jqconsole.Write(" => " + string + "\n", "repl-result");
       return void 0;
     };
+    outputLesson = function(string) {
+      jqconsole.Write("" + string + "\n", "repl-lesson");
+      return void 0;
+    };
     outputHandlers = {
       output: output,
       error: error,
-      result: result
+      result: result,
+      lesson: outputLesson
     };
     engine = Ruby;
-    rubyHandler = new RubyHandler(outputHandlers, engine);
+    questionParams = {
+      description: "Typ eens x = 1.",
+      answer: /x\s*=\s*1/,
+      possible_errors: {
+        wrong_value: /x\s*=\s*\d/
+      },
+      error_messages: {
+        wrong_value: "Je hebt de verkeerde waarde toegewezen.",
+        "default": "Dat is niet goed. Typte je x = 1?"
+      }
+    };
+    question = new Question(questionParams);
+    lesson = new Lesson([question, question]);
+    rubyHandler = new RubyHandler(outputHandlers, engine, lesson);
     promptHandler = function(input) {
       rubyHandler.Eval(input);
       return startPrompt();

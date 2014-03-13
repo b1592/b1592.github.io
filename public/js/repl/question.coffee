@@ -15,5 +15,3 @@ class this.Question
       if pattern.test(command)
         @error_message = @_error_messages[error]
     @error_message = @_error_messages["default"] unless @error_message
-
-module.exports = this.Question

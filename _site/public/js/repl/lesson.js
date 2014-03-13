@@ -4,6 +4,7 @@
     function Lesson(questions) {
       this.questions = questions;
       this._index = 0;
+      this.isDone = false;
     }
 
     Lesson.prototype.currentQuestion = function() {
@@ -11,19 +12,16 @@
     };
 
     Lesson.prototype.next = function() {
-      if (!this.isDone()) {
+      if (this.questions.length === this._index + 1) {
+        this.isDone = true;
+      }
+      if (!this.isDone) {
         return this._index += 1;
       }
-    };
-
-    Lesson.prototype.isDone = function() {
-      return this.questions.length === this._index + 1;
     };
 
     return Lesson;
 
   })();
-
-  module.exports = this.Lesson;
 
 }).call(this);

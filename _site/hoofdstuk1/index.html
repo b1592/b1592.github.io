@@ -151,6 +151,34 @@ hallo.rb - het script waar je in gaat werken</code></pre>
 <h3 id="extra_oeps_foutje">(Extra) Oeps, foutje!</h3>
 
 <p>Wat doet je programma als je per ongeluk <code>jongne</code> in plaats van <code>jongen</code> intypt? Probeer dit soort fouten op een mooie manier op te lossen. (Is het irritant om alles opnieuw in te vullen als je één typfout maakt? Antwoord: ja.)</p>
+<script id='lesson' type='application/json'>
+    [
+        {
+            "description": "Typ eens x = 1",
+            "answer": "/x\s*=\s*1/",
+            "possible_errors": {
+                "wrong_value": "/x\s*=\s*\d/"
+            },
+            "error_messages": {
+                "wrong_value": "Je hebt de verkeerde waarde toegewezen.",
+                "default": "Dat is niet goed. Typte je x = 1?"
+            }
+        },
+        {
+            "description": "Typ eens x = 1",
+            "answer": "/x\s*=\s*1/",
+            "possible_errors": {
+                "wrong_value": "/x\s*=\s*\d/"
+            },
+            "error_messages": {
+                "wrong_value": "Je hebt de verkeerde waarde toegewezen.",
+                "default": "Dat is niet goed. Typte je x = 1?"
+            }
+        }
+    ]
+
+</script>
+<p>questionParams = description: “Typ eens x = 1.” answer: /x\s<em>=\s</em>1/ possible_errors: wrong_value: /x\s<em>=\s</em>\d/ error_messages: wrong_value: “Je hebt de verkeerde waarde toegewezen.” default: “Dat is niet goed. Typte je x = 1?”</p>
         </div>
 
         <div class="col-md-3">
@@ -202,10 +230,10 @@ hallo.rb - het script waar je in gaat werken</code></pre>
     
     <script src="/public/js/custom.js"></script>
 
-    <!-- Repl scripts -->
     <script src="/public/js/repl/jqconsole.js"></script>
-    <!-- <script src="/public/js/repl/ruby.closure.js"></script> -->
-    <script src="/public/js/repl/ruby_handler.js"></script>
-    <script src="/public/js/repl/repl.js"></script>
+<script src="/public/js/repl/question.js"></script>
+<script src="/public/js/repl/lesson.js"></script>
+<script src="/public/js/repl/ruby_handler.js"></script>
+<script src="/public/js/repl/repl.js"></script>
   </body>
 </html>

@@ -1,6 +1,7 @@
 @repl-error-red: #CC3300;
 @repl-orange: #FF6600;
-@repl-green: #00AA88;
+@repl-green: #336600;
+@repl-blue: #006699;
 
 #console {
   height: 310px;
@@ -17,16 +18,17 @@
   }
 
   .repl-error {
-    color: @repl-error-red;
+    color: lighten(@repl-error-red, 15%);
   }
   
   .repl-result {
-    color: @repl-green;
+    color: lighten(@repl-green, 25%);
+  }
+
+  .repl-lesson {
+    color: lighten(@repl-blue, 25%)
   }
 }
-
-
-
 
 .jqconsole {
   padding: 10px;

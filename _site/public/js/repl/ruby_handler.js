@@ -56,11 +56,13 @@
         this.lesson.currentQuestion().evaluate(command);
         if (this.lesson.currentQuestion().isRightAnswer) {
           this.lesson.next();
-          if (this.lesson.isDone == null) {
+          if (!this.lesson.isDone) {
             return this.output_lesson((this.lesson.currentQuestion().description));
           }
         } else {
-          return this.output_lesson((this.lesson.currentQuestion().error_message));
+          if (!this.lesson.isDone) {
+            return this.output_lesson((this.lesson.currentQuestion().error_message));
+          }
         }
       }
     };
@@ -131,7 +133,5 @@
   BLOCK_OPENERS = ["begin", "module", "def", "class", "if", "unless", "case", "for", "while", "until", "do"];
 
   TOKENS = /\s+|\d+(?:\.\d*)?|"(?:[^"]|\\.)*"|'(?:[^']|\\.)*'|\/(?:[^\/]|\\.)*\/|[-+\/*]|[<>=]=?|:?[a-z@$][\w?!]*|[{}()\[\]]|[^\w\s]+/ig;
-
-  module.exports = this.RubyHandler;
 
 }).call(this);

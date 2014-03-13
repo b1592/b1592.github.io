@@ -9,6 +9,4 @@ class this.Lesson
   next: ->
     @isDone = true if @questions.length == @_index + 1
     @_index += 1 unless @isDone
-
-
-module.exports = this.Lesson
+    

@@ -114,3 +114,40 @@ Je weet nu alles wat je nodig hebt om zelf aan de slag te gaan. Je eerste script
 
 ### (Extra) Oeps, foutje!
 Wat doet je programma als je per ongeluk `jongne` in plaats van `jongen` intypt? Probeer dit soort fouten op een mooie manier op te lossen. (Is het irritant om alles opnieuw in te vullen als je één typfout maakt? Antwoord: ja.)
+
+<script type="application/json" id="lesson">
+    [
+        {
+            "description": "Typ eens x = 1",
+            "answer": "/x\s*=\s*1/",
+            "possible_errors": {
+                "wrong_value": "/x\s*=\s*\d/"
+            },
+            "error_messages": {
+                "wrong_value": "Je hebt de verkeerde waarde toegewezen.",
+                "default": "Dat is niet goed. Typte je x = 1?"
+            }
+        },
+        {
+            "description": "Typ eens x = 1",
+            "answer": "/x\s*=\s*1/",
+            "possible_errors": {
+                "wrong_value": "/x\s*=\s*\d/"
+            },
+            "error_messages": {
+                "wrong_value": "Je hebt de verkeerde waarde toegewezen.",
+                "default": "Dat is niet goed. Typte je x = 1?"
+            }
+        }
+    ]
+
+</script>
+
+  questionParams =
+      description: "Typ eens x = 1."
+      answer: /x\s*=\s*1/
+      possible_errors:
+        wrong_value: /x\s*=\s*\d/
+      error_messages:
+        wrong_value: "Je hebt de verkeerde waarde toegewezen."
+        default: "Dat is niet goed. Typte je x = 1?"

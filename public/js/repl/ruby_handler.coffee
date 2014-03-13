@@ -108,5 +108,3 @@ TOKENS = ///
  |[{}()\[\]]
  |[^\w\s]+
 ///ig
-
-module.exports = this.RubyHandler

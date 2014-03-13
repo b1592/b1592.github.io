@@ -34,6 +34,4 @@
 
   })();
 
-  module.exports = this.Question;
-
 }).call(this);

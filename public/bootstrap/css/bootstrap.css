@@ -5051,10 +5051,13 @@ footer p {
   font-size: 16px;
 }
 #console .repl-error {
-  color: #cc3300;
+  color: #ff531a;
 }
 #console .repl-result {
-  color: #00aa88;
+  color: #73e600;
+}
+#console .repl-lesson {
+  color: #1ab3ff;
 }
 .jqconsole {
   padding: 10px;
