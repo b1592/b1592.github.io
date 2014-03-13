@@ -64,19 +64,8 @@ initializeRepl = ->
 
   engine = Ruby
 
-  questionParams =
-      description: "Typ eens x = 1."
-      answer: /x\s*=\s*1/
-      possible_errors:
-        wrong_value: /x\s*=\s*\d/
-      error_messages:
-        wrong_value: "Je hebt de verkeerde waarde toegewezen."
-        default: "Dat is niet goed. Typte je x = 1?"
+  rubyHandler = new RubyHandler(outputHandlers, engine, window.lesson)
 
-  question = new Question(questionParams)
-  lesson = new Lesson([question, question])
-
-  rubyHandler = new RubyHandler(outputHandlers, engine, lesson)
   promptHandler = (input) ->
     rubyHandler.Eval(input)
     startPrompt()
