@@ -17,16 +17,16 @@ Lees eerst goed de informatie door, die is voor beide spellen belangrijk.
 
 ##Bestanden
 
-[Download hier de tictactoe bestanden:](/public/downloads/Hoofdstuk4.zip)
-[Download hier de mastermind bestanden:](/public/downloads/Mastermind.zip)
+[Download hier de tictactoe bestanden](/public/downloads/Hoofdstuk4.zip)
 
-In de map `Hoofdstuk4A` vind je de volgende bestanden:
+In de map `Hoofdstuk4` vind je de volgende bestanden:
 
     Hoofdstuk4.url - deze beschrijving
     mastermind.rb
     game.rb
 
-En in `Hoofdstuk4B`:
+[Download hier de mastermind bestanden](/public/downloads/Mastermind.zip)
+En in `Mastermind`:
 
     Hoofdstuk4.url
     tictactoe.rb
