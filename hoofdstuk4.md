@@ -17,7 +17,8 @@ Lees eerst goed de informatie door, die is voor beide spellen belangrijk.
 
 ##Bestanden
 
-[Download hier de bestanden:](/public/downloads/Hoofdstuk4.zip)
+[Download hier de tictactoe bestanden:](/public/downloads/Hoofdstuk4.zip)
+[Download hier de mastermind bestanden:](/public/downloads/Mastermind.zip)
 
 In de map `Hoofdstuk4A` vind je de volgende bestanden:
 
