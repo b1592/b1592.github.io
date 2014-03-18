@@ -25,7 +25,8 @@ In de map `Hoofdstuk4` vind je de volgende bestanden:
     mastermind.rb
     game.rb
 
-[Download hier de mastermind bestanden](/public/downloads/Mastermind.zip)
+[Download hier de mastermind bestanden](/public/downloads/Mastermind.zip)  
+
 En in `Mastermind`:
 
     Hoofdstuk4.url
