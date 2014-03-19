@@ -75,11 +75,15 @@
 
 <p>Het duurt even voordat je gewend raakt aan het programmeren met objecten, maar het is zeker de moeite waard en belangrijk om te leren. Zoals jullie hebben gezien maak je eerst een <code>class</code> aan, wat de blauwdruk is voor een object. Bijvoorbeeld:</p>
 <div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>Boek</span>
-    <span class='kp'>attr_accessor</span> <span class='ss'>:content</span><span class='p'>,</span> <span class='ss'>:title</span><span class='p'>,</span> <span class='ss'>:author</span>
-    <span class='k'>def</span> <span class='nf'>initialize</span><span class='p'>(</span><span class='n'>content</span><span class='p'>,</span> <span class='n'>title</span><span class='p'>,</span> <span class='n'>author</span><span class='p'>)</span>
-        <span class='vi'>@content</span> <span class='o'>=</span> <span class='n'>content</span>
+    <span class='kp'>attr_accessor</span> <span class='ss'>:title</span><span class='p'>,</span> <span class='ss'>:author</span><span class='p'>,</span> <span class='ss'>:content</span>
+    <span class='k'>def</span> <span class='nf'>initialize</span><span class='p'>(</span><span class='n'>title</span><span class='p'>,</span> <span class='n'>author</span><span class='p'>,</span> <span class='n'>content</span><span class='p'>)</span>
         <span class='vi'>@title</span> <span class='o'>=</span> <span class='n'>title</span>
         <span class='vi'>@author</span> <span class='o'>=</span> <span class='n'>author</span>
+        <span class='vi'>@content</span> <span class='o'>=</span> <span class='n'>content</span>
+    <span class='k'>end</span>
+
+    <span class='k'>def</span> <span class='nf'>words</span>
+        <span class='vi'>@content</span><span class='o'>.</span><span class='n'>split</span>
     <span class='k'>end</span>
 <span class='k'>end</span>
 </code></pre></div>
@@ -90,10 +94,37 @@
 
 <li>vergeet niet de <code>@</code> voor elke variabele</li>
 
-<li>met <code>attr_accessor :variabele1</code> zorg je dat je @variabele1 van buitenaf kunt aanroepen</li>
+<li>met <code>attr_accessor :variabele1</code> zorg je dat je <code>@variabele1</code> van buitenaf kunt aanroepen</li>
 
-<li></li>
+<li>de functie die <code>initialize</code> heet wordt automatisch uitgevoerd zodra je een object maakt</li>
+
+<li>alle functies schrijf je net als normaal met <code>def functienaam</code></li>
 </ul>
+
+<p>Nadat je een <code>class</code> hebt gedefinieerd, kun je een object maken. Dit doe je zo:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>boek</span> <span class='o'>=</span> <span class='no'>Boek</span><span class='o'>.</span><span class='n'>new</span><span class='p'>(</span><span class='s2'>&quot;Lord of the Rings&quot;</span><span class='p'>,</span> <span class='s2'>&quot;J. R. R. Tolkien&quot;</span><span class='p'>,</span> <span class='s2'>&quot;Three Rings for the Elven-kings ...&quot;</span><span class='p'>)</span>
+</code></pre></div>
+<p>De waarden die je meegeeft aan <code>Boek.new()</code> komen terecht bij de <code>initialize</code> functie. Let dus goed op dat je deze in dezelfde volgorde zet.</p>
+
+<p>Hierna kun je bij de variabelen en functies van het object:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>boek</span><span class='o'>.</span><span class='n'>author</span> <span class='c1'># =&gt; &quot;J. R. R. Tolkien&quot;</span>
+<span class='n'>boek</span><span class='o'>.</span><span class='n'>words</span> <span class='c1'># =&gt; [&quot;Three&quot;, &quot;Rings&quot;, &quot;for&quot;, &quot;the&quot;, &quot;Elven-kings&quot;, &quot;...&quot;]</span>
+<span class='n'>boek</span><span class='o'>.</span><span class='n'>title</span> <span class='o'>=</span> <span class='s2'>&quot;The Lord of the Rings&quot;</span> <span class='c1'># =&gt; &quot;The Lord of the Rings&quot;</span>
+<span class='n'>boek</span><span class='o'>.</span><span class='n'>title</span> <span class='c1'># =&gt; &quot;The Lord of the Rings&quot;</span>
+</code></pre></div>
+<p>Zoals je ziet in de laatste twee regels kun je variabelen van object ook aanpassen, net zoals andere variabelen.</p>
+
+<h2 id="2d_arrays">2D arrays</h2>
+
+<p>Voor een spelbord als in tic tac toe kan een 2D array goed van pas komen. Dit is een lijst die eigenlijk hetzelfde werkt als een gewone (1D) lijst.</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>bord</span> <span class='o'>=</span> <span class='o'>[[</span><span class='mi'>1</span><span class='p'>,</span><span class='mi'>2</span><span class='p'>,</span><span class='mi'>3</span><span class='o'>]</span><span class='p'>,</span> <span class='o'>[</span><span class='mi'>4</span><span class='p'>,</span><span class='mi'>5</span><span class='p'>,</span><span class='mi'>6</span><span class='o'>]</span><span class='p'>,</span> <span class='o'>[</span><span class='mi'>7</span><span class='p'>,</span><span class='mi'>8</span><span class='p'>,</span><span class='mi'>9</span><span class='o'>]]</span>
+</code></pre></div>
+<p>Als je hier goed naar kijkt, zie je dat het een lijst is met drie (!) elementen, die zelf ook lijsten zijn. Daarom krijg je dit:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>bord</span><span class='o'>[</span><span class='mi'>0</span><span class='o'>]</span> <span class='c1'># =&gt; [1,2,3]</span>
+</code></pre></div>
+<p>Als je nu een vakje op het bord wilt vinden, zoek je eerst een van deze drie elementen (rijen) en dan daarin een element (kolommen).</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>bord</span><span class='o'>[</span><span class='mi'>0</span><span class='o'>][</span><span class='mi'>1</span><span class='o'>]</span> <span class='c1'># =&gt; 2</span>
+</code></pre></div>
 </div>
 
 <!-- <div class="related">
