@@ -24,7 +24,7 @@ jqconsole.RegisterMatching('{', '}', 'brace');
 jqconsole.RegisterMatching('(', ')', 'paran');
 jqconsole.RegisterMatching('[', ']', 'bracket');
 ;
-  var blinkCursor, initializeRepl;
+  var blinkCursor, initializeRepl, inputCallback, resultCallback;
 
   blinkCursor = function() {
     var cursor;
@@ -42,33 +42,45 @@ jqconsole.RegisterMatching('[', ']', 'bracket');
 
   setInterval(blinkCursor, 650);
 
+  inputCallback = function(callback) {
+    window.jqconsole.Input((function(_this) {
+      return function(result) {
+        var e;
+        try {
+          return callback(result);
+        } catch (_error) {
+          e = _error;
+          return _this.ErrorCallback(e);
+        }
+      };
+    })(this));
+    return void 0;
+  };
+
+  resultCallback = function(result) {
+    return console.log("ruby result: " + result);
+  };
+
+  this.jsrepl = new JSREPL({
+    input: inputCallback,
+    result: resultCallback
+  });
+
   initializeRepl = function() {
-    var engine, error, output, outputHandlers, outputLesson, promptHandler, result, rubyHandler, startPrompt;
+    var error, output, outputLesson, promptHandler, result, startPrompt;
     jqconsole.Write("done.\n");
     output = function(string) {
-      jqconsole.Write("" + string, "repl-output");
-      return void 0;
+      return jqconsole.Write("" + string, "repl-output");
     };
     error = function(string) {
-      jqconsole.Write("" + string, "repl-error");
-      return void 0;
+      return jqconsole.Write("" + string, "repl-error");
     };
     result = function(string) {
-      jqconsole.Write(" => " + string + "\n", "repl-result");
-      return void 0;
+      return jqconsole.Write(" => " + string + "\n", "repl-result");
     };
     outputLesson = function(string) {
-      jqconsole.Write("" + string + "\n", "repl-lesson");
-      return void 0;
+      return jqconsole.Write("" + string + "\n", "repl-lesson");
     };
-    outputHandlers = {
-      output: output,
-      error: error,
-      result: result,
-      lesson: outputLesson
-    };
-    engine = Ruby;
-    rubyHandler = new RubyHandler(outputHandlers, engine, window.lesson);
     promptHandler = function(input) {
       rubyHandler.Eval(input);
       return startPrompt();

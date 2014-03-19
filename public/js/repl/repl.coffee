@@ -32,35 +32,40 @@ blinkCursor = ->
 
 setInterval(blinkCursor, 650);
 
+inputCallback = (callback) ->
+    window.jqconsole.Input (result) =>
+      try
+        callback result
+        # @$this.trigger 'input', [result]
+      catch e
+        @ErrorCallback e
+    # @$this.trigger 'input_request', [callback]
+    return undefined
+
+resultCallback = (result) ->
+  console.log("ruby result: #{result}")
+
+this.jsrepl = new JSREPL({  
+  input: inputCallback,
+  result: resultCallback
+});  
+
 initializeRepl = ->
 
   jqconsole.Write("done.\n")
 
   output = (string) ->
     jqconsole.Write("#{string}", "repl-output")
-    return undefined
 
   error = (string) ->
     jqconsole.Write("#{string}", "repl-error")
-    return undefined
 
   result = (string) ->
     jqconsole.Write(" => #{string}\n", "repl-result")
-    return undefined
 
   outputLesson = (string) ->
     jqconsole.Write("#{string}\n", "repl-lesson")
-    return undefined
 
-  outputHandlers =
-    output: output
-    error: error
-    result: result
-    lesson: outputLesson
-
-  engine = Ruby
-
-  rubyHandler = new RubyHandler(outputHandlers, engine, window.lesson)
 
   promptHandler = (input) ->
     rubyHandler.Eval(input)
