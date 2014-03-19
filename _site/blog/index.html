@@ -69,6 +69,47 @@
   
   <div class="post">
     <h2 id="">
+      <a href="/2014/03/19/overzicht-les-4/">
+        Overzicht les 4
+      </a>
+    </h2>
+
+    <span class="post-date">19 Mar 2014</span>
+
+    <p>Jullie hebben je goed ingezet bij Hoofdstuk 4 en veel van jullie zijn goed op weg met de <code>Game</code>-klasse. We hebben hieronder even de belangrijkste punten uit de laatste les op een rijtje gezet.</p>
+
+<p>Probeer weer alles uit in <code>irb</code>!</p>
+
+<h2 id="objecten">Objecten</h2>
+
+<p>Het duurt even voordat je gewend raakt aan het programmeren met objecten, maar het is zeker de moeite waard en belangrijk om te leren. Zoals jullie hebben gezien maak je eerst een <code>class</code> aan, wat de blauwdruk is voor een object. Bijvoorbeeld:</p>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>Boek</span>
+    <span class='kp'>attr_accessor</span> <span class='ss'>:content</span><span class='p'>,</span> <span class='ss'>:title</span><span class='p'>,</span> <span class='ss'>:author</span>
+    <span class='k'>def</span> <span class='nf'>initialize</span><span class='p'>(</span><span class='n'>content</span><span class='p'>,</span> <span class='n'>title</span><span class='p'>,</span> <span class='n'>author</span><span class='p'>)</span>
+        <span class='vi'>@content</span> <span class='o'>=</span> <span class='n'>content</span>
+        <span class='vi'>@title</span> <span class='o'>=</span> <span class='n'>title</span>
+        <span class='vi'>@author</span> <span class='o'>=</span> <span class='n'>author</span>
+    <span class='k'>end</span>
+<span class='k'>end</span>
+</code></pre></div>
+<p>Belangrijk om te onthouden:</p>
+
+<ul>
+<li>de naam van je <code>class</code> begint met een Hoofdletter</li>
+
+<li>vergeet niet de <code>@</code> voor elke variabele</li>
+
+<li>met <code>attr_accessor :variabele1</code> zorg je dat je @variabele1 van buitenaf kunt aanroepen</li>
+
+<li></li>
+</ul>
+    
+      <p><br/><a href="/2014/03/19/overzicht-les-4/">Lees verder >>></a></p><hr><br/>
+    
+  </div>
+  
+  <div class="post">
+    <h2 id="">
       <a href="/2014/03/06/overzicht-les-3/">
         Overzicht les 3
       </a>
@@ -104,7 +145,7 @@
 <span class='c1'># =&gt; &quot;d&quot;</span>
 </code></pre></div>
 <p>Hoe voeg je verbindingen toe? Zo:</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>versleuteling</span><span class='o'>[</span><span class='s2'>&quot;b&quot;</span><span class='o'>]</span> <span class='o'>=</span> <span class='s2'>&quot;d&quot;</span>
+<div class='highlight'><pre><code class='ruby'><span class='n'>versleuteling</span><span class='o'>[</span><span class='s2'>&quot;b&quot;</span><span class='o'>]</span> <span class='o'>=</span> <span class='s2'>&quot;e&quot;</span>
 </code></pre></div>
 <h3 id="de_hash_vullen">De hash vullen</h3>
 
