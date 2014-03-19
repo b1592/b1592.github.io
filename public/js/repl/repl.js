@@ -83,7 +83,7 @@ jqconsole.RegisterMatching('[', ']', 'bracket');
     if (typeof Ruby === "undefined" || Ruby === null) {
       jqconsole.Write("Loading...");
       return jQuery.ajax({
-        url: "/public/js/repl/ruby.closure.js",
+        url: "/public/js/repl/ruby.js",
         dataType: 'script',
         success: initializeRepl,
         cache: true

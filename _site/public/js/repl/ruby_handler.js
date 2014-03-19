@@ -5,14 +5,15 @@
 
   this.RubyHandler = (function() {
     function RubyHandler(outputHandlers, engine, lesson) {
-      var bufferError, bufferOutput;
+      var bufferError, bufferOutput, inputHandler;
       this.engine = engine;
       this.lesson = lesson;
       this.result = outputHandlers.result;
       this.output = outputHandlers.output;
       this.error = outputHandlers.error;
       this.output_lesson = outputHandlers.lesson;
-      this.error_buffer = this.output_buffer = [];
+      this.error_buffer = this.output_buffer = this.input_buffer = [];
+      this.count = 0;
       bufferOutput = (function(_this) {
         return function(chr) {
           if (chr != null) {
@@ -27,7 +28,11 @@
           }
         };
       })(this);
-      this.engine.initialize(null, bufferOutput, bufferError);
+      inputHandler = function() {
+        console.log("Hallo");
+        return null;
+      };
+      this.engine.initialize(inputHandler, bufferOutput, bufferError);
       if (this.lesson != null) {
         this.output_lesson(this.lesson.currentQuestion().description);
       }
@@ -35,7 +40,8 @@
 
     RubyHandler.prototype.Eval = function(command) {
       var e, result;
-      this.error_buffer = this.output_buffer = [];
+      this.error_buffer = this.output_buffer = this.input_buffer = [];
+      this.count = 0;
       try {
         result = this.engine["eval"](command);
         if (this.output_buffer.length) {

@@ -81,5 +81,5 @@ $(".jqconsole").click(->
 
   unless Ruby?
     jqconsole.Write("Loading...")
-    jQuery.ajax({url: "/public/js/repl/ruby.closure.js", dataType: 'script', success: initializeRepl, cache: true})
+    jQuery.ajax({url: "/public/js/repl/ruby.js", dataType: 'script', success: initializeRepl, cache: true})
 )

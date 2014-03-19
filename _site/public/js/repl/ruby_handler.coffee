@@ -4,17 +4,35 @@ class this.RubyHandler
     @output = outputHandlers.output
     @error = outputHandlers.error
     @output_lesson = outputHandlers.lesson
+    @error_buffer = @output_buffer = @input_buffer = []
 
-    @error_buffer = @output_buffer = []
+    @count = 0
+
     bufferOutput = (chr) =>
       if chr? then @output_buffer.push( String.fromCharCode(chr) )
     bufferError = (chr) =>
       if chr? then @error_buffer.push( String.fromCharCode (chr) )
-    @engine.initialize null, bufferOutput, bufferError
+
+    # inputHandler = =>
+    #   window.jqconsole.Input( (input) ->
+    #     @input_buffer = char.charCodeAt() for char in input
+    #     window.jqconsole.Write(input + "\n")
+    #     window.jqconsole.Prompt()
+    #   )
+    #   @count += 1
+    #   console.log(@input_buffer[0])
+    #   return if @count < 10 then "123" else null
+
+    inputHandler = ->
+      console.log("Hallo")
+      null
+
+    @engine.initialize inputHandler, bufferOutput, bufferError
     @output_lesson(@lesson.currentQuestion().description) if @lesson?
 
   Eval: (command) ->
-    @error_buffer = @output_buffer = []
+    @error_buffer = @output_buffer = @input_buffer = []
+    @count = 0
 
     try
       result = @engine.eval command
