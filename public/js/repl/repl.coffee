@@ -23,10 +23,6 @@ jqconsole.RegisterMatching('(', ')', 'paran');
 jqconsole.RegisterMatching('[', ']', 'bracket');
 `
 
-# blinkCursor = ->
-#   $(".jqconsole-cursor").animate({opacity:0}, 800)
-#   $(".jqconsole-cursor").animate({opacity:1}, 800)
-
 blinkCursor = ->
   cursor = $(".jqconsole-cursor")
   if cursor.css("opacity") == "1"
