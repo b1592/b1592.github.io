@@ -76,9 +76,11 @@
 
     <span class="post-date">19 Mar 2014</span>
 
-    <p>Jullie hebben je goed ingezet bij Hoofdstuk 4 en veel van jullie zijn goed op weg met de <code>Game</code>-klasse. We hebben hieronder even de belangrijkste punten uit de laatste les op een rijtje gezet.</p>
+    <p>Jullie zijn er weer hard tegenaan gegaan bij Hoofdstuk 4 en velen van jullie zijn goed op weg met de <code>Game</code>-klasse. We hebben hieronder even de belangrijkste punten uit de laatste les op een rijtje gezet.</p>
 
 <p>Probeer weer alles uit in <code>irb</code>!</p>
+
+<p>En denk er aan dat de volgende les op <strong>vrijdag</strong> is om 15.15 uur!</p>
 
 <h2 id="objecten">Objecten</h2>
 
@@ -110,7 +112,7 @@
 <li>alle functies schrijf je net als normaal met <code>def functienaam</code></li>
 </ul>
 
-<p>Nadat je een <code>class</code> hebt gedefinieerd, kun je een object maken. Dit doe je zo:</p>
+<p>Nadat je een klasse hebt gedefinieerd, kun je een object maken. Dit doe je zo:</p>
 <div class='highlight'><pre><code class='ruby'><span class='n'>boek</span> <span class='o'>=</span> <span class='no'>Boek</span><span class='o'>.</span><span class='n'>new</span><span class='p'>(</span><span class='s2'>&quot;Lord of the Rings&quot;</span><span class='p'>,</span> <span class='s2'>&quot;J. R. R. Tolkien&quot;</span><span class='p'>,</span> <span class='s2'>&quot;Three Rings for the Elven-kings ...&quot;</span><span class='p'>)</span>
 </code></pre></div>
 <p>De waarden die je meegeeft aan <code>Boek.new()</code> komen terecht bij de <code>initialize</code> functie. Let dus goed op dat je deze in dezelfde volgorde zet.</p>
@@ -134,6 +136,49 @@
 <p>Als je nu een vakje op het bord wilt vinden, zoek je eerst een van deze drie elementen (rijen) en dan daarin een element (kolommen).</p>
 <div class='highlight'><pre><code class='ruby'><span class='n'>bord</span><span class='o'>[</span><span class='mi'>0</span><span class='o'>][</span><span class='mi'>1</span><span class='o'>]</span> <span class='c1'># =&gt; 2</span>
 </code></pre></div>
+<p>Controleer voor jezelf met <code>irb</code> of je het door hebt. Wat wordt bijvoorbeeld <code>bord[2][0]</code>?</p>
+
+<h2 id="bestanden_in_de_opdracht_tic_tac_toe">Bestanden in de opdracht (Tic tac toe)</h2>
+
+<p>Voor de opdracht hebben we voor jullie een aantal bestanden gemaakt. Voor de duidelijkheid leggen we nog even uit waar deze voor dienen.</p>
+
+<p>Je werkt voornamelijk in het <code>game.rb</code> bestand. Hierin maak je de <code>game</code>-klasse. Deze klasse regelt de hele logica van het spel. Zo moet het een aantal functies bevatten (je kunt hier van afwijken in jouw implementatie):</p>
+
+<ul>
+<li><code>over?</code> -&gt; deze bekijkt of het spel voorbij is, doordat een speler gewonnen heeft of door gelijkspel. Geeft <code>true</code> of <code>false</code></li>
+
+<li><code>play(move)</code> -&gt; deze roep je aan als je een zet wilt doen. Je geeft hem de <code>move</code> mee (een getal die de plek aangeeft waar je wilt zetten, 1-9) en hij regelt dat er op de juiste plek een ‘X’ of ‘O’ komt</li>
+</ul>
+
+<p>Een ander bestand in de map is <code>narrator.rb</code>. De <code>narrator</code>-klasse gaat over het weergeven van dingen (<code>puts</code>). Zo hebben wij al een functie <code>draw_board(board)</code> gemaakt die je spelbord kan weergeven. Je werkt in de <code>game</code>-class met een bord als 2D array, maar je hebt de <code>narrator</code> nodig om het bord weer te geven.</p>
+
+<p>Daarnaast zal de narrator alles gaan zeggen wat iemand die het spel gaat spelen nodig heeft.</p>
+
+<p>Tot slot is er nog <code>tictactoe.rb</code>. Daarmee ga je het spel echt opstarten. Je maakt een spel aan(<code>game = Game.new</code>, net als in het voorbeeld met <code>Boek</code>) en je vraagt beurt na beurt om input van de speler. Tussendoor laat je de <code>narrator</code> het bord weergeven.</p>
+
+<h2 id="testen">Testen</h2>
+
+<p>Een makkelijke manier om snel je spel te testen is om het in te laden in <code>irb</code>. Dat doe je zo (zorg wel dat je <code>irb</code> opstart vanuit de map waarin je werkt:</p>
+<div class='highlight'><pre><code class='ruby'><span class='nb'>load</span> <span class='s2'>&quot;game.rb&quot;</span>
+</code></pre></div>
+<p>Daarna kun je de <code>game</code>-klasse gaan aanroepen en de functies testen:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>game</span> <span class='o'>=</span> <span class='no'>Game</span><span class='o'>.</span><span class='n'>new</span>
+<span class='n'>game</span><span class='o'>.</span><span class='n'>current_player</span> <span class='c1'># =&gt; &quot;X&quot;</span>
+<span class='n'>game</span><span class='o'>.</span><span class='n'>over?</span> <span class='c1'># =&gt; false</span>
+<span class='n'>game</span><span class='o'>.</span><span class='n'>play</span><span class='p'>(</span><span class='mi'>3</span><span class='p'>)</span>
+<span class='n'>game</span><span class='o'>.</span><span class='n'>current_player</span> <span class='c1'># =&gt; &quot;O&quot;</span>
+</code></pre></div>
+<p>Het kan natuurlijk dat jouw klasse andere resultaten dan hierboven geeft, maar dit is hoe je het test. Vergeet niet nadat je iets verandert in je script het script op te slaan en opnieuw <code>load &quot;game.rb&quot;</code> in <code>irb</code> te doen.</p>
+
+<p>Naast het laden in <code>irb</code> kun je natuurlijk ook je programma zelf draaien. Gebruik hiervoor <code>tictactoe.rb</code>. Net als in <code>irb</code> kun je daar een nieuw spel maken en dan je functies proberen.</p>
+
+<h2 id="voor_thuis">Voor thuis</h2>
+
+<p>Het zijn de laatste twee weken, maar dit is een iets langere opdracht dan anders. Ook is de volgende les op <strong>vrijdag</strong> (15.15 uur), waardoor je langer hebt tussen de twee lessen. Ga dus lekker thuis aan de slag. Schrijf je script functie voor functie. Ook al snap je misschien even niet meer wat er allemaal gebeurt, kun je de functie wel schrijven.</p>
+
+<p>Kom je er niet uit? Mail dan vooral naar <a href="mailto:ghkapteijns@gmail.com">ghkapteijns@gmail.com</a></p>
+
+<p>Succes en tot volgende week!</p>
     
       <p><br/><a href="/2014/03/19/overzicht-les-4/">Lees verder >>></a></p><hr><br/>
     
