@@ -24,7 +24,8 @@ jqconsole.RegisterMatching('{', '}', 'brace');
 jqconsole.RegisterMatching('(', ')', 'paran');
 jqconsole.RegisterMatching('[', ']', 'bracket');
 ;
-  var blinkCursor, initializeRepl, inputCallback, resultCallback;
+  var blinkCursor, initializeRepl,
+    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
   blinkCursor = function() {
     var cursor;
@@ -42,64 +43,112 @@ jqconsole.RegisterMatching('[', ']', 'bracket');
 
   setInterval(blinkCursor, 650);
 
-  inputCallback = function(callback) {
-    window.jqconsole.Input((function(_this) {
-      return function(result) {
-        var e;
-        try {
-          return callback(result);
-        } catch (_error) {
-          e = _error;
-          return _this.ErrorCallback(e);
-        }
-      };
-    })(this));
-    return void 0;
-  };
-
-  resultCallback = function(result) {
-    return console.log("ruby result: " + result);
-  };
-
-  this.jsrepl = new JSREPL({
-    input: inputCallback,
-    result: resultCallback
-  });
-
   initializeRepl = function() {
-    var error, output, outputLesson, promptHandler, result, startPrompt;
-    jqconsole.Write("done.\n");
-    output = function(string) {
+    var BLOCK_OPENERS, TOKENS, errorCallback, inputCallback, multiLineHandler, outputCallback, promptHandler, resultCallback, startPrompt;
+    inputCallback = function(callback) {
+      window.jqconsole.Input((function(_this) {
+        return function(result) {
+          var e;
+          try {
+            return callback(result);
+          } catch (_error) {
+            e = _error;
+            return _this.ErrorCallback(e);
+          }
+        };
+      })(this));
+      return void 0;
+    };
+    outputCallback = function(string) {
       return jqconsole.Write("" + string, "repl-output");
     };
-    error = function(string) {
-      return jqconsole.Write("" + string, "repl-error");
-    };
-    result = function(string) {
+    resultCallback = function(string) {
       return jqconsole.Write(" => " + string + "\n", "repl-result");
     };
-    outputLesson = function(string) {
-      return jqconsole.Write("" + string + "\n", "repl-lesson");
+    errorCallback = function(string) {
+      return jqconsole.Write("" + string, "repl-error");
     };
+    this.jsrepl = new JSREPL({
+      input: inputCallback,
+      output: outputCallback,
+      result: resultCallback,
+      error: errorCallback
+    });
+    jsrepl.loadLanguage("ruby", function() {
+      return jqconsole.Write("done.\n");
+    });
     promptHandler = function(input) {
-      rubyHandler.Eval(input);
+      jsrepl["eval"](input);
       return startPrompt();
     };
-    startPrompt = function() {
-      return jqconsole.Prompt(true, promptHandler);
+    multiLineHandler = function(command) {
+      var braces, brackets, last_line_changes, levels, line, parens, token, _i, _j, _len, _len1, _ref, _ref1;
+      levels = 0;
+      parens = 0;
+      braces = 0;
+      brackets = 0;
+      last_line_changes = 0;
+      _ref = command.split('\n');
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        line = _ref[_i];
+        last_line_changes = 0;
+        _ref1 = line.match(TOKENS) || [];
+        for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+          token = _ref1[_j];
+          if (__indexOf.call(BLOCK_OPENERS, token) >= 0) {
+            levels++;
+            last_line_changes++;
+          } else if (token === '(') {
+            parens++;
+            last_line_changes++;
+          } else if (token === '{') {
+            braces++;
+            last_line_changes++;
+          } else if (token === '[') {
+            brackets++;
+            last_line_changes++;
+          } else if (token === 'end') {
+            levels--;
+            last_line_changes--;
+          } else if (token === ')') {
+            parens--;
+            last_line_changes--;
+          } else if (token === ']') {
+            braces--;
+            last_line_changes--;
+          } else if (token === '}') {
+            brackets--;
+            last_line_changes--;
+          }
+          if (levels < 0 || parens < 0 || braces < 0 || brackets < 0) {
+            return false;
+          }
+        }
+      }
+      if (levels > 0 || parens > 0 || braces > 0 || brackets > 0) {
+        if (last_line_changes > 0) {
+          return 1;
+        } else if (last_line_changes < 0) {
+          return -1;
+        } else {
+          return 0;
+        }
+      } else {
+        return false;
+      }
     };
-    return startPrompt();
+    startPrompt = function() {
+      return jqconsole.Prompt(true, promptHandler, multiLineHandler);
+    };
+    startPrompt();
+    BLOCK_OPENERS = ["begin", "module", "def", "class", "if", "unless", "case", "for", "while", "until", "do"];
+    return TOKENS = /\s+|\d+(?:\.\d*)?|"(?:[^"]|\\.)*"|'(?:[^']|\\.)*'|\/(?:[^\/]|\\.)*\/|[-+\/*]|[<>=]=?|:?[a-z@$][\w?!]*|[{}()\[\]]|[^\w\s]+/ig;
   };
 
   $(".jqconsole").click(function() {
-    if (typeof Ruby === "undefined" || Ruby === null) {
+    if (typeof jsrepl === "undefined" || jsrepl === null) {
       jqconsole.Write("Loading...");
-      return jQuery.ajax({
-        url: "/public/js/repl/ruby.js",
-        dataType: 'script',
-        success: initializeRepl,
-        cache: true
-      });
+      return initializeRepl();
     }
   });
 
