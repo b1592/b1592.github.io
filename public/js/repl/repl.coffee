@@ -59,9 +59,21 @@ initializeRepl = ->
   });
 
   jsrepl.loadLanguage("ruby", ->
-    jqconsole.Write("done.\n"))
+    jqconsole.Write("done.\n")
+    if lesson?
+      jqconsole.Write(lesson.currentQuestion().description + "\n", "repl-lesson")
+  )
 
-  promptHandler = (input) ->    
+  promptHandler = (input) ->
+    if lesson? && !lesson.isDone
+      question = lesson.currentQuestion()
+      question.evaluate(input)
+      if question.isRightAnswer
+        lesson.next()
+        jqconsole.Write(lesson.currentQuestion().description + "\n", "repl-lesson") unless lesson.isDone
+      else
+        jqconsole.Write(question.error_message + "\n", "repl-lesson")
+
     jsrepl.eval(input)
     startPrompt()
 
@@ -118,6 +130,7 @@ initializeRepl = ->
     jqconsole.Prompt(true, promptHandler, multiLineHandler)
 
   startPrompt()
+
 
   BLOCK_OPENERS = [
     "begin"

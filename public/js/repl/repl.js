@@ -75,9 +75,25 @@ jqconsole.RegisterMatching('[', ']', 'bracket');
       error: errorCallback
     });
     jsrepl.loadLanguage("ruby", function() {
-      return jqconsole.Write("done.\n");
+      jqconsole.Write("done.\n");
+      if (typeof lesson !== "undefined" && lesson !== null) {
+        return jqconsole.Write(lesson.currentQuestion().description + "\n", "repl-lesson");
+      }
     });
     promptHandler = function(input) {
+      var question;
+      if ((typeof lesson !== "undefined" && lesson !== null) && !lesson.isDone) {
+        question = lesson.currentQuestion();
+        question.evaluate(input);
+        if (question.isRightAnswer) {
+          lesson.next();
+          if (!lesson.isDone) {
+            jqconsole.Write(lesson.currentQuestion().description + "\n", "repl-lesson");
+          }
+        } else {
+          jqconsole.Write(question.error_message + "\n", "repl-lesson");
+        }
+      }
       jsrepl["eval"](input);
       return startPrompt();
     };
