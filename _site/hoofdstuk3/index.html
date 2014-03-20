@@ -1,70 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-
-  <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
-  <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-  <title>
-    Hoofdstuk 3 &middot; 
-    Rubyprog
-  </title>
-
-  <!-- CSS -->
-  <link href="/public/bootstrap/css/bootstrap.css" rel="stylesheet">
-  <!-- <link href="/public/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"> -->
-  
-  <link href="/public/css/syntax.css" rel="stylesheet">
-</head>
-
-
-  <body class="scrollspy" id="top">
-
-  <header>
-
-  <!-- <img src="/public/images/logo.png" height="65px" style="padding:0px; margin-top:13px;"> -->
-  <!-- <img src="/public/images/logo.png" height="60px" style="padding:0px; margin:0px;"/> -->
-  <div class="navbar navbar-default" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/"><img id="rubylogo" src="/public/images/logo.png"></a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/" style="font-weight:400;">Home</a></li>
-          <li><a href="/introductie">Introductie</a></li>
-          <!-- <li><a href="">Contact</a></li> -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cursus <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="/installatie">Installatie</a></li>
-              <li><a href="/command_line">Command Line</a></li>
-              <li class="divider"></li>
-              <li><a href="/hoofdstuk1">Hoofdstuk 1</a></li>
-              <li><a href="/hoofdstuk2">Hoofdstuk 2</a></li>
-              <li><a href="/hoofdstuk3">Hoofdstuk 3</a></li>
-              <li><a href="/hoofdstuk4">Hoofdstuk 4</a></li>
-            </ul>
-          </li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </div>
-</header> 
-
-    <div class="container content">
-      <div class="row">
-        <div class="col-md-9">
-          <h1 id="hoofdstuk_3_cipher">Hoofdstuk 3: Cipher</h1>
+<h1 id="hoofdstuk_3_cipher">Hoofdstuk 3: Cipher</h1>
 
 <p>Al duizenden jaren proberen mensen elkaar berichten te versturen die niet door anderen mogen worden gelezen.</p>
 
@@ -133,10 +67,6 @@ secret.txt - voor de laatste opdracht</code></pre>
 </code></pre></div>
 <p><code>&quot;Nederland&quot;</code> en <code>&quot;Amsterdam&quot;</code> worden samen een <em>key, value pair</em> genoemd.</p>
 
-<p>Je kunt altijd waarden aan een hash toevoegen:</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>hoofdsteden</span><span class='o'>[</span><span class='s2'>&quot;Duitsland&quot;</span><span class='o'>]</span> <span class='o'>=</span> <span class='s2'>&quot;Berlijn&quot;</span>
-<span class='n'>hoofdsteden</span><span class='o'>[</span><span class='s2'>&quot;Duitsland&quot;</span><span class='o'>]</span> <span class='c1'># =&gt; &quot;Berlijn&quot;</span>
-</code></pre></div>
 <h3 id="file_inputoutput">File Input/Output</h3>
 
 <p>Stel dat je <code>bericht.txt</code> wilt inlezen. Dat gaat als volgt:</p>
@@ -220,56 +150,3 @@ secret.txt - voor de laatste opdracht</code></pre>
 <p>Je kunt alle mogelijkheden langsgaan. Deze methode heet <em>brute force</em>. Of is er een slimmere manier?</p>
 
 <p>Het bericht staat in het bestand <code>secret.txt</code>.</p>
-        </div>
-
-        <div class="col-md-3">
-          <div class="page-map-sidebar" data-spy="affix">
-            <ul id="page-map" class="nav">
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <footer>
-  <div class="container">
-  <div class="row">
-    <div class="col-md-9">
-      <p><a href="/" id="logo" class="footer-brand">ruby{prog}</a></p>
-
-      <p>Deze cursus is ontwikkeld door Geert Kapteijns en Boris Ponsioen. Het materiaal is vrij te gebruiken onder de <a href="http://creativecommons.org/licenses/by-nc/4.0/deed.nl">CC BY-NC 4.0-licentie</a> --- je mag er alles mee doen, zolang het maar niet-commercieel is.</p>
-
-      <p>Meehelpen? Zie de <a href="https://github.com/b1592/b1592.github.io">Github-pagina.</a></p>
-
-      <p>Alle kritiek is welkom. Mail naar <a href="mailto:ghkapteijns@gmail.com">ghkapteijns@gmail.com</a>.</p>
-    </div>
-    <div class="col-md-3">
-    &nbsp;
-    </div>
-    </div>
-  </div>
-</footer>
-
-  <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-47467348-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-  <!-- Load JS here for greater good =============================-->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="/public/bootstrap/js/bootstrap.min.js"></script>
-    
-      <script src="/public/js/scrollspy.js"></script>
-    
-    <script src="/public/js/custom.js"></script>
-  </body>
-</html>
