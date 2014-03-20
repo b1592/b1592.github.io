@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
   <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <title>
-    
+    Overzicht les 4 &middot; 
     Rubyprog
   </title>
 
@@ -64,19 +64,10 @@
     <div class="container content">
       <div class="row">
         <div class="col-md-9">
-          <h1>Nieuws</h1>
-<div class="posts">
-  
-  <div class="post">
-    <h2 id="">
-      <a href="/2014/03/20/overzicht-les-4/">
-        Overzicht les 4
-      </a>
-    </h2>
-
-    <span class="post-date">20 Mar 2014</span>
-
-    <p>Jullie zijn er weer hard tegenaan gegaan bij Hoofdstuk 4 en velen van jullie zijn goed op weg met de <code>Game</code>-klasse. We hebben hieronder even de belangrijkste punten uit de laatste les op een rijtje gezet.</p>
+          <div class="post">
+  <h1>Overzicht les 4</h1>
+  <span class="post-date">20 Mar 2014</span>
+  <p>Jullie zijn er weer hard tegenaan gegaan bij Hoofdstuk 4 en velen van jullie zijn goed op weg met de <code>Game</code>-klasse. We hebben hieronder even de belangrijkste punten uit de laatste les op een rijtje gezet.</p>
 
 <p>Probeer weer alles uit in <code>irb</code>!</p>
 
@@ -191,141 +182,42 @@
 <p>De volgende les is <strong>vrijdag</strong> om 15.15 uur.</p>
 
 <p>Succes en tot volgende week!</p>
-    
-      <p><br/><a href="/2014/03/20/overzicht-les-4/">Lees verder >>></a></p><hr><br/>
-    
-  </div>
-  
-  <div class="post">
-    <h2 id="">
-      <a href="/2014/03/06/overzicht-les-3/">
-        Overzicht les 3
-      </a>
-    </h2>
-
-    <span class="post-date">06 Mar 2014</span>
-
-    <p>Hier is wat informatie naar aanleiding van de vorige les. Probeer alles uit in <code>irb</code>.</p>
-
-<h2 id="het_alfabet_in_een_lijst">Het alfabet in een lijst</h2>
-
-<p><code>(&quot;a&quot;..&quot;z&quot;)</code> is een range. Hier kun je overheen “loopen” met een <a href="/hoofdstuk3/#for_loops">for loop</a>:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>for</span> <span class='n'>letter</span> <span class='k'>in</span> <span class='p'>(</span><span class='s2'>&quot;a&quot;</span><span class='o'>.</span><span class='n'>.</span><span class='s2'>&quot;z&quot;</span><span class='p'>)</span>
-    <span class='nb'>puts</span> <span class='n'>letter</span>
-<span class='k'>end</span>
-</code></pre></div>
-<p>Hoe maak je hier een lijst van? Met <code>to_a</code> <em>(to array)</em>.</p>
-<div class='highlight'><pre><code class='ruby'><span class='p'>(</span><span class='s2'>&quot;a&quot;</span><span class='o'>.</span><span class='n'>.</span><span class='s2'>&quot;z&quot;</span><span class='p'>)</span><span class='o'>.</span><span class='n'>to_a</span>
-<span class='c1'># =&gt; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, ..., &quot;z&quot;]</span>
-</code></pre></div>
-<p>Voor de versleuteling willen we een spatie toevoegen. Iets toevoegen aan een lijst kan eigenlijk maar op één manier: aan het eind. Dit doe je met <code>push</code>.</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>alfabet</span><span class='o'>.</span><span class='n'>push</span><span class='p'>(</span><span class='s2'>&quot; &quot;</span><span class='p'>)</span>
-<span class='c1'># =&gt; [&quot;a&quot;, &quot;b&quot;, ..., &quot;z&quot;, &quot; &quot;]</span>
-</code></pre></div>
-<p>Het “gepushte” element komt er aan het eind bij.</p>
-
-<h2 id="de_versleutelingshash">De versleutelingshash</h2>
-
-<p>Een hash bevat verbindingen tussen twee waarden. In de hash staat welke letter in de versleuteling correspondeert met een letter in het oorspronkelijke bericht.</p>
-
-<p>Met een shift van 3:</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>versleuteling</span><span class='o'>[</span><span class='s2'>&quot;a&quot;</span><span class='o'>]</span>
-<span class='c1'># =&gt; &quot;d&quot;</span>
-</code></pre></div>
-<p>Hoe voeg je verbindingen toe? Zo:</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>versleuteling</span><span class='o'>[</span><span class='s2'>&quot;b&quot;</span><span class='o'>]</span> <span class='o'>=</span> <span class='s2'>&quot;e&quot;</span>
-</code></pre></div>
-<h3 id="de_hash_vullen">De hash vullen</h3>
-
-<p>Weet je nog hoe je elementen uit een lijst aan kan spreken?</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>alfabet</span><span class='o'>[</span><span class='mi'>0</span><span class='o'>]</span>
-<span class='c1'># =&gt; &quot;a&quot; </span>
-</code></pre></div>
-<p>De makkelijkste manier om de hash te vullen is door te loopen over de range <code>(0..26)</code>. Voor een gegeven shift:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>for</span> <span class='n'>index</span> <span class='k'>in</span> <span class='p'>(</span><span class='mi'>0</span><span class='o'>.</span><span class='n'>.</span><span class='mi'>26</span><span class='p'>)</span>
-    <span class='n'>versleuteling</span><span class='p'>(</span> <span class='n'>alfabet</span><span class='o'>[</span><span class='n'>index</span><span class='o'>]</span> <span class='p'>)</span> <span class='o'>=</span> <span class='n'>alfabet</span><span class='o'>[</span><span class='n'>index</span> <span class='o'>+</span> <span class='n'>shift</span><span class='o'>]</span>
-<span class='k'>end</span> 
-</code></pre></div>
-<p>Zorg dat je deze code helemaal snapt!</p>
-
-<p>Waar gaat het nu fout? Als we bij 26 zijn aangekomen, staat er dit:</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>versleuteling</span><span class='p'>(</span> <span class='n'>alfabet</span><span class='o'>[</span><span class='mi'>26</span><span class='o'>]</span> <span class='p'>)</span> <span class='o'>=</span> <span class='n'>alfabet</span><span class='o'>[</span><span class='mi'>26</span> <span class='o'>+</span> <span class='n'>shift</span><span class='o'>]</span>
-</code></pre></div>
-<p><code>alfabet[26]</code> is <code>&quot; &quot;</code>. Dat gaat goed. Maar <code>alfabet[26 + shift]</code> zit niet meer in de lijst. 26 is namelijk de laatste index. Je krijgt <code>nil</code> terug van Ruby.</p>
-
-<p>Je lost dit op met de <a href="/hoofdstuk2/#de_modulooperator">modulo-operator</a>:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>for</span> <span class='n'>index</span> <span class='k'>in</span> <span class='p'>(</span><span class='mi'>0</span><span class='o'>.</span><span class='n'>.</span><span class='mi'>26</span><span class='p'>)</span>
-    <span class='n'>versleuteling</span><span class='p'>(</span> <span class='n'>alfabet</span><span class='o'>[</span><span class='n'>index</span><span class='o'>]</span> <span class='p'>)</span> <span class='o'>=</span> <span class='n'>alfabet</span><span class='o'>[</span> <span class='p'>(</span><span class='n'>index</span> <span class='o'>+</span> <span class='n'>shift</span><span class='p'>)</span> <span class='o'>%</span> <span class='mi'>26</span> <span class='o'>]</span>
-<span class='k'>end</span> 
-</code></pre></div>
-<p>Nu krijg je de goede hash. Niet vergeten <code>return versleuteling</code> aan het einde van je functie te zetten.</p>
-
-<h2 id="een_bericht_versleutelen">Een bericht versleutelen</h2>
-
-<p>We willen elke letter uit het bericht vervangen door de corresponderende letter uit de versleuteling. Om alle letters uit een stuk tekst in een lijst te krijgen, kun je <code>split</code> gebruiken:</p>
-<div class='highlight'><pre><code class='ruby'><span class='s2'>&quot;hallo&quot;</span><span class='o'>.</span><span class='n'>split</span><span class='p'>(</span><span class='s2'>&quot;&quot;</span><span class='p'>)</span>
-<span class='c1'># =&gt; [&quot;h&quot;, &quot;a&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;]</span>
-</code></pre></div>
-<p>Nu moet je er met een for loop wel uitkomen.</p>
-
-<h2 id="een_bestand_laden_in_irb">Een bestand laden in ‘irb’</h2>
-
-<p>Je kunt een bestand laden in ‘irb’ met <code>load</code></p>
-<div class='highlight'><pre><code class='ruby'><span class='nb'>load</span> <span class='s2'>&quot;cipher.rb&quot;</span>
-</code></pre></div>
-<p>Je moet hiervoor in dezelfde map zitten als <code>cipher.rb</code>. Anders moet je het pad veranderen. <code>load &quot;Hoofdstuk3/cipher.rb&quot;</code>, bijvoorbeeld. (Net als in de <a href="/command_line">command line</a>.)</p>
-    
-      <p><br/><a href="/2014/03/06/overzicht-les-3/">Lees verder >>></a></p><hr><br/>
-    
-  </div>
-  
-  <div class="post">
-    <h2 id="">
-      <a href="/2014/02/22/fijne-vakantie/">
-        Fijne vakantie!
-      </a>
-    </h2>
-
-    <span class="post-date">22 Feb 2014</span>
-
-    <p><em>TL;DR: Ga hierheen: <a href="https://projecteuler.net/problems">Project Euler</a>.</em></p>
-
-<p>Fijne vakantie, jongens. We zien jullie pas 3 maart weer.</p>
-
-<p>Wetenschappers zeggen dat een groene kleur creativiteit opwekt. Een rode kleur wat minder. <a href="http://www.prevention.com/mind-body/emotional-health/looking-color-green-enhances-creativity">Echt waar</a>. Dus hier is de nieuwe site! Wat vinden jullie ervan? Laat het vooral weten: <a href="mailto:ghkapteijns@gmail.com">ghkapteijns@gmail.com</a>. 
-    
-      <p><br/><a href="/2014/02/22/fijne-vakantie/">Lees verder >>></a></p><hr><br/>
-    
-  </div>
-  
-  <div class="post">
-    <h2 id="overzicht-les-1">
-      <a href="/2014/02/05/overzicht-les-1/">
-        Overzicht les 1
-      </a>
-    </h2>
-
-    <span class="post-date">05 Feb 2014</span>
-
-    <p>Hoi iedereen,</p>
-
-<p>Bedankt voor de interesse gisteren! Wij kijken uit naar volgende week. Hier een overzicht van de eerste les:
-    
-      <p><br/><a href="/2014/02/05/overzicht-les-1/">Lees verder >>></a></p><hr><br/>
-    
-  </div>
-  
 </div>
 
-<!-- Pagination links -->
-<div class="pagination" style="display:none;">
-  
-    <span class="next">Ouder</span>
-  
-  
-    <span class="previous">Nieuwer</span>
-  
-</div>
+<!-- <div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2014/03/06/overzicht-les-3/">
+            Overzicht les 3
+            <small>06 Mar 2014</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2014/02/22/fijne-vakantie/">
+            Fijne vakantie!
+            <small>22 Feb 2014</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2014/02/05/overzicht-les-1/">
+            Overzicht les 1
+            <small>05 Feb 2014</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div> -->
+
         </div>
 
         <div class="col-md-3">
@@ -373,6 +265,8 @@
   <!-- Load JS here for greater good =============================-->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+    
+      <script src="/public/js/scrollspy.js"></script>
     
     <script src="/public/js/custom.js"></script>
   </body>
