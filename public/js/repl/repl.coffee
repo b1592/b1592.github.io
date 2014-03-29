@@ -1,23 +1,6 @@
 window.jqconsole = $('#console').jqconsole("SHALL WE PLAY A GAME?\n", '> ')
 
 `
-jqconsole.RegisterShortcut('Z', function() {
-  jqconsole.AbortPrompt();
-  handler();
-});
-
-// Move to line start Ctrl+A.
-jqconsole.RegisterShortcut('A', function() {
-  jqconsole.MoveToStart();
-  handler();
-});
-
-// Move to line end Ctrl+E.
-jqconsole.RegisterShortcut('E', function() {
-  jqconsole.MoveToEnd();
-  handler();
-});
-
 jqconsole.RegisterMatching('{', '}', 'brace');
 jqconsole.RegisterMatching('(', ')', 'paran');
 jqconsole.RegisterMatching('[', ']', 'bracket');
