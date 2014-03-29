@@ -1,6 +1,6 @@
-`
-window.jqconsole = $('#console').jqconsole("SHALL WE PLAY A GAME?\n", '> ');
+window.jqconsole = $('#console').jqconsole("SHALL WE PLAY A GAME?\n", '> ')
 
+`
 jqconsole.RegisterShortcut('Z', function() {
   jqconsole.AbortPrompt();
   handler();
@@ -35,12 +35,11 @@ setInterval(blinkCursor, 650);
 initializeRepl = ->
 
   inputCallback = (callback) ->
-      window.jqconsole.Input (result) =>
+      jqconsole.Input (result) =>
         try
           callback result
         catch e
           @ErrorCallback e
-      return undefined
 
   outputCallback = (string) ->
     jqconsole.Write("#{string}", "repl-output")
@@ -160,7 +159,6 @@ initializeRepl = ->
   ///ig
 
 $(".jqconsole").click(->
-
   unless jsrepl?
     jqconsole.Write("Loading...")
     initializeRepl()
