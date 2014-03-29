@@ -13,11 +13,13 @@ drawBoard = (board) ->
     ].join("\n---|---|---\t---|---|---\n") + "\n"
   )
 
+computerMove = ->
+  tictactoe.occupy( tictactoe.alphaBetaSearch().pop() )
+
 promptHandler = (input) ->
   move = parseInt(input, 10)
   tictactoe.occupy(move)
-  # computer move
-  tictactoe.occupy( tictactoe.alphaBetaSearch().pop() )
+  computerMove()
   drawBoard( tictactoe.board() )
   startPrompt()
 
@@ -27,6 +29,10 @@ startPrompt = ->
 
 
 drawBoard( window.tictactoe.board() )
+jqconsole.Write("NUMBER OF PLAYERS?")
+jqconsole.Input( (input) ->
+  console.log("number of players: #{input}")
+)
 
 startPrompt()
 
