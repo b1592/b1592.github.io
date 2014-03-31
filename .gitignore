@@ -21,6 +21,6 @@ doc/
 _site/atom.xml
 
 # Node garbage to watch less files
-node_modules
-Gruntfile.js
-package.json
+# node_modules
+# Gruntfile.js
+# package.json

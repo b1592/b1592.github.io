@@ -1,0 +1,27 @@
+{
+  "name": "b1592.github.io",
+  "version": "0.0.0",
+  "description": "Autocompile less",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/b1592/b1592.github.io.git"
+  },
+  "author": "Boris, Geert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/b1592/b1592.github.io/issues"
+  },
+  "homepage": "https://github.com/b1592/b1592.github.io",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-less": "~0.9.0",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "dependencies": {
+    "less": "1.3.3"
+  }
+}
