@@ -17,6 +17,8 @@ computerMove = ->
   tictactoe.occupy( tictactoe.alphaBetaSearch().pop() )
 
 promptHandler = (input) ->
+  jqconsole.Clear()
+
   move = parseInt(input, 10)
   tictactoe.occupy(move)
   computerMove()

@@ -28,6 +28,7 @@
 
   promptHandler = function(input) {
     var move;
+    jqconsole.Clear();
     move = parseInt(input, 10);
     tictactoe.occupy(move);
     computerMove();
