@@ -102,19 +102,14 @@ this.tictactoe = do ($) ->
   endState = (boardSt = board, player) ->
     terminalTest(boardSt) or winner(boardSt, player) or loser(boardSt, player)
 
-
   # function winner
   #
   # determines if player is a winner based on board
   # input: boardState (optional, otherwise returns internal board), player
   # output: true if player has won
 
-  winner = (boardState, player) ->
-    if not player?
-      player = boardState
-      boardState = board
-
-    result = winnerWhere(boardState, player)
+  winner = (player, boardState = board) ->
+    result = winnerWhere(player, boardState)
     result[0] isnt -1 and result[1] isnt -1
 
   # function loser
@@ -123,8 +118,8 @@ this.tictactoe = do ($) ->
   # input: boardState (optional, otherwise returns internal board), player
   # output: true if player has lost
 
-  loser = (boardState = board, player) ->
-    winner(boardState, -player)
+  loser = (player, boardState = board) ->
+    winner(-player, boardState)
 
   # function winnerWhere
   #
@@ -137,10 +132,7 @@ this.tictactoe = do ($) ->
   #         location of the win
   #         returns [-1,-1] if not found
 
-  winnerWhere = (boardState = board, player) ->
-    if not player?
-      player = boardState
-      boardState = board
+  winnerWhere = (player, boardState = board) ->
     r = 0
     while (r < config.rows)
       sliceStart = r * config.rows
