@@ -1,7 +1,7 @@
 TOKENS = 
   "0": " "
-  "1": "X"
-  "-1": "O"
+  "-1": "X"
+  "1": "O"
 
 drawBoard = (board) ->
   board = (TOKENS[position] for position in board)
@@ -16,12 +16,33 @@ drawBoard = (board) ->
 computerMove = ->
   tictactoe.occupy( tictactoe.alphaBetaSearch().pop() )
 
+valid = (move) ->
+  move in tictactoe.getFreePositions()
+
+announceResult = ->
+  if tictactoe.winner(1)
+    jqconsole.Write("You won!")
+  else if tictactoe.loser(1)
+    jqconsole.Write("You lost.")
+  else
+    jqconsole.Write("Draw.")
+
+gameOver = ->
+  tictactoe.terminalTest() or tictactoe.winner(1) or tictactoe.loser(1)
+
 promptHandler = (input) ->
   jqconsole.Clear()
-
   move = parseInt(input, 10)
-  tictactoe.occupy(move)
-  computerMove()
+
+  if valid(move)
+    tictactoe.occupy(move)
+    computerMove()
+  else
+    jqconsole.Write("That's an illegal move. Try again.\n")
+
+  if gameOver()
+    announceResult()
+
   drawBoard( tictactoe.board() )
   startPrompt()
 

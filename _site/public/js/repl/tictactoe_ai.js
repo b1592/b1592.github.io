@@ -92,28 +92,23 @@
       }
       return terminalTest(boardSt) || winner(boardSt, player) || loser(boardSt, player);
     };
-    winner = function(boardState, player) {
+    winner = function(player, boardState) {
       var result;
-      if (player == null) {
-        player = boardState;
+      if (boardState == null) {
         boardState = board;
       }
-      result = winnerWhere(boardState, player);
+      result = winnerWhere(player, boardState);
       return result[0] !== -1 && result[1] !== -1;
     };
-    loser = function(boardState, player) {
+    loser = function(player, boardState) {
       if (boardState == null) {
         boardState = board;
       }
-      return winner(boardState, -player);
+      return winner(-player, boardState);
     };
-    winnerWhere = function(boardState, player) {
+    winnerWhere = function(player, boardState) {
       var c, col, colsMinusOne, csub, dc1, diag1, diag2, dr1, dsub, iters, numToWin, r, rowByTotalCols, rowsPlusOne, sliceEnd, sliceStart, _i, _j, _k, _ref, _ref1, _ref2;
       if (boardState == null) {
-        boardState = board;
-      }
-      if (player == null) {
-        player = boardState;
         boardState = board;
       }
       r = 0;
