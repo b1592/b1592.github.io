@@ -2,7 +2,7 @@
 (function() {
   var blinkCursor;
 
-  window.jqconsole = $('#console').jqconsole("SHALL WE PLAY A GAME?\n", '> ');
+  window.jqconsole = $('#console').jqconsole("CLICK TO START LESSON.\n", '> ');
 
   jqconsole.RegisterMatching('{', '}', 'brace');
 
