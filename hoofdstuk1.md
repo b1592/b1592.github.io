@@ -2,6 +2,7 @@
 layout: default_repl
 title: Hoofdstuk 1
 scrollspy: true
+lesson: hoofdstuk1
 ---
 
 #Hoofdstuk 1: hallo
@@ -114,5 +115,3 @@ Je weet nu alles wat je nodig hebt om zelf aan de slag te gaan. Je eerste script
 
 ### (Extra) Oeps, foutje!
 Wat doet je programma als je per ongeluk `jongne` in plaats van `jongen` intypt? Probeer dit soort fouten op een mooie manier op te lossen. (Is het irritant om alles opnieuw in te vullen als je één typfout maakt? Antwoord: ja.)
-
-<script src="/public/js/interactive_lessons/hoofdstuk1.js"></script>

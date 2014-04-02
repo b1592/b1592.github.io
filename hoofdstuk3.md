@@ -1,5 +1,5 @@
 ---
-layout: default_repl
+layout: default
 title: Hoofdstuk 3
 scrollspy: true
 ---
