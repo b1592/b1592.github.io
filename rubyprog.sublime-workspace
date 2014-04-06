@@ -13,6 +13,7 @@
 			]
 		]
 	},
+<<<<<<< HEAD
 	"buffers":
 	[
 		{
@@ -32,12 +33,26 @@
 			}
 		}
 	],
+=======
+>>>>>>> 85ba04a311b383946a5d1dad07602d27cfc9b161
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 375.0,
+		"height": 75.0,
 		"selected_items":
 		[
+			[
+				"sidebar",
+				"View: Toggle Side Bar"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
+			[
+				"sideba",
+				"View: Toggle Side Bar"
+			],
 			[
 				"erb",
 				"Snippet: output ERB tags"
@@ -75,7 +90,7 @@
 				"View: Toggle Minimap"
 			]
 		],
-		"width": 633.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -163,6 +178,7 @@
 		"whole_word": false,
 		"wrap": true
 	},
+<<<<<<< HEAD
 	"groups":
 	[
 		{
@@ -228,6 +244,8 @@
 			]
 		}
 	],
+=======
+>>>>>>> 85ba04a311b383946a5d1dad07602d27cfc9b161
 	"incremental_find":
 	{
 		"height": 23.0
@@ -263,7 +281,10 @@
 	{
 		"height": 126.0
 	},
-	"project": "rubyprog.sublime-project",
+	"output.find_results":
+	{
+		"height": 0.0
+	},
 	"replace":
 	{
 		"height": 50.0
@@ -383,7 +404,7 @@
 	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 283.0,
 	"status_bar_visible": true,
 	"template_settings":
