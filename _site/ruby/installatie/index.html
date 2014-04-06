@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
   <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <title>
-    Contact &middot; Rubyprog
+    Installatie &middot; Rubyprog
   </title>
 
   <!-- CSS -->
@@ -75,10 +75,37 @@
     <div class="container content">
       <div class="row">
         <div class="col-md-9">
-          <h1 id="contact">Contact</h1>
+          <h1 id="installatie">Installatie</h1>
 
-<p>Wij zijn Geert en Boris en je kunt ons bereiken op <a href='mailto:ghkapteijns@gmail.com'>ghkapteijns@gmail.com</a>. Alle vragen, opmerkingen en aanvullingen zijn welkom!</p>
-<p style='margin-bottom: 600px;'>&nbsp;</p>
+<p>We installeren twee dingen: de ruby interpreter en een text editor.</p>
+<div class="maruku_toc"><ul><li><a href="#ruby_interpreter">Ruby interpreter</a><ul><li><a href="#windows">Windows</a></li><li><a href="#maclinux">Mac/Linux</a></li></ul></li><li><a href="#sublime_text">Sublime Text</a></li></ul></div>
+<h2 id="ruby_interpreter">Ruby interpreter</h2>
+
+<h3 id="windows">Windows</h3>
+
+<p>Ga naar <a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>.</p>
+
+<p>Download <code>Ruby 1.9.3-p484</code> onder <code>RubyInstallers</code>.</p>
+
+<p>Vink de volgende opties aan voor het installeren:</p>
+
+<ul>
+<li><code>Add Ruby executables to your PATH</code></li>
+
+<li><code>Associate .rb and .rbw files with this Ruby installation</code></li>
+</ul>
+
+<p>Open de <a href="/command_line">command line</a> en typ <code>ruby -v</code>. Hiermee vraag je om de versie. Als het goed is zie je nu:</p>
+
+<pre><code>ruby 1.9.3p484    </code></pre>
+
+<h3 id="maclinux">Mac/Linux</h3>
+
+<p>Ruby is al geïnstalleerd. Open een terminal en typ <code>ruby -v</code>. Alles van <code>1.8.7</code> tot <code>2.1.0</code> is OK.</p>
+
+<h2 id="sublime_text">Sublime Text</h2>
+
+<p>Ga naar <a href="http://www.sublimetext.com/3">http://www.sublimetext.com/3</a> en klik onder <code>Download</code> op het juiste besturingssysteem: Windows, OS X (Mac) of Ubuntu, een distributie van Linux. (Als je een andere linuxdistributie hebt, heb je deze cursus waarschijnlijk niet nodig.)</p>
         </div>
 
         <div class="col-md-3">
@@ -125,6 +152,8 @@
 
   <!-- Load JS here for greater good =============================-->
     <script src="/public/js/bootstrap.min.js"></script>
+    
+      <script src="/public/js/scrollspy.js"></script>
     
     <script src="/public/js/custom.js"></script>
   </body>
