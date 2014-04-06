@@ -122,3 +122,16 @@ end
 {% endhighlight %}
 
 Nu weet de server dat hij bij een `GET` request voor de pagina `/` (de hoofdpagina, oftewel `localhost:9393/`) de string `"Hello world!"` moet terugsturen.
+
+## Opdracht
+
+De opdracht is om zelf te klooien. Verwerk een component uit [Refills](http://thoughtbot.github.io/refills/) in je site. Je kunt knippen en plakken (druk op Show Code), maar probeer te begrijpen wat er staat. Welke html-tags ken je al? Welke nog niet? [Hier](http://www.99lime.com/_bak/topics/you-only-need-10-tags/) staan de meestgebruikte tags op een rijtje.
+
+Let op: als er iets tussen `<head>`-tags staat, hoort het in de `<head>`. Je kunt de `<head>` maar op één plek beschrijven, dus moet je die regels in `layout.erb` in tussen de bestaande `<head>`-tags stoppen.
+
+### Variabelen
+
+Open het bestand `_variables.scss`. Hier staan variabelen die je kunt veranderen. De variabele `$base-font-family` geeft het lettertype aan, `$base-font-size` de lettergrootte, `$base-font-color` de tekstkleur, etc. Maak er wat moois van!
+
+In `style.scss` kun je zelf regels toevoegen. [Hier](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) is een lijst van CSS-dingen die je kunt veranderen. Kijk goed naar de voorbeelden.
+
