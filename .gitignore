@@ -11,6 +11,7 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+maillijst.txt
 
 # YARD artifacts
 .yardoc
@@ -18,3 +19,8 @@ _yardoc
 doc/
 
 _site/atom.xml
+
+# Node garbage to watch less files
+# node_modules
+# Gruntfile.js
+# package.json

@@ -8,15 +8,14 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
   <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <title>
-    
     Rubyprog
   </title>
 
   <!-- CSS -->
-  <link href="/public/bootstrap/css/bootstrap.css" rel="stylesheet">
-  <!-- <link href="/public/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"> -->
-  
+  <link href="/public/css/all.css" rel="stylesheet">
   <link href="/public/css/syntax.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 </head>
 
 
@@ -61,6 +60,9 @@
   </div>
 </header> 
 
+  <div id="repl-back">
+    <div id="console"></div>
+  </div>
     <div class="container content">
       <div class="row">
         <div class="col-md-9">
@@ -92,6 +94,10 @@
         <div class="col-md-3">
           <h2 id="nieuws">Nieuws</h2>
           <ul id="blog-posts" class="posts">
+          
+            <li><a href="/2014/03/20/overzicht-les-4.md/">Overzicht les 4</a></li>
+            <li>20 Mar 2014</li>
+            <li><hr></li>
           
             <li><a href="/2014/03/20/overzicht-les-4/">Overzicht les 4</a></li>
             <li>20 Mar 2014</li>
@@ -150,8 +156,13 @@
 
   <!-- Load JS here for greater good =============================-->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
     
     <script src="/public/js/custom.js"></script>
+    <script src="/public/js/repl/jqconsole.js"></script>
+<script src="/public/js/repl/initialize_console.js"></script>
+    <script src="/public/js/repl/tictactoe_ai.js"></script>
+    <script src="/public/js/repl/tictactoe_gamemaker.js"></script>
+    
   </body>
 </html>

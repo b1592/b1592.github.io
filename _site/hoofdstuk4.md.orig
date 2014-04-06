@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
+  <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <title>
+    Hoofdstuk 4 &middot; Rubyprog
+  </title>
+
+  <!-- CSS -->
+  <link href="/public/css/all.css" rel="stylesheet">
+  <link href="/public/css/syntax.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+</head>
+
+
+  <body class="scrollspy" id="top">
+
+  <header>
+
+  <!-- <img src="/public/images/logo.png" height="65px" style="padding:0px; margin-top:13px;"> -->
+  <!-- <img src="/public/images/logo.png" height="60px" style="padding:0px; margin:0px;"/> -->
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img id="rubylogo" src="/public/images/logo.png"></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/" style="font-weight:400;">Home</a></li>
+          <li><a href="/introductie">Introductie</a></li>
+          <!-- <li><a href="">Contact</a></li> -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cursus <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="/installatie">Installatie</a></li>
+              <li><a href="/command_line">Command Line</a></li>
+              <li class="divider"></li>
+              <li><a href="/hoofdstuk1">Hoofdstuk 1</a></li>
+              <li><a href="/hoofdstuk2">Hoofdstuk 2</a></li>
+              <li><a href="/hoofdstuk3">Hoofdstuk 3</a></li>
+              <li><a href="/hoofdstuk4">Hoofdstuk 4</a></li>
+            </ul>
+          </li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</header> 
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-9">
+          #HOOFDSTUK 4: TIC TAC TOE EN MASTERMIND
+
+In dit hoofdstuk ga je [boter, kaas en eieren](http://en.wikipedia.org/wiki/Tic-tac-toe) of [mastermind](http://nl.wikipedia.org/wiki/Mastermind) aan de computer uitleggen. 
+
+Beide spellen zijn een grote uitdaging, maar wij denken dat boter, kaas en eieren iets lastiger is dan mastermind. Je mag zelf weten welke je gaat maken.
+
+Lees eerst goed de informatie door, die is voor beide spellen belangrijk.
+
+<p><iframe width="420" height="315" src="//www.youtube.com/embed/F7qOV8xonfY"
+  frameborder="0" allowfullscreen="allowfullscreen">  </iframe></p>
+
+##Bestanden
+
+<<<<<<< HEAD
+[Download hier de tictactoe bestanden](/public/downloads/Hoofdstuk4.zip)
+
+In de map `Hoofdstuk4` vind je de volgende bestanden:
+=======
+[Download hier de bestanden:](/public/downloads/Hoofdstuk4.zip)
+
+In de map `Hoofdstuk4A` vind je de volgende bestanden:
+>>>>>>> repl
+
+    Hoofdstuk4.url - deze beschrijving
+    mastermind.rb
+    game.rb
+
+[Download hier de mastermind bestanden](/public/downloads/Mastermind.zip)
+
+
+En in `Mastermind`:
+
+    Hoofdstuk4.url
+    tictactoe.rb
+    game.rb
+    narrator.rb
+
+## Informatie
+
+### Objecten
+
+Om de wereld zo begrijpelijk mogelijk te vatten in code, gebruiken veel programmeertalen objecten (`Objects`). Ook Ruby. In onderstaand voorbeeld willen we boeken modelleren:
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">Book</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+        <span class="vi">@author</span> <span class="o">=</span> <span class="n">author</span>
+        <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="vi">@content</span> <span class="o">=</span> <span class="n">content</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+Een klasse (`Class`) is de blauwdruk van een object.
+
+`initialize` is een speciale functie, die wordt uitgevoerd zodra er een object van klasse `Book` wordt aangemaakt. Je maakt een object door `new` aan te roepen:
+
+<div class="highlight"><pre><code class="ruby"><span class="n">book1</span> <span class="o">=</span> <span class="no">Book</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Lord of the Rings&quot;</span><span class="p">,</span> <span class="s2">&quot;J. R. R. Tolkien&quot;</span><span class="p">,</span> <span class="s2">&quot;Three Rings for the Elven-kings ...&quot;</span><span class="p">)</span>
+<span class="n">book2</span> <span class="o">=</span> <span class="no">Book</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Titaantjes&quot;</span><span class="p">,</span> <span class="s2">&quot;Nescio&quot;</span><span class="p">,</span> <span class="s2">&quot;Jongens waren we - maar aardige jongens. Al zeg ik &#39;t zelf ...&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+Elk boek heeft dezelfde structuur, die wordt bepaald door de klasse `Book`. Het is een container van de variabelen `author`, `title` en `content`. Variabelen die bij een object horen --- _instance variables_ --- beginnen met een `@`.
+
+Deze variabelen zijn afgeschermd van de code buiten de klasse:
+
+<div class="highlight"><pre><code class="ruby"><span class="n">book1</span><span class="o">.</span><span class="n">title</span> <span class="c1"># =&gt; NoMethodError: undefined method `title&#39;</span>
+</code></pre></div>
+
+Als je bepaalde variabelen beschikbaar wilt maken, doe je dat met `attr_accessor`:
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">Book</span>
+    <span class="kp">attr_accessor</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:author</span><span class="p">,</span> <span class="ss">:content</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+        <span class="vi">@author</span> <span class="o">=</span> <span class="n">author</span>
+        <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="vi">@content</span> <span class="o">=</span> <span class="n">content</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+Nu kunnen we aan het boek vragen wat zijn titel is:
+
+<div class="highlight"><pre><code class="ruby"><span class="n">book1</span><span class="o">.</span><span class="n">title</span> <span class="c1"># =&gt; &quot;Lord of the Rings&quot;</span>
+<span class="n">book1</span><span class="o">.</span><span class="n">author</span> <span class="c1"># =&gt; &quot;J. R. R. Tolkien&quot;</span>
+</code></pre></div>
+
+En we kunnen attributen veranderen:
+
+<div class="highlight"><pre><code class="ruby"><span class="n">book2</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;De uitvreter&quot;</span>
+<span class="n">book2</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;Behalve den man, die de Sarphatistraat ...&quot;</span>
+
+<span class="n">book2</span><span class="o">.</span><span class="n">title</span> <span class="c1"># =&gt; &quot;De uitvreter&quot;</span>
+</code></pre></div>
+
+So far so good.
+
+Stel dat we willen bijhouden waar we zijn gebleven met lezen. Bij elk nieuw boek dat we maken, zetten we de variable `@current_page` op 1. Dit gebeurt dus in `initialize`. We schrijven een functie `flip_page`:
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">Book</span>
+    <span class="kp">attr_accessor</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:author</span><span class="p">,</span> <span class="ss">:content</span><span class="p">,</span> <span class="ss">:current_page</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+        <span class="vi">@author</span> <span class="o">=</span> <span class="n">author</span>
+        <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="vi">@content</span> <span class="o">=</span> <span class="n">content</span>
+        <span class="vi">@current_page</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">flip_page</span>
+        <span class="vi">@current_page</span> <span class="o">=</span> <span class="vi">@current_page</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div> 
+
+Niet vergeten `:current_page` toe te voegen aan `attr_accessor`. Nu kunnen we dit doen:
+
+<div class="highlight"><pre><code class="ruby"><span class="n">book1</span><span class="o">.</span><span class="n">current_page</span> <span class="c1"># =&gt; 1</span>
+<span class="n">book1</span><span class="o">.</span><span class="n">flip_page</span> 
+<span class="n">book1</span><span class="o">.</span><span class="n">current_page</span> <span class="c1"># =&gt; 2</span>
+</code></pre></div>
+
+Als we de woorden van een boek nodig hebben, dan definiëren we gewoon een functie `words`:
+
+<div class="highlight"><pre><code class="ruby"><span class="k">class</span> <span class="nc">Book</span>
+    <span class="kp">attr_accessor</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">:author</span><span class="p">,</span> <span class="ss">:content</span><span class="p">,</span> <span class="ss">:current_page</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+        <span class="vi">@author</span> <span class="o">=</span> <span class="n">author</span>
+        <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="vi">@content</span> <span class="o">=</span> <span class="n">content</span>
+        <span class="vi">@current_page</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">flip_page</span>
+        <span class="vi">@current_page</span> <span class="o">=</span> <span class="vi">@current_page</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">words</span>
+        <span class="vi">@content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">book1</span><span class="o">.</span><span class="n">words</span> <span class="c1"># =&gt; [&quot;Three&quot;, &quot;rings&quot;, &quot;for&quot;, ... ]</span>
+</code></pre></div>
+
+Wat is het voordeel van objecten? Zodra we de blauwdruk hebben gespecificeerd, kunnen we precies vragen aan het object wat we nodig hebben. Niets meer en niets minder. Dit geeft overzicht, en maakt software hergebruiken makkelijk.
+
+Nu weten jullie wat hier gebeurt:
+
+<div class="highlight"><pre><code class="ruby"><span class="n">getallen</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+<span class="n">getallen</span><span class="o">.</span><span class="n">max</span> <span class="c1"># =&gt; 5</span>
+</code></pre></div>
+
+`getallen` is een object, van de klasse `Array`! `max` is een functie die in deze klasse staat gedefinieerd. Stiekem is alles in Ruby een object:
+
+<div class="highlight"><pre><code class="ruby"><span class="s2">&quot;Obama&quot;</span><span class="o">.</span><span class="n">reverse</span> <span class="c1"># =&gt; &quot;amabO&quot;</span>
+</code></pre></div>
+
+`"Obama"` is een object van klasse `String`, met een functie `reverse`.
+
+Laat je niet overdonderen. Het kost de meeste mensen minstens een half jaar om aan _objectgeörienteerd_ programmeren gewend te raken.
+
+### `require` en de standard library
+Je hoeft het wiel niet opnieuw uit te vinden. Voorbeeld: je wilt een datum omrekenen naar een weekdag. Daar heeft Ruby al iets op bedacht. Je "leent" het bestand `date` uit de _standard library_. Daar staan alle files die standaard bij de Ruby-taal geleverd worden. Dat gaat zo:
+
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s2">&quot;date&quot;</span>
+
+<span class="n">date</span> <span class="o">=</span> <span class="no">Date</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">date</span><span class="o">.</span><span class="n">wday</span> <span class="c1"># =&gt; 2</span>
+<span class="n">date</span><span class="o">.</span><span class="n">tuesday?</span> <span class="c1"># =&gt; true</span>
+</code></pre></div>
+
+Nu kun je alle code uit `date` aanroepen, zonder te weten wat er precies in dat bestand staat. Op de [pagina van `date`](http://ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Date.html#method-i-wday) staat wat je er mee kunt doen. In Ruby hoef je bijna geen basisfunctionaliteit zelf te schrijven. Kijk dus eerst in de [documentatie](http://ruby-doc.org/core-1.9.3/), zodat je geen onnodig werk doet.
+
+### Eigen bestanden aanroepen
+
+Grote programma's worden vaak gesplitst in meerdere bestanden. Dit geeft overzicht. Als je code uit je eigen mappen wilt aanroepen, moet je `require_relative` gebruiken.
+
+In de map `Hoofdstuk4B` staat `tictactoe.rb`. Dit bestand willen we uitvoeren om het spel te starten. Maar om het overzicht te bewaren, zetten we alle code van de klasse `Game` in `game.rb` en van klasse `Narrator` in `narrator.rb`. In `tictactoe.rb` zetten we vervolgens:
+
+<div class="highlight"><pre><code class="ruby"><span class="n">require_relative</span> <span class="s2">&quot;game&quot;</span>
+<span class="n">require_relative</span> <span class="s2">&quot;narrator&quot;</span>
+
+<span class="n">game</span> <span class="o">=</span> <span class="no">Game</span><span class="o">.</span><span class="n">new</span>
+<span class="n">narrator</span> <span class="o">=</span> <span class="no">Narrator</span><span class="o">.</span><span class="n">new</span>
+</code></pre></div>
+
+Zoals je ziet, kun je `.rb` weglaten uit de bestandsnaam. De hulpcode van Mastermind is op dezelfde manier gescheiden.
+
+### 2D-array
+
+Deze informatie is nuttig als je boter, kaas en eieren gaat maken.
+
+Je hebt al kennis gemaakt met arrays. Nu gaan we een stapje verder: tweedimensionale arrays. Dit zijn arrays in arrays. Het spelbord is precies dat:
+
+<div class="highlight"><pre><code class="ruby"><span class="o">[[</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="o">]]</span>
+</code></pre></div>
+
+Je ziet dat er één grote array is met daarin drie kleine arrays. Deze kleine arrays vormen de rijen van het bord:
+
+     X | X | O 
+    ---|---|---
+     O | O | X 
+    ---|---|---
+       |   | O 
+
+Probeer zelf een paar van dit soort arrays te maken in `irb`, zodat je echt begrijpt hoe ze werken.
+
+## Tic Tac Toe
+### De spelregels
+Jullie zullen vooral aan de `Game`-klasse werken. Deze klasse bevat alle spellogica. We moeten aan een `Game`-object kunnen vragen wie er aan de beurt is, of het spel al over is, hoe het huidige bord eruit ziet, enzovoort. Bovendien moeten we een zet kunnen doen.
+
+<div class="highlight"><pre><code class="ruby"><span class="n">game</span> <span class="o">=</span> <span class="no">Game</span><span class="o">.</span><span class="n">new</span>
+<span class="n">game</span><span class="o">.</span><span class="n">over?</span> <span class="c1"># =&gt; false</span>
+<span class="n">game</span><span class="o">.</span><span class="n">current_player</span> <span class="c1"># =&gt; &quot;Player 1&quot;</span>
+<span class="n">game</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">game</span><span class="o">.</span><span class="n">current_player</span> <span class="c1"># =&gt; &quot;Player 2&quot;</span>
+</code></pre></div>
+
+Het leek ons handig om de plaatsen op het bord te nummeren zoals het NumPad. 7 is linksboven, 1 is linksonder, enz. `game.play(1)` betekent: de speler die aan de beurt is speelt linksonder. Welke speler aan de beurt is, moet het `Game`-object zelf bijhouden.
+
+### Het bord tekenen
+
+Kijk eens naar de `Narrator`-klasse, in `narrator.rb`. Dit kun je ermee:
+
+<div class="highlight"><pre><code class="ruby"><span class="n">narrator</span> <span class="o">=</span> <span class="no">Narrator</span><span class="o">.</span><span class="n">new</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="o">[[</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="o">]</span><span class="p">,</span> 
+        <span class="o">[</span><span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="o">]</span><span class="p">,</span> 
+        <span class="o">[</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="o">]]</span>
+<span class="n">narrator</span><span class="o">.</span><span class="n">draw_board</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</code></pre></div>
+
+Kijk maar wat je dan krijgt!
+
+De lege functie `intro` mogen jullie gebruiken, maar het hoeft niet. Het is maar een ideetje. Je kunt er handig gebruik van maken in het hoofdbestand `tictactoe.rb`:
+
+<div class="highlight"><pre><code class="ruby"><span class="n">narrator</span> <span class="o">=</span> <span class="no">Narrator</span><span class="o">.</span><span class="n">new</span>
+<span class="n">narrator</span><span class="o">.</span><span class="n">intro</span> 
+</code></pre></div> 
+
+In `narrator.rb` kun je `intro` programmeren zoals je wilt. Misschien wil je de spelers begroeten, of de regels uitleggen. Het gaat erom dat het hoofdbestand `tictactoe.rb` overzichtelijk blijft: het scheelt enorm als je alleen een instructie hoeft te geven aan het `Narrator`-object. `narrator.intro` is een stuk duidelijker dan meerdere regels met `puts`- commando's.
+
+### (Extra) Tegen de computer
+De ultieme uitdaging van deze cursus. Maak een klasse `ComputerPlayer` en zorg dat je tegen de computer kunt spelen!
+
+## Mastermind
+
+### De spelregels
+Alle spellogica staat in de `Game`-klasse. Wat moeten we allemaal aan een spelobject kunnen vragen? Hoe vaak de speler nog mag raden, wat de score van de laatste gok was, of het spel al voorbij is, enzovoorts. Stel je zoiets voor:
+
+<div class="highlight"><pre><code class="ruby"><span class="c1"># game.rb</span>
+
+<span class="c1"># De geheime code is 1234</span>
+<span class="n">game</span> <span class="o">=</span> <span class="no">Game</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;1234&quot;</span><span class="p">)</span>
+<span class="n">game</span><span class="o">.</span><span class="n">guesses_left</span> <span class="c1"># =&gt; 10</span>
+<span class="n">game</span><span class="o">.</span><span class="n">guess</span><span class="p">(</span><span class="s2">&quot;1241&quot;</span><span class="p">)</span>
+<span class="c1"># voor elk getal op de juiste plaats krijg je een plusje,</span>
+<span class="c1"># voor elk getal op de verkeerde plek een minnetje.   </span>
+<span class="n">game</span><span class="o">.</span><span class="n">score</span> <span class="c1"># =&gt; ++-</span>
+<span class="n">game</span><span class="o">.</span><span class="n">over?</span> <span class="c1"># =&gt; false</span>
+<span class="n">game</span><span class="o">.</span><span class="n">guesses_left</span> <span class="c1"># =&gt; 9</span>
+</code></pre></div>
+
+Dit is slechts een voorbeeld, het gaat erom dat je de spellogica "verstopt" in een object, zodat je de relevante informatie op een overzichtelijke manier kunt opvragen. De details laten we aan jullie over.
+
+In `mastermind.rb` hoef je je geen zorgen meer te maken over de spellogica. Een voorbeeldje:
+
+<div class="highlight"><pre><code class="ruby"><span class="c1"># mastermind.rb</span>
+
+<span class="n">require_relative</span> <span class="s2">&quot;game&quot;</span>
+
+<span class="n">game</span> <span class="o">=</span> <span class="no">Game</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;1234&quot;</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">&quot;Welkom bij Mastermind, raad de code van vier cijfers.&quot;</span>
+
+<span class="k">while</span> <span class="n">game</span><span class="o">.</span><span class="n">over?</span> <span class="o">==</span> <span class="kp">false</span>
+    <span class="c1"># vraag speler om code en geef score</span>
+<span class="k">end</span>
+</code></pre></div>
+
+## Pen en papier
+Het is verleidelijk om meteen te gaan typen. Maar begin eens met pen en papier. Hoe verloopt een speelbeurt? Wanneer is het spel afgelopen? Schroom niet om functies toe te voegen aan `Game` of (in het geval van Tic Tac Toe) `Narrator`.
+
+
+        </div>
+
+        <div class="col-md-3">
+          <div class="page-map-sidebar" data-spy="affix">
+            <ul id="page-map" class="nav">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <footer>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <p><a href="/" id="logo" class="footer-brand">ruby{prog}</a></p>
+
+      <p>Deze cursus is ontwikkeld door Geert Kapteijns en Boris Ponsioen. Het materiaal is vrij te gebruiken onder de <a href="http://creativecommons.org/licenses/by-nc/4.0/deed.nl">CC BY-NC 4.0-licentie</a> --- je mag er alles mee doen, zolang het maar niet-commercieel is.</p>
+
+      <p>Meehelpen? Zie de <a href="https://github.com/b1592/b1592.github.io">Github-pagina.</a></p>
+
+      <p>Alle kritiek is welkom. Mail naar <a href="mailto:ghkapteijns@gmail.com">ghkapteijns@gmail.com</a>.</p>
+    </div>
+    <div class="col-md-3">
+    &nbsp;
+    </div>
+    </div>
+  </div>
+</footer>
+
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-47467348-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  <!-- Load JS here for greater good =============================-->
+    <script src="/public/js/bootstrap.min.js"></script>
+    
+      <script src="/public/js/scrollspy.js"></script>
+    
+    <script src="/public/js/custom.js"></script>
+  </body>
+</html>

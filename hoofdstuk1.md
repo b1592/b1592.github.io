@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: default_repl
 title: Hoofdstuk 1
 scrollspy: true
+lesson: hoofdstuk1
 ---
 
 #Hoofdstuk 1: hallo

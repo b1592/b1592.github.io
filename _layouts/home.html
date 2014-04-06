@@ -7,6 +7,9 @@
 
   {% include header.html %} 
 
+  <div id="repl-back">
+    <div id="console"></div>
+  </div>
     <div class="container content">
       <div class="row">
         <div class="col-md-9">
@@ -33,10 +36,14 @@
 
   <!-- Load JS here for greater good =============================-->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
     {% if page.scrollspy %}
       <script src="/public/js/scrollspy.js"></script>
     {% endif %}
     <script src="/public/js/custom.js"></script>
+    {% include console_scripts.html %}
+    <script src="/public/js/repl/tictactoe_ai.js"></script>
+    <script src="/public/js/repl/tictactoe_gamemaker.js"></script>
+    
   </body>
 </html>

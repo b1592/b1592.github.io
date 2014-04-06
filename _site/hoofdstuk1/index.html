@@ -8,15 +8,14 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
   <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <title>
-    Hoofdstuk 1 &middot; 
-    Rubyprog
+    Hoofdstuk 1 &middot; Rubyprog
   </title>
 
   <!-- CSS -->
-  <link href="/public/bootstrap/css/bootstrap.css" rel="stylesheet">
-  <!-- <link href="/public/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"> -->
-  
+  <link href="/public/css/all.css" rel="stylesheet">
   <link href="/public/css/syntax.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 </head>
 
 
@@ -61,9 +60,21 @@
   </div>
 </header> 
 
+  <div id="repl-back">
+    <div id="console"></div>
+  </div>
     <div class="container content">
+
       <div class="row">
         <div class="col-md-9">
+          <script src="/public/js/repl/jqconsole.js"></script>
+<script src="/public/js/repl/initialize_console.js"></script>
+          <script src="/public/js/repl/question.js"></script>
+<script src="/public/js/repl/lesson.js"></script>
+<script src="/public/js/repl/jsrepl.js" id="jsrepl-script"></script>
+<script src="/public/js/repl/repl.js"></script>
+          <script src="/public/js/interactive_lessons/hoofdstuk1.js"></script>
+          
           <h1 id="hoofdstuk_1_hallo">Hoofdstuk 1: hallo</h1>
 
 <p>We maken kennis met Ruby en Sublime Text. We praten tegen de computer en laten de computer terugpraten.</p>
@@ -190,8 +201,7 @@ hallo.rb - het script waar je in gaat werken</code></pre>
 </script>
 
   <!-- Load JS here for greater good =============================-->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
     
       <script src="/public/js/scrollspy.js"></script>
     

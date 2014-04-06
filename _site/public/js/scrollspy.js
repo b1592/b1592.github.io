@@ -66,12 +66,22 @@ $('body').scrollspy({ target: '.page-map-sidebar' });
     })
 
     // side bar
-    $('.page-map-sidebar').affix({
-      offset: {
-        top: 284
-      , bottom: 150
-      }
-    })          
+    // Check for repl (bigger top needed)
+    if ($("#repl-back").length > 0) {
+      $('.page-map-sidebar').affix({
+        offset: {
+          top: 600
+        , bottom: 150
+        }
+      })          
+    } else {
+      $('.page-map-sidebar').affix({
+        offset: {
+          top: 284
+        , bottom: 150
+        }
+      })   
+    }
   })
 }(window.jQuery)
 
