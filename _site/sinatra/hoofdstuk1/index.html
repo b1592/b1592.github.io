@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
   <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <title>
-    Installatie &middot; Rubyprog
+    Hoofdstuk 1 &middot; Rubyprog
   </title>
 
   <!-- CSS -->
@@ -72,37 +72,30 @@
     <div class="container content">
       <div class="row">
         <div class="col-md-9">
-          <h1 id="installatie">Installatie</h1>
+          <h1 id="hoofdstuk_1_html">Hoofdstuk 1: HTML</h1>
 
-<p>We installeren twee dingen: de ruby interpreter en een text editor.</p>
-<div class="maruku_toc"><ul><li><a href="#ruby_interpreter">Ruby interpreter</a><ul><li><a href="#windows">Windows</a></li><li><a href="#maclinux">Mac/Linux</a></li></ul></li><li><a href="#sublime_text">Sublime Text</a></li></ul></div>
-<h2 id="ruby_interpreter">Ruby interpreter</h2>
+<p>Websites worden weergegeven in HTML (HyperText Markup Language).</p>
 
-<h3 id="windows">Windows</h3>
+<h2 id="setup">Setup</h2>
 
-<p>Ga naar <a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>.</p>
+<h3 id="sinatra">Sinatra</h3>
 
-<p>Download <code>Ruby 1.9.3-p484</code> onder <code>RubyInstallers</code>.</p>
+<p><a href="http://www.sinatrarb.com/">Sinatra</a> is Ruby-uitbreiding waarmee je interactieve websites kunt maken. Typ in de command line:</p>
 
-<p>Vink de volgende opties aan voor het installeren:</p>
+<pre><code>gem install sinatra</code></pre>
 
-<ul>
-<li><code>Add Ruby executables to your PATH</code></li>
+<p>Sinatra is een gem. Dat is code die je binnen je eigen programma kunt aanroepen. Als je een gem eenmaal geïnstalleerd hebt, kun je de code aanroepen met <code>require</code>. Net als bij de <a href="/ruby/hoofdstuk4/#_en_de_standard_library">standard library van Ruby</a>.</p>
 
-<li><code>Associate .rb and .rbw files with this Ruby installation</code></li>
-</ul>
+<h3 id="vormgeving">Vormgeving</h3>
 
-<p>Open de <a href="/command_line">command line</a> en typ <code>ruby -v</code>. Hiermee vraag je om de versie. Als het goed is zie je nu:</p>
+<p>De volgende gems zijn samen een raamwerk om websites vorm te geven:</p>
 
-<pre><code>ruby 1.9.3p484    </code></pre>
+<pre><code>gem install sass
+gem install bourbon
+gem install neat
+gem install bitters</code></pre>
 
-<h3 id="maclinux">Mac/Linux</h3>
-
-<p>Ruby is al geïnstalleerd. Open een terminal en typ <code>ruby -v</code>. Alles van <code>1.8.7</code> tot <code>2.1.0</code> is OK.</p>
-
-<h2 id="sublime_text">Sublime Text</h2>
-
-<p>Ga naar <a href="http://www.sublimetext.com/3">http://www.sublimetext.com/3</a> en klik onder <code>Download</code> op het juiste besturingssysteem: Windows, OS X (Mac) of Ubuntu, een distributie van Linux. (Als je een andere linuxdistributie hebt, heb je deze cursus waarschijnlijk niet nodig.)</p>
+<p><a href="http://thoughtbot.github.io/refills/">Hier wat voorbeelden</a>.</p>
         </div>
 
         <div class="col-md-3">
