@@ -26,3 +26,29 @@ De volgende gems zijn samen een raamwerk om websites vorm te geven:
     gem install bitters
 
 [Hier wat voorbeelden](http://thoughtbot.github.io/refills/).
+
+### Mappenstructuur
+
+We kunnen beginnen. Maak een map met als naam `blog` (of weet je een betere naam?) Alle verdere bestanden komen in deze map.
+    
+    mkdir blog
+    cd blog
+
+Maak in `blog` een map `views`. Hier komen de verschillende pagina's in te staan.
+
+    mkdir views
+    cd views
+
+Je staat nu in `blog/views`. Hier maak je een map `scss`. Hier komt alle code die te maken heeft met vormgeving.
+
+    mkdir scss
+    cd scss
+
+Nu ben je in `blog/views/scss`. Voer de volgende commando's uit:
+
+    bourbon install
+    neat install
+    bitters install
+
+
+
