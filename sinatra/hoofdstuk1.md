@@ -54,7 +54,25 @@ Nu ben je in `blog/views/scss`. Voer de volgende commando's uit:
     neat install
     bitters install
 
-Nu zijn er mappen `bourbon`, `neat` en `bitters` gemaakt die standaardvormgeving bevatten. Als laatste: download het bestand [normalize.scss](/public/downloads/normalize.scss) en zet het in de map `scss`. normalize.scss reset veel waarden, zodat je site er op alle browsers hetzelfde uitziet. De mappenstructuur is zo:
+Nu zijn er mappen `bourbon`, `neat` en `bitters` gemaakt die standaardvormgeving bevatten.
+
+Download het bestand [normalize.scss](/public/downloads/normalize.scss) en zet het in de map `scss`. normalize.scss reset veel waarden, zodat je site er op alle browsers hetzelfde uitziet.
+
+Je moet nog één ding doen. Open het bestand `_bitters.scss`, in de map `bitters`. Verander de bovenste twee regels:
+
+{% highlight scss %}
+// @import "neat-helpers"; // or "neat/neat-helpers" when not in Rails
+// @import "grid-settings";
+{% endhighlight %}
+
+in het volgende: (Niet vergeten op te slaan!)
+
+{% highlight scss %}
+    @import "../neat/neat-helpers";
+    @import "grid-settings";
+{% endhighlight %}
+
+De mappenstructuur moet er zo uitzien:
 
 ![Mappenstructuur](/public/images/mappenstructuur.png)
 
