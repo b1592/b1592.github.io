@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
   <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <title>
-    Installatie &middot; Rubyprog
+    Hoofdstuk 1 &middot; Rubyprog
   </title>
 
   <!-- CSS -->
@@ -53,18 +53,15 @@
               <li><a href="/ruby/hoofdstuk4">Hoofdstuk 4</a></li>
             </ul>
           </li>
-          <!-- <li class="dropdown">
+          <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sinatra <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="/ruby/installatie">Installatie</a></li>
-              <li><a href="/ruby/command_line">Command Line</a></li>
-              <li class="divider"></li>
-              <li><a href="/ruby/hoofdstuk1">Hoofdstuk 1</a></li>
+              <li><a href="/sinatra/hoofdstuk1">Hoofdstuk 1</a></li>
               <li><a href="/ruby/hoofdstuk2">Hoofdstuk 2</a></li>
               <li><a href="/ruby/hoofdstuk3">Hoofdstuk 3</a></li>
               <li><a href="/ruby/hoofdstuk4">Hoofdstuk 4</a></li>
             </ul>
-          </li> -->
+          </li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div><!--/.nav-collapse -->
@@ -75,37 +72,48 @@
     <div class="container content">
       <div class="row">
         <div class="col-md-9">
-          <h1 id="installatie">Installatie</h1>
+          <h2 id="views">Views</h2>
 
-<p>We installeren twee dingen: de ruby interpreter en een text editor.</p>
-<div class="maruku_toc"><ul><li><a href="#ruby_interpreter">Ruby interpreter</a><ul><li><a href="#windows">Windows</a></li><li><a href="#maclinux">Mac/Linux</a></li></ul></li><li><a href="#sublime_text">Sublime Text</a></li></ul></div>
-<h2 id="ruby_interpreter">Ruby interpreter</h2>
+<p>Nu gaan we iets meer inhoud toevoegen. Daarvoor gebruik je <code>erb</code>, wat staat voor “embedded ruby”. Dat wil zeggen dat je stukjes Ruby in de pagina kunt stoppen. Maar voordat je <code>erb</code> kunt gebruiken, moet je eerst iets van HTML weten. Dat is de taal die alle websites gebruiken om hun inhoud weer te geven.</p>
 
-<h3 id="windows">Windows</h3>
+<h3 id="html">HTML</h3>
 
-<p>Ga naar <a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>.</p>
+<p>HTML is niet een echte programmeertaal, zoals Ruby, maar je gebruikt het alleen om te zeggen welke inhoud waar op je pagina moet verschijnen. HTML bestaat uit “tags”, die er zo uit zien: <code>&lt;html&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;a&gt;</code>. Je sluit ze af met een <code>/</code>: <code>&lt;/html&gt;</code>.</p>
 
-<p>Download <code>Ruby 1.9.3-p484</code> onder <code>RubyInstallers</code>.</p>
+<p>Het begint allemaal met een <code>&lt;html&gt;</code>-tag:</p>
+<div class='highlight'><pre><code class='html'><span class='nt'>&lt;html&gt;</span>
+<span class='nt'>&lt;head&gt;</span>
+<span class='nt'>&lt;title&gt;</span>Titel<span class='nt'>&lt;/title&gt;</span>
+<span class='nt'>&lt;/head&gt;</span>
 
-<p>Vink de volgende opties aan voor het installeren:</p>
+<span class='nt'>&lt;body&gt;</span>
+<span class='nt'>&lt;/body&gt;</span>
+<span class='nt'>&lt;/html&gt;</span>
+</code></pre></div>
+<p>Wat gebeurt hier allemaal? Je ziet een aantal tags staan:</p>
 
 <ul>
-<li><code>Add Ruby executables to your PATH</code></li>
+<li><code>&lt;html&gt;</code> -&gt; hier begint de pagina mee. Alles moet tussen de <code>&lt;html&gt;&lt;/html&gt;</code>-tags staan</li>
 
-<li><code>Associate .rb and .rbw files with this Ruby installation</code></li>
+<li><code>&lt;head&gt;</code> -&gt; hier stop je extra informatie over je pagina, bijvoorbeeld de titel</li>
+
+<li><code>&lt;title&gt;</code> -&gt; wat hier in staat, komt in je browser bovenaan te staan. Let op dat de <code>&lt;title&gt;</code> in de <code>&lt;head&gt;</code> moet staan</li>
+
+<li><code>&lt;body&gt;</code> -&gt; hier begint je pagina pas echt. Alle inhoud stop je in de <code>&lt;body&gt;</code></li>
 </ul>
 
-<p>Open de <a href="/command_line">command line</a> en typ <code>ruby -v</code>. Hiermee vraag je om de versie. Als het goed is zie je nu:</p>
+<p>Dit is al een volledige pagina, maar het doet nog niets. Laten we dat eens proberen: maak een nieuw bestand aan in je “views” map: <code>views/home.erb</code>. Ook al is dit een erb-bestand, kun je er gewoon HTML in stoppen. Plak de HTML-code van hierboven in het bestand en sla het op.</p>
 
-<pre><code>ruby 1.9.3p484    </code></pre>
-
-<h3 id="maclinux">Mac/Linux</h3>
-
-<p>Ruby is al geïnstalleerd. Open een terminal en typ <code>ruby -v</code>. Alles van <code>1.8.7</code> tot <code>2.1.0</code> is OK.</p>
-
-<h2 id="sublime_text">Sublime Text</h2>
-
-<p>Ga naar <a href="http://www.sublimetext.com/3">http://www.sublimetext.com/3</a> en klik onder <code>Download</code> op het juiste besturingssysteem: Windows, OS X (Mac) of Ubuntu, een distributie van Linux. (Als je een andere linuxdistributie hebt, heb je deze cursus waarschijnlijk niet nodig.)</p>
+<p>Nu moet je Sinatra nog vertellen dat het je bestand moet laden. Dit doe je in <code>application.rb</code>. Daar zie je als het is nog deze route staan:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>get</span> <span class='s1'>&#39;/&#39;</span> <span class='k'>do</span>
+    <span class='s2'>&quot;Hello world!&quot;</span>
+<span class='k'>end</span>
+</code></pre></div>
+<p>Met het commando <code>erb :bestand</code> laat je Sinatra <code>bestand.erb</code> laden. Zo kun je <code>home.erb</code> laten zien:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>get</span> <span class='s1'>&#39;/&#39;</span> <span class='k'>do</span>
+    <span class='n'>erb</span> <span class='ss'>:home</span>
+<span class='k'>end</span>
+</code></pre></div>
         </div>
 
         <div class="col-md-3">

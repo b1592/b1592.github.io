@@ -1,0 +1,319 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"bg",
+				"background"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"erb",
+				"Snippet: output ERB tags"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"lor",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"lo",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"lore",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			]
+		],
+		"width": 633.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Boris/Documents/Progles/b1592.github.io/_layouts/default.html",
+		"/Users/Boris/Documents/Progles/Cursus-Sinatra/.sass-cache/aae6627b67197b03a38cf185d66b3ac28fbd1dae/style.scssc",
+		"/Users/Boris/Documents/Progles/Cursus-Sinatra/views/scss/bitters/_bitters.scss",
+		"/Users/Boris/Documents/Progles/Cursus-Sinatra/application.rb",
+		"/Users/Boris/Documents/Progles/Cursus-Sinatra/views/layout.erb",
+		"/Users/Boris/Documents/Progles/Cursus-Sinatra/views/contact.erb",
+		"/Users/Boris/Documents/Progles/Cursus-Sinatra/views/scss/style.scss",
+		"/Users/Boris/Documents/Progles/Cursus-Sinatra/views/over.erb",
+		"/Users/Boris/Documents/Progles/Cursus-Sinatra/views/home.erb",
+		"/Users/Boris/Documents/Progles/Cursus-Sinatra/over.erb",
+		"/Users/Boris/Documents/Progles/Cursus-Sinatra/views/scss/normalize.scss",
+		"/Users/Boris/Documents/Progles/Cursus-Sinatra/views/style.scss",
+		"/Users/Boris/Documents/Progles/b1592.github.io/sinatra/hoofdstuk1.md",
+		"/Users/Boris/Documents/Progles/Sinatra/Test1/views/scss/application.scss",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/spec/spec_helper.rb",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/.rspec",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/app/views/static_pages/about.html.erb",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/Gemfile",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/spec/requests/static_pages_spec.rb",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/app/static_pages.rb",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/spec/about.html.erb",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/spec/routes_spec.rb",
+		"/Users/Boris/Library/Application Support/Sublime Text 3/Packages/User/RubyTest.sublime-settings",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/app/controllers/static_pages_controller.rb",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/app/views/static_pages/help.html.erb",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/app/views/layouts/application.html.erb",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/config/routes.rb",
+		"/Users/Boris/Documents/Progles/Rails/rails_tut_sample_app/app/views/static_pages/home.html.erb",
+		"/Users/Boris/Documents/Progles/Rails/railstut_demo_app/app/controllers/microposts_controller.rb",
+		"/Users/Boris/Documents/Progles/Rails/railstut_demo_app/test/controllers/microposts_controller_test.rb",
+		"/Users/Boris/Documents/Progles/Rails/railstut_demo_app/config/routes.rb",
+		"/Users/Boris/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Boris/Documents/Progles/Rails/railstut_demo_app/app/views/users/index.html.erb",
+		"/Users/Boris/Library/Application Support/Sublime Text 3/Packages/User/Ruby.sublime-settings",
+		"/Users/Boris/Documents/Progles/Rails/railstut_demo_app/config/application.rb",
+		"/Users/Boris/Documents/Progles/Rails/railstut_demo_app/Rakefile"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			">"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 126.0
+	},
+	"project": "rubyprog.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"header",
+				"_includes/header.html"
+			],
+			[
+				"default",
+				"_layouts/default.html"
+			],
+			[
+				"hoofdstuk1",
+				"ruby/hoofdstuk1.md"
+			],
+			[
+				"styl",
+				"views/scss/style.scss"
+			],
+			[
+				"hea",
+				"_includes/header.html"
+			],
+			[
+				"spe",
+				"spec/requests/static_pages_spec.rb"
+			],
+			[
+				"spec",
+				"spec/requests/static_pages_spec.rb"
+			],
+			[
+				"ab",
+				"app/views/static_pages/about.html.erb"
+			],
+			[
+				"he",
+				"app/views/static_pages/help.html.erb"
+			],
+			[
+				"appl",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"abou",
+				"app/views/static_pages/about.html.erb"
+			],
+			[
+				"sta",
+				"app/controllers/static_pages_controller.rb"
+			],
+			[
+				"ro",
+				"config/routes.rb"
+			],
+			[
+				"hom",
+				"app/views/static_pages/home.html.erb"
+			],
+			[
+				"",
+				"app/models/micropost.rb"
+			],
+			[
+				"us",
+				"app/models/user.rb"
+			],
+			[
+				"mic",
+				"app/models/micropost.rb"
+			],
+			[
+				"micr",
+				"test/controllers/microposts_controller_test.rb"
+			],
+			[
+				"ind",
+				"app/views/users/index.html.erb"
+			],
+			[
+				"rb",
+				"config/application.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 335.0,
+		"selected_items":
+		[
+			[
+				"ho",
+				"home"
+			]
+		],
+		"width": 434.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 283.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
