@@ -130,7 +130,7 @@ Nu gaan we een echte pagina weergeven. Daarvoor gebruik je `HTML`. `HTML` vertel
 Wij gebruiken `erb`, dat is een uitbreiding op `HTML`. Je kunt stukjes Ruby toevoegen. `erb` staat voor Embedded Ruby.
 
 ### HTML-tags
-HTML bestaat uit "tags", die er zo uit zien: `<html>`, `<p>`, `<a>`. Je sluit ze zo af: `</html>`, `</p>`, `</a>`. Elke tag heeft een betekenis. Tussen `<html>` en `</html>` komen alle andere tags. `<p>` staat voor paragraaf en `<a>`staat voor een link.
+HTML bestaat uit tags, die er zo uit zien: `<html>`, `<p>`, `<a>`. Je sluit ze zo af: `</html>`, `</p>`, `</a>`. Elke tag heeft een betekenis. Tussen `<html>` en `</html>` komen alle andere tags. `<p>` staat voor paragraaf en `<a>`staat voor een link.
 
 Je begint altijd met een `<html>`-tag:
 
@@ -196,6 +196,10 @@ Je zou nu een witte pagina moeten zien, met 'Home' als titel. Laten we wat inhou
 
 {% endhighlight %}
 
+### Links
+
+Iets over links.
+
 ## CSS
 
 Je ziet nu een lap tekst, maar het is wel kaal. Daarvoor is er `CSS`. Met `CSS` geef je 'stijl' aan je website. Eerder heb je een map `views/scss` gemaakt met daarin Bourbon, Neat en Bitters. Deze pakketten bestaan voornamelijk uit stijlbestanden. Eerst moeten we deze inladen.
@@ -224,21 +228,50 @@ $max-width: em(720);
 
 Dit zijn de standaardinstellingen voor de pagina. Met deze waarden kun je later experimenteren. Vooral `$max-width` is belangrijk: hiermee stel je de breedte van de pagina in. 
 
-### Klassen
+### Elementen selecteren
 
-In CSS kun je stijl meegeven aan bijvoorbeeld tags. Met het volgende:
+Met CSS-regels geef je stijl en opmaak mee aan specifieke tags:
 
 {% highlight scss %}
 
 body {
-  background-color: #ccc;
+  background-color: #cccccc;
 }
 
 {% endhighlight %}
 
-maak je de achtergrondkleur van je pagina grijs. Dit hoort bij de `<body>`-tag. Let op de syntax: je sluit alles bij de tag hoort in met `{}` en elke regel bestaat uit `eigenschap: waarde;`. Je sluit elke regel af met een `;`. Wat hierboven is gebeurd is dat de eigenschap `background-color` wordt ingesteld op `#ccc` (grijs, dit is hoe je kleuren maakt in CSS; zie [colorpicker](http://www.colorpicker.com)).  
+Zo maak je de achtergrondkleur van de pagina grijs. Je sluit alles wat bij een tag hoort in met `{}`. Elke regel bestaat uit `eigenschap: waarde;` en geldt alleen voor de tag die je selecteert (in dit geval `<body>`.) Let op de `;` aan het eind van elke regel. De regel hierboven stelt de eigenschap `background-color` in op `#cccccc` (grijs, dit is hoe je kleuren maakt in CSS; zie [colorpicker](http://www.colorpicker.com)).
 
-Als je niet wilt dat elke tag dezelfde stijl krijgt, kun je klassen gebruiken. Alleen elementen met deze klasse worden dan gestijld. Typ in `style.scss` de volgende regels:
+Nog een voorbeeld. De standaardkleur voor links is blauw. Probeer maar eens iets tussen `<a>` tags te zetten. Maar wat als je rood wilt? 
+
+{% highlight scss %}
+
+a {
+  color: #ff4136;
+}
+
+{% endhighlight %}
+
+We geven aan dat we alleen `<a>` tags willen stijlen door de regel tussen `a { ... }` te zetten. Voor kleurinspiratie: [clrs.cc](http://clrs.cc/).
+
+Waarom worden links in de tekst wel rood, maar links in het navigatiemenu niet? In de SCSS voor het menu staat in versimpelde vorm:
+
+{% highlight scss %}
+  header {
+    ul li {
+      a {
+        color: $navigation-color;
+      }
+    }
+  }
+{% endhighlight %}
+
+Dit `<a>`-element wordt veel specifieker benoemd. Hier staat: als je een `<header` hebt, met daarin een `<ul>` (een unordered list), met daarin een `<li>` (een list item), met *daarin* een `<a>`-element, *dan pas* moet de kleur `$navigation-color` worden. (`$navigation-color` is ergens anders ingesteld, maar is net zo'n waarde als `#ff4136` of `#cccccc`.)
+
+Regels die specifieker benoemd worden, hebben prioriteit. Dus `color: $navigation-color;` wint het van `color: #ff4136;` in de navigatiebalk, omdat het `<a>`-element daar specifieker benoemd is. 
+
+### Klassen
+Behalve door specifiek te benoemen, kun tags van elkaar onderscheiden met klassen. Alleen elementen met een bepaalde klasse worden dan gestijld. Typ in `style.scss` de volgende regels:
 
 {% highlight scss %}
 
@@ -248,9 +281,9 @@ div.container {
 
 {% endhighlight %}
 
-Met het stukje `div.container` krijg je alle `<div>` elementen met de klasse `container` in je pagina. Met de middelste regel zorg je dat je inhoud mooi in het midden op de pagina komt, in een vak met de breedte die je eerder met `$max-width: em(720);` hebt ingesteld.
+Met het stukje `div.container` selecteer je alle `<div>` elementen met de klasse `container` op de pagina. Met `@include outer-container` zorg je dat je inhoud mooi in het midden op de pagina komt, in een vak met de breedte die je eerder met `$max-width: em(720);` hebt ingesteld.
 
-Nu moeten we nog de klasse in je erb-pagina stoppen. Typ daarvoor het volgende:
+Nu moeten we de klasse aan de html tag toekennen. Typ daarvoor het volgende in `home.erb`:
 
 {% highlight html %}
 
@@ -500,7 +533,7 @@ Dat was het! Je hebt nu een hele website in elkaar gezet. En zeg nou zelf, ziet 
 
 De opdracht is om zelf te klooien. Verwerk een component uit [Refills](http://thoughtbot.github.io/refills/) in je site. Je kunt knippen en plakken (druk op Show Code), maar probeer te begrijpen wat er staat. Welke html-tags ken je al? Welke nog niet? [Hier](http://www.99lime.com/_bak/topics/you-only-need-10-tags/) staan de meestgebruikte tags op een rijtje.
 
-Let op: als er iets tussen `<head>`-tags staat, hoort het in de `<head>`. Je kunt de `<head>` maar op één plek beschrijven, dus moet je die regels in `layout.erb` in tussen de bestaande `<head>`-tags stoppen.
+Let op: als er iets tussen `<head>`-tags staat, hoort het in de `<head>`. Je kunt de `<head>` maar op één plek beschrijven, dus moet je die regels in `layout.erb` tussen de bestaande `<head>`-tags stoppen.
 
 ### Variabelen
 
