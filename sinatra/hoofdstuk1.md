@@ -125,14 +125,14 @@ Nu weet de server dat hij bij een `GET` request voor de pagina `/` (de hoofdpagi
 
 ## Pagina's
 
-Nu gaan we iets meer inhoud toevoegen. Daarvoor gebruik je `HTML`. Dat is geen echte programmeertaal, maar vertelt de browser alleen welke inhoud op je pagina moet verschijnen.
+Nu gaan we een echte pagina weergeven. Daarvoor gebruik je `HTML`. `HTML` vertelt de browser wat er op de pagina moet verschijnen. Waar moeten de kopjes? Waar moet de inhoud?
 
 Wij gebruiken `erb`, dat is een uitbreiding op `HTML`. Je kunt stukjes Ruby toevoegen. `erb` staat voor Embedded Ruby.
 
 ### HTML-tags
-HTML bestaat uit "tags", die er zo uit zien: `<html>`, `<p>`, `<a>`. Je sluit ze zo af: `</html>`, `</p>`, `</a>`.
+HTML bestaat uit "tags", die er zo uit zien: `<html>`, `<p>`, `<a>`. Je sluit ze zo af: `</html>`, `</p>`, `</a>`. Elke tag heeft een betekenis. Tussen `<html>` en `</html>` komen alle andere tags. `<p>` staat voor paragraaf en `<a>`staat voor een link.
 
-Het begint allemaal met een `<html>`-tag:
+Je begint altijd met een `<html>`-tag:
 
 {% highlight html %}
 
@@ -151,14 +151,14 @@ Wat gebeurt hier allemaal? Je ziet een aantal tags staan:
 
 * `<html>` -> hier begint de pagina mee. Alles moet tussen de `<html></html>`-tags staan
 * `<head>` -> hiertussen stop je extra informatie over je pagina, bijvoorbeeld de titel
-* `<title>` -> wat hier in staat, komt in je browser bovenaan te staan. Let op dat de `<title>` in de `<head>` moet staan
-* `<body>` -> hier begint je pagina pas echt. Alle inhoud stop je in de `<body>`
+* `<title>` -> de titel van de pagina
+* `<body>` -> alle inhoud van de pagina
 
-Dit is al een volledige pagina, maar het doet nog niets. Laten we dat eens proberen: maak een nieuw bestand aan in je "views" map: `views/home.erb`. Ook al is dit een erb-bestand, kun je er gewoon HTML in stoppen. Plak de HTML-code van hierboven in het bestand en sla het op. 
+Dit is een volledige pagina, maar omdat er tussen `<body>` en `</body>` niks staat, zie je niks. Maak nu een nieuw bestand aan in je `views` map: `views/home.erb`. Typ de HTML-code van hierboven in en sla het bestand op.
 
-Deze tags zijn de belangrijkste in HTML, maar er zijn er nog veel meer. De `<div>`-tag ga je vooral nog veel tegenkomen. Deze maakt een soort "blokje" waar je tekst of plaatjes in kunt zetten. Maar daarover later meer!
+<!-- Deze tags zijn de belangrijkste in HTML, maar er zijn er nog veel meer. De `<div>`-tag ga je vooral nog veel tegenkomen. Deze maakt een soort "blokje" waar je tekst of plaatjes in kunt zetten. Maar daarover later meer! -->
 
-Nu moet je Sinatra nog vertellen dat het je bestand moet laden. Dit doe je in `application.rb`. Daar zie je als het is nog deze route staan:
+Nu moet je Sinatra vertellen dat `home.erb` moet worden weergegeven. Dit doe je in `application.rb`. Daar zie je als het goed is staan:
 
 {% highlight ruby %}
 
@@ -178,9 +178,9 @@ end
 
 {% endhighlight %}
 
-Dat is alles! Heb je shotgun nog aan staan in je command line? Dan kun je gewoon je browser verversen. Start anders shotgun weer opnieuw op met `shotgun application.rb` in je command line.
+Nu weet de server dat als je naar `"/"` gaat, hij de html in `home.erb` moet worden weergegeven. Als je `shotgun` nog aan hebt staan, kun je de pagina verversen. Start anders shotgun opnieuw op met `shotgun application.rb` in de command line.
 
-Je zou nu een lege witte pagina moeten zien, met 'Home' aan de bovenkant van je browser. Laten we wat inhoud toevoegen. In je `<body>` kun je gewoon gaan typen. Zet wel elk stukje tekst in een `<p>`-tag (de p staat voor paragraaf). In Sublime kun je snel een voorbeeldtekstje maken met `ctrl + shift + p` -> `Snippet: Lorem Ipsum`. Dan krijg je dit:
+Je zou nu een witte pagina moeten zien, met 'Home' als titel. Laten we wat inhoud toevoegen. In je `<body>` kun je gewoon gaan typen. Zet wel elk stukje tekst in een `<p>`-tag. In Sublime kun je snel een voorbeeldtekstje maken met `ctrl + shift + p` -> `Snippet: Lorem Ipsum`. Dan krijg je dit:
 
 {% highlight html %}
 
@@ -198,9 +198,9 @@ Je zou nu een lege witte pagina moeten zien, met 'Home' aan de bovenkant van je 
 
 ## CSS
 
-Nu zou je een hele lap tekst moeten zien als je de pagina laadt. Het is nog erg kaal, maar daarvoor is er `CSS`. Met CSS geef je 'stijl' aan je website. Eerder heb je een map gemaakt `views/scss` met daarin Bourbon, Neat en Bitters. Deze pakketten bestaan voornamelijk uit stijlbestanden. Wat we eerst moeten doen is deze inladen.
+Je ziet nu een lap tekst, maar het is wel kaal. Daarvoor is er `CSS`. Met `CSS` geef je 'stijl' aan je website. Eerder heb je een map `views/scss` gemaakt met daarin Bourbon, Neat en Bitters. Deze pakketten bestaan voornamelijk uit stijlbestanden. Eerst moeten we deze inladen.
 
-Maak een nieuw bestand aan `views/scss/style.scss` (let op de 's' in 'scss' - SCSS is een betere versie van CSS, daar vertellen we later meer over). Hierin kun je de pakketten importeren met `@import`. Typ dit in je `style.scss` (in deze volgorde):
+Maak een nieuw bestand `views/scss/style.scss` (let op de 's' in 'scss' - SCSS is een betere versie van CSS, daar vertellen we later meer over). Hierin kun je de pakketten importeren met `@import`. Typ dit in `style.scss` (in deze volgorde):
 
 {% highlight scss %}
 
@@ -211,7 +211,7 @@ Maak een nieuw bestand aan `views/scss/style.scss` (let op de 's' in 'scss' - SC
 
 {% endhighlight %}
 
-In de eerste regel importeer je ook het bestand `normalize.scss`. Dit bestand zorgt dat je pagina in elke browser er hetzelfde uitziet. Typ daaronder de volgende regels:
+Typ daaronder de volgende regels:
 
 {% highlight scss %}
 
@@ -222,7 +222,7 @@ $max-width: em(720);
 
 {% endhighlight %}
 
-Dit zijn de standaardinstellingen voor je pagina. Met deze waarden kun je later gaan experimenteren. Vooral de laatste is belangrijk: hiermee stel je de breedte van de pagina in. 
+Dit zijn de standaardinstellingen voor de pagina. Met deze waarden kun je later experimenteren. Vooral `$max-width` is belangrijk: hiermee stel je de breedte van de pagina in. 
 
 ### Klassen
 
