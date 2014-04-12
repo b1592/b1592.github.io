@@ -335,7 +335,7 @@ Behalve door specifiek te benoemen, kun tags van elkaar onderscheiden met klasse
 }
 {% endhighlight %}
 
-Met `.klasse` stijl je dus geen specifieke tags, maar alle tags met een bepaalde klasse. Let op de punt. In de HTML voeg je die zo toe:
+Met `.opvallend` stijl je dus geen specifieke tags, maar alle tags met de klasse `opvallend`. Let op de punt. In de HTML moet je typen:
 
 {% highlight html %}
 <p class="opvallend">Opvallende paragraaf.</p>
