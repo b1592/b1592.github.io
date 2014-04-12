@@ -603,7 +603,7 @@ Dat was het! Je hebt nu een hele website in elkaar gezet. En zeg nou zelf, ziet 
 
 ## Opdracht
 
-De opdracht is om zelf te klooien. Verwerk een component uit [Refills](http://thoughtbot.github.io/refills/) in je site. Je kunt knippen en plakken (druk op Show Code), maar probeer te begrijpen wat er staat. Welke html-tags ken je al? Welke nog niet? [Hier](http://www.99lime.com/_bak/topics/you-only-need-10-tags/) staan de meestgebruikte tags op een rijtje.
+De opdracht is om zelf te klooien. Verwerk een component uit [Refills](http://thoughtbot.github.io/refills/) in je site. Je kunt knippen en plakken (druk op Show Code), maar probeer te begrijpen wat er staat. Welke html-tags ken je al? Welke nog niet? In de [Mozilla guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) staan alle tags op een rijtje.
 
 Let op: als er iets tussen `<head>`-tags staat, hoort het in de `<head>`. Je kunt de `<head>` maar op één plek beschrijven, dus moet je die regels in `layout.erb` tussen de bestaande `<head>`-tags stoppen.
 
