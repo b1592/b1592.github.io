@@ -99,8 +99,8 @@ this.tictactoe = do ($) ->
   #        player
   # output: true if no more moves can be made
 
-  endState = (boardSt = board, player) ->
-    terminalTest(boardSt) or winner(boardSt, player) or loser(boardSt, player)
+  endState = (player, boardSt = board) ->
+    terminalTest(boardSt) or winner(player, boardSt) or loser(player, boardSt)
 
   # function winner
   #
@@ -248,9 +248,9 @@ this.tictactoe = do ($) ->
     for tryMove in possMoves
       newBoard[tryMove] = player
 
-      if (winner(newBoard, player))
+      if (winner(player, newBoard))
         return [player, 1000, tryMove]
-      if (loser(newBoard, player))
+      if (loser(player, newBoard))
         return [player, -1000, tryMove]
 
       abs = -negaMax(newBoard, config.ply, -Infinity, Infinity, -player)
@@ -343,6 +343,7 @@ this.tictactoe = do ($) ->
     isBoard: isBoard
     getFreePositions: getFreePositions
     terminalTest: terminalTest
+    endState: endState
 
     winner: winner
     loser: loser

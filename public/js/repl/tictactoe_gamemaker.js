@@ -58,7 +58,6 @@
     drawBoard(tictactoe.board());
     if (gameOver()) {
       announceResult();
-      tictactoe.clear();
       return;
     }
     return startPrompt();
@@ -67,6 +66,8 @@
   startPrompt = function() {
     return jqconsole.Prompt(true, promptHandler);
   };
+
+  jqconsole.Write("SHALL WE PLAY A GAME?\n");
 
   drawBoard(window.tictactoe.board());
 

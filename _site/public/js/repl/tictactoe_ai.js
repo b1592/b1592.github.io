@@ -86,11 +86,11 @@
       }
       return getFreePositions(boardState).length === 0;
     };
-    endState = function(boardSt, player) {
+    endState = function(player, boardSt) {
       if (boardSt == null) {
         boardSt = board;
       }
-      return terminalTest(boardSt) || winner(boardSt, player) || loser(boardSt, player);
+      return terminalTest(boardSt) || winner(player, boardSt) || loser(player, boardSt);
     };
     winner = function(player, boardState) {
       var result;
@@ -213,10 +213,10 @@
       for (_i = 0, _len = possMoves.length; _i < _len; _i++) {
         tryMove = possMoves[_i];
         newBoard[tryMove] = player;
-        if (winner(newBoard, player)) {
+        if (winner(player, newBoard)) {
           return [player, 1000, tryMove];
         }
-        if (loser(newBoard, player)) {
+        if (loser(player, newBoard)) {
           return [player, -1000, tryMove];
         }
         abs = -negaMax(newBoard, config.ply, -Infinity, Infinity, -player);
@@ -300,6 +300,7 @@
       isBoard: isBoard,
       getFreePositions: getFreePositions,
       terminalTest: terminalTest,
+      endState: endState,
       winner: winner,
       loser: loser,
       winnerWhere: winnerWhere,

@@ -33,16 +33,16 @@
 
   announceResult = function() {
     if (tictactoe.winner(1)) {
-      return jqconsole.Write("You won!");
+      return jqconsole.Write("You won!\n");
     } else if (tictactoe.loser(1)) {
-      return jqconsole.Write("You lost.");
+      return jqconsole.Write("You lost.\n");
     } else {
-      return jqconsole.Write("Draw.");
+      return jqconsole.Write("Draw.\n");
     }
   };
 
   gameOver = function() {
-    return tictactoe.terminalTest() || tictactoe.winner(1) || tictactoe.loser(1);
+    return tictactoe.endState(1);
   };
 
   promptHandler = function(input) {
@@ -55,10 +55,11 @@
     } else {
       jqconsole.Write("That's an illegal move. Try again.\n");
     }
+    drawBoard(tictactoe.board());
     if (gameOver()) {
       announceResult();
+      return;
     }
-    drawBoard(tictactoe.board());
     return startPrompt();
   };
 
@@ -66,13 +67,9 @@
     return jqconsole.Prompt(true, promptHandler);
   };
 
+  jqconsole.Write("SHALL WE PLAY A GAME?\n");
+
   drawBoard(window.tictactoe.board());
-
-  jqconsole.Write("NUMBER OF PLAYERS?");
-
-  jqconsole.Input(function(input) {
-    return console.log("number of players: " + input);
-  });
 
   startPrompt();
 

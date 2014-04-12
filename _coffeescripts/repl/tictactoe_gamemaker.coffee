@@ -21,14 +21,14 @@ valid = (move) ->
 
 announceResult = ->
   if tictactoe.winner(1)
-    jqconsole.Write("You won!")
+    jqconsole.Write("You won!\n")
   else if tictactoe.loser(1)
-    jqconsole.Write("You lost.")
+    jqconsole.Write("You lost.\n")
   else
-    jqconsole.Write("Draw.")
+    jqconsole.Write("Draw.\n")
 
 gameOver = ->
-  tictactoe.terminalTest() or tictactoe.winner(1) or tictactoe.loser(1)
+  tictactoe.endState(1)
 
 promptHandler = (input) ->
   jqconsole.Clear()
@@ -40,22 +40,24 @@ promptHandler = (input) ->
   else
     jqconsole.Write("That's an illegal move. Try again.\n")
 
+  drawBoard( tictactoe.board() )
+
   if gameOver()
     announceResult()
+    return
 
-  drawBoard( tictactoe.board() )
   startPrompt()
 
 startPrompt = ->
   # Start prompt with history enabled
   jqconsole.Prompt(true, promptHandler)
 
-
+jqconsole.Write("SHALL WE PLAY A GAME?\n")
 drawBoard( window.tictactoe.board() )
-jqconsole.Write("NUMBER OF PLAYERS?")
-jqconsole.Input( (input) ->
-  console.log("number of players: #{input}")
-)
+# jqconsole.Write("NUMBER OF PLAYERS?")
+# jqconsole.Input( (input) ->
+#   console.log("number of players: #{input}")
+# )
 
 startPrompt()
 

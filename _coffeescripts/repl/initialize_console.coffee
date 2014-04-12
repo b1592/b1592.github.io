@@ -1,4 +1,4 @@
-window.jqconsole = $('#console').jqconsole("CLICK TO START LESSON.\n", '> ')
+window.jqconsole = $('#console').jqconsole("", '> ')
 
 jqconsole.RegisterMatching('{', '}', 'brace')
 jqconsole.RegisterMatching('(', ')', 'paran')
