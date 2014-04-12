@@ -33,11 +33,11 @@
 
   announceResult = function() {
     if (tictactoe.winner(1)) {
-      return jqconsole.Write("You won!\n");
+      return jqconsole.Write("You won! You've got talent, kid.\nLearn to program --- we could use you.\n");
     } else if (tictactoe.loser(1)) {
-      return jqconsole.Write("You lost.\n");
+      return jqconsole.Write("You lost. Don't let it bring you down.\nLearn to program instead.\n");
     } else {
-      return jqconsole.Write("Draw.\n");
+      return jqconsole.Write("Draw. How about a nice game of chess?\nJust kidding, learn to program instead.\nIt's one of the most rewarding things you can learn. Much more rewarding than this futile game, in any case.");
     }
   };
 
@@ -70,6 +70,8 @@
   jqconsole.Write("SHALL WE PLAY A GAME?\n");
 
   drawBoard(window.tictactoe.board());
+
+  jqconsole.Write("YOU START. USE THE NUMBERS 0 - 8 TO MAKE A MOVE.\n");
 
   startPrompt();
 

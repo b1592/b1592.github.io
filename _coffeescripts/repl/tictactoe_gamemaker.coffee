@@ -21,11 +21,11 @@ valid = (move) ->
 
 announceResult = ->
   if tictactoe.winner(1)
-    jqconsole.Write("You won!\n")
+    jqconsole.Write("You won! You've got talent, kid.\nLearn to program --- we could use you.\n")
   else if tictactoe.loser(1)
-    jqconsole.Write("You lost.\n")
+    jqconsole.Write("You lost. Don't let it bring you down.\nLearn to program instead.\n")
   else
-    jqconsole.Write("Draw.\n")
+    jqconsole.Write("Draw. How about a nice game of chess?\nJust kidding, learn to program instead.\nIt's one of the most rewarding things you can learn. Much more rewarding than this futile game, in any case.")
 
 gameOver = ->
   tictactoe.endState(1)
@@ -54,6 +54,7 @@ startPrompt = ->
 
 jqconsole.Write("SHALL WE PLAY A GAME?\n")
 drawBoard( window.tictactoe.board() )
+jqconsole.Write("YOU START. USE THE NUMBERS 0 - 8 TO MAKE A MOVE.\n")
 # jqconsole.Write("NUMBER OF PLAYERS?")
 # jqconsole.Input( (input) ->
 #   console.log("number of players: #{input}")
