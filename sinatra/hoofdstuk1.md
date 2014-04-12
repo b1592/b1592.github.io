@@ -6,7 +6,7 @@ scrollspy: true
 
 # Hoofdstuk 1: Je eigen site
 
-Je gaat je eigen site maken! Je leert wat `HTML` en `CSS` zijn, en hoe je je website kunt besturen met Sinatra. 
+Je gaat je eigen site maken! Je leert wat HTML en CSS zijn, en hoe je je website kunt besturen met Sinatra. 
 
 ## Setup
 
@@ -125,9 +125,9 @@ Nu weet de server dat hij bij een `GET` request voor de pagina `/` (de hoofdpagi
 
 ## HTML
 
-Nu gaan we een echte pagina weergeven. Daarvoor gebruik je `HTML`. `HTML` vertelt de browser wat er op de pagina moet verschijnen. Waar moeten de kopjes? Waar moet de inhoud?
+Nu gaan we een echte pagina weergeven. Daarvoor gebruik je HTML. HTML vertelt de browser wat er op de pagina moet verschijnen. Waar moeten de kopjes? Waar moet de inhoud?
 
-Wij gebruiken `erb`, dat is een uitbreiding op `HTML`. Je kunt stukjes Ruby toevoegen. `erb` staat voor Embedded Ruby.
+Wij gebruiken `erb`, dat is een uitbreiding op HTML. Je kunt stukjes Ruby toevoegen. `erb` staat voor Embedded Ruby.
 
 ### HTML-tags
 HTML bestaat uit tags, die er zo uit zien: `<html>`, `<p>`, `<a>`. Je sluit ze zo af: `</html>`, `</p>`, `</a>`. Elke tag heeft een betekenis. Tussen `<html>` en `</html>` komen alle andere tags. `<p>` staat voor paragraaf en `<a>`staat voor een link.
@@ -178,9 +178,9 @@ end
 
 {% endhighlight %}
 
-Nu weet de server dat als je naar `"/"` gaat, hij de html in `home.erb` moet worden weergegeven. Als je `shotgun` nog aan hebt staan, kun je de pagina verversen. Start anders shotgun opnieuw op met `shotgun application.rb` in de command line.
+Nu weet de server dat als je naar `"/"` gaat, hij de html in `home.erb` moet weergegeven. Als je `shotgun` nog aan hebt staan, kun je de pagina verversen. Start anders shotgun opnieuw op met `shotgun application.rb` in de command line.
 
-Je zou nu een witte pagina moeten zien, met 'Home' als titel. Laten we wat inhoud toevoegen. In je `<body>` kun je gewoon gaan typen. Zet wel elk stukje tekst in een `<p>`-tag. In Sublime kun je snel een voorbeeldtekstje maken met `ctrl + shift + p` -> `Snippet: Lorem Ipsum`. Dan krijg je dit:
+Je zou nu een witte pagina moeten zien, met 'Home' als titel. Laten we wat inhoud toevoegen. In je `<body>` kun je gewoon gaan typen. Zet wel elk stukje tekst in een `<p>`-tag (een paragraaf). In Sublime kun je snel een voorbeeldtekstje maken met `ctrl + shift + p` -> `Snippet: Lorem Ipsum`. Dan krijg je dit:
 
 {% highlight html %}
 
@@ -244,11 +244,17 @@ Kopjes maak je met `<h1>`, `<h2` en `<h3>`:
 <h3>Kopje drie</h3>
 {% endhighlight %}
 
+Een `<div>` is een *division*, een afscheiding. Het wordt vaak gebruikt om de verschillende delen van een site te scheiden.
+
+{% highlight html %}
+<div>Een deel van de site dat op zichzelf staat.</div> 
+{% endhighlight %} 
+
 In [de uitgebreide documentatie van Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) staat uitleg over alle tags. Als je zoekt naar informatie op internet, probeer dan altijd eerst de site van Mozilla. Voeg MDN of Mozilla toe als zoekterm. Op internet wordt een hoop onzin verkondigd. (Al eens opgevallen?) De mensen van Mozilla weten waarover ze het hebben.
 
 ## CSS
 
-Je ziet nu een lap tekst, maar het is wel kaal. Daarvoor is er `CSS`. Met `CSS` geef je 'stijl' aan je website. Eerder heb je een map `views/scss` gemaakt met daarin Bourbon, Neat en Bitters. Deze pakketten bestaan uit stijlbestanden. Eerst moeten we deze inladen.
+Je kunt nu tekst en plaatjes weergeven, maar het is erg kaal. Daarvoor is er CSS. Met CSS geef je 'stijl' aan je website. Eerder heb je een map `views/scss` gemaakt met daarin Bourbon, Neat en Bitters. Deze pakketten bestaan uit stijlbestanden. Eerst moeten we deze inladen.
 
 Maak een nieuw bestand `views/scss/style.scss` (let op de 's' in 'scss' - SCSS is een betere versie van CSS, daar vertellen we later meer over). Hierin kun je de pakketten importeren met `@import`. Typ dit in `style.scss` (in deze volgorde):
 
@@ -321,7 +327,21 @@ Dit `<a>`-element wordt veel specifieker benoemd. Hier staat: als je een `<heade
 Regels die specifieker benoemd worden, hebben prioriteit. Dus `color: $navigation-color;` wint het van `color: #ff4136;` in de navigatiebalk, omdat het `<a>`-element daar specifieker benoemd is.
 
 ### Klassen
-Behalve door specifiek te benoemen, kun tags van elkaar onderscheiden met klassen. Alleen elementen met een bepaalde klasse worden dan gestijld. Typ in `style.scss` de volgende regels:
+Behalve door specifiek te benoemen, kun tags van elkaar onderscheiden met klassen. Alleen elementen met een bepaalde klasse worden dan gestijld. Stel dat je een bepaalde paragraaf extra opvallend wilt maken, dan kun je in de CSS typen:
+
+{% highlight scss %}
+.opvallend {
+  color: #ff4136;
+}
+{% endhighlight %}
+
+Met `.klasse` stijl je dus geen specifieke tags, maar alle tags met een bepaalde klasse. Let op de punt. In de HTML voeg je die zo toe:
+
+{% highlight html %}
+<p class="opvallend">Opvallende paragraaf.</p>
+{% endhighlight %}
+
+Hoe gaan we dit gebruiken? Typ in `style.scss` de volgende regels:
 
 {% highlight scss %}
 
@@ -333,7 +353,7 @@ div.container {
 
 Met het stukje `div.container` selecteer je alle `<div>` elementen met de klasse `container` op de pagina. Met `@include outer-container` zorg je dat je inhoud mooi in het midden op de pagina komt, in een vak met de breedte die je eerder met `$max-width: em(720);` hebt ingesteld.
 
-Nu moeten we de klasse aan de html tag toekennen. Typ daarvoor het volgende in `home.erb`:
+Nu moeten we de klasse aan de tag toekennen. Typ daarvoor het volgende in `home.erb`:
 
 {% highlight html %}
 
