@@ -2,7 +2,7 @@
 (function() {
   this.lesson = new Lesson([
     new Question({
-      description: "Laten we bij het begin beginnen! In Ruby kun je makkelijk variabelen gebruiken om iets in op te slaan. Begin eens met je naam, bijvoorbeeld\nnaam = \"Henk\"",
+      description: "Laten we bij het begin beginnen! In Ruby kun je makkelijk variabelen gebruiken om iets op te slaan. Begin eens met je naam, bijvoorbeeld\nnaam = \"Henk\"",
       answer: /naam\s*=\s*\"[\w\s]*\"/,
       possible_errors: {
         quotes_vergeten: /^naam\s*=\s*\"?[\w\s]+\"?$/,
@@ -14,7 +14,14 @@
         "default": "Dat is niet goed. Typte je naam = \"je naam\"?"
       }
     }), new Question({
-      description: "Een stuk tekst tussen aanhalingstekens heet een String. Met 'puts' geeft Ruby output. Als je een variabele in een string wilt zetten, gebruik je een hekje, gevolgd door accolades. Bijvoorbeeld zo:\nputs \"Hallo, \#\{naam\}\"",
+      description: "Ruby onthoudt alles. Typ in: naam",
+      answer: /^naam$/,
+      possible_errors: {},
+      error_messages: {
+        "default": "Dat is niet goed. Typte je naam?"
+      }
+    }), new Question({
+      description: "Zie je? Ruby weet je naam nog. Een stuk tekst tussen aanhalingstekens heet een String. Met 'puts' geeft Ruby output. Als je een variabele in een string wilt zetten, gebruik je een hekje, gevolgd door accolades. Bijvoorbeeld zo:\nputs \"Hallo, \#\{naam\}\"",
       answer: /^puts\s*\"[\w\s\,]+\#\{naam\}\!?\"$/,
       possible_errors: {
         quotes_vergeten: /^puts\s*\"?[\w\s\,]+\#\{naam\}\!?\"?$/
@@ -84,7 +91,7 @@
         "default": "Dat is niet goed. Typte je\nif naam == \"je naam\"\n   puts \"Hallo, \#\{naam\}!\"\nend"
       }
     }), new Question({
-      description: "Oke! Bij een if kun je ook een else zetten. Dit gebruik je als je nog een andere mogelijk verwacht. Let op dat je alsnog een end krijgt aan het einde.\nTyp eens:\nif 9 \> 10\n   puts \"Dit is bijzonder!\"\nelse\n   puts \"Gelukkig, het klopt!\"\nend",
+      description: "Oke! Bij een if kun je ook een else zetten. Dit gebruik je als je nog een andere mogelijkheid verwacht. Let op dat je alsnog een end krijgt aan het einde.\nTyp eens:\nif 9 \> 10\n   puts \"Dit is bijzonder!\"\nelse\n   puts \"Gelukkig, het klopt!\"\nend",
       answer: /^if\s*9\s*>\s*10\s*\n\s*puts\s*\"[\w\s\,\!]+\"\s*\n\s*else\s*\n\s*puts\s*\"[\w\s\,\!]+\"\s*\n\s*end\s*$/,
       possible_errors: {
         quotes_vergeten: /^if\s*9\s*>\s*10\s*\n\s*puts\s*\"?[\w\s\,\!]+\"?\s*\n\s*else\s*\n\s*puts\s*\"?[\w\s\,\!]+\"?\s*\n\s*end\s*$/,
