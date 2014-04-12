@@ -18,7 +18,7 @@ maillijst.txt
 _yardoc
 doc/
 
-_site/atom.xml
+_site
 
 # Node garbage to watch less files
 # node_modules
