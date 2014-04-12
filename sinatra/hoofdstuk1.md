@@ -123,7 +123,7 @@ end
 
 Nu weet de server dat hij bij een `GET` request voor de pagina `/` (de hoofdpagina, oftewel `localhost:9393/`) de string `"Hello world!"` moet terugsturen.
 
-## Pagina's
+## HTML
 
 Nu gaan we een echte pagina weergeven. Daarvoor gebruik je `HTML`. `HTML` vertelt de browser wat er op de pagina moet verschijnen. Waar moeten de kopjes? Waar moet de inhoud?
 
@@ -196,13 +196,59 @@ Je zou nu een witte pagina moeten zien, met 'Home' als titel. Laten we wat inhou
 
 {% endhighlight %}
 
-### Links
+### Meer tags
 
-Iets over links.
+Tussen `<a>` en `</a>` plaats je links. [Een link naar Google](https://www.google.com) maak je zo:
+
+{% highlight html %}
+<a href="https://www.google.com">Een link naar Google</a>
+{% endhighlight %}
+
+Zoals je ziet, geef je met `href` het adres waar je heen wilt linken. 
+
+Een `<ul>` (*unordered list*) maak je zo:
+
+{% highlight html %}
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+{% endhighlight %}
+
+`<li>` is een *list item*. Het resultaat is:
+
+- Item 1
+- Item 2
+- Item 3
+
+Een plaatje voeg je toe met:
+
+{% highlight html %}
+<img src="http://www.engr.uconn.edu/~rohitm/tutorials/crash2/images/matz.jpg">
+{% endhighlight %}
+
+Het resultaat is:
+
+<img src="/public/images/matz.jpg">
+
+Dit is de maker van Ruby. Onze dank is groot.
+
+Maar wacht even. We hebben de `<img>`-tag helemaal niet afgesloten! `<img>` is één van de weinige tags die je niet hoeft af te sluiten, omdat er niks tussen hoort te staan. Alle informatie zit al in het attribuut `src`, dat wijst naar de locatie van de foto.
+
+Kopjes maak je met `<h1>`, `<h2` en `<h3>`:
+
+{% highlight html %}
+<h1>Kopje één</h1>
+<h2>Kopje twee</h2>
+<h3>Kopje drie</h3>
+{% endhighlight %}
+
+In [de uitgebreide documentatie van Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) staat uitleg over alle tags. Als je zoekt naar informatie op internet, probeer dan altijd eerst de site van Mozilla. Voeg MDN of Mozilla toe als zoekterm. Op internet wordt een hoop onzin verkondigd. (Al eens opgevallen?) De mensen van Mozilla weten waarover ze het hebben.
 
 ## CSS
 
-Je ziet nu een lap tekst, maar het is wel kaal. Daarvoor is er `CSS`. Met `CSS` geef je 'stijl' aan je website. Eerder heb je een map `views/scss` gemaakt met daarin Bourbon, Neat en Bitters. Deze pakketten bestaan voornamelijk uit stijlbestanden. Eerst moeten we deze inladen.
+Je ziet nu een lap tekst, maar het is wel kaal. Daarvoor is er `CSS`. Met `CSS` geef je 'stijl' aan je website. Eerder heb je een map `views/scss` gemaakt met daarin Bourbon, Neat en Bitters. Deze pakketten bestaan uit stijlbestanden. Eerst moeten we deze inladen.
 
 Maak een nieuw bestand `views/scss/style.scss` (let op de 's' in 'scss' - SCSS is een betere versie van CSS, daar vertellen we later meer over). Hierin kun je de pakketten importeren met `@import`. Typ dit in `style.scss` (in deze volgorde):
 
@@ -228,7 +274,7 @@ $max-width: em(720);
 
 Dit zijn de standaardinstellingen voor de pagina. Met deze waarden kun je later experimenteren. Vooral `$max-width` is belangrijk: hiermee stel je de breedte van de pagina in. 
 
-### Elementen selecteren
+### Tags selecteren
 
 Met CSS-regels geef je stijl en opmaak mee aan specifieke tags:
 
@@ -240,7 +286,11 @@ body {
 
 {% endhighlight %}
 
-Zo maak je de achtergrondkleur van de pagina grijs. Je sluit alles wat bij een tag hoort in met `{}`. Elke regel bestaat uit `eigenschap: waarde;` en geldt alleen voor de tag die je selecteert (in dit geval `<body>`.) Let op de `;` aan het eind van elke regel. De regel hierboven stelt de eigenschap `background-color` in op `#cccccc` (grijs, dit is hoe je kleuren maakt in CSS; zie [colorpicker](http://www.colorpicker.com)).
+Zo maak je de achtergrondkleur van de pagina grijs. Je sluit alles wat bij een tag hoort in met `{}`. Elke regel bestaat uit `eigenschap: waarde;` en geldt alleen voor de tag die je selecteert (in dit geval `<body>`.) Let op de `;` aan het eind van elke regel. De regel hierboven stelt de eigenschap `background-color` in op `#cccccc`. Dit is grijs.
+
+Zo'n kleurcode bestaat uit zes hexadecimale cijfers (van 0 tot f). De eerste twee cijfers stellen de hoeveelheid rood voor, cijfers drie en vier de hoeveelheid groen en de laatste twee cijfers de hoeveelheid blauw.
+
+Zie [colorpicker](http://www.colorpicker.com) en [clrs.cc](http://clrs.cc/).
 
 Nog een voorbeeld. De standaardkleur voor links is blauw. Probeer maar eens iets tussen `<a>` tags te zetten. Maar wat als je rood wilt? 
 
@@ -252,7 +302,7 @@ a {
 
 {% endhighlight %}
 
-We geven aan dat we alleen `<a>` tags willen stijlen door de regel tussen `a { ... }` te zetten. Voor kleurinspiratie: [clrs.cc](http://clrs.cc/).
+We geven aan dat we alleen `<a>` tags willen stijlen door de regel tussen `a { ... }` te zetten.
 
 Waarom worden links in de tekst wel rood, maar links in het navigatiemenu niet? In de SCSS voor het menu staat in versimpelde vorm:
 
@@ -268,7 +318,7 @@ Waarom worden links in de tekst wel rood, maar links in het navigatiemenu niet? 
 
 Dit `<a>`-element wordt veel specifieker benoemd. Hier staat: als je een `<header` hebt, met daarin een `<ul>` (een unordered list), met daarin een `<li>` (een list item), met *daarin* een `<a>`-element, *dan pas* moet de kleur `$navigation-color` worden. (`$navigation-color` is ergens anders ingesteld, maar is net zo'n waarde als `#ff4136` of `#cccccc`.)
 
-Regels die specifieker benoemd worden, hebben prioriteit. Dus `color: $navigation-color;` wint het van `color: #ff4136;` in de navigatiebalk, omdat het `<a>`-element daar specifieker benoemd is. 
+Regels die specifieker benoemd worden, hebben prioriteit. Dus `color: $navigation-color;` wint het van `color: #ff4136;` in de navigatiebalk, omdat het `<a>`-element daar specifieker benoemd is.
 
 ### Klassen
 Behalve door specifiek te benoemen, kun tags van elkaar onderscheiden met klassen. Alleen elementen met een bepaalde klasse worden dan gestijld. Typ in `style.scss` de volgende regels:
@@ -301,7 +351,11 @@ Nu moeten we de klasse aan de html tag toekennen. Typ daarvoor het volgende in `
 
 {% endhighlight %}
 
-Let op dat je de `<div>` ook weer afsluit. Zoals je waarschijnlijk wel kunt raden geef je de klasse aan met `class="container"`. Tot slot moeten we nog het stijlbestand aanroepen, zodat de browser weet dat welk stijlbestand hij moet laden op deze pagina. Dit doe je met `<link>`. Stop deze in je head, zodat je het volgende krijgt:
+Let op dat je de `<div>` ook weer afsluit. Je geeft de klasse aan met `class="container"`.
+
+### Het stijlbestand aanroepen
+
+Tot slot moeten we het stijlbestand aanroepen, zodat de browser weet welk stijlbestand hij moet laden op deze pagina. Dit doe je met `<link>`. Stop de `<link>`-tag in je head, zodat je het volgende krijgt:
 
 {% highlight html %}
 
@@ -320,7 +374,7 @@ Let op dat je de `<div>` ook weer afsluit. Zoals je waarschijnlijk wel kunt rade
 
 {% endhighlight %}
 
-Zo geef je aan dat de browser het bestand "/style.css" moet laden. Maar als je kijkt in je bestanden, dan zie dit bestand niet staan - wat gebeurt hier? Maak in `application.rb` de volgende route (dat wil zeggen, typ deze regels):
+Zo geef je aan dat de browser het bestand "/style.css" moet laden. Maar als je kijkt in je bestanden, dan zie dit bestand niet staan. Wat gebeurt hier? Maak in `application.rb` de volgende route (dat wil zeggen, typ deze regels):
 
 {% highlight ruby %}
 
@@ -330,7 +384,7 @@ end
 
 {% endhighlight %}
 
-Je hoeft hier het fijne niet van te weten, maar wat er gebeurt is gewoon een GET-request. De browser vraagt om het bestand '/style.css' en dan geeft Sinatra antwoord. Het commando `scss :/"scss/style"` zoekt naar het bestand `style.scss` en zet hem om naar `style.css`. Dit is vrij ingewikkeld, maar het lijkt op wat er gebeurt bij
+Je hoeft hier het fijne niet van te weten, maar wat er gebeurt is gewoon een GET-request. De browser vraagt om het bestand `/style.css` en dan geeft Sinatra antwoord. Het commando `scss :/"scss/style"` zoekt naar het bestand `style.scss` en zet hem om naar `style.css`. Dit is vrij ingewikkeld, maar het lijkt op wat er gebeurt bij:
 
 {% highlight ruby %}
 
@@ -344,7 +398,7 @@ Deze route zet een erb-bestand om naar een HTML-bestand.
 
 ## Meerdere pagina's
 
-Nu wordt het tijd om eens wat meer pagina's te maken. Maar als je eens in je `home.erb` kijkt, zie je dat maar een klein gedeelte bestaat uit de inhoud van de pagina:
+Nu wordt het tijd om eens wat meer pagina's te maken. Maar als je in `home.erb` kijkt, zie je dat maar een klein gedeelte bestaat uit de inhoud van de pagina:
 
 {% highlight html %}
 
@@ -363,7 +417,7 @@ Nu wordt het tijd om eens wat meer pagina's te maken. Maar als je eens in je `ho
 
 {% endhighlight %}
 
-Eigenlijk alleen het gedeelte in de `<div class="container">` bevat de inhoud van de pagina. De rest is opbouw. Als je nu meerdere pagina's wilt maken, waarbij de opbouw hetzelfde blijft, wil je natuurlijk niet de opbouw elke keer opnieuw typen. Daar heeft Sinatra ook iets op gevonden: maak een pagina `views/layout.erb` (de naam is belangrijk).  
+Eigenlijk bevat alleen het gedeelte in de `<div class="container">` de inhoud van de pagina. De rest is opbouw. Als je meerdere pagina's wilt maken, waarbij de opbouw hetzelfde blijft, wil je natuurlijk niet de opbouw elke keer opnieuw typen. Daar heeft Sinatra ook iets op gevonden: maak een pagina `views/layout.erb` (de naam is belangrijk).  
 
 Plak daar alles in uit `home.erb`, maar haal de inhoud eruit. Zet daarvoor in de plaats `<%= yield %>`. Dit lijkt abracadabra, maar dit is nu een stukje Ruby! Met `<%= %>` zeg je dat daar een stukje Ruby moet worden uitgevoerd en de output daarvan moet worden weergegeven. En `yield` betekent iets als: stop hier een pagina in.
 
@@ -411,8 +465,6 @@ Maak daarna `views/contact.erb` met iets als dit:
 <p>Hallo! Als je ons iets wilt vragen mail dan naar <a href="mailto:ghkapteijns@gmail.com">Rubyprog</a></p>
 
 {% endhighlight %}
-
-Als je goed kijkt zie je een `<a>`-tag staan in ons voorbeeld. Daarmee maak je links. In de `href=""` zet je het adres waar je naartoe wilt (bijv. `www.google.com`).
 
 ### Nieuwe routes
 
@@ -509,7 +561,7 @@ Je kunt ook nog het logo weghalen als je wilt (of je eigen logo er in plakken). 
 
 {% endhighlight %}
 
-## Margin
+### Margin
 
 Om nog even de puntjes op de i te zetten, kun je nog wat extra ruimte toevoegen onder het menu. Je ziet namelijk dat de tekst er te dicht op staat. Dit doe je met `margin` (marge). Om het menu een beetje marge aan de onderkant te geven, typ je in `style.css` het volgende:
 
