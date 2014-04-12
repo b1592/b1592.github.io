@@ -1,3 +1,5 @@
+jqconsole.Write("CLICK TO START LESSON.\n")
+
 initializeRepl = ->
 
   inputCallback = (callback) ->

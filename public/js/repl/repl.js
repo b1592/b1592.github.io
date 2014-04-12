@@ -3,6 +3,8 @@
   var initializeRepl,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
+  jqconsole.Write("CLICK TO START LESSON.\n");
+
   initializeRepl = function() {
     var BLOCK_OPENERS, TOKENS, errorCallback, inputCallback, multiLineHandler, outputCallback, promptHandler, resultCallback, startPrompt;
     inputCallback = function(callback) {
