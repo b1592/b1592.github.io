@@ -18,6 +18,10 @@ maillijst.txt
 _yardoc
 doc/
 
+<<<<<<< HEAD
+=======
+_site/atom.xml
+>>>>>>> sinatra
 _site
 
 # Node garbage to watch less files
