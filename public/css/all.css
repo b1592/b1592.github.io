@@ -503,10 +503,10 @@ a.text-primary:hover {
   color: #e53c33;
 }
 .text-success {
-  color: #88b175;
+  color: #567b45;
 }
 a.text-success:hover {
-  color: #6d9c57;
+  color: #3f5a33;
 }
 .text-info {
   color: #31708f;
@@ -1841,25 +1841,25 @@ select[multiple].input-lg {
 .has-success .checkbox,
 .has-success .radio-inline,
 .has-success .checkbox-inline {
-  color: #88b175;
+  color: #567b45;
 }
 .has-success .form-control {
-  border-color: #88b175;
+  border-color: #567b45;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 .has-success .form-control:focus {
-  border-color: #6d9c57;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0d6b6;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0d6b6;
+  border-color: #3f5a33;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #88b175;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #88b175;
 }
 .has-success .input-group-addon {
-  color: #88b175;
-  border-color: #88b175;
+  color: #567b45;
+  border-color: #567b45;
   background-color: #eaf2e7;
 }
 .has-success .form-control-feedback {
-  color: #88b175;
+  color: #567b45;
 }
 .has-warning .help-block,
 .has-warning .control-label,
@@ -3954,13 +3954,13 @@ a.thumbnail.active {
 .alert-success {
   background-color: #eaf2e7;
   border-color: #dfe8d7;
-  color: #88b175;
+  color: #567b45;
 }
 .alert-success hr {
   border-top-color: #d2dfc6;
 }
 .alert-success .alert-link {
-  color: #6d9c57;
+  color: #3f5a33;
 }
 .alert-info {
   background-color: #d9edf7;
@@ -4080,26 +4080,26 @@ a.list-group-item.active:focus .list-group-item-text {
   color: #ffffff;
 }
 .list-group-item-success {
-  color: #88b175;
+  color: #567b45;
   background-color: #eaf2e7;
 }
 a.list-group-item-success {
-  color: #88b175;
+  color: #567b45;
 }
 a.list-group-item-success .list-group-item-heading {
   color: inherit;
 }
 a.list-group-item-success:hover,
 a.list-group-item-success:focus {
-  color: #88b175;
+  color: #567b45;
   background-color: #dce8d7;
 }
 a.list-group-item-success.active,
 a.list-group-item-success.active:hover,
 a.list-group-item-success.active:focus {
   color: #fff;
-  background-color: #88b175;
-  border-color: #88b175;
+  background-color: #567b45;
+  border-color: #567b45;
 }
 .list-group-item-info {
   color: #31708f;
