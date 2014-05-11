@@ -21,14 +21,14 @@
         "default": "Dat is niet goed. Typte je naam?"
       }
     }), new Question({
-      description: "Zie je? Ruby weet je naam nog. Een stuk tekst tussen aanhalingstekens heet een String. Met 'puts' geeft Ruby output. Als je een variabele in een string wilt zetten, gebruik je een hekje, gevolgd door accolades. Bijvoorbeeld zo:\nputs \"Hallo, \#\{naam\}\"",
-      answer: /^puts\s*\"[\w\s\,]+\#\{naam\}\!?\"$/,
+      description: "Zie je? Ruby weet je naam nog. Een stuk tekst tussen aanhalingstekens heet een String. Als je een variabele in een string wilt zetten, gebruik je een hekje, gevolgd door accolades. Bijvoorbeeld zo:\n\"Hallo, \#\{naam\}\"",
+      answer: /^\s*\"[\w\s\,]+\#\{naam\}\!?\"$/,
       possible_errors: {
-        quotes_vergeten: /^puts\s*\"?[\w\s\,]+\#\{naam\}\!?\"?$/
+        quotes_vergeten: /^\s*\"?[\w\s\,]+\#\{naam\}\!?\"?$/
       },
       error_messages: {
         quotes_vergeten: "Let op de aanhalingstekens.",
-        "default": "Dat is niet goed. Typte je puts \"Hallo, \#\{naam\}?\""
+        "default": "Dat is niet goed. Typte je \"Hallo, \#\{naam\}?\""
       }
     }), new Question({
       description: "Ruby kan ook rekenen. Typ maar eens 3 + 4.",
