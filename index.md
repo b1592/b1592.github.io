@@ -1,6 +1,6 @@
 ---
 layout: home
-title: 
+title:
 ---
 
 &nbsp;
@@ -9,7 +9,7 @@ title:
 
 <h3 style="margin-top: 0px;">UvA Summerschool</h3>
 
-Van 7 tm 12 juli zijn wij op de UvA met een zomercursus. Wil je hier meer over weten? <a>Lees dan verder...</a>
+Van 7 tm 12 juli zijn wij op de UvA met een zomercursus. <a href="{% post_url 2014-05-11-summerschool %}">Lees verder...</a>
 </div>
 
 Programmeren wordt steeds belangrijker. Daarom is ons doel om jonge mensen er vertrouwd mee te laten raken, zodat zij een krachtige vaardigheid erbij krijgen en beter begrijpen hoe moderne technologie werkt.
