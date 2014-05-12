@@ -439,7 +439,7 @@ Nu wordt het tijd om eens wat meer pagina's te maken. Maar als je in `home.erb` 
 
 Eigenlijk bevat alleen het gedeelte in de `<div class="container">` de inhoud van de pagina. De rest is opbouw. Als je meerdere pagina's wilt maken, waarbij de opbouw hetzelfde blijft, wil je natuurlijk niet de opbouw elke keer opnieuw typen. Daar heeft Sinatra ook iets op gevonden: maak een pagina `views/layout.erb` (de naam is belangrijk).  
 
-Plak daar alles in uit `home.erb`, maar haal de inhoud eruit. Zet daarvoor in de plaats `<%= yield %>`. Dit lijkt abracadabra, maar dit is nu een stukje Ruby! Met `<%= %>` zeg je dat daar een stukje Ruby moet worden uitgevoerd en de output daarvan moet worden weergegeven. En `yield` betekent iets als: stop hier een pagina in.
+Plak daar alles in uit `home.erb`, maar haal de inhoud eruit. Zet daarvoor in de plaats `<%= yield %>`. Dit lijkt abracadabra, maar dit is nu een stukje Ruby! Met `<%= %>` zeg je dat daar een stukje Ruby moet worden uitgevoerd en de output daarvan moet worden weergegeven. En `yield` betekent iets als: stop hier een pagina in. Je kunt ook Ruby uitvoeren, maar niet weergeven, met `<% %>` (dus zonder `=`.)
 
 Dan ziet `layout.erb` er zo uit:
 
