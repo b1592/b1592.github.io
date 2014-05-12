@@ -80,18 +80,56 @@ We maken een blog, en op een blog heb je posts. Je moet als eerste iets inbouwen
 
 {% highlight ruby %}
 
-get "/posts/new" do
+get '/posts/new' do
   erb :nieuwepost
 end
 
 {% endhighlight %}
 
-En een view `views/nieuwepost.erb`. Hierin maak je een tekstveld waar je je post in kunt 
+En een view `views/nieuwepost.erb`. Hierin maak je een tekstveld waar je je post in kunt typen en een knop waarmee je het opslaat. Dit doe je in HTML met een `<form>`. Probeer maar eens iets als dit:
 
+{% highlight html %}
+
+<h2>Nieuwe post</h2>
+
+<form action="/posts" method="post">
+  <label for="post_title">Titel:</label><br />
+  <input id="post_title" name="post[title]" type="text" value="" />
+  <br />
+
+  <label for="post_body">Inhoud:</label><br />
+  <textarea id="post_body" name="post[body]" rows="5"></textarea>
+  <br />
+
+  <label for="post_body">Auteur:</label><br />
+  <input id="post_author" name="post[author]" type="text" value="" />
+  <br />
+
+  <input type="submit" value="Create Post" />
+
+</form>
+
+{% endhighlight %}
+
+Als je kijkt in `<form>` dan zie je staan `action="/posts"`. Dit betekent dat de inhoud van alles wat er in `<form>` staat opgestuurd wordt naar de route `/posts`. Deze route moet nog gemaakt worden, nu niet met `get` maar `post`:
+
+{% highlight ruby %}
+
+post "/posts" do
+  @post = Post.new(params[:post])
+  @post.save
+  redirect "/"
+end
+
+{% endhighlight %}
+
+Zoals je eerder hebt gezien, maak je een nieuwe post aan met `Post.new`. Daar geef je met `params[:post]` alles aan mee wat je in het formulier eerder had ingevuld. Met `@post.save` sla je de nieuwe post op in de database. Als alles gelukt is, stuur je de browser weer door naar je homepagina met `redirect '/'`.
 
 ###Read
 
-bas
+Nu heb je op de homepagina een lijst met de posts en de inhoud van die posts. Maar je kunt nog niet klikken op de posts. Dit is het 'Read'-gedeelte: je maakt een losse pagina waarop je één post tegelijk kunt lezen.
+
+De route die je hiervoor maakt is misschien niet erg verrassend. Je gaat 
 
 ###Update
 
