@@ -129,7 +129,37 @@ Zoals je eerder hebt gezien, maak je een nieuwe post aan met `Post.new`. Daar ge
 
 Nu heb je op de homepagina een lijst met de posts en de inhoud van die posts. Maar je kunt nog niet klikken op de posts. Dit is het 'Read'-gedeelte: je maakt een losse pagina waarop je één post tegelijk kunt lezen.
 
-De route die je hiervoor maakt is misschien niet erg verrassend. Je gaat 
+De route die je hiervoor maakt is misschien niet erg verrassend. Je gaat naar `.../posts/` met daarachter de id van de post die je zoekt. Met `Post.get(id)` haal je vervolgens de goede post uit de database. Dan ziet je route er zo uit:
+
+{% highlight ruby %}
+
+get '/posts/:id' do
+  @post = Post.get(params[:id])
+  erb :post
+end
+
+{% endhighlight %}
+
+Nu nog de view, maar dat is redelijk simpel. Eigenlijk is het niet veel anders dan je homepagina, maar waar je daar door alle posts gaat met een `@posts.each` pak je nu maar één post. Dan krijg je iets als dit:
+
+{% highlight erb %}
+
+<article class="type-system-geometric">
+
+<h1><%= @post.title %></h1>
+
+<p class="date"><%= @post.created_at.strftime("%d-%m-%Y") %></p>
+<p><%= @post.body %>
+</p>
+
+<hr>
+<p class="author"><%= @post.author %></p>
+
+</article>
+
+{% endhighlight %}
+
+De opmaak mag je natuurlijk helemaal zelf weten; dit is een voorbeeld. Zolang je maar de titel, datum, auteur en inhoud van de post weergeeft. Als je op de homepagina de inhoud van de posts hebt ingekort, let dan op dat je dat hier niet doet; je hebt nu immers de ruimte.
 
 ###Update
 
