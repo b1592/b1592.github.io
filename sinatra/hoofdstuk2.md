@@ -6,9 +6,9 @@ scrollspy: true
 
 ##Een dynamische route
 
-Jullie hebben nu kennis gemaakt met routes. Maar routes kunnen veel meer dan alleen bepaalde bestanden vinden. Je kunt aan routes variabelen meegeven. Laten we eens gaan testen hoe dat werkt.
+Jullie hebben nu kennis gemaakt met routes. Maar routes kunnen veel meer dan alleen bepaalde bestanden vinden. Je kunt aan routes variabelen meegeven. Laten we gaan testen hoe dat werkt.
 
-Maak een nieuwe view aan: `views/welkom.erb`. Deze pagina gaat je begroeten met je naam. Typ maar iets leuks, zodat er iets in deze vorm komt te staan:
+Maak eens een nieuwe view aan: `views/welkom.erb`. Deze pagina gaat je begroeten. Typ maar iets leuks, zodat er iets in deze vorm komt te staan:
 
 {% highlight html %}
 
@@ -158,6 +158,18 @@ Nu nog de view, maar dat is redelijk simpel. Eigenlijk is het niet veel anders d
 </article>
 
 {% endhighlight %}
+
+Let op: op de homepagina krijg je de variabele `@posts` binnen. Daar ga je doorheen op zo'n manier:
+
+{% highlight ruby %}
+
+@posts.each do |post|
+  #Doe iets met post
+end
+
+{% endhighlight %}
+
+Dan kun je dus overal `post.title` en dergelijke gebruiken. Nu (in de 'Read') krijg je maar één post binnen, als variabele `@post`. Vergeet dus niet de `@` als je de code van de homepagina kopieert.
 
 De opmaak mag je natuurlijk helemaal zelf weten; dit is een voorbeeld. Zolang je maar de titel, datum, auteur en inhoud van de post weergeeft. Als je op de homepagina de inhoud van de posts hebt ingekort, let dan op dat je dat hier niet doet; je hebt nu immers de ruimte.
 
