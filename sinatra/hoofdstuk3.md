@@ -294,5 +294,16 @@ In `home.erb` zorgen we ervoor dat alleen een ingelogd persoon nieuwe posts kan 
 
 Op dezelfde manier kun je de links voor destroy en edit verhullen voor bezoekers van je site.
 
+Tenslotte maken we een logout link.
+
+{% highlight ruby %}
+get '/logout' do
+  session[:logged_in] = false
+  redirect '/'
+end
+{% endhighlight %}
+
+Zorg er in `application.rb` voor dat er een link naar login staat als de bezoeker niet is ingelogd, en naar logout als de bezoeker wel is ingelogd.
+
 Hebben we alles goed dichtgetimmerd? Het antwoord is nee. Een bezoeker kan `/posts/new` intypen en een nieuwe post maken. We moeten ook in `application.rb` kijken of een bezoeker wel is ingelogd, voordat we `erb :nieuwepost` terug geven.
 
