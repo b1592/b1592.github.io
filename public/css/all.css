@@ -627,7 +627,7 @@ abbr[data-original-title] {
 blockquote {
   padding: 13.5px 27px;
   margin: 0 0 27px;
-  font-size: 22.5px;
+  font-size: 18px;
   border-left: 5px solid #eeeeee;
 }
 blockquote p:last-child,
