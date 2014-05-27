@@ -4,9 +4,61 @@ title: Hoofdstuk 4
 scrollspy: true
 ---
 
-# Hoofdstuk 4: Comments
+# Hoofdstuk 4: Versiebeheer en comments
 
-In dit hoofdstuk gaan we comments toevoegen aan onze blog. 
+In dit hoofdstuk gaan we comments toevoegen aan onze blog. Maar eerst gaan we onze bestanden (eindelijk) onder versiebeheer zetten. 
+
+## Versiebeheer met Git
+
+### Wat is Git?
+
+Git is versiebeheersoftware. Hiermee kun je elke wijziging die je maakt (een *commit*) opslaan. Zo kun je later (als je bijvoorbeeld een fout hebt gemaakt) terug naar een eerder snapshot van je bestandsmap. Versiebeheer is essentieel voor elke programmeur &mdash; helemaal als je met anderen samenwerkt.
+
+### GitHub-account
+
+[Github](https://github.com/) is een site waar je online bestandsmappen kunt delen. Alles staat onder versiebeheer met Git (zodat iedereen alle versies van elkaars software kan zien.) GitHub is de grootste site waar programmeurs samen aan projecten werken.
+
+[Maak een account](https://github.com/).
+
+Gelukt? [Installeer Git](https://help.github.com/articles/set-up-git#platform-windows).
+
+### Inleiding in Git
+
+Doe deze uitstekende tutorial: [Try Git](https://try.github.io/levels/1/challenges/1).
+
+Nu zetten we de map `blog` onder versiebeheer. `cd` naar de juiste map en typ
+
+{% highlight bash %}
+$ git init
+Initialized empty Git repository in [weggelaten]/blog/.git/
+{% endhighlight %}
+
+Voeg alle bestanden toe aan de *staging area* (vergeet de punt niet):
+
+{% highlight bash %}
+$ git add .
+{% endhighlight %}
+
+Commit de veranderingen (in dit geval de hele map):
+
+{% highlight bash %}
+$ git commit -m "Alle bestanden onder versiebeheer."
+[weggelaten]
+create mode 100644 application.rb
+create mode 100644 views/contact.erb
+create mode 100644 views/deletepost.erb
+[weggelaten]
+{% endhighlight %}
+
+Nu gaan we de map op GitHub zetten.
+
+[Maak een nieuwe repository (bestandsmap) aan](https://github.com/new). Geef de repository een naam en verander niets aan de standaardopties (Public en geen README).
+
+Klik op `HTTP` en typ de twee regels in onder &ldquo;Push an existing repository from the command line.&rdquo;
+
+### Samenvatting
+
+Met de commando's `git add`, `git commit` en `git push` kun je voorlopig genoeg. Elke keer als je een verandering hebt gemaakt, doe je `git add .` en `git commit -m "een bericht met wat je hebt veranderd"`. Als je de bestanden op GitHub wilt gooien doe je `git push`.
 
 ## Comments in de database
 
@@ -29,7 +81,7 @@ end
 
 We moeten nog iets toevoegen. Comments horen namelijk *bij een bepaalde post*. Door een kolom `post_id` toe te voegen aan de comments, weten we bij welke post elke comment hoort. Een comment met `post_id` van 1 hoort bij de post met een `id` van 1, die je kunt vinden met `Post.get(1)`.
 
-**Plaatje**
+![one-to-many](/public/images/has_many.png)
 
 We kunnen `property :post_id, Integer` toevoegen aan het model voor een comment. Maar dankzij DataMapper kan het handiger. In het postmodel:
 
@@ -97,7 +149,7 @@ post.comments.create({
 {% endhighlight %}
 
 
-## De opdracht
+## Opdrachten
 
 ### Create, Read, Update, Destroy: Comments
 
@@ -114,4 +166,10 @@ En als je de slechtste comments bovenaan wilt hebben (*ascending*):
 
 {% highlight ruby %}
 post.comments.all(order: [:rating.asc])
+{% endhighlight %}
+
+Of natuurlijk:
+
+{% highlight ruby %}
+post.comments.all(order: [:rating.desc]).reverse
 {% endhighlight %}
