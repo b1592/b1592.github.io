@@ -8,6 +8,8 @@ scrollspy: true
 
 Je gaat je eigen site maken! Je leert wat HTML en CSS zijn, en hoe je je website kunt besturen met Sinatra. 
 
+[Download de bestanden voor de cursus](/public/downloads/Sinatra.zip)
+
 ## Setup
 
 ### Sinatra
