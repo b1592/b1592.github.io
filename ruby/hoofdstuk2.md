@@ -29,9 +29,27 @@ In bijna elk programma moeten er keuzes worden gemaakt: als dít waar is, doe da
 8 > 5   # => true
 6 < 6   # => false
 6 <= 6  # => true
+8 >= 9  # => false
 
 naam = "Piet"
 naam == "Piet"  # => true
+{% endhighlight %}
+
+### Logische uitspraken combineren met EN (&&) en OF (||)
+Als je wilt weten of de variabele `weekdag` de waarde `"zaterdag"` of `"zondag"` bevat, gebruik je de OF-operator.
+
+{% highlight ruby %}
+if weekdag == "zaterdag" || weekdag == "zondag"
+  puts "Het is weekend."
+end
+{% endhighlight %}
+
+En als je wilt kijken of de leeftijd groter of gelijk is aan `10`, maar kleiner dan `20`? Dan gebruik je de EN-operator:
+
+{% highlight ruby %}
+if leeftijd >= 10 && leeftijd < 20
+    puts "Een tiener."
+end
 {% endhighlight %}
 
 ### De modulo-operator

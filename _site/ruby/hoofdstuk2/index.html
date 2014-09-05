@@ -98,9 +98,22 @@ prime_test.rb - de testjes</code></pre>
 <div class='highlight'><pre><code class='ruby'><span class='mi'>8</span> <span class='o'>&gt;</span> <span class='mi'>5</span>   <span class='c1'># =&gt; true</span>
 <span class='mi'>6</span> <span class='o'>&lt;</span> <span class='mi'>6</span>   <span class='c1'># =&gt; false</span>
 <span class='mi'>6</span> <span class='o'>&lt;=</span> <span class='mi'>6</span>  <span class='c1'># =&gt; true</span>
+<span class='mi'>8</span> <span class='o'>&gt;=</span> <span class='mi'>9</span>  <span class='c1'># =&gt; false</span>
 
 <span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Piet&quot;</span>
 <span class='n'>naam</span> <span class='o'>==</span> <span class='s2'>&quot;Piet&quot;</span>  <span class='c1'># =&gt; true</span>
+</code></pre></div>
+<h3 id="logische_uitspraken_combineren_met_en__en_of_">Logische uitspraken combineren met EN (&amp;&amp;) en OF (||)</h3>
+
+<p>Als je wilt weten of de variabele <code>weekdag</code> de waarde <code>&quot;zaterdag&quot;</code> of <code>&quot;zondag&quot;</code> bevat, gebruik je de OF-operator.</p>
+<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>weekdag</span> <span class='o'>==</span> <span class='s2'>&quot;zaterdag&quot;</span> <span class='o'>||</span> <span class='n'>weekdag</span> <span class='o'>==</span> <span class='s2'>&quot;zondag&quot;</span>
+  <span class='nb'>puts</span> <span class='s2'>&quot;Het is weekend.&quot;</span>
+<span class='k'>end</span>
+</code></pre></div>
+<p>En als je wilt kijken of de leeftijd groter of gelijk is aan <code>10</code>, maar kleiner dan <code>20</code>? Dan gebruik je de EN-operator:</p>
+<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>leeftijd</span> <span class='o'>&gt;=</span> <span class='mi'>10</span> <span class='o'>&amp;&amp;</span> <span class='n'>leeftijd</span> <span class='o'>&lt;</span> <span class='mi'>20</span>
+    <span class='nb'>puts</span> <span class='s2'>&quot;Een tiener.&quot;</span>
+<span class='k'>end</span>
 </code></pre></div>
 <h3 id="de_modulooperator">De modulo-operator</h3>
 
