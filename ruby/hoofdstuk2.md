@@ -15,7 +15,6 @@ Jullie gaan een _algoritme_ schrijven. Dat is een set instructies die tot een du
 
     Hoofdstuk2.url - deze beschrijving
     prime.rb - het script waar je in gaat werken
-    prime_test.rb - de testjes
 
 ## Informatie
 
@@ -35,7 +34,7 @@ naam = "Piet"
 naam == "Piet"  # => true
 {% endhighlight %}
 
-### Logische uitspraken combineren met EN (&&) en OF (||)
+### Logische uitspraken combineren met EN (`&&`) en OF (`||`)
 Als je wilt weten of de variabele `weekdag` de waarde `"zaterdag"` of `"zondag"` bevat, gebruik je de OF-operator.
 
 {% highlight ruby %}
@@ -183,13 +182,6 @@ prime?(8)   # => false
 prime?(13)  # => true
 prime?(104729)  # => true
 {% endhighlight %}
-
-### Tests
-We hebben een programma geschreven dat je functie aan een paar simpele tests onderwerpt. Dit programma voer je uit met:
-
-    ruby prime_test.rb
-
-Aan de slag!
 
 ### (Extra) Duizendste priemgetal
 Je hebt de functie `prime?` geschreven. Kun je het duizendste priemgetal vinden? En het miljoenste? En het miljardste? Nu begint de snelheid van je algoritme een rol te spelen. Probeer je algoritme te optimaliseren. Check je niet onnodig veel getallen? Snelste algoritme van de klas krijgt een verrassing!
