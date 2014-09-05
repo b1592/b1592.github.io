@@ -113,5 +113,43 @@ Je weet nu alles wat je nodig hebt om zelf aan de slag te gaan. Je eerste script
 * Verwerkt de naam in een antwoord en vraagt de gebruiker om `jongen` of `meisje`, of `man` of `vrouw` in te typen
 * Maakt een persoonlijke begroeting, waarin de gebruiker wordt begroet met "Meneer" of "Mevrouw" en dan de naam, allemaal bepaald door wat de gebruiker eerder heeft ingetypt
 
+{% highlight bash %}
+
+Wat is je naam?
+Piet
+Ben je een jongen of een meisje?
+jongen
+Hallo, meneer Piet!
+
+{% endhighlight %}
+
 ### (Extra) Oeps, foutje!
-Wat doet je programma als je per ongeluk `jongne` in plaats van `jongen` intypt? Probeer dit soort fouten op een mooie manier op te lossen. (Is het irritant om alles opnieuw in te vullen als je één typfout maakt? Antwoord: ja.)
+Wat doet je programma als je per ongeluk `jongne` in plaats van `jongen` intypt? Probeer dit soort fouten op een mooie manier op te lossen. (Het is irritant om alles opnieuw in te vullen als je één typfout maakt. Probeer daar rekening mee te houden.) Lees hiervoor alvast over de [while-loop](/ruby/hoofdstuk2#whileloop).
+
+## Extra commando's
+
+### Een enter afbijten met `chomp`
+Er staat in je programma `naam = gets`. Jij typt `Jan` in. Staat er in `naam` dan de waarde `"Jan"`? Nee! De enter, die je hebt ingetoetst om de input te beëindigen, is ook opgeslagen. `naam` heeft de waarde `"Jan\n"`. `"\n"` is een speciaal karakter dat een _newline_ (nieuwe regel) aangeeft --- een enter dus.
+
+Met `chomp` haal je de newline aan het eind van een string weg. Lees de [officiële uitleg van Ruby](http://www.ruby-doc.org/core-1.9.3/String.html#method-i-chomp).
+
+### Een variabele verwerken in een string: `"Hallo, #{naam}"`
+Hiermee zet je de waarde van `naam` op de juiste plek in de string. Je kunt daarna weer verder typen: `"Wat is #{naam} een mooie naam!"`. Als `naam` de string `"Jan"` bevat, krijg je:
+
+{% highlight ruby %}
+"Wat is Jan een mooie naam!"
+{% endhighlight %}
+
+### Hint voor de extra opdracht
+Je hebt een programma dat "Hoi meneer!" of "Hoi mevrouw" en de juiste naam zegt. Hoe kun je er voor zorgen dat het programma doorgaat tot de gebruiker het _eindelijk_ goed heeft ingevoerd? Met een [while loop](/hoofdstuk2/#whileloop)!
+
+Net als bij een [`if-statement`](/hoofdstuk1/#het_statement), checkt een while loop een [logische uitspraak](/hoofdstuk2/#logische_uitspraken). Welke logische uitspraak moeten we in dit geval checken? Wij hadden zoiets bedacht:
+
+{% highlight ruby %}
+correct = false
+while correct == false
+    # De code
+end
+{% endhighlight %}
+
+Ergens in de while loop zul je dan `correct = true` moeten zetten, zodat `correct == false` niet meer waar is. Dan stopt de while loop.
