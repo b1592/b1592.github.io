@@ -30,13 +30,13 @@ while correct == false do
     # De code
 end
 {% endhighlight %}
-  
+
 Ergens in de while loop zul je dan `correct = true` moeten zetten, zodat `correct == false` niet meer waar is. Dan stopt de while loop.
 
 ### Wat is `gets.chomp`?
 Er staat in je programma `naam = gets`. Jij typt `Jan` in. Staat er in `naam` dan de waarde `"Jan"`? Nee! De enter, die je hebt ingetoetst om de input te beëindigen, is ook opgeslagen. `naam` heeft de waarde `"Jan\n"`. `"\n"` is een speciaal karakter dat een _newline_ (nieuwe regel) aangeeft --- een enter dus.
 
-`chomp` haalt de newline aan het eind van een string weg. Lees [hier](http://www.ruby-doc.org/core-1.9.3/String.html#method-i-chomp) de officiële uitleg.
+Met `chomp` haal je de newline aan het eind van een string weg. Lees [hier](http://www.ruby-doc.org/core-1.9.3/String.html#method-i-chomp) de officiële uitleg.
 
 ### Wat doet `"Hallo, #{naam}"`?
 Hiermee zet je de waarde van `naam` op de juiste plek in de string. Je kunt daarna weer verder typen: `"Wat is #{naam} een mooie naam!"`.
@@ -57,7 +57,7 @@ Als je wilt checken of `geslacht` de waarde `"vrouw"` of de waarde `"meisje"` be
 {% highlight ruby %}
 if geslacht == "vrouw" || geslacht == "meisje"
     puts "Hallo mevrouw #{naam}!"
-end 
+end
 {% endhighlight %}
 
 Wat nou als je wilt kijken of de leeftijd groter is dan `10`, maar kleiner dan `20`? Dan gebruik je de EN-operator:
@@ -65,7 +65,7 @@ Wat nou als je wilt kijken of de leeftijd groter is dan `10`, maar kleiner dan `
 {% highlight ruby %}
 if leeftijd > 10 && leeftijd < 20
     puts "Een tiener."
-end 
+end
 {% endhighlight %}
 
 ### `!=` (niet gelijk aan)
@@ -81,7 +81,7 @@ Ruby klaagt luidkeels als je een typfout maakt. All hope is not lost. Wat gebeur
 
 {% highlight ruby %}
 # test.rb
-correct == false 
+correct == false
 {% endhighlight %}
 
 Je bedoelde `correct = false`, maar je gebruikte `==`. Je vraagt Ruby de waarde van `correct` te checken, terwijl `correct` nog niet bestaat! Je krijgt nu:
@@ -122,7 +122,7 @@ Elk apart codeblok moet je laten inspringen met Tab. Alles in de while loop hoor
 ### Ruby Warrior
 Speel [hier](https://www.bloc.io/ruby-warrior/#/). Er gebeuren wat dingen die jullie nog niet snappen (aan het eind van de cursus wel.) De functie `play_turn` wordt steeds opnieuw uitgevoerd. Als je een functie gebruikt met een uitroepteken, zoals `warrior.walk!`, dan is de beurt voorbij en begin je vooraan `play_turn`. Dus je kunt maar één keer lopen, slaan of healen per beurt.
 
-In het eerste level hoef je alleen maar vooruit te lopen: 
+In het eerste level hoef je alleen maar vooruit te lopen:
 
 {% highlight ruby %}
 def play_turn(warrior)

@@ -15,7 +15,7 @@ Jullie gaan een _algoritme_ schrijven. Dat is een set instructies die tot een du
 
     Hoofdstuk2.url - deze beschrijving
     prime.rb - het script waar je in gaat werken
-    prime_test.rb - de testjes 
+    prime_test.rb - de testjes
 
 ## Informatie
 
@@ -32,7 +32,7 @@ In bijna elk programma moeten er keuzes worden gemaakt: als dít waar is, doe da
 
 naam = "Piet"
 naam == "Piet"  # => true
-{% endhighlight %}    
+{% endhighlight %}
 
 ### De modulo-operator
 Een belangrijke operator voor deze opdracht is `%`, de modulo-operator. Deze geeft de rest terug van deling van twee getallen.
@@ -46,14 +46,14 @@ Een belangrijke operator voor deze opdracht is `%`, de modulo-operator. Deze gee
 14 % 3 == 0 # => false
 # is 12 deelbaar door 4?
 12 % 4 == 0 # => true
-{% endhighlight %} 
+{% endhighlight %}
 
 ### While-loop
 Een if-statement is een eenmalige beslissing. Maar soms wil je met een opdracht doorgaan zolang als _(while)_ een bepaalde uitspraak waar is. Haal een ei uit de doos, zolang er nog eieren zijn. Wat komt hier uit?
 
 {% highlight ruby %}
 counter = 0
-while counter < 10 do
+while counter < 10
     counter = counter + 1
 end
 puts counter
@@ -82,7 +82,7 @@ def multiply(a, b)
 end
 
 multiply(5, 8)  # => 40
-{% endhighlight %} 
+{% endhighlight %}
 
 Een functie geeft overzicht en scheelt behoorlijk wat typwerk. Stel dat je drie mensen wilt begroeten.
 
@@ -163,7 +163,7 @@ end
 
 prime?(8)   # => false
 prime?(13)  # => true
-prime?(104729)  # => true 
+prime?(104729)  # => true
 {% endhighlight %}
 
 ### Tests
