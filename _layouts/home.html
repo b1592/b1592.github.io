@@ -22,7 +22,16 @@
     $('.single-item').slick({
         infinite: false,
         autoplay: true,
-        autoplaySpeed: 4000
+        autoplaySpeed: 4000,
+        arrows: true,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                arrows: false
+              }
+            }
+          ]
       });
                     </script>
     

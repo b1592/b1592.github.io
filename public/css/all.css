@@ -5176,6 +5176,10 @@ ul.posts span {
     -moz-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
   }
+  #carousel .slick-prev,
+  #carousel .slick-next {
+    display: none;
+  }
   .content {
     padding-top: 10px;
   }
@@ -5186,5 +5190,9 @@ ul.posts span {
   }
   #carousel {
     width: 970px;
+  }
+  #carousel .slick-prev,
+  #carousel .slick-next {
+    display: block;
   }
 }
