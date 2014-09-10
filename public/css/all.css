@@ -5143,6 +5143,9 @@ ul.posts span {
 #repl-back {
   display: none;
 }
+#carousel {
+  display: none;
+}
 @media (min-width: 768px) {
   #repl-back {
     padding: 0px;
@@ -5152,9 +5155,23 @@ ul.posts span {
     width: 750px;
     position: relative;
     display: block;
-    height: 350px;
+    height: 400px;
     background-image: url("/public/images/repl_background.png");
     background-size: 100% 100%;
+    -webkit-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
+  }
+  #carousel {
+    padding: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 750px;
+    position: relative;
+    display: block;
+    height: 400px;
     -webkit-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 0 7px 1.5px rgba(0, 0, 0, 0.3);
@@ -5165,6 +5182,9 @@ ul.posts span {
 }
 @media (min-width: 992px) {
   #repl-back {
+    width: 970px;
+  }
+  #carousel {
     width: 970px;
   }
 }

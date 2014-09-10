@@ -6,14 +6,34 @@
   <body id="top">
 
   {% include header.html %}
+  <!-- <div class="carousel"> -->
 
-  <div id="repl-back" style="height: 240px;">
-    <div id="console"></div>
-  </div>
+    <div class="slider single-item" style="height: 400px;" id="carousel">
+      <div id="repl-back" style="height: 400px;">
+        <div id="console"></div>
+      </div>
+      <div style="height: 400px;">
+        <!-- <a href="/summerschool"> -->
+        <img src="/public/images/foto/summerschool_banner.jpg"></img>
+        <!-- </a> -->
+      </div>
+    </div>
+    <script>
+    $('.single-item').slick({
+        infinite: false,
+        autoplay: true,
+        autoplaySpeed: 4000
+      });
+                    </script>
+    
+    <!-- <div>
+      Foto
+    </div>
+  </div> -->
     <div class="container content">
       <div class="row">
         <div class="col-md-9">
-          {{ content }}
+         {{ content }}
         </div>
 
         <div class="col-md-3">
