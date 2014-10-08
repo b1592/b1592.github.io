@@ -16,5 +16,3 @@ Wij hebben een [cursus](/ruby/hoofdstuk1) voor jouw middelbare school. Hierin le
 Rubyprog is begonnen door twee studenten uit Amsterdam. Als je meer wilt weten over ons of over hoe je deze cursus ook op jouw school kunt krijgen, mail ons dan op [info@rubyprog.nl](mailto:info@rubyprog.nl).
 
 Laat je overtuigen door de mensen in dit filmpje - niet de minsten!
-
-<iframe allowfullscreen='allowfullscreen' frameborder='0' height='315' src='//www.youtube.com/embed/dU1xS07N-FA' width='420'>  </iframe>
