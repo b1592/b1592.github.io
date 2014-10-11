@@ -42,11 +42,18 @@ namen[2]    # => "Evelien"
 namen[-1]   # => "Piet"
 {% endhighlight %}
 
-N.B. Je kunt ook strings op deze manier aanspreken!
+Je kunt ook strings op deze manier aanspreken!
 
 {% highlight ruby %}
 naam = "Jan"
 naam[0]     # => "J"
+{% endhighlight %}
+
+Met `push` voeg je elementen aan een array toe.
+
+{% highlight ruby %}
+getallen = [1, 2, 3]
+getallen.push(4)  # => [1, 2, 3, 4]
 {% endhighlight %}
 
 ### For Loops
