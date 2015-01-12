@@ -96,51 +96,46 @@ prime.rb - het script waar je in gaat werken</code></pre>
 <h3 id="logische_uitspraken">Logische uitspraken</h3>
 
 <p>In bijna elk programma moeten er keuzes worden gemaakt: als dít waar is, doe dan dát. Deze <em>logische uitspraken</em> leveren <code>true</code> of <code>false</code> op. Een paar voorbeelden (testen met <code>irb</code>!)</p>
-<div class='highlight'><pre><code class='ruby'><span class='mi'>8</span> <span class='o'>&gt;</span> <span class='mi'>5</span>   <span class='c1'># =&gt; true</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='mi'>8</span> <span class='o'>&gt;</span> <span class='mi'>5</span>   <span class='c1'># =&gt; true</span>
 <span class='mi'>6</span> <span class='o'>&lt;</span> <span class='mi'>6</span>   <span class='c1'># =&gt; false</span>
 <span class='mi'>6</span> <span class='o'>&lt;=</span> <span class='mi'>6</span>  <span class='c1'># =&gt; true</span>
 <span class='mi'>8</span> <span class='o'>&gt;=</span> <span class='mi'>9</span>  <span class='c1'># =&gt; false</span>
 
 <span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Piet&quot;</span>
-<span class='n'>naam</span> <span class='o'>==</span> <span class='s2'>&quot;Piet&quot;</span>  <span class='c1'># =&gt; true</span>
-</code></pre></div>
+<span class='n'>naam</span> <span class='o'>==</span> <span class='s2'>&quot;Piet&quot;</span>  <span class='c1'># =&gt; true</span></code></pre></div>
 <h3 id="logische_uitspraken_combineren_met_en__en_of_">Logische uitspraken combineren met EN (<code>&amp;&amp;</code>) en OF (<code>||</code>)</h3>
 
 <p>Als je wilt weten of de variabele <code>weekdag</code> de waarde <code>&quot;zaterdag&quot;</code> of <code>&quot;zondag&quot;</code> bevat, gebruik je de OF-operator.</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>weekdag</span> <span class='o'>==</span> <span class='s2'>&quot;zaterdag&quot;</span> <span class='o'>||</span> <span class='n'>weekdag</span> <span class='o'>==</span> <span class='s2'>&quot;zondag&quot;</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='k'>if</span> <span class='n'>weekdag</span> <span class='o'>==</span> <span class='s2'>&quot;zaterdag&quot;</span> <span class='o'>||</span> <span class='n'>weekdag</span> <span class='o'>==</span> <span class='s2'>&quot;zondag&quot;</span>
   <span class='nb'>puts</span> <span class='s2'>&quot;Het is weekend.&quot;</span>
-<span class='k'>end</span>
-</code></pre></div>
+<span class='k'>end</span></code></pre></div>
 <p>En als je wilt kijken of de leeftijd groter of gelijk is aan <code>10</code>, maar kleiner dan <code>20</code>? Dan gebruik je de EN-operator:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>leeftijd</span> <span class='o'>&gt;=</span> <span class='mi'>10</span> <span class='o'>&amp;&amp;</span> <span class='n'>leeftijd</span> <span class='o'>&lt;</span> <span class='mi'>20</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='k'>if</span> <span class='n'>leeftijd</span> <span class='o'>&gt;=</span> <span class='mi'>10</span> <span class='o'>&amp;&amp;</span> <span class='n'>leeftijd</span> <span class='o'>&lt;</span> <span class='mi'>20</span>
     <span class='nb'>puts</span> <span class='s2'>&quot;Een tiener.&quot;</span>
-<span class='k'>end</span>
-</code></pre></div>
+<span class='k'>end</span></code></pre></div>
 <h3 id="de_modulooperator">De modulo-operator</h3>
 
 <p>Een belangrijke operator voor deze opdracht is <code>%</code>, de modulo-operator. Deze geeft de rest terug van deling van twee getallen.</p>
-<div class='highlight'><pre><code class='ruby'><span class='mi'>10</span> <span class='o'>%</span> <span class='mi'>3</span>  <span class='c1'># =&gt; 1</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='mi'>10</span> <span class='o'>%</span> <span class='mi'>3</span>  <span class='c1'># =&gt; 1</span>
 <span class='mi'>17</span> <span class='o'>%</span> <span class='mi'>7</span>  <span class='c1'># =&gt; 3</span>
 <span class='mi'>8</span> <span class='o'>%</span> <span class='mi'>2</span>   <span class='c1'># =&gt; 0</span>
 
 <span class='c1'># is 14 deelbaar door 3?</span>
 <span class='mi'>14</span> <span class='o'>%</span> <span class='mi'>3</span> <span class='o'>==</span> <span class='mi'>0</span> <span class='c1'># =&gt; false</span>
 <span class='c1'># is 12 deelbaar door 4?</span>
-<span class='mi'>12</span> <span class='o'>%</span> <span class='mi'>4</span> <span class='o'>==</span> <span class='mi'>0</span> <span class='c1'># =&gt; true</span>
-</code></pre></div>
+<span class='mi'>12</span> <span class='o'>%</span> <span class='mi'>4</span> <span class='o'>==</span> <span class='mi'>0</span> <span class='c1'># =&gt; true</span></code></pre></div>
 <h3 id="whileloop">While-loop</h3>
 
 <p>Een if-statement is een eenmalige beslissing. Maar soms wil je met een opdracht doorgaan zolang als <em>(while)</em> een bepaalde uitspraak waar is. Haal een ei uit de doos, zolang er nog eieren zijn. Wat komt hier uit?</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>counter</span> <span class='o'>=</span> <span class='mi'>0</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='n'>counter</span> <span class='o'>=</span> <span class='mi'>0</span>
 <span class='k'>while</span> <span class='n'>counter</span> <span class='o'>&lt;</span> <span class='mi'>10</span>
     <span class='n'>counter</span> <span class='o'>=</span> <span class='n'>counter</span> <span class='o'>+</span> <span class='mi'>1</span>
 <span class='k'>end</span>
-<span class='nb'>puts</span> <span class='n'>counter</span>
-</code></pre></div>
+<span class='nb'>puts</span> <span class='n'>counter</span></code></pre></div>
 <h3 id="functies">Functies</h3>
 
 <p>Een functie is één van de belangrijkste wapens die een programmeur tot zijn beschikking heeft. Wat voorbeelden (test zoals altijd met <code>irb</code>.)</p>
-<div class='highlight'><pre><code class='ruby'><span class='c1'># Een functie begint met def, en wordt niet direct uitgevoerd.</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='c1'># Een functie begint met def, en wordt niet direct uitgevoerd.</span>
 <span class='k'>def</span> <span class='nf'>f</span><span class='p'>(</span><span class='n'>x</span><span class='p'>)</span>
     <span class='k'>return</span> <span class='n'>x</span> <span class='o'>+</span> <span class='mi'>1</span>
 <span class='k'>end</span>
@@ -158,30 +153,27 @@ prime.rb - het script waar je in gaat werken</code></pre>
     <span class='k'>return</span> <span class='n'>a</span> <span class='o'>*</span> <span class='n'>b</span>
 <span class='k'>end</span>
 
-<span class='n'>multiply</span><span class='p'>(</span><span class='mi'>5</span><span class='p'>,</span> <span class='mi'>8</span><span class='p'>)</span>  <span class='c1'># =&gt; 40</span>
-</code></pre></div>
+<span class='n'>multiply</span><span class='p'>(</span><span class='mi'>5</span><span class='p'>,</span> <span class='mi'>8</span><span class='p'>)</span>  <span class='c1'># =&gt; 40</span></code></pre></div>
 <p>Een functie geeft overzicht en scheelt behoorlijk wat typwerk. Stel dat je drie mensen wilt begroeten.</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>greet</span><span class='p'>(</span><span class='s2'>&quot;Anna&quot;</span><span class='p'>)</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='n'>greet</span><span class='p'>(</span><span class='s2'>&quot;Anna&quot;</span><span class='p'>)</span>
 <span class='n'>greet</span><span class='p'>(</span><span class='s2'>&quot;Bert&quot;</span><span class='p'>)</span>
-<span class='n'>greet</span><span class='p'>(</span><span class='s2'>&quot;Chloe&quot;</span><span class='p'>)</span>
-</code></pre></div>
+<span class='n'>greet</span><span class='p'>(</span><span class='s2'>&quot;Chloe&quot;</span><span class='p'>)</span></code></pre></div>
 <p>Als je nu de groet wilt veranderen, hoef je alleen maar de functiedefinitie aan te passen (<code>def ... end</code>). Dan worden Anna, Bert en Chloe meteen op de juiste manier begroet.</p>
 
 <h3 id="scope_van_variabelen">Scope van variabelen</h3>
-<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>mijn_functie</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='k'>def</span> <span class='nf'>mijn_functie</span>
     <span class='nb'>puts</span> <span class='s2'>&quot;Dit is mijn functie&quot;</span>
     <span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Klaas&quot;</span>
 <span class='k'>end</span>
 
 <span class='nb'>puts</span> <span class='n'>naam</span>
-<span class='c1'># =&gt; undefined local variable or method `naam&#39;</span>
-</code></pre></div>
+<span class='c1'># =&gt; undefined local variable or method `naam&#39;</span></code></pre></div>
 <p>Waarom is <code>naam</code> onbekend? Er staat toch <code>naam = &quot;Klaas&quot;</code> in <code>mijn_functie</code>?</p>
 
 <p>Het antwoord is dat de variabele <code>naam</code> alleen bekend is in de functie <code>mijn_functie</code>. Daarbuiten bestaat <code>naam</code> niet. Je zegt ook wel: <code>naam</code> is bekend in de <em>scope</em> van <code>mijn_functie</code>. De scope bepaalt vanaf welke plek een variabele bereikbaar is.</p>
 
 <p>Dus wat gebeurt hier?</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Pieter&quot;</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Pieter&quot;</span>
 
 <span class='k'>def</span> <span class='nf'>mijn_functie</span>
     <span class='nb'>puts</span> <span class='s2'>&quot;Dit is mijn functie&quot;</span>
@@ -195,14 +187,13 @@ prime.rb - het script waar je in gaat werken</code></pre>
 <span class='c1'># =&gt; &quot;Dit is mijn functie&quot;</span>
 <span class='c1'># =&gt; &quot;Klaas&quot;</span>
 <span class='nb'>puts</span> <span class='n'>naam</span>
-<span class='c1'># =&gt; &quot;Pieter&quot;</span>
-</code></pre></div>
+<span class='c1'># =&gt; &quot;Pieter&quot;</span></code></pre></div>
 <p>Buiten de functie staat nu <code>naam = &quot;Pieter&quot;</code>. Dus <code>puts naam</code> geeft <code>&quot;Pieter&quot;</code> terug.</p>
 
 <p>Maar binnen de functie, in de <em>lokale scope</em>, staat <code>naam = &quot;Klaas&quot;</code>. Dus het commando <code>puts naam</code> binnen <code>mijn_functie</code> geeft <code>&quot;Klaas&quot;</code>.</p>
 
 <p>Wat gebeurt er als we <code>naam = &quot;Klaas&quot;</code> weghalen?</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Pieter&quot;</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Pieter&quot;</span>
 
 <span class='k'>def</span> <span class='nf'>mijn_functie</span>
     <span class='nb'>puts</span> <span class='s2'>&quot;Dit is mijn functie&quot;</span>
@@ -211,8 +202,7 @@ prime.rb - het script waar je in gaat werken</code></pre>
 
 <span class='n'>mijn_functie</span>
 <span class='c1'># &quot;Dit is mijn functie&quot;</span>
-<span class='c1'># =&gt; undefined local variable or method `naam&#39;</span>
-</code></pre></div>
+<span class='c1'># =&gt; undefined local variable or method `naam&#39;</span></code></pre></div>
 <p><code>naam</code> is niet bekend! Variabelen die binnen functies worden gedefinieerd zijn onzichtbaar buiten de functie en <em>vice versa</em>!</p>
 
 <p>Wees niet bang als je het bovenstaande niet begrijpt. Programmeer vrolijk door, tot je een keer <code>undefined local variable or method &#39;naam&#39;</code> in de command line ziet staan, terwijl je zéker weet dat je <code>naam</code> gedefinieerd hebt. Lees dan dit stuk nog eens door. Programmeren ga je snappen door te doen.</p>
@@ -220,14 +210,13 @@ prime.rb - het script waar je in gaat werken</code></pre>
 <h2 id="de_opdracht">De opdracht</h2>
 
 <p>Jullie gaan een functie schrijven die <code>false</code> teruggeeft als het getal niet priem is, en <code>true</code> als het getal wel priem is. Dit is de bedoeling:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>prime?</span><span class='p'>(</span><span class='n'>number</span><span class='p'>)</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='k'>def</span> <span class='nf'>prime?</span><span class='p'>(</span><span class='n'>number</span><span class='p'>)</span>
     <span class='c1'># Algoritme ...</span>
 <span class='k'>end</span>
 
 <span class='n'>prime?</span><span class='p'>(</span><span class='mi'>8</span><span class='p'>)</span>   <span class='c1'># =&gt; false</span>
 <span class='n'>prime?</span><span class='p'>(</span><span class='mi'>13</span><span class='p'>)</span>  <span class='c1'># =&gt; true</span>
-<span class='n'>prime?</span><span class='p'>(</span><span class='mi'>104729</span><span class='p'>)</span>  <span class='c1'># =&gt; true</span>
-</code></pre></div>
+<span class='n'>prime?</span><span class='p'>(</span><span class='mi'>104729</span><span class='p'>)</span>  <span class='c1'># =&gt; true</span></code></pre></div>
 <h3 id="extra_duizendste_priemgetal">(Extra) Duizendste priemgetal</h3>
 
 <p>Je hebt de functie <code>prime?</code> geschreven. Kun je het duizendste priemgetal vinden? En het miljoenste? En het miljardste? Nu begint de snelheid van je algoritme een rol te spelen. Probeer je algoritme te optimaliseren. Check je niet onnodig veel getallen? Snelste algoritme van de klas krijgt een verrassing!</p>
