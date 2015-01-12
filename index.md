@@ -9,7 +9,8 @@ title:
 
 [Schrijf je
 in.](http://scholen.uva.nl/nieuws/agenda/item/rubyprog-feb15-uva.html) Zie
-jullie op het Science Park! Lokalen volgen.
+jullie op het Science Park! Lokalen volgen. [Kijk alvast naar het
+lesmateriaal.](/ruby/hoofdstuk1)
 
 ### Waarom programmeren?
 
