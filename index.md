@@ -5,13 +5,6 @@ title:
 
 &nbsp;
 
-## UvA-cursus in februari
-
-[Schrijf je
-in.](http://scholen.uva.nl/nieuws/agenda/item/rubyprog-feb15-uva.html) Zie
-jullie op het Science Park! Lokalen volgen. [Kijk alvast naar het
-lesmateriaal.](/ruby/hoofdstuk1)
-
 ### Waarom programmeren?
 
 Programmeren is leuk! Bovendien is er een groot tekort aan programmeurs. Of je
@@ -27,4 +20,4 @@ Wij geven [onze cursus](/ruby/hoofdstuk1) ook op middelbare scholen. Wil je meer
 ### Wie zijn wij?
 
 Rubyprog is begonnen door Boris Ponsioen en [Geert
-Kapteijns](http://kapteijns.org/), twee studenten uit Amsterdam. 
+Kapteijns](http://kapteijns.org/), twee studenten uit Amsterdam.
