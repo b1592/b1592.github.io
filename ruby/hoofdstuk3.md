@@ -42,11 +42,18 @@ namen[2]    # => "Evelien"
 namen[-1]   # => "Piet"
 {% endhighlight %}
 
-N.B. Je kunt ook strings op deze manier aanspreken!
+Je kunt ook strings op deze manier aanspreken!
 
 {% highlight ruby %}
 naam = "Jan"
 naam[0]     # => "J"
+{% endhighlight %}
+
+Met `push` voeg je elementen aan een array toe.
+
+{% highlight ruby %}
+getallen = [1, 2, 3]
+getallen.push(4)  # => [1, 2, 3, 4]
 {% endhighlight %}
 
 ### For Loops
@@ -129,7 +136,22 @@ De volgende functies kunnen van pas komen:
 
 `String#split` betekent: de functie `split` die hoort bij `String`. Gebruik de bovenstaande documentatie (of gebruik google) om uit te vinden hoe je `split` en `join` gebruikt.
 
-##De opdracht
+## De opdracht
+
+### Opdrachten vooraf
+
+Om te oefenen met loops, arrays en hashes, eerst wat kleine oefeningen.
+
+- Maak een programma dat de getallen 1 tot 1000 uitprint.
+- Maak een programma dat alle letters van het alfabet uitprint.
+- Maak een array met alle letters van het alfabet. (Gebruik een for loop
+  of de functie `to_a`.)
+- Maak een programma dat om een woord vraagt en vervolgens de letters van dat woord één voor één uitprint. (Gebruik een for
+  loop of de functie `split`)
+- Maak een programma dat om een woord vraagt en dat woord omgekeerd uitprint.
+- Maak een programma dat om een woord vraagt en de scrabbelwaarde van dat woord
+  teruggeeft. Hiervoor gebruik je een hash `scrabbelwaardes` die letters
+  verbindt met waardes.
 
 ###De functie `build_cipher`
 
