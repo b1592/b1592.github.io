@@ -4,7 +4,7 @@
 * overal downloads weg (muv cipher)
 * links checken
 
-- Installatie
+- (OK) Installatie (Geert)
 * patch level weghalen
 * sublime -> atom
 
@@ -12,9 +12,10 @@
 * alles dubbel win/unix
 * powershell download
 * irb korte tutorial met voorbeelden
-
-- Hoofdstuk 1
 * mappen maken met command line
+
+- (OK) Hoofdstuk 1 (Geert)
+
 * workspace
 * open map met "atom ." -> windows??
 * taalgebruik
