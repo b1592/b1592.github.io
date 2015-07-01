@@ -1,6 +1,6 @@
-* Atom ipv Sublime
-* Installatie updaten
-* Summerschool 2015 op homepagina
+* (OK) Atom ipv Sublime
+* (OK) Installatie updaten
+* (OK) Summerschool 2015 op homepagina
 * overal downloads weg (muv cipher)
 * links checken
 
