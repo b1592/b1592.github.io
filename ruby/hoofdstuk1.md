@@ -7,20 +7,13 @@ lesson: hoofdstuk1
 
 #Hoofdstuk 1: hallo
 
-We maken kennis met Ruby en Sublime Text. We praten tegen de computer en laten de computer terugpraten.
+We maken kennis met Ruby en Atom. We praten tegen de computer en laten de computer terugpraten.
 
-## De bestanden
+## Introductie
 
-In de map Hoofdstuk 1 vind je de volgende bestanden:
+Open de [command line](/ruby/command_line), navigeer naar de map `Programmeren` (met `cd`) en typ `atom .` (vergeet de punt niet.) De punt staat voor de huidige map. Hiermee open je alle mappen en bestanden in `Programmeren`. Je ziet in het navigatiemenu `Hoofdstuk1` staan, de map die je eerder had gemaakt.
 
-    Hoofdstuk1.url - deze beschrijving
-    hallo.rb - het script waar je in gaat werken
-
-## Informatie
-
-### Iets op het scherm zetten: `puts`
-
-Open de map `Rubyprog` in Sublime Text. (`File -> Open Folder...`). Links zie je allerlei mappen (Hoofdstuk 1, Hoofdstuk 2, etc.) staan. Open nu het bestand `hallo.rb` in de map "Hoofdstuk 1". Daar staat:
+Klik met de rechtermuisknop op `Hoofdstuk1` en klik op `New File`. Typ `Hoofdstuk1/hallo.rb`. Ruby-files eindigen op `.rb`. Typ nu:
 
 {% highlight ruby %}
 
@@ -28,7 +21,40 @@ puts "Hallo"
 
 {% endhighlight %}
 
-Dit programma zag je in de [command line](/command_line) al in actie. Het commando `puts` (put string) zet een `String` op het scherm. Een string is een stuk tekst.
+Het commando `puts` (put String) zet een string op het scherm. Een string is een stuk tekst. Sla het bestand op. Ga terug naar de commandline en navigeer naar `Hoofdstuk1` met `cd Hoofdstuk1`. Typ nu `ruby hallo.rb`. Nu zie je:
+
+{% highlight bash %}
+
+Hallo
+
+{% endhighlight %}
+
+Je hebt net je eerste Ruby-programma gemaakt en uitgevoerd! Dat gaat dus zo: in Atom typ je Ruby-code, en in de command line voer je het programma uit met `ruby naam_van_programma.rb`.
+
+### Interactive Ruby (irb)
+Als je korte commando's wilt uitproberen, hoef je niet eerst een programma te maken en dat uit te voeren. Ruby heeft ook een interactieve modus, `irb`, die je vanaf de command line opent door `irb` te typen. Je ziet dan:
+
+```
+irb(main):001:0>
+```
+
+Nu kun je Ruby-commando's typen, en krijg je direct output.
+
+```
+irb(main):001:0> 1 + 1
+```
+
+Druk op enter en je ziet:
+
+```
+irb(main):001:0> 1 + 1
+=> 2
+irb(main):002:0>
+```
+
+Wij hebben `irb` altijd open staan in een apart tabblad van de command line. In totaal heb je dus Atom en een command line met twee tabbladen (waarvan één `irb`) geopend. Als je onderstaande uitleg doorleest, probeer dan zo veel mogelijk uit in `irb`.
+
+## Informatie
 
 ### Om input vragen: `gets`
 
@@ -56,7 +82,7 @@ puts geluksgetal
 
 {% endhighlight %}
 
-en dan geeft Ruby `1` als output.
+en dan geeft Ruby `1` als output. (Uitproberen in `irb`!)
 
 Maar terug naar `gets`. Dit is een commando dat de gebruiker om *input* vraagt: je kunt iets intypen. `naam = gets` vertelt de computer de input van de gebruiker op te slaan in `naam`.
 
@@ -104,34 +130,16 @@ end
 
 Je kunt er net zoveel `elsif`s achter zetten als je wilt.
 
-##De opdracht
-
-Je weet nu alles wat je nodig hebt om zelf aan de slag te gaan. Je eerste script gaat over het communiceren met de computer. Schrijf een programma dat de volgende dingen doet:
-
-* Begroet de gebruiker
-* Vraagt de naam van de gebruiker
-* Verwerkt de naam in een antwoord en vraagt de gebruiker om `jongen` of `meisje`, of `man` of `vrouw` in te typen
-* Maakt een persoonlijke begroeting, waarin de gebruiker wordt begroet met "Meneer" of "Mevrouw" en dan de naam, allemaal bepaald door wat de gebruiker eerder heeft ingetypt
-
-{% highlight bash %}
-
-Wat is je naam?
-Piet
-Ben je een jongen of een meisje?
-jongen
-Hallo, meneer Piet!
-
-{% endhighlight %}
-
-### (Extra) Oeps, foutje!
-Wat doet je programma als je per ongeluk `jongne` in plaats van `jongen` intypt? Probeer dit soort fouten op een mooie manier op te lossen. (Het is irritant om alles opnieuw in te vullen als je één typfout maakt. Probeer daar rekening mee te houden.) Lees hiervoor alvast over de [while-loop](/ruby/hoofdstuk2#whileloop).
-
-## Extra commando's
-
 ### Een enter afbijten met `chomp`
 Er staat in je programma `naam = gets`. Jij typt `Jan` in. Staat er in `naam` dan de waarde `"Jan"`? Nee! De enter, die je hebt ingetoetst om de input te beëindigen, is ook opgeslagen. `naam` heeft de waarde `"Jan\n"`. `"\n"` is een speciaal karakter dat een _newline_ (nieuwe regel) aangeeft --- een enter dus.
 
-Met `chomp` haal je de newline aan het eind van een string weg. Lees de [officiële uitleg van Ruby](http://www.ruby-doc.org/core-1.9.3/String.html#method-i-chomp).
+Met `chomp` haal je de newline aan het eind van een string weg.
+
+{% highlight ruby %}
+
+"Jan\n".chomp # => "Jan"
+
+{% endhighlight %}
 
 ### Een variabele verwerken in een string: `"Hallo, #{naam}"`
 Hiermee zet je de waarde van `naam` op de juiste plek in de string. Je kunt daarna weer verder typen: `"Wat is #{naam} een mooie naam!"`. Als `naam` de string `"Jan"` bevat, krijg je:
@@ -139,6 +147,28 @@ Hiermee zet je de waarde van `naam` op de juiste plek in de string. Je kunt daar
 {% highlight ruby %}
 "Wat is Jan een mooie naam!"
 {% endhighlight %}
+
+##De opdracht
+
+Je weet nu alles wat je nodig hebt om zelf aan de slag te gaan. Je eerste script gaat over het communiceren met de computer. Schrijf een programma dat de volgende dingen doet:
+
+* Begroet de gebruiker
+* Vraagt de naam van de gebruiker
+* Verwerkt de naam in een antwoord en vraagt de gebruiker om `man` of `vrouw` in te typen
+* Maakt een persoonlijke begroeting, waarin de gebruiker wordt begroet met "Meneer" of "Mevrouw" en dan de naam, allemaal bepaald door wat de gebruiker eerder heeft ingetypt
+
+{% highlight bash %}
+
+Wat is je naam?
+Piet
+Ben je een man of een vrouw?
+man
+Hallo, meneer Piet!
+
+{% endhighlight %}
+
+### (Extra) Oeps, foutje!
+Wat doet je programma als je per ongeluk `vruow` in plaats van `vrouw` intypt? Probeer dit soort fouten op een mooie manier op te lossen. (Het is irritant om alles opnieuw in te vullen als je één typfout maakt. Probeer daar rekening mee te houden.) Lees hiervoor alvast over de [while-loop](/ruby/hoofdstuk2#whileloop).
 
 ### Hint voor de extra opdracht
 Je hebt een programma dat "Hoi meneer!" of "Hoi mevrouw" en de juiste naam zegt. Hoe kun je er voor zorgen dat het programma doorgaat tot de gebruiker het _eindelijk_ goed heeft ingevoerd? Met een [while loop](/hoofdstuk2/#whileloop)!
