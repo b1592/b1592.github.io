@@ -98,10 +98,11 @@
 <p>Je hebt een programma dat “Hoi meneer!” of “Hoi mevrouw” en de juiste naam zegt. Hoe kun je er voor zorgen dat het programma doorgaat tot de gebruiker het <em>eindelijk</em> goed heeft ingevoerd? Met een <a href="/hoofdstuk2/#whileloop">while loop</a>!</p>
 
 <p>Net als bij een <a href="/hoofdstuk1/#het_statement"><code>if-statement</code></a>, checkt een while loop een <a href="/hoofdstuk2/#logische_uitspraken">logische uitspraak</a>. Welke logische uitspraak moeten we in dit geval checken? Wij hadden zoiets bedacht:</p>
-<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='n'>correct</span> <span class='o'>=</span> <span class='kp'>false</span>
+<div class='highlight'><pre><code class='ruby'><span class='n'>correct</span> <span class='o'>=</span> <span class='kp'>false</span>
 <span class='k'>while</span> <span class='n'>correct</span> <span class='o'>==</span> <span class='kp'>false</span> <span class='k'>do</span>
     <span class='c1'># De code</span>
-<span class='k'>end</span></code></pre></div>
+<span class='k'>end</span>
+</code></pre></div>
 <p>Ergens in de while loop zul je dan <code>correct = true</code> moeten zetten, zodat <code>correct == false</code> niet meer waar is. Dan stopt de while loop.</p>
 
 <h3 id="wat_is_">Wat is <code>gets.chomp</code>?</h3>
@@ -115,32 +116,37 @@
 <p>Hiermee zet je de waarde van <code>naam</code> op de juiste plek in de string. Je kunt daarna weer verder typen: <code>&quot;Wat is #{naam} een mooie naam!&quot;</code>.</p>
 
 <p>Dit is niet de enige manier om strings aan elkaar te maken. Met <code>+</code> lukt het ook:</p>
-<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Jan&quot;</span>
+<div class='highlight'><pre><code class='ruby'><span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Jan&quot;</span>
 <span class='nb'>puts</span> <span class='s2'>&quot;Wat is &quot;</span> <span class='o'>+</span> <span class='n'>naam</span> <span class='o'>+</span> <span class='s2'>&quot; een mooie naam!&quot;</span>
-<span class='c1'># =&gt; Wat is Jan een mooie naam!</span></code></pre></div>
+<span class='c1'># =&gt; Wat is Jan een mooie naam!</span>
+</code></pre></div>
 <p>Maar de eerste methode is in dit geval handiger.</p>
 
 <h3 id="_of_en__en">|| (OF) en &amp;&amp; (EN)</h3>
 
 <p>Als je wilt checken of <code>geslacht</code> de waarde <code>&quot;vrouw&quot;</code> of de waarde <code>&quot;meisje&quot;</code> bevat, moet je de OF-operator gebruiken. Dat gaat zo:</p>
-<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='k'>if</span> <span class='n'>geslacht</span> <span class='o'>==</span> <span class='s2'>&quot;vrouw&quot;</span> <span class='o'>||</span> <span class='n'>geslacht</span> <span class='o'>==</span> <span class='s2'>&quot;meisje&quot;</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>geslacht</span> <span class='o'>==</span> <span class='s2'>&quot;vrouw&quot;</span> <span class='o'>||</span> <span class='n'>geslacht</span> <span class='o'>==</span> <span class='s2'>&quot;meisje&quot;</span>
     <span class='nb'>puts</span> <span class='s2'>&quot;Hallo mevrouw </span><span class='si'>#{</span><span class='n'>naam</span><span class='si'>}</span><span class='s2'>!&quot;</span>
-<span class='k'>end</span></code></pre></div>
+<span class='k'>end</span>
+</code></pre></div>
 <p>Wat nou als je wilt kijken of de leeftijd groter is dan <code>10</code>, maar kleiner dan <code>20</code>? Dan gebruik je de EN-operator:</p>
-<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='k'>if</span> <span class='n'>leeftijd</span> <span class='o'>&gt;</span> <span class='mi'>10</span> <span class='o'>&amp;&amp;</span> <span class='n'>leeftijd</span> <span class='o'>&lt;</span> <span class='mi'>20</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>leeftijd</span> <span class='o'>&gt;</span> <span class='mi'>10</span> <span class='o'>&amp;&amp;</span> <span class='n'>leeftijd</span> <span class='o'>&lt;</span> <span class='mi'>20</span>
     <span class='nb'>puts</span> <span class='s2'>&quot;Een tiener.&quot;</span>
-<span class='k'>end</span></code></pre></div>
+<span class='k'>end</span>
+</code></pre></div>
 <h3 id="_niet_gelijk_aan"><code>!=</code> (niet gelijk aan)</h3>
 
 <p>Met <code>!=</code> eis je dat twee dingen <em>niet</em> gelijk aan elkaar zijn.</p>
-<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='mi'>5</span> <span class='o'>!=</span> <span class='mi'>10</span>             <span class='c1'># =&gt; true</span>
+<div class='highlight'><pre><code class='ruby'><span class='mi'>5</span> <span class='o'>!=</span> <span class='mi'>10</span>             <span class='c1'># =&gt; true</span>
 <span class='s2'>&quot;Piet&quot;</span> <span class='o'>!=</span> <span class='s2'>&quot;Jan&quot;</span>     <span class='c1'># =&gt; true</span>
-<span class='s2'>&quot;Jan&quot;</span> <span class='o'>!=</span> <span class='s2'>&quot;Jan&quot;</span>      <span class='c1'># =&gt; false</span></code></pre></div>
+<span class='s2'>&quot;Jan&quot;</span> <span class='o'>!=</span> <span class='s2'>&quot;Jan&quot;</span>      <span class='c1'># =&gt; false</span>
+</code></pre></div>
 <h3 id="error_messages">Error messages</h3>
 
 <p>Ruby klaagt luidkeels als je een typfout maakt. All hope is not lost. Wat gebeurt hier?</p>
-<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='c1'># test.rb</span>
-<span class='n'>correct</span> <span class='o'>==</span> <span class='kp'>false</span></code></pre></div>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># test.rb</span>
+<span class='n'>correct</span> <span class='o'>==</span> <span class='kp'>false</span>
+</code></pre></div>
 <p>Je bedoelde <code>correct = false</code>, maar je gebruikte <code>==</code>. Je vraagt Ruby de waarde van <code>correct</code> te checken, terwijl <code>correct</code> nog niet bestaat! Je krijgt nu:</p>
 
 <pre><code>test.rb:2:in `&lt;main&gt;&#39;: undefined local variable or method `correct&#39;
@@ -155,7 +161,7 @@ for main:Object (NameError)</code></pre>
 </ul>
 
 <p>Genoeg informatie om je fout snel te herstellen. Nog een voorbeeld:</p>
-<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='n'>correct</span> <span class='o'>=</span> <span class='kp'>false</span>
+<div class='highlight'><pre><code class='ruby'><span class='n'>correct</span> <span class='o'>=</span> <span class='kp'>false</span>
 <span class='k'>while</span> <span class='n'>correct</span> <span class='o'>==</span> <span class='kp'>false</span> <span class='k'>do</span>
     <span class='nb'>puts</span> <span class='s2'>&quot;Ben je een jongen, of een meisje?&quot;</span>
     <span class='n'>geslacht</span> <span class='o'>=</span> <span class='nb'>gets</span><span class='o'>.</span><span class='n'>chomp</span>
@@ -167,7 +173,8 @@ for main:Object (NameError)</code></pre>
         <span class='n'>correct</span> <span class='o'>=</span> <span class='kp'>true</span>
     <span class='k'>else</span>
         <span class='nb'>puts</span> <span class='s2'>&quot;Ik begrijp het niet, probeer het nog eens.&quot;</span>
-<span class='k'>end</span></code></pre></div>
+<span class='k'>end</span>
+</code></pre></div>
 <p>Nu is de foutboodschap:</p>
 
 <pre><code>test.rb:13: syntax error, unexpected end-of-input, expecting keyword_end</code></pre>
@@ -181,9 +188,10 @@ for main:Object (NameError)</code></pre>
 <p>Speel <a href="https://www.bloc.io/ruby-warrior/#/">hier</a>. Er gebeuren wat dingen die jullie nog niet snappen (aan het eind van de cursus wel.) De functie <code>play_turn</code> wordt steeds opnieuw uitgevoerd. Als je een functie gebruikt met een uitroepteken, zoals <code>warrior.walk!</code>, dan is de beurt voorbij en begin je vooraan <code>play_turn</code>. Dus je kunt maar één keer lopen, slaan of healen per beurt.</p>
 
 <p>In het eerste level hoef je alleen maar vooruit te lopen:</p>
-<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='k'>def</span> <span class='nf'>play_turn</span><span class='p'>(</span><span class='n'>warrior</span><span class='p'>)</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>play_turn</span><span class='p'>(</span><span class='n'>warrior</span><span class='p'>)</span>
     <span class='n'>warrior</span><span class='o'>.</span><span class='n'>walk!</span>
-<span class='k'>end</span></code></pre></div>
+<span class='k'>end</span>
+</code></pre></div>
 <p>Links in beeld voor staan alle functies uitgelegd. Succes!</p>
 </div>
 

@@ -11,11 +11,6 @@ In dit hoofdstuk gaan we bepalen of een getal priem is of niet. Een getal is pri
 
 Jullie gaan een _algoritme_ schrijven. Dat is een set instructies die tot een duidelijke conclusie leiden: is het gegeven getal een priemgetal, ja of nee?
 
-## Bestanden
-
-    Hoofdstuk2.url - deze beschrijving
-    prime.rb - het script waar je in gaat werken
-
 ## Informatie
 
 ### Booleans: waar of niet waar?
@@ -76,115 +71,53 @@ end
 puts counter
 {% endhighlight %}
 
-### Functies
-Een functie is één van de belangrijkste wapens die een programmeur tot zijn beschikking heeft. Wat voorbeelden (test zoals altijd met `irb`.)
-
-{% highlight ruby %}
-# Een functie begint met def, en wordt niet direct uitgevoerd.
-def f(x)
-    return x + 1
-end
-
-f(4)    # => 5
-
-def greet(naam)
-    return "Hallo, #{naam}!"
-end
-
-greet("Bob")    # => "Hallo, Bob!"
-
-# Meerdere variabelen.
-def multiply(a, b)
-    return a * b
-end
-
-multiply(5, 8)  # => 40
-{% endhighlight %}
-
-Een functie geeft overzicht en scheelt behoorlijk wat typwerk. Stel dat je drie mensen wilt begroeten.
-
-{% highlight ruby %}
-greet("Anna")
-greet("Bert")
-greet("Chloe")
-{% endhighlight %}
-
-Als je nu de groet wilt veranderen, hoef je alleen maar de functiedefinitie aan te passen (`def ... end`). Dan worden Anna, Bert en Chloe meteen op de juiste manier begroet.
-
-### Scope van variabelen
-
-{% highlight ruby %}
-def mijn_functie
-    puts "Dit is mijn functie"
-    naam = "Klaas"
-end
-
-puts naam
-# => undefined local variable or method `naam'
-{% endhighlight %}
-
-Waarom is `naam` onbekend? Er staat toch `naam = "Klaas"` in `mijn_functie`?
-
-Het antwoord is dat de variabele `naam` alleen bekend is in de functie `mijn_functie`. Daarbuiten bestaat `naam` niet. Je zegt ook wel: `naam` is bekend in de _scope_   van `mijn_functie`. De scope bepaalt vanaf welke plek een variabele bereikbaar is.
-
-Dus wat gebeurt hier?
-
-{% highlight ruby %}
-naam = "Pieter"
-
-def mijn_functie
-    puts "Dit is mijn functie"
-    naam = "Klaas"
-    puts naam
-end
-
-puts naam
-# => "Pieter"
-mijn_functie
-# => "Dit is mijn functie"
-# => "Klaas"
-puts naam
-# => "Pieter"
-{% endhighlight %}
-
-Buiten de functie staat nu `naam = "Pieter"`. Dus `puts naam` geeft `"Pieter"` terug.
-
-Maar binnen de functie, in de _lokale scope_, staat `naam = "Klaas"`. Dus het commando `puts naam` binnen `mijn_functie` geeft `"Klaas"`.
-
-Wat gebeurt er als we `naam = "Klaas"` weghalen?
-
-{% highlight ruby %}
-naam = "Pieter"
-
-def mijn_functie
-    puts "Dit is mijn functie"
-    puts naam
-end
-
-mijn_functie
-# "Dit is mijn functie"
-# => undefined local variable or method `naam'
-{% endhighlight %}
-
-`naam` is niet bekend! Variabelen die binnen functies worden gedefinieerd zijn onzichtbaar buiten de functie en _vice versa_!
-
-Wees niet bang als je het bovenstaande niet begrijpt. Programmeer vrolijk door, tot je een keer `undefined local variable or method 'naam'` in de command line ziet staan, terwijl je zéker weet dat je `naam` gedefinieerd hebt. Lees dan dit stuk nog eens door. Programmeren ga je snappen door te doen.
-
 ## De opdracht
-Jullie gaan een functie schrijven die `false` teruggeeft als het getal niet priem is, en `true` als het getal wel priem is. Dit is de bedoeling:
+
+### Opdrachten vooraf
+
+Om een gevoel te krijgen voor de bovenstaande uitleg volgen hier twee korte opdrachten.
+
+#### Getallen deelbaar door 3 onder 100
+
+Begin eens met het uitprinten van alle getallen kleiner dan 100 die deelbaar zijn door 3 (met uitprinten bedoelen we hier op het scherm zetten, met `puts`).
+
+#### Fizz Buzz
+
+Een klassiek spelletje, dat je zowel als drankspelletje kunt tegenkomen als bij een sollicitatiegesprek voor Google, staat in het Engels bekend als 'Fizz Buzz'.
+
+Het idee is dat er twee getallen worden gekozen, bijvoorbeeld 5 en 7. Vervolgens beginnen de spelers om de beurt te tellen, maar vervangen ze elk getal dat deelbaar is door 5 door 'Fizz', en elk getal deelbaar door 7 door 'Buzz'. Bij getallen die deelbaar zijn door 5 én 7 zeg je 'Fizz Buzz'.
+
+Schrijf nu een script die alle getallen tot en met 100 uitprint, met 'Fizz', 'Buzz' en 'Fizz Buzz' op de juiste plaatsen, volgens de regels hierboven:
+
+    1
+    2
+    3
+    4
+    Fizz
+    6
+    Buzz
+    7
+    ...
+
+### Priemgetallen zoeken
+
+Jullie gaan een script schrijven die de gebruiker vraagt om een getal en vervolgens antwoord of dat getal een priemgetal is of niet. Bijvoorbeeld in deze vorm:
 
 {% highlight ruby %}
-def prime?(number)
-    # Algoritme ...
-end
+getal = gets.to_i
 
-prime?(8)   # => false
-prime?(13)  # => true
-prime?(104729)  # => true
+# Code waarbij wordt gecheckt of 'getal' een priemgetal is ...
+
+puts "#{getal} is een priemgetal."
+# of
+puts "#{getal} is geen priemgetal."
+
 {% endhighlight %}
 
 ### (Extra) Duizendste priemgetal
-Je hebt de functie `prime?` geschreven. Kun je het duizendste priemgetal vinden? En het miljoenste? En het miljardste? Nu begint de snelheid van je algoritme een rol te spelen. Probeer je algoritme te optimaliseren. Check je niet onnodig veel getallen? Snelste algoritme van de klas krijgt een verrassing!
+Nu heb je een programma die kan bedenken of een getal een priemgetal is. Kun je nu ook het honderdste priemgetal vinden? Tip: stop de code van de vorige opdracht in een `while`-loop.
+
+Maar kun je ook het duizendste priemgetal vinden? En het miljoenste? En het miljardste? Nu begint de snelheid van je algoritme een rol te spelen. Probeer je algoritme te optimaliseren. Check je niet onnodig veel getallen?
 
 ### (Extra) Zeef van Eratosthenes
-Wat dacht je van alle priemgetallen onder de duizend? [Een oude Griek](http://nl.wikipedia.org/wiki/Zeef_van_Eratosthenes) heeft hier al over nagedacht.
+Wat dacht je van alle priemgetallen onder de duizend? [Een oude Griek](http://nl.wikipedia.org/wiki/Zeef_van_Eratosthenes) heeft hier al over nagedacht. Tip: kijk ook bij [`Arrays`](/ruby/hoofdstuk3/#arrays)
