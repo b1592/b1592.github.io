@@ -73,15 +73,13 @@ puts counter
 
 ## De opdracht
 
-### Opdrachten vooraf
-
 Om een gevoel te krijgen voor de bovenstaande uitleg volgen hier twee korte opdrachten.
 
-#### Getallen deelbaar door 3 onder 100
+### Getallen deelbaar door 3 onder 100
 
 Begin eens met het uitprinten van alle getallen kleiner dan 100 die deelbaar zijn door 3 (met uitprinten bedoelen we hier op het scherm zetten, met `puts`).
 
-#### Fizz Buzz
+### Fizz Buzz
 
 Een klassiek spelletje, dat je zowel als drankspelletje kunt tegenkomen als bij een sollicitatiegesprek voor Google, staat in het Engels bekend als 'Fizz Buzz'.
 
