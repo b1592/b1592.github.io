@@ -10,26 +10,55 @@ Al duizenden jaren proberen mensen elkaar berichten te versturen die niet door a
 
 Een van de oudste manieren zou door Julius Caesar zelf zijn gebruikt en is redelijk eenvoudig. Hij schoof elke letter in een bericht een vast aantal plaatsen door in het alfabet. Dus hij maakte bijvoorbeeld van een 'a' een 'd', van een 'b' een 'e' etc. Met deze methode gaan we in deze opdracht aan de slag. Zie ook: [Caesar Cipher op wikipedia](http://en.wikipedia.org/wiki/Caesar_cipher).
 
-##Bestanden
-
-[Download hier de bestanden:](/public/downloads/Hoofdstuk3.zip)
-
-    Hoofstuk3.url - deze beschrijving
-    cipher.rb - het script waar je in gaat werken
-    cipher_test.rb - wat simpele tests
-    encrypted_message.txt - het versleutelde bestand met shift 12
-    secret.txt - voor de laatste opdracht
-
 ## Informatie
 
+### Functies
+Een functie is één van de belangrijkste wapens die een programmeur tot zijn beschikking heeft. Wat voorbeelden (test zoals altijd met `irb`):
+
+{% highlight ruby %}
+# Een functie begint met def, en wordt niet direct uitgevoerd.
+def f(x)
+    return x + 1
+end
+
+f(4)    # => 5
+
+def greet(naam)
+    return "Hallo, #{naam}!"
+end
+
+greet("Bob")    # => "Hallo, Bob!"
+
+# Meerdere variabelen.
+def multiply(a, b)
+    return a * b
+end
+
+multiply(5, 8)  # => 40
+{% endhighlight %}
+
+Een functie geeft overzicht en scheelt behoorlijk wat typwerk. Stel dat je drie mensen wilt begroeten.
+
+{% highlight ruby %}
+greet("Anna")
+greet("Bert")
+greet("Chloe")
+{% endhighlight %}
+
+Als je nu de groet wilt veranderen, hoef je alleen maar de functiedefinitie aan te passen (`def ... end`). Dan worden Anna, Bert en Chloe meteen op de juiste manier begroet.
+
+
+
 ### Arrays
+Binnen Ruby zijn er eigenlijk maar twee manieren om een collectie van gegevens op te slaan in een variabele. Je zult zien dat je aan deze twee typen genoeg zult hebben.
+
 Een `Array` is een geordende collectie.
 
 {% highlight ruby %}
 namen = ["Harrie", "Maria", "Evelien", "Piet"]
 {% endhighlight %}
 
-Je spreekt een voorwerp uit een array aan met de index. Het eerste voorwerp uit de array correspondeert met index 0. 
+Je spreekt een voorwerp uit een array aan met de index. Het eerste voorwerp uit de array correspondeert met index `0`.
 
 {% highlight ruby %}
 namen[0]    # => "Harrie"
@@ -56,11 +85,33 @@ getallen = [1, 2, 3]
 getallen.push(4)  # => [1, 2, 3, 4]
 {% endhighlight %}
 
+### Hashes
+Een `Hash` lijkt op een array, maar je spreekt een waarde uit de collectie niet aan met een index, maar met een _key_. Een key kan van elk datatype zijn. De volgende hash verbindt landen met hun hoofdsteden:
+
+{% highlight ruby %}
+hoofdsteden = {
+    "Nederland" => "Amsterdam",
+    "Frankrijk" => "Parijs",
+    "Slowakije" => "Bratislava"
+    }
+
+hoofdsteden["Nederland"]    # => "Amsterdam"
+{% endhighlight %}
+
+`"Nederland"` en `"Amsterdam"` worden samen een _key, value pair_ genoemd.
+
+Je kunt altijd waarden aan een hash toevoegen:
+
+{% highlight ruby %}
+hoofdsteden["Duitsland"] = "Berlijn"
+hoofdsteden["Duitsland"] # => "Berlijn"
+{% endhighlight %}
+
 ### For Loops
 Als je een opdracht een vast aantal keer uit moet voeren, gebruik je een for loop. Stel dat je elk element uit een array wilt aanspreken:
 
 {% highlight ruby %}
-for naam in namen do
+for naam in namen
     puts "Hallo, #{naam}!"
 end
 # => "Hallo, Harrie!"
@@ -72,7 +123,7 @@ end
 Je kunt ook over een _range_ itereren. Experimenteer met de volgende loops in `irb`.
 
 {% highlight ruby %}
-for number in (0..100) do
+for number in (0..100)
     puts number
 end
 
@@ -82,28 +133,6 @@ end
 {% endhighlight %}
 
 Wat is het verschil tussen `(0..10)` en `(0...10)`?
-
-### Hashes
-Een `Hash` lijkt op een array, maar je spreekt een waarde uit de collectie niet aan met een index, maar met een _key_. Een key kan van elk datatype zijn. De volgende hash verbindt landen met hun hoofdsteden:
-
-{% highlight ruby %}
-hoofdsteden = {
-    "Nederland" => "Amsterdam",
-    "Frankrijk" => "Parijs",
-    "Slowakije" => "Bratislava"
-    }
-
-hoofdsteden["Nederland"]    # => "Amsterdam"   
-{% endhighlight %}
-
-`"Nederland"` en `"Amsterdam"` worden samen een _key, value pair_ genoemd.
-
-Je kunt altijd waarden aan een hash toevoegen:
-
-{% highlight ruby %}
-hoofdsteden["Duitsland"] = "Berlijn"
-hoofdsteden["Duitsland"] # => "Berlijn"
-{% endhighlight %}
 
 ### File Input/Output
 Stel dat je `bericht.txt` wilt inlezen. Dat gaat als volgt:
@@ -129,10 +158,10 @@ Nu jullie een aantal basisbegrippen hebben leren kennen, moeten jullie de docume
 * [http://www.ruby-doc.org/core-1.9.3/Array.html](http://www.ruby-doc.org/core-1.9.3/Array.html)
 * [http://www.ruby-doc.org/core-1.9.3/Hash.html](http://www.ruby-doc.org/core-1.9.3/Hash.html)
 
-De volgende functies kunnen van pas komen: 
+De volgende functies kunnen van pas komen:
 
 * `String#split`
-* `Array#join` 
+* `Array#join`
 
 `String#split` betekent: de functie `split` die hoort bij `String`. Gebruik de bovenstaande documentatie (of gebruik google) om uit te vinden hoe je `split` en `join` gebruikt.
 
@@ -153,41 +182,46 @@ Om te oefenen met loops, arrays en hashes, eerst wat kleine oefeningen.
   teruggeeft. Hiervoor gebruik je een hash `scrabbelwaardes` die letters
   verbindt met waardes.
 
-###De functie `build_cipher`
+### De functie `shift`
 
-In deze opdracht ga je de computer inzetten om berichten te versleutelen en weer te ontcijferen. Hiervoor zul je een aantal functies moeten schrijven. Begin bij een functie `build_cipher`, die met een gegeven _shift_ (het aantal plaatsen dat elke letter moet worden verschoven) een hash aanmaakt.  
-In deze hash moet elke letter in het alfabet gekoppeld worden aan de letter waar hij door vervangen moet worden. We vatten de spatie `" "` op als 27e letter. Een shift van 3 zou moeten opleveren:
+Begin nu met een functie `shift` die twee parameters binnen krijgt:
+
+* `letter` -> de letter die je wilt vervangen
+* `number_of_places` -> hoeveel plaatsen de letter moet worden opgeschoven in het alfabet
+
+Deze functie versleutelt één letter tegelijk. Deze vorm zou het kunnen hebben:
 
 {% highlight ruby %}
 
-{
- "a" => "d", "b" => "e",
- "c" => "f", "d" => "g",
- "e" => "h", "f" => "i",
- "g" => "j", "h" => "k",
- "i" => "l", "j" => "m",
- "k" => "n", "l" => "o",
- "m" => "p", "n" => "q",
- "o" => "r", "p" => "s",
- "q" => "t", "r" => "u",
- "s" => "v", "t" => "w",
- "u" => "x", "v" => "y",
- "w" => "z", "x" => " ",
- "y" => "a", "z" => "b", 
- " " => "c"
-}
+def shift(letter, number_of_places)
+  # Code
+
+  return shifted_letter
+end
+
+shift("c", 3)   # => "f"
+shift("o", 5)   # => "t"
 
 {% endhighlight %}
 
-Je ziet hier dat de "a" drie plaatsen is opgeschoven en in het gecodeerde bericht een "d" wordt. 
+Let op dat je rekening moet houden met het einde van het alfabet: als je in Ruby een element uit een array vraagt met een index die buiten het bereik ligt, dan krijg je `nil` terug. De bedoeling is dat je functie na de 'z' weer van voren af aan begint. Dit zou je functie dus moeten kunnen:
+
+{% highlight ruby %}
+
+shift("z", 1)   # => "a"
+shift("x", 6)   # => "d"
+
+{% endhighlight %}
+
+Tip: hier kan de [`modulo-operator`](/ruby/hoofdstuk2/#de_modulooperator) van hoofdstuk 2 van pas komen.
 
 ###De functie `encrypt`
 
-Dit is de functie waar het allemaal om draait. Als je deze functie een bericht en een bepaalde shift geeft, zou het de build_cipher-functie moeten aanroepen en dan vervolgens het bericht letter *voor* letter (denk hierbij aan een `for`loop) moeten coderen tot tekst waar je niks zinnigs meer in ziet.
+Dit is de functie waar het allemaal om draait. Als je deze functie een bericht en een bepaalde `number_of_places` geeft, zou het de `shift`-functie moeten aanroepen en dan vervolgens het bericht *letter voor letter* (denk hierbij aan een `for`-loop) moeten coderen tot tekst waar je niks zinnigs meer in ziet.
 
 ###De functie `decrypt`
 
-Als je iets codeert, wil je het natuurlijk ook weer terug kunnen vertalen. Hiervoor heb je deze functie nodig. We gaan er hier van uit dat je de 'sleutel' (dus de shift) weet. Denk goed na, je hoeft hiervoor niet veel nieuwe code te schrijven!
+Als je iets codeert, wil je het natuurlijk ook weer terug kunnen vertalen. Hiervoor heb je deze functie nodig. We gaan er hier van uit dat je de 'sleutel' (`number_of_places`) weet. Denk goed na, je hoeft hiervoor niet veel nieuwe code te schrijven!
 
 ##Het bestand ontcijferen
 
@@ -205,3 +239,64 @@ Nu gaan jullie een bericht ontcijferen! Hoe zou je dit doen?
 Je kunt alle mogelijkheden langsgaan. Deze methode heet _brute force_. Of is er een slimmere manier?
 
 Het bericht staat in het bestand `secret.txt`.
+
+## Extra informatie
+
+### Scope van variabelen
+
+{% highlight ruby %}
+def mijn_functie
+    puts "Dit is mijn functie"
+    naam = "Klaas"
+end
+
+puts naam
+# => undefined local variable or method `naam'
+{% endhighlight %}
+
+Waarom is `naam` onbekend? Er staat toch `naam = "Klaas"` in `mijn_functie`?
+
+Het antwoord is dat de variabele `naam` alleen bekend is in de functie `mijn_functie`. Daarbuiten bestaat `naam` niet. Je zegt ook wel: `naam` is bekend in de _scope_   van `mijn_functie`. De scope bepaalt vanaf welke plek een variabele bereikbaar is.
+
+Dus wat gebeurt hier?
+
+{% highlight ruby %}
+naam = "Pieter"
+
+def mijn_functie
+    puts "Dit is mijn functie"
+    naam = "Klaas"
+    puts naam
+end
+
+puts naam
+# => "Pieter"
+mijn_functie
+# => "Dit is mijn functie"
+# => "Klaas"
+puts naam
+# => "Pieter"
+{% endhighlight %}
+
+Buiten de functie staat nu `naam = "Pieter"`. Dus `puts naam` geeft `"Pieter"` terug.
+
+Maar binnen de functie, in de _lokale scope_, staat `naam = "Klaas"`. Dus het commando `puts naam` binnen `mijn_functie` geeft `"Klaas"`.
+
+Wat gebeurt er als we `naam = "Klaas"` weghalen?
+
+{% highlight ruby %}
+naam = "Pieter"
+
+def mijn_functie
+    puts "Dit is mijn functie"
+    puts naam
+end
+
+mijn_functie
+# "Dit is mijn functie"
+# => undefined local variable or method `naam'
+{% endhighlight %}
+
+`naam` is niet bekend! Variabelen die binnen functies worden gedefinieerd zijn onzichtbaar buiten de functie en _vice versa_!
+
+Wees niet bang als je het bovenstaande niet begrijpt. Programmeer vrolijk door, tot je een keer `undefined local variable or method 'naam'` in de command line ziet staan, terwijl je zéker weet dat je `naam` gedefinieerd hebt. Lees dan dit stuk nog eens door. Programmeren ga je snappen door te doen.
