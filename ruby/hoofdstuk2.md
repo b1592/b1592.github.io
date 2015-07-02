@@ -99,7 +99,7 @@ Schrijf nu een script die alle getallen tot en met 100 uitprint, met 'Fizz', 'Bu
 
 ### Priemgetallen zoeken
 
-Jullie gaan een script schrijven die de gebruiker vraagt om een getal en vervolgens antwoord of dat getal een priemgetal is of niet. Bijvoorbeeld in deze vorm:
+Jullie gaan een script schrijven dat de gebruiker vraagt om een getal en vervolgens antwoord of dat getal een priemgetal is of niet. Bijvoorbeeld in deze vorm:
 
 {% highlight ruby %}
 getal = gets.to_i
