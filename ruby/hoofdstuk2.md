@@ -96,7 +96,7 @@ Schrijf nu een script die alle getallen tot en met 100 uitprint, met 'Fizz', 'Bu
     Fizz
     6
     Buzz
-    7
+    8
     ...
 
 ### Priemgetallen zoeken
