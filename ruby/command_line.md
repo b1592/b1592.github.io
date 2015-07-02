@@ -41,7 +41,7 @@ Je zet een stap terug met:
 
 Nu sta je weer in de map waar je begon (je kunt het checken met `pwd`). Je kunt ook meerdere stappen tegelijk zetten:
 
-    cd Rubyprog/Hoofdstuk1
+    cd Programmeren/Hoofdstuk1
 
 Als je op tab drukt, wordt je invoer aangevuld. Probeer het maar eens. Met pijltje-omhoog en pijltje-omlaag kun je vorige commando's terughalen.
 

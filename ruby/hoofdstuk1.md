@@ -9,6 +9,9 @@ lesson: hoofdstuk1
 
 We maken kennis met Ruby en Atom. We praten tegen de computer en laten de computer terugpraten.
 
+<!-- ## College
+['Download hier de bestanden uit het college'](/public/downloads/College1.zip) -->
+
 ## Introductie
 
 Open de [command line](/ruby/command_line), navigeer naar de map `Programmeren` (met `cd`) en typ `atom .` (vergeet de punt niet.) De punt staat voor de huidige map. Hiermee open je alle mappen en bestanden in `Programmeren`. Je ziet in het navigatiemenu `Hoofdstuk1` staan, de map die je eerder had gemaakt.
