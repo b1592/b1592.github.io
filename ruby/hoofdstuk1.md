@@ -9,8 +9,8 @@ lesson: hoofdstuk1
 
 We maken kennis met Ruby en Atom. We praten tegen de computer en laten de computer terugpraten.
 
-<!-- ## College
-['Download hier de bestanden uit het college'](/public/downloads/College1.zip) -->
+## College
+['Download hier de bestanden uit het college'](/public/downloads/College1.zip) 
 
 ## Introductie
 
