@@ -4,6 +4,9 @@ title: Hoofdstuk 2
 scrollspy: true
 ---
 
+## College
+['Download hier de bestanden uit het college'](/public/downloads/College2.zip) 
+
 # Hoofdstuk 2: priemgetallen
 In dit hoofdstuk gaan we bepalen of een getal priem is of niet. Een getal is priem als het alleen deelbaar is door 1 en door zichzelf. De eerste paar priemgetallen zijn:
 
