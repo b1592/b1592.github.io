@@ -224,13 +224,11 @@ Dit is de functie waar het allemaal om draait. Als je deze functie een bericht e
 
 Als je iets codeert, wil je het natuurlijk ook weer terug kunnen vertalen. Hiervoor heb je deze functie nodig. We gaan er hier van uit dat je de 'sleutel' (`number_of_places`) weet. Denk goed na, je hoeft hiervoor niet veel nieuwe code te schrijven!
 
-##Het bestand ontcijferen
-
-Je hebt nu alles gemaakt om het bestand `encrypted_message.txt` te gaan ontcijferen. Lees het bestand in, draai het in zijn geheel door de `decrypt` functie en sla het ontcijferde stuk tekst op in `decrypted_message.txt`.
-
 ### (Extra) Hoofdletters, getallen en leestekens
 
-Je programma kan nu allerlei stukken tekst, zo lang als je maar wilt, versleutelen en weer decoderen. Maar hoofdletters, getallen en leestekens coderen lukt nog niet. Verzin hier iets op! Als je bepaalde karakters hetzelfde wilt houden (bijvoorbeeld leestekens), komt de functie `Hash#fetch` goed van pas.
+Je programma kan nu allerlei stukken tekst, zo lang als je maar wilt,
+versleutelen en weer decoderen. Maar hoofdletters, getallen en leestekens
+coderen lukt nog niet. Verzin hier iets op.
 
 
 ### (Extra) Geheim bericht kraken
