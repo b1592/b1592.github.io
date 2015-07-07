@@ -29,6 +29,7 @@ end
 
 greet("Bob")    # => "Hallo, Bob!"
 
+
 # Meerdere variabelen.
 def multiply(a, b)
     return a * b
@@ -231,14 +232,14 @@ Je hebt nu alles gemaakt om het bestand `encrypted_message.txt` te gaan ontcijfe
 
 Je programma kan nu allerlei stukken tekst, zo lang als je maar wilt, versleutelen en weer decoderen. Maar hoofdletters, getallen en leestekens coderen lukt nog niet. Verzin hier iets op! Als je bepaalde karakters hetzelfde wilt houden (bijvoorbeeld leestekens), komt de functie `Hash#fetch` goed van pas.
 
-Met de nieuwe `build_cipher` werken de tests niet meer. Als je het leuk vindt, kun je [hier](http://mattsears.com/articles/2011/12/10/minitest-quick-reference) vinden hoe je tests schrijft met `minitest`, één van de vele _test frameworks_ in Ruby.
 
 ### (Extra) Geheim bericht kraken
 Nu gaan jullie een bericht ontcijferen! Hoe zou je dit doen?
 
 Je kunt alle mogelijkheden langsgaan. Deze methode heet _brute force_. Of is er een slimmere manier?
 
-Het bericht staat in het bestand `secret.txt`.
+Het bericht staat in het bestand `secret.txt`. Download het
+[hier](/public/downloads/secret.txt).
 
 ## Extra informatie
 
