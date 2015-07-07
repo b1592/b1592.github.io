@@ -86,6 +86,14 @@ getallen = [1, 2, 3]
 getallen.push(4)  # => [1, 2, 3, 4]
 {% endhighlight %}
 
+Met de functie `index` vraag je de index van een element op.
+
+{% highlight ruby %}
+namen = ["Harrie", "Maria", "Evelien", "Piet"]
+namen.index("Maria") # => 1
+namen.index("Sjaak") # => nil
+{% endhighlight %}
+
 ### Hashes
 Een `Hash` lijkt op een array, maar je spreekt een waarde uit de collectie niet aan met een index, maar met een _key_. Een key kan van elk datatype zijn. De volgende hash verbindt landen met hun hoofdsteden:
 
@@ -134,6 +142,12 @@ end
 {% endhighlight %}
 
 Wat is het verschil tussen `(0..10)` en `(0...10)`?
+
+Met de functie `to_a` (to array) maak je van een range een array.
+
+{% highlight ruby %}
+(0..5).to_a # => [0, 1, 2, 3, 4, 5]
+{% endhighlight %}
 
 ### File Input/Output
 Stel dat je `bericht.txt` wilt inlezen. Dat gaat als volgt:
