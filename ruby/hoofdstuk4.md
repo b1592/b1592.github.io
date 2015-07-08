@@ -8,7 +8,7 @@ scrollspy: true
 
 In dit hoofdstuk ga je [boter, kaas en
 eieren](http://en.wikipedia.org/wiki/Tic-tac-toe) of
-[mastermind](http://nl.wikipedia.org/wiki/Mastermind) aan de computer uitleggen.
+aan de computer uitleggen.
 
 <p><iframe width="420" height="315" src="//www.youtube.com/embed/F7qOV8xonfY"
   frameborder="0" allowfullscreen="allowfullscreen">  </iframe></p>
