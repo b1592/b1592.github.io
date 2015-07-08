@@ -7,7 +7,7 @@ scrollspy: true
 #HOOFDSTUK 4: TIC TAC TOE
 
 In dit hoofdstuk ga je [boter, kaas en
-eieren](http://en.wikipedia.org/wiki/Tic-tac-toe) of
+eieren](http://en.wikipedia.org/wiki/Tic-tac-toe)
 aan de computer uitleggen.
 
 <p><iframe width="420" height="315" src="//www.youtube.com/embed/F7qOV8xonfY"
