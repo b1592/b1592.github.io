@@ -4,13 +4,11 @@ title: Hoofdstuk 4
 scrollspy: true
 ---
 
-#HOOFDSTUK 4: TIC TAC TOE EN MASTERMIND
+#HOOFDSTUK 4: TIC TAC TOE
 
-In dit hoofdstuk ga je [boter, kaas en eieren](http://en.wikipedia.org/wiki/Tic-tac-toe) of [mastermind](http://nl.wikipedia.org/wiki/Mastermind) aan de computer uitleggen. 
-
-Beide spellen zijn een grote uitdaging, maar wij denken dat boter, kaas en eieren iets lastiger is dan mastermind. Je mag zelf weten welke je gaat maken.
-
-Lees eerst goed de informatie door, die is voor beide spellen belangrijk.
+In dit hoofdstuk ga je [boter, kaas en
+eieren](http://en.wikipedia.org/wiki/Tic-tac-toe) of
+[mastermind](http://nl.wikipedia.org/wiki/Mastermind) aan de computer uitleggen.
 
 <p><iframe width="420" height="315" src="//www.youtube.com/embed/F7qOV8xonfY"
   frameborder="0" allowfullscreen="allowfullscreen">  </iframe></p>
@@ -19,18 +17,9 @@ Lees eerst goed de informatie door, die is voor beide spellen belangrijk.
 
 [Download hier de bestanden:](/public/downloads/Hoofdstuk4.zip)
 
-In de map `Hoofdstuk4A` vind je de volgende bestanden:
-
-    Hoofdstuk4.url - deze beschrijving
-    mastermind.rb
-    game.rb
-
-En in `Hoofdstuk4B`:
-
     Hoofdstuk4.url
     tictactoe.rb
     game.rb
-    narrator.rb
 
 ## Informatie
 
@@ -40,11 +29,11 @@ Om de wereld zo begrijpelijk mogelijk te vatten in code, gebruiken veel programm
 
 {% highlight ruby %}
 class Book
-    def initialize(author, title, content)
-        @author = author
-        @title = title
-        @content = content
-    end
+  def initialize(author, title, content)
+    @author = author
+    @title = title
+    @content = content
+  end
 end
 {% endhighlight %}
 
@@ -114,13 +103,13 @@ class Book
         @current_page = @current_page + 1
     end
 end
-{% endhighlight %} 
+{% endhighlight %}
 
 Niet vergeten `:current_page` toe te voegen aan `attr_accessor`. Nu kunnen we dit doen:
 
 {% highlight ruby %}
 book1.current_page # => 1
-book1.flip_page 
+book1.flip_page
 book1.current_page # => 2
 {% endhighlight %}
 
@@ -183,11 +172,11 @@ date.tuesday? # => true
 
 Nu kun je alle code uit `date` aanroepen, zonder te weten wat er precies in dat bestand staat. Op de [pagina van `date`](http://ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Date.html#method-i-wday) staat wat je er mee kunt doen. In Ruby hoef je bijna geen basisfunctionaliteit zelf te schrijven. Kijk dus eerst in de [documentatie](http://ruby-doc.org/core-1.9.3/), zodat je geen onnodig werk doet.
 
-### Eigen bestanden aanroepen
+<!-- ### Eigen bestanden aanroepen
 
 Grote programma's worden vaak gesplitst in meerdere bestanden. Dit geeft overzicht. Als je code uit je eigen mappen wilt aanroepen, moet je `require_relative` gebruiken.
 
-In de map `Hoofdstuk4B` staat `tictactoe.rb`. Dit bestand willen we uitvoeren om het spel te starten. Maar om het overzicht te bewaren, zetten we alle code van de klasse `Game` in `game.rb` en van klasse `Narrator` in `narrator.rb`. In `tictactoe.rb` zetten we vervolgens:
+In de map `Hoofdstuk4` staat `tictactoe.rb`. Dit bestand willen we uitvoeren om het spel te starten. Maar om het overzicht te bewaren, zetten we alle code van de klasse `Game` in `game.rb` en van klasse `Narrator` in `narrator.rb`. In `tictactoe.rb` zetten we vervolgens:
 
 {% highlight ruby %}
 require_relative "game"
@@ -197,9 +186,10 @@ game = Game.new
 narrator = Narrator.new
 {% endhighlight %}
 
-Zoals je ziet, kun je `.rb` weglaten uit de bestandsnaam. De hulpcode van Mastermind is op dezelfde manier gescheiden.
+Zoals je ziet, kun je `.rb` weglaten uit de bestandsnaam. De hulpcode van
+Mastermind is op dezelfde manier gescheiden. -->
 
-### 2D-array
+<!-- ### 2D-array
 
 Deze informatie is nuttig als je boter, kaas en eieren gaat maken.
 
@@ -211,13 +201,14 @@ Je hebt al kennis gemaakt met arrays. Nu gaan we een stapje verder: tweedimensio
 
 Je ziet dat er één grote array is met daarin drie kleine arrays. Deze kleine arrays vormen de rijen van het bord:
 
-     X | X | O 
+     X | X | O
     ---|---|---
-     O | O | X 
+     O | O | X
     ---|---|---
-       |   | O 
+       |   | O
 
-Probeer zelf een paar van dit soort arrays te maken in `irb`, zodat je echt begrijpt hoe ze werken.
+Probeer zelf een paar van dit soort arrays te maken in `irb`, zodat je echt
+begrijpt hoe ze werken. -->
 
 ## Tic Tac Toe
 ### De spelregels
@@ -235,27 +226,6 @@ Het leek ons handig om de plaatsen op het bord te nummeren zoals het NumPad. 7 i
 
 ### Het bord tekenen
 
-Kijk eens naar de `Narrator`-klasse, in `narrator.rb`. Dit kun je ermee:
-
-{% highlight ruby %}
-narrator = Narrator.new
-
-board = [[" ", "X", " "], 
-        ["O", "X", " "], 
-        [" ", " ", "O"]]
-narrator.draw_board(board)
-{% endhighlight %}
-
-Kijk maar wat je dan krijgt!
-
-De lege functie `intro` mogen jullie gebruiken, maar het hoeft niet. Het is maar een ideetje. Je kunt er handig gebruik van maken in het hoofdbestand `tictactoe.rb`:
-
-{% highlight ruby %}
-narrator = Narrator.new
-narrator.intro 
-{% endhighlight %} 
-
-In `narrator.rb` kun je `intro` programmeren zoals je wilt. Misschien wil je de spelers begroeten, of de regels uitleggen. Het gaat erom dat het hoofdbestand `tictactoe.rb` overzichtelijk blijft: het scheelt enorm als je alleen een instructie hoeft te geven aan het `Narrator`-object. `narrator.intro` is een stuk duidelijker dan meerdere regels met `puts`- commando's.
 
 ### (Extra) Tegen de computer
 De ultieme uitdaging van deze cursus. Maak een klasse `ComputerPlayer` en zorg dat je tegen de computer kunt spelen!
@@ -273,7 +243,7 @@ game = Game.new("1234")
 game.guesses_left # => 10
 game.guess("1241")
 # voor elk getal op de juiste plaats krijg je een plusje,
-# voor elk getal op de verkeerde plek een minnetje.   
+# voor elk getal op de verkeerde plek een minnetje.
 game.score # => ++-
 game.over? # => false
 game.guesses_left # => 9
@@ -298,4 +268,3 @@ end
 
 ## Pen en papier
 Het is verleidelijk om meteen te gaan typen. Maar begin eens met pen en papier. Hoe verloopt een speelbeurt? Wanneer is het spel afgelopen? Schroom niet om functies toe te voegen aan `Game` of (in het geval van Tic Tac Toe) `Narrator`.
-

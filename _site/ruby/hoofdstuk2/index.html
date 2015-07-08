@@ -74,7 +74,11 @@
     <div class="container content">
       <div class="row">
         <div class="col-md-9">
-          <h1 id="hoofdstuk_2_priemgetallen">Hoofdstuk 2: priemgetallen</h1>
+          <h2 id="college">College</h2>
+
+<p><a href="/public/downloads/College2.zip">Download hier de bestanden uit het college</a></p>
+
+<h1 id="hoofdstuk_2_priemgetallen">Hoofdstuk 2: priemgetallen</h1>
 
 <p>In dit hoofdstuk gaan we bepalen of een getal priem is of niet. Een getal is priem als het alleen deelbaar is door 1 en door zichzelf. De eerste paar priemgetallen zijn:</p>
 
@@ -91,47 +95,42 @@
 <h3 id="logische_uitspraken">Logische uitspraken</h3>
 
 <p>In bijna elk programma moeten er keuzes worden gemaakt: als dít waar is, doe dan dát. Deze <em>logische uitspraken</em> leveren <code>true</code> of <code>false</code> op. Een paar voorbeelden (testen met <code>irb</code>!)</p>
-<div class='highlight'><pre><code class='ruby'><span class='mi'>8</span> <span class='o'>&gt;</span> <span class='mi'>5</span>   <span class='c1'># =&gt; true</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='mi'>8</span> <span class='o'>&gt;</span> <span class='mi'>5</span>   <span class='c1'># =&gt; true</span>
 <span class='mi'>6</span> <span class='o'>&lt;</span> <span class='mi'>6</span>   <span class='c1'># =&gt; false</span>
 <span class='mi'>6</span> <span class='o'>&lt;=</span> <span class='mi'>6</span>  <span class='c1'># =&gt; true</span>
 <span class='mi'>8</span> <span class='o'>&gt;=</span> <span class='mi'>9</span>  <span class='c1'># =&gt; false</span>
 
 <span class='n'>naam</span> <span class='o'>=</span> <span class='s2'>&quot;Piet&quot;</span>
-<span class='n'>naam</span> <span class='o'>==</span> <span class='s2'>&quot;Piet&quot;</span>  <span class='c1'># =&gt; true</span>
-</code></pre></div>
+<span class='n'>naam</span> <span class='o'>==</span> <span class='s2'>&quot;Piet&quot;</span>  <span class='c1'># =&gt; true</span></code></pre></div>
 <h3 id="logische_uitspraken_combineren_met_en__en_of_">Logische uitspraken combineren met EN (<code>&amp;&amp;</code>) en OF (<code>||</code>)</h3>
 
 <p>Als je wilt weten of de variabele <code>weekdag</code> de waarde <code>&quot;zaterdag&quot;</code> of <code>&quot;zondag&quot;</code> bevat, gebruik je de OF-operator.</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>weekdag</span> <span class='o'>==</span> <span class='s2'>&quot;zaterdag&quot;</span> <span class='o'>||</span> <span class='n'>weekdag</span> <span class='o'>==</span> <span class='s2'>&quot;zondag&quot;</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='k'>if</span> <span class='n'>weekdag</span> <span class='o'>==</span> <span class='s2'>&quot;zaterdag&quot;</span> <span class='o'>||</span> <span class='n'>weekdag</span> <span class='o'>==</span> <span class='s2'>&quot;zondag&quot;</span>
   <span class='nb'>puts</span> <span class='s2'>&quot;Het is weekend.&quot;</span>
-<span class='k'>end</span>
-</code></pre></div>
+<span class='k'>end</span></code></pre></div>
 <p>En als je wilt kijken of de leeftijd groter of gelijk is aan <code>10</code>, maar kleiner dan <code>20</code>? Dan gebruik je de EN-operator:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>leeftijd</span> <span class='o'>&gt;=</span> <span class='mi'>10</span> <span class='o'>&amp;&amp;</span> <span class='n'>leeftijd</span> <span class='o'>&lt;</span> <span class='mi'>20</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='k'>if</span> <span class='n'>leeftijd</span> <span class='o'>&gt;=</span> <span class='mi'>10</span> <span class='o'>&amp;&amp;</span> <span class='n'>leeftijd</span> <span class='o'>&lt;</span> <span class='mi'>20</span>
     <span class='nb'>puts</span> <span class='s2'>&quot;Een tiener.&quot;</span>
-<span class='k'>end</span>
-</code></pre></div>
+<span class='k'>end</span></code></pre></div>
 <h3 id="de_modulooperator">De modulo-operator</h3>
 
 <p>Een belangrijke operator voor deze opdracht is <code>%</code>, de modulo-operator. Deze geeft de rest terug van deling van twee getallen.</p>
-<div class='highlight'><pre><code class='ruby'><span class='mi'>10</span> <span class='o'>%</span> <span class='mi'>3</span>  <span class='c1'># =&gt; 1</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='mi'>10</span> <span class='o'>%</span> <span class='mi'>3</span>  <span class='c1'># =&gt; 1</span>
 <span class='mi'>17</span> <span class='o'>%</span> <span class='mi'>7</span>  <span class='c1'># =&gt; 3</span>
 <span class='mi'>8</span> <span class='o'>%</span> <span class='mi'>2</span>   <span class='c1'># =&gt; 0</span>
 
 <span class='c1'># is 14 deelbaar door 3?</span>
 <span class='mi'>14</span> <span class='o'>%</span> <span class='mi'>3</span> <span class='o'>==</span> <span class='mi'>0</span> <span class='c1'># =&gt; false</span>
 <span class='c1'># is 12 deelbaar door 4?</span>
-<span class='mi'>12</span> <span class='o'>%</span> <span class='mi'>4</span> <span class='o'>==</span> <span class='mi'>0</span> <span class='c1'># =&gt; true</span>
-</code></pre></div>
+<span class='mi'>12</span> <span class='o'>%</span> <span class='mi'>4</span> <span class='o'>==</span> <span class='mi'>0</span> <span class='c1'># =&gt; true</span></code></pre></div>
 <h3 id="whileloop">While-loop</h3>
 
 <p>Een if-statement is een eenmalige beslissing. Maar soms wil je met een opdracht doorgaan zolang als <em>(while)</em> een bepaalde uitspraak waar is. Haal een ei uit de doos, zolang er nog eieren zijn. Wat komt hier uit?</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>counter</span> <span class='o'>=</span> <span class='mi'>0</span>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='n'>counter</span> <span class='o'>=</span> <span class='mi'>0</span>
 <span class='k'>while</span> <span class='n'>counter</span> <span class='o'>&lt;</span> <span class='mi'>10</span>
     <span class='n'>counter</span> <span class='o'>=</span> <span class='n'>counter</span> <span class='o'>+</span> <span class='mi'>1</span>
 <span class='k'>end</span>
-<span class='nb'>puts</span> <span class='n'>counter</span>
-</code></pre></div>
+<span class='nb'>puts</span> <span class='n'>counter</span></code></pre></div>
 <h2 id="de_opdracht">De opdracht</h2>
 
 <p>Om een gevoel te krijgen voor de bovenstaande uitleg volgen hier twee korte opdrachten.</p>
@@ -160,15 +159,14 @@ Buzz
 
 <h3 id="priemgetallen_zoeken">Priemgetallen zoeken</h3>
 
-<p>Jullie gaan een script schrijven die de gebruiker vraagt om een getal en vervolgens antwoord of dat getal een priemgetal is of niet. Bijvoorbeeld in deze vorm:</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>getal</span> <span class='o'>=</span> <span class='nb'>gets</span><span class='o'>.</span><span class='n'>to_i</span>
+<p>Jullie gaan een script schrijven dat de gebruiker vraagt om een getal en vervolgens antwoord of dat getal een priemgetal is of niet. Bijvoorbeeld in deze vorm:</p>
+<div class='highlight'><pre><code class='language-ruby' data-lang='ruby'><span class='n'>getal</span> <span class='o'>=</span> <span class='nb'>gets</span><span class='o'>.</span><span class='n'>to_i</span>
 
 <span class='c1'># Code waarbij wordt gecheckt of &#39;getal&#39; een priemgetal is ...</span>
 
 <span class='nb'>puts</span> <span class='s2'>&quot;</span><span class='si'>#{</span><span class='n'>getal</span><span class='si'>}</span><span class='s2'> is een priemgetal.&quot;</span>
 <span class='c1'># of</span>
-<span class='nb'>puts</span> <span class='s2'>&quot;</span><span class='si'>#{</span><span class='n'>getal</span><span class='si'>}</span><span class='s2'> is geen priemgetal.&quot;</span>
-</code></pre></div>
+<span class='nb'>puts</span> <span class='s2'>&quot;</span><span class='si'>#{</span><span class='n'>getal</span><span class='si'>}</span><span class='s2'> is geen priemgetal.&quot;</span></code></pre></div>
 <h3 id="extra_duizendste_priemgetal">(Extra) Duizendste priemgetal</h3>
 
 <p>Nu heb je een programma die kan bedenken of een getal een priemgetal is. Kun je nu ook het honderdste priemgetal vinden? Tip: stop de code van de vorige opdracht in een <code>while</code>-loop.</p>
