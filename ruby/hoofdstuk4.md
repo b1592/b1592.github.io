@@ -15,11 +15,7 @@ eieren](http://en.wikipedia.org/wiki/Tic-tac-toe) of
 
 ##Bestanden
 
-[Download hier de bestanden:](/public/downloads/Hoofdstuk4.zip)
-
-    Hoofdstuk4.url
-    tictactoe.rb
-    game.rb
+Download [tic_tac_toe.rb](/public/downloads/tic_tac_toe.rb).
 
 ## Informatie
 
@@ -211,7 +207,10 @@ Probeer zelf een paar van dit soort arrays te maken in `irb`, zodat je echt
 begrijpt hoe ze werken. -->
 
 ## Tic Tac Toe
-### De spelregels
+
+Implementeer het spelletje boter kaas en eieren (zie hulpbestand).
+
+<!-- ### De spelregels
 Jullie zullen vooral aan de `Game`-klasse werken. Deze klasse bevat alle spellogica. We moeten aan een `Game`-object kunnen vragen wie er aan de beurt is, of het spel al over is, hoe het huidige bord eruit ziet, enzovoort. Bovendien moeten we een zet kunnen doen.
 
 {% highlight ruby %}
@@ -222,49 +221,11 @@ game.play(1)
 game.current_player # => "Player 2"
 {% endhighlight %}
 
-Het leek ons handig om de plaatsen op het bord te nummeren zoals het NumPad. 7 is linksboven, 1 is linksonder, enz. `game.play(1)` betekent: de speler die aan de beurt is speelt linksonder. Welke speler aan de beurt is, moet het `Game`-object zelf bijhouden.
-
-### Het bord tekenen
-
+Het leek ons handig om de plaatsen op het bord te nummeren zoals het NumPad. 7
+is linksboven, 1 is linksonder, enz. `game.play(1)` betekent: de speler die aan
+de beurt is speelt linksonder. Welke speler aan de beurt is, moet het
+`Game`-object zelf bijhouden. -->
 
 ### (Extra) Tegen de computer
-De ultieme uitdaging van deze cursus. Maak een klasse `ComputerPlayer` en zorg dat je tegen de computer kunt spelen!
-
-## Mastermind
-
-### De spelregels
-Alle spellogica staat in de `Game`-klasse. Wat moeten we allemaal aan een spelobject kunnen vragen? Hoe vaak de speler nog mag raden, wat de score van de laatste gok was, of het spel al voorbij is, enzovoorts. Stel je zoiets voor:
-
-{% highlight ruby %}
-# game.rb
-
-# De geheime code is 1234
-game = Game.new("1234")
-game.guesses_left # => 10
-game.guess("1241")
-# voor elk getal op de juiste plaats krijg je een plusje,
-# voor elk getal op de verkeerde plek een minnetje.
-game.score # => ++-
-game.over? # => false
-game.guesses_left # => 9
-{% endhighlight %}
-
-Dit is slechts een voorbeeld, het gaat erom dat je de spellogica "verstopt" in een object, zodat je de relevante informatie op een overzichtelijke manier kunt opvragen. De details laten we aan jullie over.
-
-In `mastermind.rb` hoef je je geen zorgen meer te maken over de spellogica. Een voorbeeldje:
-
-{% highlight ruby %}
-# mastermind.rb
-
-require_relative "game"
-
-game = Game.new("1234")
-puts "Welkom bij Mastermind, raad de code van vier cijfers."
-
-while game.over? == false
-    # vraag speler om code en geef score
-end
-{% endhighlight %}
-
-## Pen en papier
-Het is verleidelijk om meteen te gaan typen. Maar begin eens met pen en papier. Hoe verloopt een speelbeurt? Wanneer is het spel afgelopen? Schroom niet om functies toe te voegen aan `Game` of (in het geval van Tic Tac Toe) `Narrator`.
+De ultieme uitdaging van deze cursus. Maak een klasse `ComputerPlayer` en zorg
+dat je tegen de computer kunt spelen!
