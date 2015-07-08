@@ -168,44 +168,6 @@ date.tuesday? # => true
 
 Nu kun je alle code uit `date` aanroepen, zonder te weten wat er precies in dat bestand staat. Op de [pagina van `date`](http://ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Date.html#method-i-wday) staat wat je er mee kunt doen. In Ruby hoef je bijna geen basisfunctionaliteit zelf te schrijven. Kijk dus eerst in de [documentatie](http://ruby-doc.org/core-1.9.3/), zodat je geen onnodig werk doet.
 
-<!-- ### Eigen bestanden aanroepen
-
-Grote programma's worden vaak gesplitst in meerdere bestanden. Dit geeft overzicht. Als je code uit je eigen mappen wilt aanroepen, moet je `require_relative` gebruiken.
-
-In de map `Hoofdstuk4` staat `tictactoe.rb`. Dit bestand willen we uitvoeren om het spel te starten. Maar om het overzicht te bewaren, zetten we alle code van de klasse `Game` in `game.rb` en van klasse `Narrator` in `narrator.rb`. In `tictactoe.rb` zetten we vervolgens:
-
-{% highlight ruby %}
-require_relative "game"
-require_relative "narrator"
-
-game = Game.new
-narrator = Narrator.new
-{% endhighlight %}
-
-Zoals je ziet, kun je `.rb` weglaten uit de bestandsnaam. De hulpcode van
-Mastermind is op dezelfde manier gescheiden. -->
-
-<!-- ### 2D-array
-
-Deze informatie is nuttig als je boter, kaas en eieren gaat maken.
-
-Je hebt al kennis gemaakt met arrays. Nu gaan we een stapje verder: tweedimensionale arrays. Dit zijn arrays in arrays. Het spelbord is precies dat:
-
-{% highlight ruby %}
-[["X", "X", "O"], ["O", "O", "X"], [" ", " ", "O"]]
-{% endhighlight %}
-
-Je ziet dat er één grote array is met daarin drie kleine arrays. Deze kleine arrays vormen de rijen van het bord:
-
-     X | X | O
-    ---|---|---
-     O | O | X
-    ---|---|---
-       |   | O
-
-Probeer zelf een paar van dit soort arrays te maken in `irb`, zodat je echt
-begrijpt hoe ze werken. -->
-
 ## Tic Tac Toe
 
 Implementeer het spelletje boter kaas en eieren (zie hulpbestand).
