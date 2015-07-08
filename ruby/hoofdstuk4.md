@@ -172,22 +172,6 @@ Nu kun je alle code uit `date` aanroepen, zonder te weten wat er precies in dat 
 
 Implementeer het spelletje boter kaas en eieren (zie hulpbestand).
 
-<!-- ### De spelregels
-Jullie zullen vooral aan de `Game`-klasse werken. Deze klasse bevat alle spellogica. We moeten aan een `Game`-object kunnen vragen wie er aan de beurt is, of het spel al over is, hoe het huidige bord eruit ziet, enzovoort. Bovendien moeten we een zet kunnen doen.
-
-{% highlight ruby %}
-game = Game.new
-game.over? # => false
-game.current_player # => "Player 1"
-game.play(1)
-game.current_player # => "Player 2"
-{% endhighlight %}
-
-Het leek ons handig om de plaatsen op het bord te nummeren zoals het NumPad. 7
-is linksboven, 1 is linksonder, enz. `game.play(1)` betekent: de speler die aan
-de beurt is speelt linksonder. Welke speler aan de beurt is, moet het
-`Game`-object zelf bijhouden. -->
-
 ### (Extra) Tegen de computer
 De ultieme uitdaging van deze cursus. Maak een klasse `ComputerPlayer` en zorg
 dat je tegen de computer kunt spelen!
