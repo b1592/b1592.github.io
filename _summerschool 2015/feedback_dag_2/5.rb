@@ -9,14 +9,15 @@ while aantalpriemgetallen < hoeveelste
 
   nummer = 1
   while nummer < counter
-  nummer += 1
+    nummer += 1
     if counter % nummer == 0
       break
     end
   end
+
   if counter == nummer
-      aantalpriemgetallen += 1
-    end
+    aantalpriemgetallen += 1
+  end
 end
 
 puts "Het getal is #{counter}"

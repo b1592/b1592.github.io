@@ -2,17 +2,16 @@ puts "Fill in a number:"
 
 number = gets.chomp.to_i
 
-
-counter = 1
+deler = 1
 prime = true
-while counter < number - 1
-  counter = counter + 1
-  if number % counter == 0
+while deler < number - 1
+  deler = deler + 1
+  if number % deler == 0
     prime = false
   end
 end
 
-if prime == true
+if prime 
   puts "#{number} is a prime number!"
 else
   puts "#{number} is not a prime number!"

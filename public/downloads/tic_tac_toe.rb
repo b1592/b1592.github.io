@@ -19,13 +19,13 @@ class Game
 
   def over?
     # to check verticals:
-    @board.three_same_in_rows?(@board.verticals)
+    @board.rows_occupied?(@board.verticals)
   end
 end
 
 class Board
   def initialize
-    @board = [" ", " ", " ", " ", " ", " ", " ", " ", "O"]
+    @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   end
 
   def get_square(n)
@@ -34,9 +34,9 @@ class Board
   def put_square(player, n)
   end
 
-  def three_same_in_rows?(rows)
+  def rows_occupied?(rows)
     for row in rows
-      if row[0] == row[1] && row[1] == row[2]
+      if row[0] == row[1] && row[1] == row[2] && row.include?(" ") == false
         return true
       end
     end
@@ -64,8 +64,10 @@ class Board
   def draw
     output = []
     for i in [0, 3, 6]
-      output << " #{@board[i]} | #{@board[i + 1]} | #{@board[i + 2]}       #{i} | #{i + 1} | #{i + 2} "
+      output.push(" #{@board[i]} | #{@board[i + 1]} | #{@board[i + 2]}       #{i} | #{i + 1} | #{i + 2} ")
     end
     puts output.join("\n---|---|---     ---|---|---\n")
   end
 end
+
+Game.new
