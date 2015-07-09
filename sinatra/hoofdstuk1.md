@@ -6,9 +6,8 @@ scrollspy: true
 
 # Hoofdstuk 1: Je eigen site
 
-Je gaat je eigen site maken! Je leert wat HTML en CSS zijn, en hoe je je website kunt besturen met Sinatra. 
-
-[Download de bestanden voor de cursus](/public/downloads/Sinatra.zip)
+Je gaat je eigen site maken! Je leert wat HTML en CSS zijn, en hoe je je website
+kunt besturen met Sinatra.
 
 ## Setup
 
@@ -16,15 +15,12 @@ Je gaat je eigen site maken! Je leert wat HTML en CSS zijn, en hoe je je website
 [Sinatra](http://www.sinatrarb.com/) is Ruby-uitbreiding waarmee je interactieve websites kunt maken. Typ in de command line:
 
     gem install sinatra
+    gem install sinatra-contrib
 
 Sinatra is een gem. Dat is code die je binnen je eigen programma kunt aanroepen. Als je een gem eenmaal geïnstalleerd hebt, kun je de code aanroepen met `require`. Net als bij de [standard library van Ruby](/ruby/hoofdstuk4/#_en_de_standard_library).
 
-[Shotgun](https://github.com/rtomayko/shotgun) zorgt ervoor dat veranderingen in bestanden meteen worden verwerkt in de website. Typ dit in:
-
-    gem install shotgun
-
 ### Vormgeving
-De volgende gems zijn samen een raamwerk om websites vorm te geven: 
+De volgende gems zijn samen een raamwerk om websites vorm te geven:
 
     gem install sass
     gem install bourbon
@@ -36,7 +32,7 @@ De volgende gems zijn samen een raamwerk om websites vorm te geven:
 ### Mappenstructuur
 
 We kunnen beginnen. Maak een map met als naam `blog` (of weet je een betere naam?) Alle verdere bestanden komen in deze map.
-    
+
     mkdir blog
     cd blog
 
@@ -45,7 +41,8 @@ Maak in `blog` een map `views`. Hier komen de verschillende pagina's in te staan
     mkdir views
     cd views
 
-Je staat nu in `blog/views`. Hier maak je een map `scss`. Hier komt alle code die te maken heeft met vormgeving. 
+Je staat nu in `blog/views`. Hier maak je een map `scss`. Hier komt alle code
+die te maken heeft met vormgeving.
 
     mkdir scss
     cd scss
@@ -58,20 +55,25 @@ Nu ben je in `blog/views/scss`. Voer de volgende commando's uit:
 
 Nu zijn er mappen `bourbon`, `neat` en `bitters` gemaakt die standaardvormgeving bevatten.
 
-Download het bestand [normalize.scss](/public/downloads/normalize.scss) en zet het in de map `scss`. normalize.scss reset veel waarden, zodat je site er op alle browsers hetzelfde uitziet.
+Download het bestand [normalize.scss](/public/downloads/normalize.scss) en zet
+het in de map `scss`. normalize.scss reset veel waarden, zodat je site er op
+alle browsers hetzelfde uitziet. Als je in de map `scss` staat kun je dit doen
+vanaf de command line met:
+
+    mv ~/Downloads/normalize.scss ./
 
 Je moet nog één ding doen. Open het bestand `_bitters.scss`, in de map `bitters`. Verander de bovenste twee regels:
 
 {% highlight scss %}
-// @import "neat-helpers"; // or "neat/neat-helpers" when not in Rails
+// Neat Settings -- uncomment if using Neat -- must be imported before Neat
 // @import "grid-settings";
 {% endhighlight %}
 
 in het volgende: (Niet vergeten op te slaan!)
 
 {% highlight scss %}
-    @import "../neat/neat-helpers";
-    @import "grid-settings";
+// Neat Settings -- uncomment if using Neat -- must be imported before Neat
+@import "grid-settings";
 {% endhighlight %}
 
 De mappenstructuur moet er zo uitzien:
@@ -82,10 +84,11 @@ Ga terug naar de hoofdmap met `cd ../..`.
 
 ## Eerste app
 
-Maak in de hoofdmap een bestand `application.rb` (met Sublime Text). Hier komt de code die de website bestuurt. Typ dit in:
+Maak in de hoofdmap een bestand `application.rb`. Hier komt de code die de website bestuurt. Typ dit in:
 
 {% highlight ruby %}
 require "sinatra"
+require "sinatra/reloader"
 
 get "/" do
   "Hello world!"
@@ -94,15 +97,15 @@ end
 
 Typ nu in de command line:
 
-    shotgun application.rb
+    ruby application.rb
 
 Je ziet onder andere:
-    
-    INFO  WEBrick::HTTPServer#start: pid=4517 port=9393
+
+    INFO  WEBrick::HTTPServer#start: pid=4517 port=4567
 
 Start een webbrowser en ga naar:
 
-    localhost:9393
+    localhost:4567
 
 Je ziet:
 
@@ -113,7 +116,9 @@ Je hebt je eerste app gemaakt! Maar wat is hier in godsnaam gebeurd?
 ### GET requests
 Als je een pagina opvraagt &mdash; bijvoorbeeld [www.google.com](http://google.com) &mdash; doe je een GET request. Je vraagt aan de server van Google of je de hoofdpagina mag zien. Een *server* is een (hele grote) computer die zit te wachten tot iemand een pagina opvraagt. Als er een verzoek binnenkomt, stuurt de server je alle informatie van de pagina. De browser laat de pagina vervolgens zien.
 
-Je hebt zelf een server opgestart met `shotgun application.rb`. De server staat niet in Amerika (zoals bij Google), maar op je eigen computer. De server luistert op poort 9393 van je computer (`localhost`). 
+Je hebt zelf een server opgestart met `shotgun application.rb`. De server staat
+niet in Amerika (zoals bij Google), maar op je eigen computer. De server
+luistert op poort 4567 van je computer (`localhost`).
 
 Hoe weet de server welke informatie hij moet opsturen? Daar is Sinatra voor:
 
@@ -123,7 +128,7 @@ get "/" do
 end
 {% endhighlight %}
 
-Nu weet de server dat hij bij een `GET` request voor de pagina `/` (de hoofdpagina, oftewel `localhost:9393/`) de string `"Hello world!"` moet terugsturen.
+Nu weet de server dat hij bij een `GET` request voor de pagina `/` (de hoofdpagina, oftewel `localhost:4567/`) de string `"Hello world!"` moet terugsturen.
 
 ## HTML
 
@@ -206,7 +211,7 @@ Tussen `<a>` en `</a>` plaats je links. [Een link naar Google](https://www.googl
 <a href="https://www.google.com">Een link naar Google</a>
 {% endhighlight %}
 
-Zoals je ziet, geef je met `href` het adres waar je heen wilt linken. 
+Zoals je ziet, geef je met `href` het adres waar je heen wilt linken.
 
 Een `<ul>` (*unordered list*) maak je zo:
 
@@ -249,8 +254,8 @@ Kopjes maak je met `<h1>`, `<h2` en `<h3>`:
 Een `<div>` is een *division*, een afscheiding. Het wordt vaak gebruikt om de verschillende delen van een site te scheiden.
 
 {% highlight html %}
-<div>Een deel van de site dat op zichzelf staat.</div> 
-{% endhighlight %} 
+<div>Een deel van de site dat op zichzelf staat.</div>
+{% endhighlight %}
 
 In [de uitgebreide documentatie van Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) staat uitleg over alle tags. Als je zoekt naar informatie op internet, probeer dan altijd eerst de site van Mozilla. Voeg MDN of Mozilla toe als zoekterm. Op internet wordt een hoop onzin verkondigd. (Al eens opgevallen?) De mensen van Mozilla weten waarover ze het hebben.
 
@@ -265,7 +270,7 @@ Maak een nieuw bestand `views/scss/style.scss` (let op de 's' in 'scss' - SCSS i
 @import "normalize";
 @import "bourbon/bourbon";
 @import "bitters/bitters";
-@import "neat/neat"; 
+@import "neat/neat";
 
 {% endhighlight %}
 
@@ -280,7 +285,9 @@ $max-width: em(720);
 
 {% endhighlight %}
 
-Dit zijn de standaardinstellingen voor de pagina. Met deze waarden kun je later experimenteren. Vooral `$max-width` is belangrijk: hiermee stel je de breedte van de pagina in. 
+Dit zijn de standaardinstellingen voor de pagina. Met deze waarden kun je later
+experimenteren. Vooral `$max-width` is belangrijk: hiermee stel je de breedte
+van de pagina in.
 
 ### Tags selecteren
 
@@ -300,7 +307,8 @@ Zo'n kleurcode bestaat uit zes hexadecimale cijfers (van 0 tot f). De eerste twe
 
 Zie [colorpicker](http://www.colorpicker.com) en [clrs.cc](http://clrs.cc/).
 
-Nog een voorbeeld. De standaardkleur voor links is blauw. Probeer maar eens iets tussen `<a>` tags te zetten. Maar wat als je rood wilt? 
+Nog een voorbeeld. De standaardkleur voor links is blauw. Probeer maar eens iets
+tussen `<a>` tags te zetten. Maar wat als je rood wilt?
 
 {% highlight scss %}
 
@@ -400,7 +408,7 @@ Zo geef je aan dat de browser het bestand "/style.css" moet laden. Maar als je k
 
 {% highlight ruby %}
 
-get '/style.css' do 
+get '/style.css' do
   scss :"/scss/style"
 end
 
@@ -410,7 +418,7 @@ Je hoeft hier het fijne niet van te weten, maar wat er gebeurt is gewoon een GET
 
 {% highlight ruby %}
 
-get '/' do 
+get '/' do
   erb :home
 end
 
@@ -504,7 +512,7 @@ end
 
 {% endhighlight %}
 
-Zie je wat hier gebeurt? Als de browser vraagt om `/over` dan laat Sinatra de pagina `over.erb` zien. Probeer maar eens in je browser te gaan naar `localhost:9393/over`, dan zie je de pagina die je net gemaakt hebt. Maar op deze manier navigeren is natuurlijk niet erg handig voor de gebruikers van je app. Daarom gaan we een menu maken!
+Zie je wat hier gebeurt? Als de browser vraagt om `/over` dan laat Sinatra de pagina `over.erb` zien. Probeer maar eens in je browser te gaan naar `localhost:4567/over`, dan zie je de pagina die je net gemaakt hebt. Maar op deze manier navigeren is natuurlijk niet erg handig voor de gebruikers van je app. Daarom gaan we een menu maken!
 
 ## Een menu
 
@@ -614,4 +622,3 @@ Let op: als er iets tussen `<head>`-tags staat, hoort het in de `<head>`. Je kun
 Open het bestand `_variables.scss`. Hier staan variabelen die je kunt veranderen. De variabele `$base-font-family` geeft het lettertype aan, `$base-font-size` de lettergrootte, `$base-font-color` de tekstkleur, etc. Maak er wat moois van!
 
 In `style.scss` kun je zelf regels toevoegen. [Hier](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) is een lijst van CSS-dingen die je kunt veranderen. Kijk goed naar de voorbeelden.
-
