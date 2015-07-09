@@ -62,7 +62,7 @@ vanaf de command line met:
 
     mv ~/Downloads/normalize.scss ./
 
-Je moet nog één ding doen. Open het bestand `_base.scss`, in de map
+Je moet nog twee dingen doen. Open het bestand `_base.scss`, in de map
 `base`. Uncomment de volgende regel:
 
 {% highlight scss %}
@@ -70,12 +70,26 @@ Je moet nog één ding doen. Open het bestand `_base.scss`, in de map
 // @import "grid-settings";
 {% endhighlight %}
 
-Niet vergeten op te slaan.
+In:
 
 {% highlight scss %}
 // Neat Settings -- uncomment if using Neat -- must be imported before Neat
 @import "grid-settings";
 {% endhighlight %}
+
+En in `base/_grid_settings.scss` verander je:
+
+{% highlight scss %}
+@import "neat-helpers"; // or "../neat/neat-helpers" when not in Rails
+{% endhighlight %}
+
+In:
+
+{% highlight scss %}
+@import "../neat/neat-helpers";
+{% endhighlight %}
+
+Niet vergeten op te slaan.
 
 De mappenstructuur moet er zo uitzien:
 

@@ -14,6 +14,8 @@ Een van de oudste manieren zou door Julius Caesar zelf zijn gebruikt en is redel
 
 ## Informatie
 
+base/_grid_settings.scss
+
 ### Functies
 Een functie is één van de belangrijkste wapens die een programmeur tot zijn beschikking heeft. Wat voorbeelden (test zoals altijd met `irb`):
 
