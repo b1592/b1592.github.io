@@ -131,7 +131,7 @@ Je hebt je eerste app gemaakt! Maar wat is hier in godsnaam gebeurd?
 ### GET requests
 Als je een pagina opvraagt &mdash; bijvoorbeeld [www.google.com](http://google.com) &mdash; doe je een GET request. Je vraagt aan de server van Google of je de hoofdpagina mag zien. Een *server* is een (hele grote) computer die zit te wachten tot iemand een pagina opvraagt. Als er een verzoek binnenkomt, stuurt de server je alle informatie van de pagina. De browser laat de pagina vervolgens zien.
 
-Je hebt zelf een server opgestart met `shotgun application.rb`. De server staat
+Je hebt zelf een server opgestart met `ruby application.rb`. De server staat
 niet in Amerika (zoals bij Google), maar op je eigen computer. De server
 luistert op poort 4567 van je computer (`localhost`).
 
@@ -200,7 +200,7 @@ end
 
 {% endhighlight %}
 
-Nu weet de server dat als je naar `"/"` gaat, hij de html in `home.erb` moet weergegeven. Als je `shotgun` nog aan hebt staan, kun je de pagina verversen. Start anders shotgun opnieuw op met `shotgun application.rb` in de command line.
+Nu weet de server dat als je naar `"/"` gaat, hij de html in `home.erb` moet weergegeven. Als je `shotgun` nog aan hebt staan, kun je de pagina verversen. Start anders de server opnieuw op met `ruby application.rb` in de command line.
 
 Je zou nu een witte pagina moeten zien, met 'Home' als titel. Laten we wat inhoud toevoegen. In je `<body>` kun je gewoon gaan typen. Zet wel elk stukje tekst in een `<p>`-tag (een paragraaf). In Sublime kun je snel een voorbeeldtekstje maken met `ctrl + shift + p` -> `Snippet: Lorem Ipsum`. Dan krijg je dit:
 
