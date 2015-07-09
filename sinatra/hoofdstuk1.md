@@ -27,7 +27,7 @@ De volgende gems zijn samen een raamwerk om websites vorm te geven:
     gem install neat
     gem install bitters
 
-[Hier wat voorbeelden](http://thoughtbot.github.io/refills/)
+[Hier wat voorbeelden](http://refills.bourbon.io/)
 
 ### Mappenstructuur
 
@@ -284,7 +284,7 @@ Maak een nieuw bestand `views/scss/style.scss` (let op de 's' in 'scss' - SCSS i
 
 @import "normalize";
 @import "bourbon/bourbon";
-@import "bitters/bitters";
+@import "base/base";
 @import "neat/neat";
 
 {% endhighlight %}
