@@ -531,7 +531,7 @@ Zie je wat hier gebeurt? Als de browser vraagt om `/over` dan laat Sinatra de pa
 
 ## Een menu
 
-Nu kunnen we echt aan de slag. Kijk even op de [site van Refills](http://thoughtbot.github.io/refills/). Hier staan allemaal prachtige dingen op, die je kunt gebruiken in jouw app. Scroll naar het bovenste element (Navigation) en klik op 'Show Code'. Dan verschijnen er twee stukken code, links de HTML, rechts de CSS. Klik op de linker 'copy' (boven het vak met HTML code). Plak het in `layout.erb` net onder `<div class="container">`, voor `<%= yield %>`:
+Nu kunnen we echt aan de slag. Kijk even op de [site van Refills](http://refills.bourbon.io/). Hier staan allemaal prachtige dingen op, die je kunt gebruiken in jouw app. Scroll naar het bovenste element (Navigation) en klik op 'Show Code'. Dan verschijnen er twee stukken code, links de HTML, rechts de CSS. Klik op de linker 'copy' (boven het vak met HTML code). Plak het in `layout.erb` net onder `<div class="container">`, voor `<%= yield %>`:
 
 {% highlight html+erb %}
 
