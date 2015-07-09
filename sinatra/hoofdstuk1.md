@@ -27,7 +27,7 @@ De volgende gems zijn samen een raamwerk om websites vorm te geven:
     gem install neat
     gem install bitters
 
-[Hier wat voorbeelden](http://thoughtbot.github.io/refills/).
+[Hier wat voorbeelden](http://thoughtbot.github.io/refills/)
 
 ### Mappenstructuur
 
@@ -62,14 +62,15 @@ vanaf de command line met:
 
     mv ~/Downloads/normalize.scss ./
 
-Je moet nog één ding doen. Open het bestand `_bitters.scss`, in de map `bitters`. Verander de bovenste twee regels:
+Je moet nog één ding doen. Open het bestand `_base.scss`, in de map
+`base`. Uncomment de volgende regel:
 
 {% highlight scss %}
 // Neat Settings -- uncomment if using Neat -- must be imported before Neat
 // @import "grid-settings";
 {% endhighlight %}
 
-in het volgende: (Niet vergeten op te slaan!)
+Niet vergeten op te slaan.
 
 {% highlight scss %}
 // Neat Settings -- uncomment if using Neat -- must be imported before Neat
