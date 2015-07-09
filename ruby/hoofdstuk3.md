@@ -6,6 +6,8 @@ scrollspy: true
 
 #Hoofdstuk 3: Cipher
 
+Download [hier](/public/downloads/caesar_cipher.rb) een mogelijke oplossing.
+
 Al duizenden jaren proberen mensen elkaar berichten te versturen die niet door anderen mogen worden gelezen.
 
 Een van de oudste manieren zou door Julius Caesar zelf zijn gebruikt en is redelijk eenvoudig. Hij schoof elke letter in een bericht een vast aantal plaatsen door in het alfabet. Dus hij maakte bijvoorbeeld van een 'a' een 'd', van een 'b' een 'e' etc. Met deze methode gaan we in deze opdracht aan de slag. Zie ook: [Caesar Cipher op wikipedia](http://en.wikipedia.org/wiki/Caesar_cipher).
