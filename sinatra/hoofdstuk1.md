@@ -93,7 +93,7 @@ Niet vergeten op te slaan.
 
 De mappenstructuur moet er zo uitzien:
 
-![Mappenstructuur](/public/images/mappenstructuur.png)
+![Mappenstructuur](/public/images/mappenstructuur_atom.png)
 
 Ga terug naar de hoofdmap met `cd ../..`.
 
