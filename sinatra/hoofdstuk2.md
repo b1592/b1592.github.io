@@ -65,6 +65,17 @@ end
 Je kunt vast zelf wel bedenken nu hoe je deze variabelen in je view verwerkt.
 
 ## Posts opslaan in een database
+
+### Extra stap voor Windows
+
+Ga naar [http://www.sqlite.org/download.html](http://www.sqlite.org/download.html). Download onder het kopje Precompiled Binaries for Windows de bestanden `sqlite-shell-win32-x86-3081002.zip` en `sqlite-dll-win32-x86-3081002.zip`. Pak de bestanden uit onder `c:\ruby\bin`. Vervolgens:
+
+    gem install sqlite3-ruby
+
+Einde extra stap voor Windows.
+
+### DataMapper
+
 Een blog bestaat uit posts, die moeten worden opgeslagen in een database. Hiervoor gebruiken we [DataMapper](http://datamapper.org/getting-started.html):
 
     gem install data_mapper
