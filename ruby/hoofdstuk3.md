@@ -6,11 +6,15 @@ scrollspy: true
 
 #Hoofdstuk 3: Cipher
 
+Download [hier](/public/downloads/caesar_cipher.rb) een mogelijke oplossing.
+
 Al duizenden jaren proberen mensen elkaar berichten te versturen die niet door anderen mogen worden gelezen.
 
 Een van de oudste manieren zou door Julius Caesar zelf zijn gebruikt en is redelijk eenvoudig. Hij schoof elke letter in een bericht een vast aantal plaatsen door in het alfabet. Dus hij maakte bijvoorbeeld van een 'a' een 'd', van een 'b' een 'e' etc. Met deze methode gaan we in deze opdracht aan de slag. Zie ook: [Caesar Cipher op wikipedia](http://en.wikipedia.org/wiki/Caesar_cipher).
 
 ## Informatie
+
+base/_grid_settings.scss
 
 ### Functies
 Een functie is één van de belangrijkste wapens die een programmeur tot zijn beschikking heeft. Wat voorbeelden (test zoals altijd met `irb`):
@@ -28,6 +32,7 @@ def greet(naam)
 end
 
 greet("Bob")    # => "Hallo, Bob!"
+
 
 # Meerdere variabelen.
 def multiply(a, b)
@@ -85,6 +90,14 @@ getallen = [1, 2, 3]
 getallen.push(4)  # => [1, 2, 3, 4]
 {% endhighlight %}
 
+Met de functie `index` vraag je de index van een element op.
+
+{% highlight ruby %}
+namen = ["Harrie", "Maria", "Evelien", "Piet"]
+namen.index("Maria") # => 1
+namen.index("Sjaak") # => nil
+{% endhighlight %}
+
 ### Hashes
 Een `Hash` lijkt op een array, maar je spreekt een waarde uit de collectie niet aan met een index, maar met een _key_. Een key kan van elk datatype zijn. De volgende hash verbindt landen met hun hoofdsteden:
 
@@ -133,6 +146,12 @@ end
 {% endhighlight %}
 
 Wat is het verschil tussen `(0..10)` en `(0...10)`?
+
+Met de functie `to_a` (to array) maak je van een range een array.
+
+{% highlight ruby %}
+(0..5).to_a # => [0, 1, 2, 3, 4, 5]
+{% endhighlight %}
 
 ### File Input/Output
 Stel dat je `bericht.txt` wilt inlezen. Dat gaat als volgt:
@@ -223,22 +242,20 @@ Dit is de functie waar het allemaal om draait. Als je deze functie een bericht e
 
 Als je iets codeert, wil je het natuurlijk ook weer terug kunnen vertalen. Hiervoor heb je deze functie nodig. We gaan er hier van uit dat je de 'sleutel' (`number_of_places`) weet. Denk goed na, je hoeft hiervoor niet veel nieuwe code te schrijven!
 
-##Het bestand ontcijferen
-
-Je hebt nu alles gemaakt om het bestand `encrypted_message.txt` te gaan ontcijferen. Lees het bestand in, draai het in zijn geheel door de `decrypt` functie en sla het ontcijferde stuk tekst op in `decrypted_message.txt`.
-
 ### (Extra) Hoofdletters, getallen en leestekens
 
-Je programma kan nu allerlei stukken tekst, zo lang als je maar wilt, versleutelen en weer decoderen. Maar hoofdletters, getallen en leestekens coderen lukt nog niet. Verzin hier iets op! Als je bepaalde karakters hetzelfde wilt houden (bijvoorbeeld leestekens), komt de functie `Hash#fetch` goed van pas.
+Je programma kan nu allerlei stukken tekst, zo lang als je maar wilt,
+versleutelen en weer decoderen. Maar hoofdletters, getallen en leestekens
+coderen lukt nog niet. Verzin hier iets op.
 
-Met de nieuwe `build_cipher` werken de tests niet meer. Als je het leuk vindt, kun je [hier](http://mattsears.com/articles/2011/12/10/minitest-quick-reference) vinden hoe je tests schrijft met `minitest`, één van de vele _test frameworks_ in Ruby.
 
 ### (Extra) Geheim bericht kraken
 Nu gaan jullie een bericht ontcijferen! Hoe zou je dit doen?
 
 Je kunt alle mogelijkheden langsgaan. Deze methode heet _brute force_. Of is er een slimmere manier?
 
-Het bericht staat in het bestand `secret.txt`.
+Het bericht staat in het bestand `secret.txt`. Download het
+[hier](/public/downloads/secret.txt).
 
 ## Extra informatie
 
