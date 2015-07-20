@@ -10,3 +10,11 @@ markdown:     maruku
 permalink:    pretty
 pygments:     true
 paginate:     5
+flickr_set:
+  enabled:         yes
+  cache_dir:       "./_cache/flickr"
+  api_key:          50b42ce96473c93415ca2609f04f84e8
+  shared_secret:    7828ea1fe467c586
+  access_token:     72157656055471892-24e3623393937306
+  auth_token:     72157656055471892-24e3623393937306
+  access_secret:    8dd951ce5a33bd95

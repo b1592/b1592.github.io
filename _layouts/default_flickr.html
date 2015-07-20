@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  {% include head.html %}
+
+  <body class="scrollspy" id="top">
+
+  {% include header.html %}
+
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-9">
+          {{ content }}
+
+          {% if page.photoset %}
+
+          <iframe src="https://www.flickr.com/photos/boris1592/sets/{{ page.photoset }}/player/" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
+          {% endif %}
+        </div>
+
+        <div class="col-md-3">
+          <div class="page-map-sidebar" data-spy="affix">
+            <ul id="page-map" class="nav">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% include footer.html %}
+
+  {% include analytics.html %}
+
+  <!-- Load JS here for greater good =============================-->
+    <script src="/public/js/bootstrap.min.js"></script>
+    {% if page.scrollspy %}
+      <script src="/public/js/scrollspy.js"></script>
+    {% endif %}
+    <script src="/public/js/custom.js"></script>
+  </body>
+</html>
