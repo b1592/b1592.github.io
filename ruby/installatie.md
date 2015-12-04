@@ -9,6 +9,7 @@ scrollspy: true
 We installeren twee dingen: de ruby interpreter en een tekstverwerker.
 
 ## Ruby interpreter
+
 ### Windows
 Ga naar [http://rubyinstaller.org/downloads/](http://rubyinstaller.org/downloads/).
 
